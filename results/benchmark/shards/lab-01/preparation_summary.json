@@ -1,0 +1,21 @@
+{
+  "benchmark_jobs": 3936,
+  "historical_conversion_exact": true,
+  "instances": 74,
+  "official": true,
+  "profile": "benchmark74_v2_4",
+  "protocol_sha256": "69bb95f3fd069d5f43bd71e091aabe0ce079cfe9ea8ba51ab07e691bfdca0f23",
+  "shards": {
+    "0": {
+      "jobs": 2063,
+      "nominal_cpu_seconds": 3908550
+    },
+    "1": {
+      "jobs": 2063,
+      "nominal_cpu_seconds": 3908550
+    }
+  },
+  "status": "prepared",
+  "total_jobs": 4126,
+  "trajectory_jobs": 190
+}

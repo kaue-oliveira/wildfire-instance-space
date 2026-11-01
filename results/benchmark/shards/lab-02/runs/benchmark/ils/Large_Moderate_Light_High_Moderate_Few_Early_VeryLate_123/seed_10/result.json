@@ -1,0 +1,69 @@
+{
+  "algorithm": "ils",
+  "collection": "original_55",
+  "complete_candidates": 45,
+  "completed_utc": "2026-09-10T04:35:37Z",
+  "deadline_overshoot_seconds": 0.8461699120234698,
+  "engine": "legacy_python",
+  "harris_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2/inputs/harris/Large_Moderate_Light_High_Moderate_Few_Early_VeryLate_123.json",
+  "instance": "Large_Moderate_Light_High_Moderate_Few_Early_VeryLate_123",
+  "instance_sha256": "fa33c3b8a9e50e73ff7185c3101daf088dbd585249ae1ef3b73a34ab7f45d2dc",
+  "job_id": "job_01663",
+  "lower_bound": null,
+  "n_vertices": "1600",
+  "native_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2/inputs/native/Large_Moderate_Light_High_Moderate_Few_Early_VeryLate_123.json",
+  "objective": 1600,
+  "peak_rss_bytes": 47128576,
+  "phase": "benchmark",
+  "pilot": false,
+  "protocol_sha256": "221f596a97287cd01d7002ec17c48b4857603c27bef5b56a0dcf6e7a35a2c49f",
+  "result_provenance": "measured",
+  "search_limit_seconds": 2400,
+  "search_wall_seconds": 2400.8461699120235,
+  "seed": 10,
+  "shard_index": "1",
+  "size_class": "Large",
+  "solution": [],
+  "solver_status": "time_limit",
+  "status": "completed",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "370708c599977c468453450b19b70ec758202d5538bc87fc4160c62932837b9b",
+  "termination_reason": "time_limit",
+  "thermal_after": {
+    "frequencies_mhz": {
+      "cpu0": 4061.75,
+      "cpu1": 4061.642,
+      "cpu2": 4001.769,
+      "cpu3": 4061.732,
+      "cpu4": 4002.193,
+      "cpu5": 800.0,
+      "cpu6": 4000.005,
+      "cpu7": 4064.685
+    },
+    "temperatures_c": {
+      "thermal_zone0:acpitz": 27.8,
+      "thermal_zone1:acpitz": 29.8,
+      "thermal_zone2:x86_pkg_temp": 75.0
+    },
+    "utc": "2026-09-10T04:35:37Z"
+  },
+  "time_limit_seconds": "2400",
+  "validation": {
+    "assignments": 0,
+    "feasible": true,
+    "objective_recomputed": 1600
+  },
+  "wall_seconds": 2401.0662296280498,
+  "worker": {
+    "core_type": "homogeneous",
+    "logical_cpu": 2,
+    "max_mhz": 4200.0,
+    "physical_core": 2,
+    "sibling_logical_cpus": [
+      2,
+      6
+    ],
+    "socket": 0,
+    "worker_id": 2
+  }
+}

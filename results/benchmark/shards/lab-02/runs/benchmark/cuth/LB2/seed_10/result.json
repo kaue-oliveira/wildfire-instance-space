@@ -1,0 +1,92 @@
+{
+  "algorithm": "cuth",
+  "collection": "original_55",
+  "completed_utc": "2026-09-11T22:18:39Z",
+  "engine": "unified_cpp",
+  "harris_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2_1/inputs/harris/LB2.json",
+  "improvement_trajectory": [
+    [
+      0,
+      4,
+      263.0
+    ],
+    [
+      0,
+      5,
+      261.0
+    ],
+    [
+      0,
+      6,
+      258.0
+    ]
+  ],
+  "instance": "LB2",
+  "instance_sha256": "61c05473557ae47d271a79c241fceaeccbe878c07cd6eb66e628b38e128ecb7a",
+  "job_id": "job_00611",
+  "lower_bound": null,
+  "n_vertices": "282",
+  "native_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2_1/inputs/native/LB2.json",
+  "objective": 258,
+  "peak_rss_bytes": 0,
+  "phase": "benchmark",
+  "pilot": false,
+  "protocol_sha256": "9ac0471d22d99947e0cab1a50a93f2b4e680a7bb8aff2f52eef3a341e451a0ee",
+  "result_provenance": "measured",
+  "seed": 10,
+  "shard_index": "1",
+  "size_class": "Small",
+  "solution_file": "sol_cuth_LB2_10.json",
+  "solution_sha256": "8df015d5bfe2c7d3850c5dfa305e2a558efee6c2259da6ddfd02de349178d29b",
+  "statistics_fields": [
+    "LB2",
+    "10",
+    "258",
+    "0",
+    "8619",
+    "258",
+    "13",
+    "0",
+    "6",
+    "0",
+    "54.53125",
+    "54.00024414",
+    "0",
+    "[(0,4,263.000000), (0,5,261.000000), (0,6,258.000000)]"
+  ],
+  "status": "completed",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "a94a9128bc4b71cb2eb03afef4f40f81c6282c34f0a5dbff4c6f6b43ddf5b923",
+  "thermal_after": {
+    "frequencies_mhz": {
+      "cpu0": 4099.996,
+      "cpu1": 800.0,
+      "cpu2": 800.0,
+      "cpu3": 800.0,
+      "cpu4": 800.0,
+      "cpu5": 800.0,
+      "cpu6": 800.0,
+      "cpu7": 4100.015
+    },
+    "temperatures_c": {
+      "thermal_zone0:acpitz": 27.8,
+      "thermal_zone1:acpitz": 29.8,
+      "thermal_zone2:x86_pkg_temp": 64.0
+    },
+    "utc": "2026-09-11T22:18:39Z"
+  },
+  "time_limit_seconds": "600",
+  "wall_seconds": 0.5057047489099205,
+  "worker": {
+    "core_type": "homogeneous",
+    "logical_cpu": 1,
+    "max_mhz": 4200.0,
+    "physical_core": 1,
+    "sibling_logical_cpus": [
+      1,
+      5
+    ],
+    "socket": 0,
+    "worker_id": 1
+  }
+}

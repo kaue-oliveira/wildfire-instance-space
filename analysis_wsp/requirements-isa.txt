@@ -1,0 +1,15 @@
+# Ambiente reproduzível da ampliação ISA/topologia/GA (Python 3.12).
+numpy==1.26.4
+pandas==2.2.3
+scipy==1.14.1
+scikit-learn==1.5.2
+networkx==3.4.2
+matplotlib==3.9.2
+shapely==2.0.6
+pyarrow==18.1.0
+pytest==8.3.4
+noise==1.2.2
+psutil==6.1.0
+seaborn==0.13.2
+instancespace @ git+https://github.com/andremun/pyInstanceSpace.git@289a940a79cee2001bd8c54621465ddc3e30a094
+igraph==1.0.0

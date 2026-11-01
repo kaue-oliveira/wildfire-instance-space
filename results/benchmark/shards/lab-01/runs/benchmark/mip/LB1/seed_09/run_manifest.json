@@ -1,0 +1,72 @@
+{
+  "command": [
+    "taskset",
+    "--cpu-list",
+    "1",
+    "{PROJECT_ROOT}/third_party/Wildfire-Suppression/build/fire",
+    "--instance",
+    "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2/inputs/native/LB1.json",
+    "--alg",
+    "mip",
+    "--seed",
+    "9",
+    "--timelimit",
+    "600",
+    "--output",
+    "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2/runs/benchmark/mip/LB1/seed_09/statistics.csv",
+    "--save_solution",
+    "--mipModel",
+    "basic"
+  ],
+  "effective_time_limit_seconds": 600,
+  "job": {
+    "algorithm": "mip",
+    "collection": "original_55",
+    "engine": "unified_cpp",
+    "harris_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2/inputs/harris/LB1.json",
+    "instance": "LB1",
+    "instance_sha256": "43a33392d8042295fb1e9205858da9c4e6e8bac524d47fa75c9a534c96248494",
+    "job_id": "job_02902",
+    "n_vertices": "294",
+    "native_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2/inputs/native/LB1.json",
+    "phase": "benchmark",
+    "protocol_sha256": "221f596a97287cd01d7002ec17c48b4857603c27bef5b56a0dcf6e7a35a2c49f",
+    "seed": "9",
+    "shard_index": "0",
+    "size_class": "Small",
+    "time_limit_seconds": "600"
+  },
+  "pilot_limit_seconds": null,
+  "shard_index": 0,
+  "started_utc": "2026-09-14T06:05:42Z",
+  "thermal_before": {
+    "frequencies_mhz": {
+      "cpu0": 4100.005,
+      "cpu1": 800.0,
+      "cpu2": 4100.018,
+      "cpu3": 800.0,
+      "cpu4": 800.0,
+      "cpu5": 800.0,
+      "cpu6": 800.0,
+      "cpu7": 4095.439
+    },
+    "temperatures_c": {
+      "thermal_zone0:acpitz": 27.8,
+      "thermal_zone1:acpitz": 29.8,
+      "thermal_zone2:x86_pkg_temp": 64.0
+    },
+    "utc": "2026-09-14T06:05:42Z"
+  },
+  "worker": {
+    "core_type": "homogeneous",
+    "logical_cpu": 1,
+    "max_mhz": 4200.0,
+    "physical_core": 1,
+    "sibling_logical_cpus": [
+      1,
+      5
+    ],
+    "socket": 0,
+    "worker_id": 1
+  }
+}

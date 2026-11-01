@@ -1,0 +1,3 @@
+[submodule "third_party/Logic-based-Benders-decomposition-for-wildfire-suppression"]
+	path = third_party/Logic-based-Benders-decomposition-for-wildfire-suppression
+	url = https://github.com/mitchopt/Logic-based-Benders-decomposition-for-wildfire-suppression.git

@@ -1,0 +1,110 @@
+{
+    "allocation": {
+        "0": {
+            "base": "NA",
+            "protected": [
+                637
+            ],
+            "time": 523.3
+        },
+        "1": {
+            "base": "NA",
+            "protected": [
+                328
+            ],
+            "time": 577.84
+        },
+        "10": {
+            "base": "NA",
+            "protected": [
+                788
+            ],
+            "time": 1286.89
+        },
+        "11": {
+            "base": "NA",
+            "protected": [
+                782
+            ],
+            "time": 1341.43
+        },
+        "12": {
+            "base": "NA",
+            "protected": [
+                751
+            ],
+            "time": 1395.97
+        },
+        "13": {
+            "base": "NA",
+            "protected": [
+                720
+            ],
+            "time": 1450.51
+        },
+        "14": {
+            "base": "NA",
+            "protected": [
+                844
+            ],
+            "time": 1505.05
+        },
+        "2": {
+            "base": "NA",
+            "protected": [
+                511
+            ],
+            "time": 686.93
+        },
+        "3": {
+            "base": "NA",
+            "protected": [
+                160
+            ],
+            "time": 741.47
+        },
+        "4": {
+            "base": "NA",
+            "protected": [
+                814
+            ],
+            "time": 796.01
+        },
+        "5": {
+            "base": "NA",
+            "protected": [
+                875
+            ],
+            "time": 850.55
+        },
+        "6": {
+            "base": "NA",
+            "protected": [
+                16
+            ],
+            "time": 959.64
+        },
+        "7": {
+            "base": "NA",
+            "protected": [
+                482
+            ],
+            "time": 1014.18
+        },
+        "8": {
+            "base": "NA",
+            "protected": [
+                813
+            ],
+            "time": 1123.26
+        },
+        "9": {
+            "base": "NA",
+            "protected": [
+                665
+            ],
+            "time": 1232.34
+        }
+    },
+    "objv": 885.0
+}

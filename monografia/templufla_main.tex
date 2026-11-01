@@ -1,0 +1,396 @@
+%==============================================================================
+% Importando a classe
+%==============================================================================
+\documentclass{templufla}          
+
+%==============================================================================
+% Pacote hyperref para referências cruzadas dentro do documento \ref e \autoref
+% O pacote hyperref precisa ser importado o mais cedo possível.
+
+% Setspace precisa estar antes do hyperref para usar a versão atual do abntex.
+\usepackage{setspace}
+
+% Definindo cores para os links cruzados
+\usepackage{xcolor}              % para mais cores
+\definecolor{rltred}{rgb}{0.2,0,0}
+\definecolor{rltgreen}{rgb}{0,0.2,0}
+\definecolor{rltblue}{rgb}{0,0,0.2}
+
+
+% Importa hyperref
+\usepackage[%
+hidelinks, % colorlinks=true, | Troque se quiser link com cor
+urlcolor=rltblue,       % \href{...}{...} external (URL)
+filecolor=rltgreen,     % \href{...} local file
+linkcolor=rltred,       % \ref{...} and \pageref{...}
+citecolor=rltgreen,%
+]{hyperref} % 
+
+
+%==============================================================================
+% Configurando a linguagem do template
+
+% Português
+\usepackage[english,brazilian]{babel}
+\input{linguas/tempPor}
+
+% Inglês
+%\usepackage[english]{babel}
+%\input{linguas/tempEng}
+
+%==============================================================================
+% Configuração dos pacotes necessários
+% Primeiros pacotes (alguns precisam ser importados depois)
+
+% TEXTOS
+\usepackage[T1]{fontenc}         % usa fontes postscript com acentos
+\usepackage[utf8]{inputenc}      % permite edição direta com acentos
+\usepackage{listings}            % para inserção de código
+\usepackage{fancyvrb}            % para inserção de saídas de comandos
+
+% MATEMÁTICA
+\usepackage{amsmath}             % pacote da AMS para Matemática Avançada
+\usepackage{amssymb}             % símbolos extras da AMS
+\usepackage{mathtools}			 % para mais comandos de matemática
+\usepackage{latexsym}            % símbolos extras do LaTeX
+
+% TABELAS
+\usepackage{longtable}           % para tabelas muito grandes
+\usepackage{array}               % para mais opções em tabelas
+\usepackage{colortbl}            % para cores em tabelas
+\usepackage{multirow}            % para células com várias linhas
+\usepackage{multicol}            % para células com várias colunas
+
+% FIGUAS E GRÁFICOS
+\usepackage{subfigure}           % para figuras dentro de figuras
+\usepackage{caption}             % para remodelar o formato dos títulos
+\usepackage{placeins}            % controle da posição de tabelas e figuras
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+
+
+%==============================================================================
+% Citações/referências no formato ABNT, utilizando o pacote abntex2.
+% O pacote já vem na maioria das distribuições (texLive, MikTeX, Overleaf e etc...)
+% mas, caso você seja super roots e não use os listados, precisa instalar o abntex2:
+% http://abntex.codigolivre.org.br/
+
+% A versão disponível com esse template sofreu algumas alterações para se adaptar ao
+% padrão atual, já que a original está desatualizada.
+% Para mais informações, vizite o repositório oficial do template.
+
+
+% abnt-emphasize=bf coloca o título das bibliografias em negrito
+% abnt-etal-list=3 limita o número de autores antes de et al. para 3
+% abnt-url-package=xurl diz para usar o pacote url
+\usepackage[alf, abnt-etal-list=3, abnt-emphasize=bf]{abntex2cite}
+
+% Manual UFLA: referências em espaço simples, com uma linha simples entre entradas.
+\AfterTheBibliography{%
+  \raggedright
+  \renewcommand{\baselinestretch}{1}\normalsize
+  \setlength{\itemsep}{\baselineskip}%
+  \setlength{\parsep}{0pt}%
+  \setlength{\parskip}{0pt}%
+  \interlinepenalty=10000\relax
+}
+
+%==============================================================================
+% Ajustando os pacotes importados
+
+% Definindo cores para elementos tabulares
+\newcolumntype{Z}{|>{\columncolor[gray]{0.9}}l|} %cor cinza em células
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+% Definindo espaçamento vertical de elementos tabulares
+\renewcommand{\arraystretch}{1.5}
+
+% Configuração padrão do listings (ambiente de código)
+\lstset{
+	extendedchars=true,
+	breaklines=true,
+	tabsize=3,
+	basicstyle=\linespread{1}\ttfamily\normalsize,
+	stringstyle=\em,
+	showstringspaces=true,
+	inputencoding=utf8,
+	captionpos=t,
+	backgroundcolor=\color{black!5},
+	literate={{á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+	{Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+	{â}{{\^a}}1 {ê}{{\^e}}1 {ô}{{\^o}}1
+	{Â}{{\^A}}1 {Ê}{{\^E}}1 {Ô}{{\^O}}1
+	{ã}{{\~a}}1 {õ}{{\~o}}1 {ẽ}{{\~e}}1 
+	{ç}{{\c{c}}}1
+	{à}{{\`{a}}}1{À}{{\`{A}}}1}
+}
+
+% Carregamento do glossário, listas de siglas, símbolos e etc
+\loadglsentries{glossarios/abreviaturas}
+\loadglsentries{glossarios/glossario}
+\loadglsentries{glossarios/siglas}
+\loadglsentries{glossarios/simbolos}
+
+% Especificando hifenizações que por ventura LaTeX não saiba fazer
+% Por padrão 99,9% dos termos em português devem ser hifenizados corretamente.
+% Adicione aqui palavras precise especificar como hifenizar (ou não hifenizar)
+\hyphenation{software am-bien-te coor-de-na-ção FAE-PE TelEduc Williams UFLA Murray Bookchin}
+
+%==============================================================================
+% Dados da monografia, capa: autor, titulo, banca, etc... - SUBSTITUA DE ACORDO
+%==============================================================================
+% Dados para o arquivo PDF (metadados)
+
+\hypersetup{%
+% Titulo
+pdftitle={Caracterização e expansão do espaço de instâncias do Problema de Supressão de Incêndios Florestais},
+% Autor
+pdfauthor={Kauê de Oliveira Silva},
+% Descrição
+pdfsubject={Trabalho de Conclusão de Curso em Ciência da Computação sobre a caracterização e a expansão do espaço de instâncias do Problema de Supressão de Incêndios Florestais.},
+% Palavras-Chave
+pdfkeywords={supressão de incêndios florestais; otimização combinatória; análise do espaço de instâncias; redes de trajetórias de busca; grafos direcionados.}
+}
+	
+%==============================================================================
+% Informações básicas
+
+% Nome da(s)/do(s) autora(s)/autor(es)
+\author{Kauê de Oliveira Silva}
+
+% Título do trabalho, em língua vernácula
+\title{Caracterização e expansão do espaço de instâncias do Problema de Supressão de Incêndios Florestais}
+
+% Subtítulo do trabalho, em língua vernácula (não utilizado)
+%\subtitle{}
+
+% Título do trabalho, em inglês
+\engtitle{Characterization and Expansion of the Instance Space of the \textit{Wildfire Suppression Problem}}
+
+% Subtítulo do trabalho, em inglês (não utilizado)
+%\engsubtitle{}
+
+% Edição (não se aplica)
+%\edicao{}
+
+% Data de publicação
+\date{2026}
+
+% Tipo do Documento
+\tipo{Trabalho de conclusão de curso apresentado à Universidade Federal de Lavras, como parte das exigências do Curso de Ciência da Computação, para a obtenção do título de Bacharel.}
+
+
+% Orientador/orientadora
+% Altere o comando para os diferentes gêneros
+\orientador{Prof. Dr. Mayron César de Oliveira Moreira}
+%\orientadora{Profa. Dr. Maria Orientadora}
+
+% Coorientador/coorientadora
+% Altere o comando para os diferentes gêneros
+% Comente se não houver.
+%\coorientadora{Profa. Dra. Nome da Coorientadora}
+%\coorientador{Prof. Dr. José Orientador}
+
+% Local
+\local{Lavras - MG}
+
+%==============================================================================
+% Informações da banca
+
+% Membros da banca. Até quatro membros. 
+% Deve ser {nome}{instituição}.
+% Preencher quando a composição da banca estiver definida.
+%\bancaum{Nome do primeiro membro}{Instituição}
+%\bancadois{Nome do segundo membro}{Instituição}
+%\bancatres{Nome do terceiro membro}{Instituição}
+%\bancaquatro{Nome do quarto membro}{Instituição}
+
+% Data da defesa (preencher quando estiver definida)
+%\defesa{}
+
+% Imprime a folha obrigatória com campos em branco até a definição de data e banca.
+% Após preencher os campos acima, este comando pode ser removido.
+\folhaAprovacaoPendente
+
+%==============================================================================
+% Ficha catalográfica, gerada pelo sistema da Biblioteca da UFLA
+% https://bibliotecauniversitaria.ufla.br/recursos-tecnologicos/ficha-catalografica
+% adicione o arquivo PDF da ficha ao projeto e ajuste o nome no comando
+
+% Preencher somente após gerar a ficha catalográfica definitiva.
+%\fichaCatalograficaPDF{ficha-catalografica-SIG.pdf}
+
+%==============================================================================
+% Se vc já defendeu e tem o arquivo escaneado da folha de rosto, 
+% descomente e altere o nome do arquivo
+%\folhaAprovacaoAssinada{folharosto}
+
+
+%==============================================================================
+% O documento em si
+%==============================================================================
+\begin{document}
+
+%==============================================================================
+%Elementos pré-textuais
+
+% Cria capa, folha de rosto, folha de aprovação e ficha
+\maketitle
+
+% Dedicatória
+\dedic{À minha família, pelo apoio ao longo da minha formação e por fazer
+parte do caminho que me trouxe até aqui.}
+
+% Agradecimentos
+\thanks{À minha família, pelo apoio e pelo incentivo ao longo da minha
+trajetória acadêmica.
+
+Ao meu orientador, Prof. Dr. Mayron César de Oliveira Moreira, pela orientação,
+pela disponibilidade e pelas contribuições ao desenvolvimento deste trabalho.
+Agradeço pelos ensinamentos e pelas discussões que contribuíram para minha
+formação e para a construção desta pesquisa.
+
+Aos amigos e colegas que compartilharam comigo os desafios e as conquistas da
+graduação, pela companhia, pelas trocas de conhecimento e pelo incentivo
+durante essa etapa.
+
+À Universidade Federal de Lavras e aos professores do curso de Ciência da
+Computação, pela oportunidade de formação e pelos conhecimentos compartilhados
+ao longo do curso.
+
+Por fim, reconheço meu próprio esforço e a persistência para enfrentar os
+desafios desta trajetória e concluir esta etapa da minha formação.}
+
+% Epígrafe
+\epigrafe{%
+“É através da lógica que provamos, mas através da intuição que descobrimos.”\par
+(Henri Poincaré)}
+
+% Resumo e palavras-chave
+% As palavras-chave PRECISAM vir primeiro
+\palchaves{supressão de incêndios florestais; otimização combinatória; análise do espaço de instâncias; redes de trajetórias de busca; grafos direcionados.}
+\resumo{Este trabalho investiga a caracterização e a ampliação da cobertura de uma representação do espaço de instâncias do Problema de Supressão de Incêndios Florestais (WSP, do inglês: \textit{wildfire suppression problem}), relacionando atributos estruturais, temporais e topológicos ao desempenho de algoritmos e examinando as trajetórias do algoritmo estado da arte na literatura, denominado Busca em Feixe Iterada (IBS, do inglês: \textit{iterated beam search}). O WSP é modelado como a alocação temporal de recursos em um grafo direcionado para minimizar o número de regiões queimadas. A hipótese deste trabalho é que a ampliação orientada da cobertura do espaço de instâncias do WSP, aliada à caracterização por atributos do problema e medidas topológicas, torna observáveis relações entre as propriedades das instâncias, o desempenho dos algoritmos e o comportamento de busca do IBS que a coleção original não permitia distinguir. As contribuições do trabalho são as seguintes: a consolidação e a caracterização de uma base de 55 instâncias do WSP por atributos do problema e medidas topológicas do grafo; a geração orientada de 19 instâncias válidas para regiões internas pouco ocupadas do espaço de instâncias, mantido fixo como referência, ampliando a coleção para 74; a comparação de seis abordagens, incluindo o IBS, e o ajuste de quatro modelos de análise do espaço de instâncias na coleção ampliada; e a caracterização das trajetórias de busca do IBS por meio de redes que representam as soluções visitadas e as transições entre elas. A metodologia prevê a comparação de seis abordagens sob limites de tempo definidos por classe de tamanho e a análise de quatro famílias de instâncias, contrastando as coleções original e ampliada e as representações com e sem medidas topológicas adicionais. Os resultados indicam que a ampliação orientada elevou a ocupação da grade do espaço de instâncias de referência de 15\% para 20\% e reduziu em 20,92\% a maior distância aos pontos do domínio. A análise das trajetórias de busca permitiu observar diferenças de recorrência, dispersão e retorno a soluções piores, não descritas apenas pela qualidade final. Por fim, o estudo oferece evidências descritivas compatíveis com a hipótese, embora a cobertura tenha sido avaliada em um espaço de referência fixo e as relações observadas sejam associações, não efeitos causais. Como trabalhos futuros, propõem-se validação externa ou aninhada, análise de sensibilidade dos limiares e comparação com geração aleatória sob orçamento equivalente.}
+
+% Abstract e keywords
+% As keywords PRECISAM vir primeiro
+\keywords{wildfire suppression; combinatorial optimization; instance space analysis; search trajectory networks; directed graphs.}
+\begin{otherlanguage}{english}
+\abstract{This study investigates the characterization and expansion of coverage in a representation of the instance space of the \textit{wildfire suppression problem} (WSP), relating structural, temporal, and topological features to algorithm performance and examining the search trajectories of the state-of-the-art \textit{iterated beam search} (IBS). The WSP is modeled as the allocation of resources over time on a directed graph to minimize the number of burned regions. The hypothesis is that targeted expansion of WSP instance space coverage, together with problem features and topological measures, reveals relationships among instance properties, algorithm performance, and IBS search behavior that the original collection did not distinguish. The contributions are: consolidating and characterizing 55 WSP instances through problem features and graph topological measures; generating 19 valid instances for sparsely occupied internal regions of a fixed instance space reference, expanding the collection to 74; comparing six approaches, including IBS, and fitting four instance space analysis models on the expanded collection; and characterizing IBS search trajectories through networks of visited solutions and transitions. The methodology provides for comparing six approaches under time limits defined by instance size and analyzing four families of instances, contrasting the original and expanded collections and representations with and without additional topological measures. The results indicate that targeted expansion raised grid occupancy of the reference instance space from 15\% to 20\% and reduced the maximum distance to sampled domain points by 20.92\%. Search trajectory analysis revealed differences in recurrence, dispersion, and returns to worse solutions that final quality alone does not describe. The study provides descriptive evidence consistent with the hypothesis, although coverage was evaluated in a fixed reference space and the observed relationships are associations, not causal effects. Future work includes external or nested validation, threshold sensitivity analysis, and comparison with random generation under an equivalent budget.}
+
+\end{otherlanguage}
+
+% Indicadores de impacto
+% O bloco de exemplo abaixo é mantido apenas como referência do modelo. Ele não
+% integra este TCC de graduação, pois se destina a trabalhos stricto sensu.
+\iffalse
+\indicadoresdeimpacto{%
+De caráter institucional, é um item obrigatório como parte das exigências das PRPG/PROEC para os trabalhos de pós-graduação Stricto sensu da UFLA. O autor deve apresentar um relato dos impactos sociais, tecnológicos, econômicos e/ou culturais dos resultados obtidos, considerando as populações, sociedade e territórios, deixando evidente se esses impactos foram concretos e diretos ou em potencial. Ao elaborar o item sobre impactos, é importante: 
+a) caracterizar e quantificar resultados dos impactos sociais, tecnológicos, econômicos e/ou culturais da melhor forma possível; 
+b) estabelecer se há algum caráter extensionista no trabalho, demonstrando impacto e participação da sociedade externa à UFLA, como parceiros e público-alvo; 
+c) definir o território e grupos populacionais impactados; 
+d) quando possível, declarar público diretamente beneficiado e número de docentes, estudantes e técnicos envolvidos nas ações extensionistas; 
+e) estabelecer em quais das oito áreas temáticas da Política Nacional de Extensão podem ser classificados os impactos do trabalho. São elas: 1 - Comunicação, 2 - Cultura, 3 - Direitos humanos e justiça, 4 - Educação, 5 - Meio ambiente, 6 - Saúde, 7 - Tecnologia e produção e 8 - Trabalho;
+f) demonstrar quais os impactos da pesquisa e se estão alinhados com os 17 (dezessete) Objetivos de Desenvolvimento Sustentável (ODS) da Organização das Nações Unidas (ONU).
+}
+
+% Impact indicators
+\impactindicators{%
+Of an institutional nature, it is a mandatory item as part of the PRPG/PROEC requirements for UFLA's Stricto sensu postgraduate work. The author must present a report on the social, technological, economic and/or cultural impacts of the results obtained, considering the populations, society and territories, making it clear whether these impacts were concrete and direct or potential. When preparing the item on impacts, it is important to:
+a) characterize and quantify the results of the social, technological, economic and/or cultural impacts in the best possible way;
+b) establish whether there is any extensionist character to the work, demonstrating the impact and participation of society outside UFLA, such as partners and target audience;
+c) define the territory and population groups impacted;
+d) when possible, declare the public directly benefited and the number of teachers, students and technicians involved in the extension actions;
+e) establish in which of the eight thematic areas of the National Extension Policy the impacts of the work can be classified. They are: 1 - Communication, 2 - Culture, 3 - Human rights and justice, 4 - Education, 5 - Environment, 6 - Health, 7 - Technology and production and 8 - Work;
+f) demonstrate the impacts of the research and whether they are aligned with the 17 (seventeen) Sustainable Development Goals (SDGs) of the United Nations (UN).
+}
+\fi
+
+% Listas gerais
+% Comente para remover.
+%\listoffigures  	% Lista de Figuras (habilitar quando houver figuras)
+%\listofilustracoes % Lista de Ilustrações
+%\listofgraficos	% Lista de Gráficos
+%\listoftables       % Lista de Tabelas (habilitar quando houver tabelas)
+%\listofquadros		% Lista de Quadros (habilitar quando houver quadros)
+%\listofexemplos    % Lista de Exemplos
+%\listofteoremas    % Lista de Teoremas
+%\listofabreviaturas % Lista de Abreviaturas (habilitar quando houver entradas)
+%\listofsiglas       % Lista de Siglas (habilitar quando houver entradas)
+%\listofsimbolos     % Lista de Símbolos (habilitar quando houver entradas)
+
+% Sumário
+\tableofcontents
+\clearpage
+
+%==============================================================================
+% Elementos textuais
+
+% Começa a mostrar a numeração
+\pagestyle{ufla}
+
+
+% Incluindo as seções
+% É recomendado que as seções sejam organizadas em arquivos separados
+% e incluídas no documento com o comando \include
+\include{secoes/introducao}
+\include{secoes/fundamentacao-teorica}
+\include{secoes/metodologia}
+\include{secoes/resultados-discussao}
+\include{secoes/conclusao}
+
+%==============================================================================
+% Bibliografia
+
+% Carrega o estilo para referências ABNT
+\bibliographystyle{abntex2-alf}            
+
+% Alterando informações do estilo de citação.
+% Como estamos usando uma versão alterada, essas opções são necessárias.
+% Et al. em itálico
+\citeoption{abnt-etal-text=it}
+
+% Até 3 autores antes do et al.
+\citeoption{abnt-etal-cite=3}
+
+% Colocar s.d. na falta de um ano de publicação
+\citeoption{abnt-missing-year=sd}
+
+% Altera o estilo de citação para (Autor, ano)
+% A opção abnt-cite-style=AuthorYEAR está quebrada; essa é equivalente.
+\citeoption{abnt-nbr10520=1988}
+\citeoption{abnt-and-type=e}
+
+
+% Comando necessário para corrigir o título das referências.
+% Para o estilo ABNT, esse comando SEMPRE deve ser
+% chamado antes do \bibliography
+\referencias
+% Adiciona as referência em bibtex 
+\bibliography{refbib}
+
+%==============================================================================
+% Outros elementos pós-textuais
+
+% Glossário (habilitar quando houver entradas utilizadas no texto)
+%\glossario
+
+% Anexos e apêndices
+% Os anexos devem ser includios antes
+% e utilizar \input ao invés de \include, para não criar uma nova página
+% Anexos
+%\input{anexos/anexo1}
+%\input{anexos/anexo2}
+
+% Apendices
+%\input{apendices/apendice1}
+
+% Índice
+%\indice
+
+
+%==============================================================================
+% Fim do documento
+%==============================================================================
+\end{document}

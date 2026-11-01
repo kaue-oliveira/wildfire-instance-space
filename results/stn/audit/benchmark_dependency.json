@@ -1,0 +1,9 @@
+{
+  "benchmark_runs_preserved": 3936,
+  "algorithms_preserved": 6,
+  "audited_mip_exception_preserved": true,
+  "bkv_changed_instances": [],
+  "mean_objectives_and_objective_ranking_unchanged": true,
+  "corrected_stn_runs_added": 190,
+  "legacy_stn_runs_excluded_from_corrected_bkv": true
+}

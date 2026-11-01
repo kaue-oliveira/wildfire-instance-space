@@ -1,0 +1,79 @@
+Set parameter Username
+Academic license - for non-commercial use only - expires 2027-09-01
+Set parameter Threads to value 1
+Set parameter LazyConstraints to value 1
+Set parameter Seed to value 2
+Set parameter TimeLimit to value 1350
+Set parameter Threads to value 1
+Set parameter LazyConstraints to value 1
+Set parameter Seed to value 2
+Set parameter TimeLimit to value 1.0976404134294717e+02
+Set parameter TimeLimit to value 1.0957267836196115e+02
+Gurobi Optimizer version 10.0.3 build v10.0.3rc0 (linux64)
+
+CPU model: Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 4 physical cores, 8 logical processors, using up to 1 threads
+
+Optimize a model with 1810 rows, 9900 columns and 65259 nonzeros
+Model fingerprint: 0xaf25d5bb
+Variable types: 0 continuous, 9900 integer (9900 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 3e+00]
+
+Loaded user MIP start with objective 878
+
+Presolve removed 42 rows and 5 columns
+Presolve time: 0.04s
+Presolved: 1768 rows, 9895 columns, 54404 nonzeros
+Variable types: 46 continuous, 9849 integer (9822 binary)
+
+Root relaxation: objective 1.650000e+02, 758 iterations, 0.01 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  165.00000    0    -  878.00000  165.00000  81.2%     -    0s
+     0     0  181.33333    0   43  878.00000  181.33333  79.3%     -    0s
+     0     0  198.41667    0  126  878.00000  198.41667  77.4%     -    0s
+     0     0  199.08333    0  128  878.00000  199.08333  77.3%     -    0s
+     0     0  199.12500    0  129  878.00000  199.12500  77.3%     -    0s
+     0     0  199.45833    0  163  878.00000  199.45833  77.3%     -    0s
+     0     0  199.45833    0  148  878.00000  199.45833  77.3%     -    0s
+     0     2  199.50000    0  146  878.00000  199.50000  77.3%     -    0s
+    85    87  435.66667   59   36  878.00000  199.62500  77.3%   151    5s
+   151   151  281.94123   11  243  878.00000  199.87500  77.2%   171   10s
+   185   185  351.29551   36  197  878.00000  199.87500  77.2%   203   15s
+   225   225  419.58051   62  119  878.00000  199.87500  77.2%   200   20s
+   308   298  248.25817    2  267  878.00000  200.44444  77.2%   180   25s
+   328   318  334.20263   18  389  878.00000  200.44444  77.2%   204   30s
+   355   345  360.31330   42  229  878.00000  200.44444  77.2%   201   35s
+   392   382  499.13636   67   85  878.00000  200.44444  77.2%   201   40s
+   432   420  766.12500   95  276  878.00000  200.44444  77.2%   190   45s
+   446   432  298.72035    7  358  878.00000  200.50000  77.2%   199   50s
+   465   451  317.89019   19  178  878.00000  200.50000  77.2%   206   55s
+   475   461  362.50000   22  142  878.00000  200.50000  77.2%   220   60s
+   486   472  379.77534   27  275  878.00000  200.50000  77.2%   225   65s
+   511   496  287.00000   18  148  878.00000  200.50000  77.2%   222   87s
+   513   497  434.55556   52 1088  878.00000  263.39637  70.0%   221   94s
+   514   498  473.50000   60 1133  878.00000  264.21158  69.9%   220   97s
+   517   500  428.64444   66 1315  878.00000  264.77447  69.8%   219  100s
+   519   501  436.00000   80 1469  878.00000  265.49660  69.8%   218  106s
+
+Cutting planes:
+  Gomory: 5
+  Flow cover: 10
+  Zero half: 63
+  RLT: 6
+
+Explored 522 nodes (135559 simplex iterations) in 109.61 seconds (168.34 work units)
+Thread count was 1 (of 8 available processors)
+
+Solution count 1: 878 
+
+Time limit reached
+Best objective 8.780000000000e+02, best bound 2.660000000000e+02, gap 69.7039%
+
+User-callback calls 8679, time in user-callback 2.84 sec

@@ -1,0 +1,14 @@
+{
+  "profile": "tcc_essential",
+  "root_seeds": [20260612, 104729, 1299709],
+  "population": 40,
+  "generations": 40,
+  "local_search_evaluations": 400,
+  "target_budget": 12,
+  "batch_size": 6,
+  "workers": "auto",
+  "sobol_points": 10000,
+  "thresholds": [0.10],
+  "primary_threshold": 0.10,
+  "exact_topology": true
+}

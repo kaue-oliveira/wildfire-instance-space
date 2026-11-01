@@ -1,0 +1,66 @@
+{
+  "expected_unique_instances": 55,
+  "files": [
+    {
+      "path": "Wildfire-Suppression-main/instances/environmental_factors.zip",
+      "sha256": "81ae78f5a56348917ad658e00be785d7bcdf885aad0a0493298f4ff503449ec4",
+      "size": 2915672
+    },
+    {
+      "path": "Wildfire-Suppression-main/instances/instance_size.zip",
+      "sha256": "818a919a0f3ad037ed73ac9d53761f643d507353cc1db65343cd4a8c5edfcf7a",
+      "size": 2551542
+    },
+    {
+      "path": "Wildfire-Suppression-main/instances/literature.zip",
+      "sha256": "ecf4e1a7172bf4a0d3f9d29768337d1c204722a67ebb6a1531ac018da2ebbc6f",
+      "size": 116513
+    },
+    {
+      "path": "Wildfire-Suppression-main/instances/release_window.zip",
+      "sha256": "75e8aaa30c8b32ad41e0eeea3a49d7840efb6c38f9cc41fe3065978549266648",
+      "size": 769779
+    },
+    {
+      "path": "Wildfire-Suppression-main/instances/suppression_capacity.zip",
+      "sha256": "63c32f130f3b226fee3a63826d1441046d7abe8d19644bb7d52c31bee50636f6",
+      "size": 656812
+    },
+    {
+      "path": "analysis_wsp/configs/tcc_essential.json",
+      "sha256": "ba87a12275835f6568b2f86656976ebbe454e6aea56e92481109595e83f3395a",
+      "size": 321
+    },
+    {
+      "path": "analysis_wsp/data/features_instances.csv",
+      "sha256": "1fc2f0f75c471336bb6b9eb0fc01dbd64f5763c3ffb9d475ba4602e724239126",
+      "size": 28195
+    },
+    {
+      "path": "analysis_wsp/data/performance_by_algorithm.csv",
+      "sha256": "a66f79cf388184e8da4a71a9cd652d8a2dff16ebebacbdc4470847a5f5e7ae0b",
+      "size": 32350
+    },
+    {
+      "path": "analysis_wsp/reports/Relatorio_atividade_inicial_TTC.md",
+      "sha256": "e29cc9abb4fd9048c9d879c0fe71b22f1dca7215366271fdf9e76aba1d64330e",
+      "size": 14975
+    },
+    {
+      "path": "analysis_wsp/reports/Relatorio_completo_ISA_STN_WSP.md.md",
+      "sha256": "e62b64cbaee022e16983d821340767e0ae0f02e34298f40313b393070eefc1dc",
+      "size": 59376
+    },
+    {
+      "path": "anexo/metricas_grafos_direcionados_pca.docx",
+      "sha256": "65518c6c1d66ddc911d6393187835356067091a4b853a75fa8470457617f3032",
+      "size": 39500
+    }
+  ],
+  "observed_unique_instances": 55,
+  "preserved_report_hashes": {
+    "analysis_wsp/reports/Relatorio_atividade_inicial_TTC.md": "e29cc9abb4fd9048c9d879c0fe71b22f1dca7215366271fdf9e76aba1d64330e",
+    "analysis_wsp/reports/Relatorio_completo_ISA_STN_WSP.md.md": "e62b64cbaee022e16983d821340767e0ae0f02e34298f40313b393070eefc1dc"
+  },
+  "result_provenance": "original_source"
+}

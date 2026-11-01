@@ -1,0 +1,59 @@
+{
+    "allocation": {
+        "0": {
+            "base": "NA",
+            "protected": [
+                61,
+                79,
+                292
+            ],
+            "time": 10.0
+        },
+        "1": {
+            "base": "NA",
+            "protected": [
+                25,
+                284,
+                42
+            ],
+            "time": 20.0
+        },
+        "2": {
+            "base": "NA",
+            "protected": [
+                41,
+                36,
+                4
+            ],
+            "time": 30.0
+        },
+        "3": {
+            "base": "NA",
+            "protected": [
+                65,
+                12,
+                43
+            ],
+            "time": 40.0
+        },
+        "4": {
+            "base": "NA",
+            "protected": [
+                27,
+                257,
+                23
+            ],
+            "time": 50.0
+        },
+        "5": {
+            "base": "NA",
+            "protected": [
+                50,
+                237,
+                180
+            ],
+            "time": 60.0
+        }
+    },
+    "objv": 265.0
+}

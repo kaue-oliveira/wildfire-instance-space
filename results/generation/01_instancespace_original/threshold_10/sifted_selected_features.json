@@ -1,0 +1,27 @@
+{
+  "features": [
+    "feature_n_arcs",
+    "feature_decision_points",
+    "feature_delta_over_h",
+    "feature_first_release_over_h",
+    "feature_release_window_over_h",
+    "feature_free_burning_over_h",
+    "feature_directional_asymmetry_max",
+    "feature_z_span",
+    "feature_arc_time_min",
+    "feature_release_front_window_mean"
+  ],
+  "indices": [
+    1,
+    5,
+    8,
+    9,
+    11,
+    13,
+    18,
+    21,
+    25,
+    33
+  ],
+  "result_provenance": "measured"
+}

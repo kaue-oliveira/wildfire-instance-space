@@ -1,0 +1,12 @@
+{
+  "baseline_sha256": "79f116da99699cf1b5aead66535c787119cccdb3e78ef4f03929e519ae34994a",
+  "configuration_sha256": "49f4e9ca90543cb0d90c4d1baa55bd2652e912349a491c37e5750062520c09f2",
+  "csv_sha256": "4c221c552368196a88164dd27f7b6b6a09f2287ffd8efc2dc8582e9d352f59ad",
+  "geometry": "empirical_hull_intersection_cloister",
+  "result_provenance": "measured",
+  "sobol_points_requested": 10000,
+  "sobol_scramble": true,
+  "sobol_seed": 20260612,
+  "targets_created": 6,
+  "undercoverage_threshold": 0.2373897579616101
+}

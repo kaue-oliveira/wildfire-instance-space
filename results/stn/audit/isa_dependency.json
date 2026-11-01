@@ -1,0 +1,10 @@
+{
+  "performance_changed": false,
+  "changed_bkv_instances": [],
+  "input_features_preserved": true,
+  "generation_ga_reexecuted": false,
+  "sifted_revision": "sifted-corrected-v1",
+  "fits": [],
+  "status": "reused_byte_identically",
+  "reason": "The six-algorithm performance matrix and all instance features are unchanged"
+}

@@ -1,0 +1,41 @@
+{
+  "accepted_coordinates_are_exact": true,
+  "allowed_domain_area": 4.343083220363796,
+  "axis_semantics": {
+    "basis": "largest absolute projection weights after PRELIM and SIFTED",
+    "interpretation": "PILOT coordinates, not isolated physical attributes",
+    "z1": {
+      "decreases_with": [
+        "resources_per_decision",
+        "arc_time_max",
+        "last_release_over_h"
+      ],
+      "increases_with": [
+        "betweenness_unweighted_q90",
+        "arrival_q50_over_h"
+      ]
+    },
+    "z2": {
+      "decreases_with": [
+        "betweenness_unweighted_q90",
+        "n_vertices",
+        "arrival_q50_over_h"
+      ],
+      "increases_with": [
+        "arc_time_max",
+        "arc_time_min",
+        "harmonic_in_distance_q90"
+      ]
+    }
+  },
+  "baseline_points": 55,
+  "domain_geometry": "empirical_hull_intersection_cloister",
+  "empirical_hull_area": 4.947576566604976,
+  "figures": [
+    "internal_coverage_pilot.png",
+    "internal_domain_cloister.png",
+    "coverage_trajectories.png"
+  ],
+  "result_provenance": "measured",
+  "scope": "internal_gap_population"
+}

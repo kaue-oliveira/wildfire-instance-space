@@ -1,0 +1,82 @@
+{
+  "algorithm": "cuth",
+  "collection": "original_55",
+  "completed_utc": "2026-09-11T22:16:33Z",
+  "engine": "unified_cpp",
+  "harris_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2_1/inputs/harris/Medium_Moderate_Light_Medium_Few_Moderate_Early_VeryLate_123.json",
+  "improvement_trajectory": [
+    [
+      0,
+      3,
+      849.0
+    ]
+  ],
+  "instance": "Medium_Moderate_Light_Medium_Few_Moderate_Early_VeryLate_123",
+  "instance_sha256": "3a16d9e1517b1d0f1aad74012e00c9061d31b24fe2f0b48bc9da179439c4b0b0",
+  "job_id": "job_00502",
+  "lower_bound": null,
+  "n_vertices": "900",
+  "native_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2_1/inputs/native/Medium_Moderate_Light_Medium_Few_Moderate_Early_VeryLate_123.json",
+  "objective": 849,
+  "peak_rss_bytes": 25296896,
+  "phase": "benchmark",
+  "pilot": false,
+  "protocol_sha256": "9ac0471d22d99947e0cab1a50a93f2b4e680a7bb8aff2f52eef3a341e451a0ee",
+  "result_provenance": "measured",
+  "seed": 2,
+  "shard_index": "1",
+  "size_class": "Medium",
+  "solution_file": "sol_cuth_Medium_Moderate_Light_Medium_Few_Moderate_Early_VeryLate_123_2.json",
+  "solution_sha256": "65e7bba70fae04db0d36265c69b9abdd0782803287db026ba87744036c0355bc",
+  "statistics_fields": [
+    "Medium_Moderate_Light_Medium_Few_Moderate_Early_VeryLate_123",
+    "2",
+    "849",
+    "0",
+    "1093740.47",
+    "849",
+    "17",
+    "0",
+    "3",
+    "0",
+    "1229.265",
+    "1208.398301",
+    "1",
+    "[(0,3,849.000000)]"
+  ],
+  "status": "completed",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "e1cd78be6ef4a758c57dd4cb7cd74750fa933c6fe2d5f41954855503a5d06009",
+  "thermal_after": {
+    "frequencies_mhz": {
+      "cpu0": 800.0,
+      "cpu1": 4100.002,
+      "cpu2": 4099.946,
+      "cpu3": 4100.025,
+      "cpu4": 800.0,
+      "cpu5": 800.0,
+      "cpu6": 800.0,
+      "cpu7": 800.0
+    },
+    "temperatures_c": {
+      "thermal_zone0:acpitz": 27.8,
+      "thermal_zone1:acpitz": 29.8,
+      "thermal_zone2:x86_pkg_temp": 63.0
+    },
+    "utc": "2026-09-11T22:16:33Z"
+  },
+  "time_limit_seconds": "1350",
+  "wall_seconds": 1.5157254530349746,
+  "worker": {
+    "core_type": "homogeneous",
+    "logical_cpu": 0,
+    "max_mhz": 4200.0,
+    "physical_core": 0,
+    "sibling_logical_cpus": [
+      0,
+      4
+    ],
+    "socket": 0,
+    "worker_id": 0
+  }
+}

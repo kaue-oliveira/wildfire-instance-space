@@ -1,0 +1,170 @@
+{
+  "algorithm": "lbbd",
+  "baseline_mip_starts": 1,
+  "budget_policy": "global_remaining_divided_among_remaining_greedy_stages",
+  "completed_utc": "2026-09-21T13:32:46Z",
+  "exact_started": false,
+  "feasibility_cuts": 41,
+  "global_budget_seconds": 1350,
+  "greedy_wall_seconds": 1350.0395432289806,
+  "lower_bound": 577.0,
+  "mip_gap": 0.3480225988700565,
+  "model_mip_gap": 0.34875846501128666,
+  "model_objective": 886,
+  "objective": 885,
+  "objective_consistent": false,
+  "objective_delta": -1,
+  "objective_source": "validated_recomputation",
+  "optimality_cuts": 136290,
+  "optimize_calls": 10,
+  "optimize_time_allocations_seconds": [
+    134.89546598430024,
+    134.8926314348937,
+    134.889634872874,
+    134.88234235728825,
+    134.87876378716706,
+    134.87497722740517,
+    134.87074110050162,
+    134.8529288066784,
+    134.8440836314985,
+    134.83596154203406
+  ],
+  "result_provenance": "measured",
+  "seed": 1,
+  "solution": [
+    [
+      [
+        1,
+        6
+      ],
+      562.56
+    ],
+    [
+      [
+        1,
+        7
+      ],
+      562.56
+    ],
+    [
+      [
+        2,
+        1
+      ],
+      398.69
+    ],
+    [
+      [
+        2,
+        2
+      ],
+      398.69
+    ],
+    [
+      [
+        2,
+        3
+      ],
+      398.69
+    ],
+    [
+      [
+        2,
+        6
+      ],
+      562.56
+    ],
+    [
+      [
+        3,
+        4
+      ],
+      480.62
+    ],
+    [
+      [
+        3,
+        5
+      ],
+      480.62
+    ],
+    [
+      [
+        16,
+        11
+      ],
+      316.75
+    ],
+    [
+      [
+        20,
+        28
+      ],
+      316.75
+    ],
+    [
+      [
+        28,
+        27
+      ],
+      726.43
+    ],
+    [
+      [
+        28,
+        28
+      ],
+      480.62
+    ],
+    [
+      [
+        28,
+        30
+      ],
+      234.82
+    ],
+    [
+      [
+        29,
+        26
+      ],
+      726.43
+    ],
+    [
+      [
+        29,
+        27
+      ],
+      644.49
+    ],
+    [
+      [
+        29,
+        29
+      ],
+      234.82
+    ],
+    [
+      [
+        30,
+        26
+      ],
+      644.49
+    ],
+    [
+      [
+        30,
+        28
+      ],
+      234.82
+    ]
+  ],
+  "solver_status": 9,
+  "status": "completed",
+  "validation": {
+    "assignments": 18,
+    "feasible": true,
+    "objective_recomputed": 885
+  },
+  "wall_seconds": 1350.0428917299723
+}

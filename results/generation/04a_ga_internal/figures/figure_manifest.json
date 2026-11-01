@@ -1,0 +1,20 @@
+{
+  "adaptive_targets": "AUC distributions only; numeric comparisons remain stratified by round and radius_class",
+  "common_targets_only_for_paired_curves": [
+    "internal_common_r0_t00",
+    "internal_common_r0_t01",
+    "internal_common_r0_t02",
+    "internal_common_r0_t03",
+    "internal_common_r0_t04",
+    "internal_common_r0_t05"
+  ],
+  "figures": [
+    "convergence_evaluations_raw_common_targets.png",
+    "convergence_wall_raw_common_targets.png",
+    "convergence_evaluations_normalized_common_targets.png",
+    "convergence_wall_normalized_common_targets.png",
+    "auc_distributions_by_root_seed.png"
+  ],
+  "raw_numeric_source": "one convergence_raw.csv per target and seed",
+  "result_provenance": "measured"
+}

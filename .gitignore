@@ -1,0 +1,82 @@
+# Credentials and machine configuration
+.env
+.env.*
+*.env
+*.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.lic
+gurobi.lic
+.aws/
+.ssh/
+.netrc
+.pypirc
+credentials.json
+service-account*.json
+secrets.*
+# Python environments, caches and packaging
+.venv/
+.venv-*/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+*.egg-info/
+.eggs/
+build/
+dist/
+# Local experiments and generated dependencies
+experiments/
+runtime/
+.tools/
+.mamba/
+.r-stns/
+.venv-gurobi/
+.venv-isa/
+tmp/
+# Native builds
+build-*/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+*.o
+*.a
+*.so
+# LaTeX auxiliary files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.ind
+*.lof
+*.loq
+*.lot
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+*.log
+# Measured logs are part of the research data
+!results/**/*.log
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*~

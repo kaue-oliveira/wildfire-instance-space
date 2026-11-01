@@ -1,0 +1,87 @@
+{
+  "algorithm": "cuth",
+  "collection": "original_55",
+  "completed_utc": "2026-09-11T03:57:08Z",
+  "engine": "unified_cpp",
+  "harris_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2/inputs/harris/LA7.json",
+  "improvement_trajectory": [
+    [
+      0,
+      1,
+      268.0
+    ],
+    [
+      0,
+      2,
+      263.0
+    ]
+  ],
+  "instance": "LA7",
+  "instance_sha256": "2ef533b579ce44ea903e53e8850a979563c664baeb27843edb810c2905442f8d",
+  "job_id": "job_00268",
+  "lower_bound": null,
+  "n_vertices": "327",
+  "native_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2/inputs/native/LA7.json",
+  "objective": 263,
+  "peak_rss_bytes": 29372416,
+  "phase": "benchmark",
+  "pilot": false,
+  "protocol_sha256": "221f596a97287cd01d7002ec17c48b4857603c27bef5b56a0dcf6e7a35a2c49f",
+  "result_provenance": "measured",
+  "seed": 9,
+  "shard_index": "0",
+  "size_class": "Small",
+  "solution_file": "sol_cuth_LA7_9.json",
+  "solution_sha256": "cf0f54d307c13b7d11d97f244cf26341ccab47e81b26b4c83c54348f53d41357",
+  "statistics_fields": [
+    "LA7",
+    "9",
+    "263",
+    "0",
+    "10701",
+    "263",
+    "12",
+    "0",
+    "2",
+    "0",
+    "17.5",
+    "15.00244141",
+    "18",
+    "[(0,1,268.000000), (0,2,263.000000)]"
+  ],
+  "status": "completed",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "c281ac323550340c2930ec0302e65b271100164aab1f1f8dd9f70d59c9be6f1d",
+  "thermal_after": {
+    "frequencies_mhz": {
+      "cpu0": 800.0,
+      "cpu1": 4100.006,
+      "cpu2": 800.0,
+      "cpu3": 4100.03,
+      "cpu4": 800.0,
+      "cpu5": 800.0,
+      "cpu6": 800.0,
+      "cpu7": 800.0
+    },
+    "temperatures_c": {
+      "thermal_zone0:acpitz": 27.8,
+      "thermal_zone1:acpitz": 29.8,
+      "thermal_zone2:x86_pkg_temp": 63.0
+    },
+    "utc": "2026-09-11T03:57:08Z"
+  },
+  "time_limit_seconds": "600",
+  "wall_seconds": 18.682989662047476,
+  "worker": {
+    "core_type": "homogeneous",
+    "logical_cpu": 0,
+    "max_mhz": 4200.0,
+    "physical_core": 0,
+    "sibling_logical_cpus": [
+      0,
+      4
+    ],
+    "socket": 0,
+    "worker_id": 0
+  }
+}

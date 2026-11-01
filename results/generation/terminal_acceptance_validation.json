@@ -1,0 +1,209 @@
+{
+  "checks": [
+    {
+      "check": "baseline_preserved",
+      "details": {
+        "instances": 55
+      },
+      "passed": true,
+      "result_provenance": "measured"
+    },
+    {
+      "check": "baseline_features_recomputed",
+      "details": {
+        "details_csv": "baseline_feature_recomputation_validation_by_feature.csv",
+        "features_checked": 36,
+        "instances_checked": 55,
+        "max_absolute_error": 4.440892098500626e-16,
+        "missing_features": [],
+        "result_provenance": "measured",
+        "status": "passed",
+        "tolerance": 1e-09,
+        "worst_feature": "directional_asymmetry_mean"
+      },
+      "passed": true,
+      "result_provenance": "measured"
+    },
+    {
+      "check": "attachment_metric_catalog_complete",
+      "details": {
+        "expected_aggregated_features": 136,
+        "instances": 55,
+        "missing": [],
+        "observed_aggregated_features": 136,
+        "unique_instances": 55
+      },
+      "passed": true,
+      "result_provenance": "measured"
+    },
+    {
+      "check": "canonical_topology_recomputed",
+      "details": {
+        "details_csv": "exact_ga_topology_recomputation_validation_by_instance.csv",
+        "features_checked": 136,
+        "instances_checked": 55,
+        "max_absolute_error": 0.0,
+        "result_provenance": "measured",
+        "status": "passed",
+        "tolerance": 1e-10,
+        "topology_backend_id": "hybrid_exact_igraph_betweenness_harmonic_scipy_svds_seeded_random_state_v2"
+      },
+      "passed": true,
+      "result_provenance": "measured"
+    },
+    {
+      "check": "matilda_boxcox_and_zscore_recorded",
+      "details": {
+        "automatic_preprocessing": true,
+        "missing_prelim_parameters": [],
+        "normalization_enabled": true,
+        "prelim_topology_parameters": 73,
+        "topology_inputs": 73
+      },
+      "passed": true,
+      "result_provenance": "measured"
+    },
+    {
+      "check": "candidate_projection_reproduces_isa",
+      "details": {
+        "details_csv": "ga_projection_validation_by_instance.csv",
+        "feature_recomputations_checked": 55,
+        "instances_checked": 55,
+        "max_euclidean_error": 3.3766115072321297e-16,
+        "max_recomputed_projection_euclidean_error": 3.3766115072321297e-16,
+        "max_selected_feature_absolute_error": 5.551115123125783e-17,
+        "median_euclidean_error": 4.163336342344337e-17,
+        "p95_euclidean_error": 2.3962169951041017e-16,
+        "pinned_explorer_behavior": "pyInstanceSpace 0.2.1 explore clips unconditionally; not used for GA projection",
+        "projection_semantics": "match PRELIM training; apply clipping only when bound.flag=true",
+        "recomputed_features_csv": "ga_projection_validation_recomputed_features.csv",
+        "resolved_bound_flag": false,
+        "result_provenance": "measured",
+        "status": "passed",
+        "tolerance": 1e-08
+      },
+      "passed": true,
+      "result_provenance": "measured"
+    },
+    {
+      "check": "matilda_original",
+      "details": {
+        "status": "completed"
+      },
+      "passed": true,
+      "result_provenance": "measured"
+    },
+    {
+      "check": "matilda_topology",
+      "details": {
+        "status": "completed"
+      },
+      "passed": true,
+      "result_provenance": "measured"
+    },
+    {
+      "check": "control_vs_topology_compared",
+      "details": {
+        "embedding": {
+          "comparison": "controle_vs_topologia",
+          "mean_aligned_displacement": 0.04457090386511212,
+          "mean_neighbor_overlap": 0.35272727272727283,
+          "median_aligned_displacement": 0.04274899695821384,
+          "n_instances": 55,
+          "neighbor_k": 5,
+          "pairwise_distance_spearman": 0.8285042932305378,
+          "procrustes_scale": 0.9208860306333078,
+          "result_provenance": "measured"
+        },
+        "isa_artifacts": {
+          "comparison": "controle_vs_topologia",
+          "pythia_binary_agreement": 0.9212121212121213,
+          "pythia_probability_mae": 0.08901570388502462,
+          "pythia_probability_spearman": 0.6887730407828843,
+          "pythia_semantic_provenance": "predicted",
+          "result_provenance": "measured",
+          "sifted_candidate_count": 10,
+          "sifted_candidate_only": [
+            "feature_arc_time_max",
+            "feature_arrival_q50_over_h",
+            "feature_last_release_over_h",
+            "feature_n_vertices",
+            "feature_resources_per_decision",
+            "feature_topo_betweenness_unweighted_q90",
+            "feature_topo_harmonic_in_distance_q90",
+            "feature_topo_hits_hub_strength_q50",
+            "feature_topo_in_degree_min"
+          ],
+          "sifted_intersection_count": 1,
+          "sifted_jaccard": 0.05263157894736842,
+          "sifted_reference_count": 10,
+          "sifted_reference_only": [
+            "feature_decision_points",
+            "feature_delta_over_h",
+            "feature_directional_asymmetry_max",
+            "feature_first_release_over_h",
+            "feature_free_burning_over_h",
+            "feature_n_arcs",
+            "feature_release_front_window_mean",
+            "feature_release_window_over_h",
+            "feature_z_span"
+          ],
+          "trace_algorithms_compared": 6,
+          "trace_footprint_metric_mae": 0.24460841522024251,
+          "trace_semantic_provenance": "predicted"
+        }
+      },
+      "passed": true,
+      "result_provenance": "measured"
+    },
+    {
+      "check": "ga_internal_completed",
+      "details": {
+        "all_budgets_completed": true,
+        "all_finalists_recomputed_exactly": true,
+        "duplicate_targets": 0,
+        "evaluation_budget_per_target": 2000,
+        "expected_seeds": [
+          104729,
+          1299709,
+          20260612
+        ],
+        "observed_seeds": [
+          104729,
+          1299709,
+          20260612
+        ],
+        "targets_by_seed": {
+          "104729": 12,
+          "1299709": 12,
+          "20260612": 12
+        }
+      },
+      "passed": true,
+      "result_provenance": "measured"
+    },
+    {
+      "check": "exact_generated_instances_persisted",
+      "details": {
+        "instances_checked": 36,
+        "invalid": []
+      },
+      "passed": true,
+      "result_provenance": "measured"
+    },
+    {
+      "check": "accepted_instances_recomputed_in_domain",
+      "details": {
+        "accepted_rows": 19,
+        "invalid_rows": 0,
+        "zero_acceptances_is_a_valid_negative_result": false
+      },
+      "passed": true,
+      "result_provenance": "measured"
+    }
+  ],
+  "checks_passed": 12,
+  "checks_total": 12,
+  "result_provenance": "measured",
+  "status": "passed"
+}

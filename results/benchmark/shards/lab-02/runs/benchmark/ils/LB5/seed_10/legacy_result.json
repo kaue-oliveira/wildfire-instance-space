@@ -1,0 +1,149 @@
+{
+  "algorithm": "ils",
+  "complete_candidates": 50,
+  "completed_utc": "2026-09-11T20:02:57Z",
+  "deadline_overshoot_seconds": 0.0,
+  "lower_bound": null,
+  "objective": 254,
+  "result_provenance": "measured",
+  "search_limit_seconds": 600,
+  "search_wall_seconds": 195.49038100696635,
+  "seed": 10,
+  "solution": [
+    [
+      [
+        6,
+        7
+      ],
+      60.0
+    ],
+    [
+      [
+        6,
+        16
+      ],
+      50.0
+    ],
+    [
+      [
+        7,
+        6
+      ],
+      50.0
+    ],
+    [
+      [
+        7,
+        10
+      ],
+      20.0
+    ],
+    [
+      [
+        7,
+        15
+      ],
+      40.0
+    ],
+    [
+      [
+        8,
+        5
+      ],
+      30.0
+    ],
+    [
+      [
+        8,
+        9
+      ],
+      20.0
+    ],
+    [
+      [
+        8,
+        11
+      ],
+      10.0
+    ],
+    [
+      [
+        8,
+        12
+      ],
+      20.0
+    ],
+    [
+      [
+        8,
+        13
+      ],
+      30.0
+    ],
+    [
+      [
+        8,
+        14
+      ],
+      30.0
+    ],
+    [
+      [
+        9,
+        1
+      ],
+      60.0
+    ],
+    [
+      [
+        9,
+        4
+      ],
+      40.0
+    ],
+    [
+      [
+        9,
+        9
+      ],
+      10.0
+    ],
+    [
+      [
+        10,
+        0
+      ],
+      60.0
+    ],
+    [
+      [
+        10,
+        2
+      ],
+      50.0
+    ],
+    [
+      [
+        10,
+        3
+      ],
+      40.0
+    ],
+    [
+      [
+        10,
+        8
+      ],
+      10.0
+    ]
+  ],
+  "solver_status": "no_improvement_limit",
+  "status": "completed",
+  "termination_reason": "no_improvement_limit",
+  "validation": {
+    "assignments": 18,
+    "feasible": true,
+    "objective_recomputed": 254
+  },
+  "wall_seconds": 195.49167628097348
+}

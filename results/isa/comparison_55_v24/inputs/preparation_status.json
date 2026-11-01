@@ -1,0 +1,43 @@
+{
+  "algorithms": [
+    "CUTH",
+    "IBS",
+    "ILS",
+    "LBBD",
+    "MIP",
+    "RS"
+  ],
+  "base_features_after_audit": 35,
+  "combined_audit_decisions": {
+    "constant_or_degenerate": 1,
+    "exact_duplicate": 1,
+    "kept": 107
+  },
+  "combined_features_after_audit": 107,
+  "cv_folds": 4,
+  "good_performance_threshold": 0.1,
+  "historical_matilda_performance_reused": false,
+  "instances": 55,
+  "original_audit_decisions": {
+    "constant_or_degenerate": 1,
+    "kept": 35
+  },
+  "performance_protocol": "benchmark74_v2_4_integrated_final",
+  "solvers_rerun": false,
+  "source_sha256": {
+    "base_features_74.csv": "ed2bde6d85858fe6e61f21cb42558e26ce3220cbe3f844c6ab8cc9cea3dd9a12",
+    "historical_topology_candidates.csv": "3e9aae1c4ec429a87f27705a679a69ca4dd79d2aca7c4774ecbeada1bcea7b34",
+    "historical_topology_diagnostics.csv": "136852bc16d9e3547c23b5e95d5b2003e3fea60d21dacd5892960d4ae98c369e",
+    "performance_74x6.csv": "e8e64a07f9547df6c8c0892ee00c58df36fb1c35953d4eb7a0051797a421ca11"
+  },
+  "status": "completed",
+  "topology_audit_decisions": {
+    "constant_or_degenerate": 34,
+    "exact_duplicate": 11,
+    "hits_numerically_unstable": 16,
+    "kept": 73,
+    "prelim_numeric_degenerate": 2
+  },
+  "topology_candidates": 136,
+  "topology_features_after_audit": 73
+}

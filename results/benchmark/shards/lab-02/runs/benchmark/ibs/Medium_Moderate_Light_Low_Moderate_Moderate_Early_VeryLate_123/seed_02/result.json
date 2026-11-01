@@ -1,0 +1,194 @@
+{
+  "algorithm": "ibs",
+  "collection": "original_55",
+  "completed_utc": "2026-09-03T04:44:04Z",
+  "engine": "unified_cpp",
+  "harris_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v1/inputs/harris/Medium_Moderate_Light_Low_Moderate_Moderate_Early_VeryLate_123.json",
+  "improvement_trajectory": [
+    [
+      40,
+      1,
+      848.0
+    ],
+    [
+      82,
+      2,
+      857.0
+    ],
+    [
+      148,
+      3,
+      842.0
+    ],
+    [
+      213,
+      4,
+      839.0
+    ],
+    [
+      276,
+      5,
+      842.0
+    ],
+    [
+      358,
+      6,
+      860.0
+    ],
+    [
+      399,
+      7,
+      867.0
+    ],
+    [
+      463,
+      8,
+      862.0
+    ],
+    [
+      545,
+      9,
+      852.0
+    ],
+    [
+      588,
+      10,
+      853.0
+    ],
+    [
+      652,
+      11,
+      860.0
+    ],
+    [
+      732,
+      12,
+      857.0
+    ],
+    [
+      776,
+      13,
+      857.0
+    ],
+    [
+      842,
+      14,
+      857.0
+    ],
+    [
+      927,
+      15,
+      842.0
+    ],
+    [
+      969,
+      16,
+      856.0
+    ],
+    [
+      1034,
+      17,
+      840.0
+    ],
+    [
+      1119,
+      18,
+      853.0
+    ],
+    [
+      1161,
+      19,
+      865.0
+    ],
+    [
+      1225,
+      20,
+      851.0
+    ],
+    [
+      1307,
+      21,
+      840.0
+    ],
+    [
+      1348,
+      22,
+      853.0
+    ],
+    [
+      1350,
+      23,
+      899.0
+    ]
+  ],
+  "instance": "Medium_Moderate_Light_Low_Moderate_Moderate_Early_VeryLate_123",
+  "instance_sha256": "36f65273f591b1786aa5e4629004b2ca89d9e14a72b04c3f09e71ce2f35542a9",
+  "job_id": "job_01153",
+  "lower_bound": null,
+  "n_vertices": "900",
+  "native_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v1/inputs/native/Medium_Moderate_Light_Low_Moderate_Moderate_Early_VeryLate_123.json",
+  "objective": 839,
+  "peak_rss_bytes": 71741440,
+  "phase": "benchmark",
+  "pilot": false,
+  "protocol_sha256": "913474b960afa5dea8d58b512fa942aa36965edb4fac608aa99208ac10e0442a",
+  "result_provenance": "measured",
+  "seed": 2,
+  "shard_index": "1",
+  "size_class": "Medium",
+  "solution_file": "sol_ibs_Medium_Moderate_Light_Low_Moderate_Moderate_Early_VeryLate_123_2.json",
+  "solution_sha256": "c3f7c7134e9895835380e3b9ba5c1293c0c2de3997ecffef9d3ba30f45afed47",
+  "statistics_fields": [
+    "Medium_Moderate_Light_Low_Moderate_Moderate_Early_VeryLate_123",
+    "2",
+    "50",
+    "70",
+    "0.5",
+    "1",
+    "30",
+    "3",
+    "839",
+    "4",
+    "932812.85",
+    "839",
+    "23",
+    "1350",
+    "32846995",
+    "[(40,1,848.000000), (82,2,857.000000), (148,3,842.000000), (213,4,839.000000), (276,5,842.000000), (358,6,860.000000), (399,7,867.000000), (463,8,862.000000), (545,9,852.000000), (588,10,853.000000), (652,11,860.000000), (732,12,857.000000), (776,13,857.000000), (842,14,857.000000), (927,15,842.000000), (969,16,856.000000), (1034,17,840.000000), (1119,18,853.000000), (1161,19,865.000000), (1225,20,851.000000), (1307,21,840.000000), (1348,22,853.000000), (1350,23,899.000000)]"
+  ],
+  "status": "completed",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "thermal_after": {
+    "frequencies_mhz": {
+      "cpu0": 4011.246,
+      "cpu1": 800.0,
+      "cpu2": 4011.219,
+      "cpu3": 4011.242,
+      "cpu4": 800.0,
+      "cpu5": 4000.05,
+      "cpu6": 800.0,
+      "cpu7": 4003.393
+    },
+    "temperatures_c": {
+      "thermal_zone0:acpitz": 27.8,
+      "thermal_zone1:acpitz": 29.8,
+      "thermal_zone2:x86_pkg_temp": 77.0
+    },
+    "utc": "2026-09-03T04:44:04Z"
+  },
+  "time_limit_seconds": "1350",
+  "wall_seconds": 1350.4358217660047,
+  "worker": {
+    "core_type": "homogeneous",
+    "logical_cpu": 1,
+    "max_mhz": 4200.0,
+    "physical_core": 1,
+    "sibling_logical_cpus": [
+      1,
+      5
+    ],
+    "socket": 0,
+    "worker_id": 1
+  }
+}

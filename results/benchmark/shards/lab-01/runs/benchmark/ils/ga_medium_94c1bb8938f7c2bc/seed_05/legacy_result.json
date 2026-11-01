@@ -1,0 +1,128 @@
+{
+  "algorithm": "ils",
+  "complete_candidates": 50,
+  "completed_utc": "2026-09-11T01:39:11Z",
+  "deadline_overshoot_seconds": 0.000905142049305141,
+  "lower_bound": null,
+  "objective": 889,
+  "result_provenance": "measured",
+  "search_limit_seconds": 1350,
+  "search_wall_seconds": 1350.0009051420493,
+  "seed": 5,
+  "solution": [
+    [
+      [
+        1,
+        25
+      ],
+      1286.89
+    ],
+    [
+      [
+        1,
+        28
+      ],
+      1450.51
+    ],
+    [
+      [
+        1,
+        30
+      ],
+      1505.05
+    ],
+    [
+      [
+        2,
+        26
+      ],
+      1014.18
+    ],
+    [
+      [
+        2,
+        27
+      ],
+      959.64
+    ],
+    [
+      [
+        2,
+        30
+      ],
+      1395.97
+    ],
+    [
+      [
+        3,
+        28
+      ],
+      1232.34
+    ],
+    [
+      [
+        3,
+        29
+      ],
+      1341.43
+    ],
+    [
+      [
+        4,
+        29
+      ],
+      850.55
+    ],
+    [
+      [
+        5,
+        30
+      ],
+      796.01
+    ],
+    [
+      [
+        6,
+        29
+      ],
+      686.93
+    ],
+    [
+      [
+        7,
+        18
+      ],
+      741.47
+    ],
+    [
+      [
+        13,
+        28
+      ],
+      577.84
+    ],
+    [
+      [
+        17,
+        3
+      ],
+      1123.26
+    ],
+    [
+      [
+        21,
+        20
+      ],
+      523.3
+    ]
+  ],
+  "solver_status": "time_limit",
+  "status": "completed",
+  "termination_reason": "time_limit",
+  "validation": {
+    "assignments": 15,
+    "feasible": true,
+    "objective_recomputed": 889
+  },
+  "wall_seconds": 1350.0048411340686
+}

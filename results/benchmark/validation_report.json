@@ -1,0 +1,21 @@
+{
+  "checks": {
+    "all_lbbd_objectives_independently_feasible_and_recomputed": true,
+    "canonical_artifact_per_job": true,
+    "complete_union_jobs": 4126,
+    "copied_profiles_match_source_sha256_inventories": true,
+    "cross_shard_job_overlap": 0,
+    "duplicate_jobs": 0,
+    "input_bundles_byte_identical": true,
+    "lab01_checkpoint_amendment_verify_tampered": 0,
+    "lab02_checkpoint_amendment_verify_tampered": 0,
+    "missing_jobs": 0,
+    "normalized_instance_manifests_equal": true,
+    "normalized_job_manifests_equal": true,
+    "selected_jobs_per_shard": {
+      "LAB-01": 2063,
+      "LAB-02": 2063
+    }
+  },
+  "status": "verified"
+}

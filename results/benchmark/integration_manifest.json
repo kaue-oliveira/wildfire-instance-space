@@ -1,0 +1,168 @@
+{
+  "analysis_artifacts": {
+    "algorithm_failures.csv": {
+      "sha256": "37f8c7032a0aa0256ce890f881634afaafdfcf56ce314e41f2e4de944e3a5481",
+      "size_bytes": 1847
+    },
+    "analysis_index.csv": {
+      "sha256": "6bde0fe6debfd7e6c00bb5f6a7ce4fe03243ee47e27b65f644c6bfdad782cd76",
+      "size_bytes": 2478361
+    },
+    "analysis_records.jsonl": {
+      "sha256": "c1e91eda86c79e5428cbd2e87dcc2a73897c10b809c13d9a8ecac7498942ead8",
+      "size_bytes": 18524584
+    },
+    "best_known_values.csv": {
+      "sha256": "b4da6c8c3f981d97c2632d8d290beba98fa613b0107326a34e9586043865a4e2",
+      "size_bytes": 12310
+    }
+  },
+  "analysis_policy": {
+    "algorithm_failure": "retain status=algorithm_failure and use only the protocol-defined feasible no-deployment scored_objective for objective-based comparisons",
+    "bkv": "minimum analysis_objective observed across both shards and all algorithms",
+    "completed": "use result.objective",
+    "raw_failed_attempts": "preserved for audit but excluded from the canonical record set"
+  },
+  "integration_id": "benchmark74_v2_4_final_labs_01_02_20260924",
+  "profile": "benchmark74_v2_4",
+  "protocol_compatibility_note": "Both shards use the same normalized 4,126-job design and byte-identical inputs. Their v2.4 protocol hashes differ because the LBBD audit-field implementation and deployment metadata differ; every LBBD objective included here equals an independently recomputed feasible objective. The original protocols remain intact in each shard.",
+  "protocol_difference_paths": [
+    "amendment.carry_forward_policy",
+    "amendment.lbbd_bound_policy",
+    "amendment.lbbd_budget_policy",
+    "amendment.lbbd_no_incumbent_policy",
+    "amendment.lbbd_objective_policy",
+    "amendment.lbbd_search_policy",
+    "amendment.reason",
+    "amendment.search_algorithm_changed",
+    "deployment_git.branch",
+    "deployment_git.head",
+    "license.sha256",
+    "license.size_bytes",
+    "protocol_sha256",
+    "source_manifest.bundle_sha256",
+    "source_manifest.files[3].sha256",
+    "source_manifest.files[6].sha256"
+  ],
+  "protocol_hashes_identical": false,
+  "purpose": "immutable two-laboratory integration for TCC analysis",
+  "shards": {
+    "LAB-01": {
+      "by_algorithm": {
+        "cuth": {
+          "completed": 328
+        },
+        "ibs": {
+          "completed": 328
+        },
+        "ibs_stn": {
+          "completed": 95
+        },
+        "ils": {
+          "completed": 328
+        },
+        "lbbd": {
+          "completed": 328
+        },
+        "mip": {
+          "completed": 328
+        },
+        "rs": {
+          "completed": 328
+        }
+      },
+      "counts": {
+        "completed": 2063
+      },
+      "file_count": 11784,
+      "historical_failure_files": [],
+      "inventory": "inventories/lab-01-files.csv",
+      "path": "shards/lab-01",
+      "shard_index": 0,
+      "tree_sha256": "9164b5ae8d4ad0ac7a985180fbcab6840b60ff95da0b423216cde79e07b8931d"
+    },
+    "LAB-02": {
+      "by_algorithm": {
+        "cuth": {
+          "completed": 328
+        },
+        "ibs": {
+          "completed": 328
+        },
+        "ibs_stn": {
+          "completed": 95
+        },
+        "ils": {
+          "algorithm_failure": 2,
+          "completed": 326
+        },
+        "lbbd": {
+          "completed": 328
+        },
+        "mip": {
+          "completed": 328
+        },
+        "rs": {
+          "completed": 328
+        }
+      },
+      "counts": {
+        "algorithm_failure": 2,
+        "completed": 2061
+      },
+      "file_count": 11784,
+      "historical_failure_files": [
+        "runs/benchmark/ils/ga_medium_94c1bb8938f7c2bc/seed_04/failure.json"
+      ],
+      "inventory": "inventories/lab-02-files.csv",
+      "path": "shards/lab-02",
+      "shard_index": 1,
+      "tree_sha256": "b407341bd2c96ee0da8fd8de70696bb11aa4f30918d9dfcac7a56782fbfd6695"
+    }
+  },
+  "source_branches": {
+    "LAB-01": "results/benchmark74-v2-4-final-complete-lab-01-20260923",
+    "LAB-02": "backup/benchmark74-v2-4-lab-02-final-20260921"
+  },
+  "source_commits": {
+    "LAB-01": "40fbd26a775aeb404f15f30b2769739c84565788",
+    "LAB-02": "194e9b5acb4ffa5730edf897162a7aa1d34bb171"
+  },
+  "source_machine_manifests": {
+    "LAB-01": {
+      "path": "source_metadata/lab-01-machine.json",
+      "sha256": "babaf583135d99cf517c4bde92a7b75f48eb3b1a40a1cae31c182e97a1f0c285"
+    },
+    "LAB-02": {
+      "path": "source_metadata/lab-02-machine.json",
+      "sha256": "5c50863868c7178683bad07c56f774d96b2ab7be1a80e6261ab8d747f36a8f82"
+    }
+  },
+  "source_protocol_sha256": {
+    "LAB-01": "69bb95f3fd069d5f43bd71e091aabe0ce079cfe9ea8ba51ab07e691bfdca0f23",
+    "LAB-02": "e3d18d9a7f1ac04276df98b5306333bdae4db2effd6fb8c90ee3ea6a126329fc"
+  },
+  "union": {
+    "algorithm_counts": {
+      "cuth": 656,
+      "ibs": 656,
+      "ibs_stn": 190,
+      "ils": 656,
+      "lbbd": 656,
+      "mip": 656,
+      "rs": 656
+    },
+    "canonical_records": 4126,
+    "cross_shard_overlap": 0,
+    "duplicate_jobs": 0,
+    "input_file_count": 148,
+    "input_tree_sha256": "c12ea41e7c78658ea73ee424a6f645a2cb3c527723cbe537c36e78bc958b35ca",
+    "instance_count": 74,
+    "missing_jobs": 0,
+    "planned_jobs": 4126,
+    "status_counts": {
+      "algorithm_failure": 2,
+      "completed": 4124
+    }
+  }
+}

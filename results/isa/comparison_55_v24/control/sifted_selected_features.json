@@ -1,0 +1,27 @@
+{
+  "features": [
+    "feature_total_resources",
+    "feature_decision_points",
+    "feature_delta_over_h",
+    "feature_first_release_over_h",
+    "feature_release_window_over_h",
+    "feature_arrival_q50_over_h",
+    "feature_directional_asymmetry_mean",
+    "feature_arc_time_std",
+    "feature_arc_time_p25",
+    "feature_release_front_window_mean"
+  ],
+  "indices": [
+    4,
+    5,
+    8,
+    9,
+    11,
+    15,
+    17,
+    24,
+    27,
+    33
+  ],
+  "result_provenance": "measured"
+}

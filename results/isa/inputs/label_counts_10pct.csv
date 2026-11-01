@@ -1,0 +1,7 @@
+threshold,algorithm,positive,negative,missing,status,cv_folds,result_provenance
+0.1,CUTH,24,50,0,estimable,5,measured
+0.1,IBS,70,4,0,estimable,4,measured
+0.1,ILS,35,39,0,estimable,5,measured
+0.1,LBBD,36,38,0,estimable,5,measured
+0.1,MIP,42,32,0,estimable,5,measured
+0.1,RS,23,51,0,estimable,5,measured

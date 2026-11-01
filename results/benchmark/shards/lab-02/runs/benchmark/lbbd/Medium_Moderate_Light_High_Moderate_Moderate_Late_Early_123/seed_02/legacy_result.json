@@ -1,0 +1,227 @@
+{
+  "algorithm": "lbbd",
+  "baseline_mip_starts": 1,
+  "budget_policy": "global_remaining_divided_among_remaining_greedy_stages",
+  "completed_utc": "2026-09-19T05:59:24Z",
+  "exact_started": false,
+  "feasibility_cuts": 42,
+  "global_budget_seconds": 1350,
+  "greedy_wall_seconds": 1350.036767424026,
+  "lower_bound": 641.0,
+  "mip_gap": 0.2765237020316027,
+  "objective": 886,
+  "objective_consistency": "exact",
+  "objective_delta_vs_solver": 0,
+  "objective_source": "independent_shortest_path_validation",
+  "optimality_cuts": 136071,
+  "optimize_calls": 10,
+  "optimize_time_allocations_seconds": [
+    134.98480683710076,
+    134.9816887555579,
+    134.9780196318752,
+    134.97462254257076,
+    134.9699566438309,
+    134.9654191097943,
+    134.9599035519932,
+    134.9538730419978,
+    134.94790626649046,
+    134.93628652801272
+  ],
+  "result_provenance": "measured",
+  "seed": 2,
+  "solution": [
+    [
+      [
+        1,
+        12
+      ],
+      808.37
+    ],
+    [
+      [
+        1,
+        13
+      ],
+      808.37
+    ],
+    [
+      [
+        1,
+        14
+      ],
+      316.75
+    ],
+    [
+      [
+        1,
+        15
+      ],
+      234.82
+    ],
+    [
+      [
+        1,
+        17
+      ],
+      234.82
+    ],
+    [
+      [
+        1,
+        19
+      ],
+      726.43
+    ],
+    [
+      [
+        2,
+        13
+      ],
+      480.62
+    ],
+    [
+      [
+        2,
+        14
+      ],
+      480.62
+    ],
+    [
+      [
+        2,
+        15
+      ],
+      316.75
+    ],
+    [
+      [
+        2,
+        16
+      ],
+      234.82
+    ],
+    [
+      [
+        2,
+        18
+      ],
+      726.43
+    ],
+    [
+      [
+        3,
+        15
+      ],
+      480.62
+    ],
+    [
+      [
+        3,
+        17
+      ],
+      726.43
+    ],
+    [
+      [
+        4,
+        16
+      ],
+      562.56
+    ],
+    [
+      [
+        6,
+        1
+      ],
+      398.69
+    ],
+    [
+      [
+        7,
+        2
+      ],
+      316.75
+    ],
+    [
+      [
+        8,
+        1
+      ],
+      398.69
+    ],
+    [
+      [
+        13,
+        10
+      ],
+      398.69
+    ],
+    [
+      [
+        29,
+        20
+      ],
+      972.24
+    ],
+    [
+      [
+        29,
+        21
+      ],
+      644.49
+    ],
+    [
+      [
+        29,
+        26
+      ],
+      644.49
+    ],
+    [
+      [
+        30,
+        19
+      ],
+      972.24
+    ],
+    [
+      [
+        30,
+        20
+      ],
+      808.37
+    ],
+    [
+      [
+        30,
+        22
+      ],
+      644.49
+    ],
+    [
+      [
+        30,
+        25
+      ],
+      562.56
+    ],
+    [
+      [
+        30,
+        27
+      ],
+      562.56
+    ]
+  ],
+  "solver_lower_bound": 641.0,
+  "solver_mip_gap": 0.2765237020316027,
+  "solver_objective": 886,
+  "solver_status": 9,
+  "status": "completed",
+  "validation": {
+    "assignments": 26,
+    "feasible": true,
+    "objective_recomputed": 886
+  },
+  "wall_seconds": 1350.0402287379839
+}

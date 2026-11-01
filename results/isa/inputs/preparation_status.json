@@ -1,0 +1,38 @@
+{
+  "algorithms": [
+    "CUTH",
+    "IBS",
+    "ILS",
+    "LBBD",
+    "MIP",
+    "RS"
+  ],
+  "base_feature_candidates": 36,
+  "base_features_after_audit": 35,
+  "baseline_55_max_absolute_feature_error": 4.547473508864641e-13,
+  "baseline_55_worst": [
+    "Medium_Flat_Light_High_Moderate_Moderate_Early_VeryLate_123",
+    "delta_mean"
+  ],
+  "benchmark_runs": 3936,
+  "cv_folds": 4,
+  "ga_rerun": false,
+  "gap_unit": "fraction of audited BKV, not percent",
+  "good_performance_threshold": 0.1,
+  "ils_failures_explicit": 2,
+  "instances": 74,
+  "original_feature_audit_decisions": {
+    "constant_or_degenerate": 1,
+    "kept": 35
+  },
+  "original_instances": 55,
+  "performance_cells": 444,
+  "solvers_rerun": false,
+  "source_file_sha256": {
+    "analysis_wsp/data/features_instances.csv": "1fc2f0f75c471336bb6b9eb0fc01dbd64f5763c3ffb9d475ba4602e724239126",
+    "analysis_wsp/reports/relatorio_final_benchmark74_v2_4_20260927/auditoria/camada_auditada_mip_v1/per_instance_algorithm_auditado.csv": "6b357c98c185e707cc2cc9916f7df483e26675152abd0dc7b8974407758a5f8e",
+    "analysis_wsp/results_benchmark74/benchmark74_v2_4_integrated_final/shards/lab-01/instances_74.csv": "c9f344a1ae8736bc802245c8c33a783144ecbb2ba49a0eada058594dbb0c3d0a"
+  },
+  "status": "completed",
+  "supplementary_instances": 19
+}

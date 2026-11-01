@@ -1,0 +1,71 @@
+{
+  "command": [
+    "taskset",
+    "--cpu-list",
+    "1",
+    "{PROJECT_ROOT}/.venv-gurobi/bin/python",
+    "-m",
+    "analysis_wsp.benchmark74.legacy_worker",
+    "--algorithm",
+    "lbbd",
+    "--instance",
+    "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2_4/inputs/harris/LB4.json",
+    "--seed",
+    "2",
+    "--timelimit",
+    "600",
+    "--output",
+    "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2_4/runs/benchmark/lbbd/LB4/seed_02/legacy_result.json"
+  ],
+  "effective_time_limit_seconds": 600,
+  "job": {
+    "algorithm": "lbbd",
+    "collection": "original_55",
+    "engine": "legacy_python",
+    "harris_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2_4/inputs/harris/LB4.json",
+    "instance": "LB4",
+    "instance_sha256": "b9b0442f0d3f08f987c972689061f70856512ec93f1a88a2c139f3d4001bdf1d",
+    "job_id": "job_02585",
+    "n_vertices": "317",
+    "native_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2_4/inputs/native/LB4.json",
+    "phase": "benchmark",
+    "protocol_sha256": "e3d18d9a7f1ac04276df98b5306333bdae4db2effd6fb8c90ee3ea6a126329fc",
+    "seed": "2",
+    "shard_index": "1",
+    "size_class": "Small",
+    "time_limit_seconds": "600"
+  },
+  "pilot_limit_seconds": null,
+  "shard_index": 1,
+  "started_utc": "2026-09-19T20:12:19Z",
+  "thermal_before": {
+    "frequencies_mhz": {
+      "cpu0": 4099.989,
+      "cpu1": 800.0,
+      "cpu2": 800.0,
+      "cpu3": 4099.982,
+      "cpu4": 4100.627,
+      "cpu5": 800.0,
+      "cpu6": 4100.0,
+      "cpu7": 800.0
+    },
+    "temperatures_c": {
+      "thermal_zone0:acpitz": 27.8,
+      "thermal_zone1:acpitz": 29.8,
+      "thermal_zone2:x86_pkg_temp": 64.0
+    },
+    "utc": "2026-09-19T20:12:19Z"
+  },
+  "worker": {
+    "core_type": "homogeneous",
+    "logical_cpu": 1,
+    "max_mhz": 4200.0,
+    "physical_core": 1,
+    "sibling_logical_cpus": [
+      1,
+      5
+    ],
+    "socket": 0,
+    "worker_id": 1
+  }
+}

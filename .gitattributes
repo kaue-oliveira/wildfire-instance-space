@@ -1,0 +1,17 @@
+* text=auto
+*.py text eol=lf
+*.sh text eol=lf
+*.md text eol=lf
+*.tex text eol=lf
+*.pdf binary
+*.png binary
+*.jpg binary
+*.zip binary
+*.pkl binary
+*.RData binary
+# Preserve exact research bytes: run checksums include original line endings.
+results/** -text
+data/** -text
+analysis_wsp/data/** -text
+monografia/** -text
+third_party/** -text

@@ -1,0 +1,27 @@
+{
+  "features": [
+    "feature_total_resources",
+    "feature_release_window_over_h",
+    "feature_arrival_q95_over_h",
+    "feature_directional_asymmetry_mean",
+    "feature_arc_time_p75",
+    "feature_release_front_window_mean",
+    "feature_topo_harmonic_out_distance_mean",
+    "feature_topo_hits_authority_strength_q50",
+    "feature_topo_hits_hub_strength_std",
+    "feature_topo_pagerank_strength_mean"
+  ],
+  "indices": [
+    4,
+    11,
+    16,
+    17,
+    29,
+    33,
+    68,
+    78,
+    88,
+    92
+  ],
+  "result_provenance": "measured"
+}

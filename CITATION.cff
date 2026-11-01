@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "Ao utilizar este código ou os resultados, cite o trabalho e as implementações originais relacionadas em THIRD_PARTY.md."
+type: software
+title: "Caracterização e expansão do espaço de instâncias do Wildfire Suppression Problem"
+authors:
+  - family-names: "de Oliveira Silva"
+    given-names: "Kauê"
+repository-code: "https://github.com/kaue-oliveira/wildfire-instance-space"
+url: "https://github.com/kaue-oliveira/wildfire-instance-space"
+keywords:
+  - wildfire suppression
+  - instance space analysis
+  - search trajectory networks
+  - instance generation

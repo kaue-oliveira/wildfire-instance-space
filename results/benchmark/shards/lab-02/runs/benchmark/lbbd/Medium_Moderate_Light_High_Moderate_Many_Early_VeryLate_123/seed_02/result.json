@@ -1,0 +1,200 @@
+{
+  "algorithm": "lbbd",
+  "baseline_mip_starts": 1,
+  "budget_policy": "global_remaining_divided_among_remaining_greedy_stages",
+  "collection": "original_55",
+  "completed_utc": "2026-09-19T02:17:34Z",
+  "engine": "legacy_python",
+  "exact_started": false,
+  "feasibility_cuts": 248,
+  "global_budget_seconds": 1350,
+  "greedy_wall_seconds": 1350.1293127560057,
+  "harris_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2_4/inputs/harris/Medium_Moderate_Light_High_Moderate_Many_Early_VeryLate_123.json",
+  "instance": "Medium_Moderate_Light_High_Moderate_Many_Early_VeryLate_123",
+  "instance_sha256": "7a3d87dd2af7e0f957057d2042121c22bab9398f6dbb5c630c17df422c0395ee",
+  "job_id": "job_02390",
+  "lower_bound": 410.0,
+  "mip_gap": 0.5403587443946188,
+  "n_vertices": "900",
+  "native_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2_4/inputs/native/Medium_Moderate_Light_High_Moderate_Many_Early_VeryLate_123.json",
+  "objective": 892,
+  "objective_consistency": "exact",
+  "objective_delta_vs_solver": 0,
+  "objective_source": "independent_shortest_path_validation",
+  "optimality_cuts": 230510,
+  "optimize_calls": 20,
+  "optimize_time_allocations_seconds": [
+    67.48815957714979,
+    67.48461919152606,
+    67.4832845767766,
+    67.48227239794248,
+    67.48122295649955,
+    67.45171832386792,
+    67.44963281964218,
+    67.44584507200096,
+    67.44176780008517,
+    67.4373504007288,
+    67.43287569480017,
+    67.42849331688679,
+    67.41975629387889,
+    67.41413070285593,
+    67.40145799733,
+    67.39504785699538,
+    67.38428265525727,
+    67.37507333299921,
+    67.35306218100595,
+    67.33186261099763
+  ],
+  "peak_rss_bytes": 546152448,
+  "phase": "benchmark",
+  "pilot": false,
+  "protocol_sha256": "e3d18d9a7f1ac04276df98b5306333bdae4db2effd6fb8c90ee3ea6a126329fc",
+  "result_provenance": "measured",
+  "seed": 2,
+  "shard_index": "1",
+  "size_class": "Medium",
+  "solution": [
+    [
+      [
+        1,
+        4
+      ],
+      289.42
+    ],
+    [
+      [
+        1,
+        5
+      ],
+      417.94
+    ],
+    [
+      [
+        1,
+        9
+      ],
+      674.99
+    ],
+    [
+      [
+        1,
+        15
+      ],
+      160.89
+    ],
+    [
+      [
+        1,
+        17
+      ],
+      225.15
+    ],
+    [
+      [
+        2,
+        1
+      ],
+      353.68
+    ],
+    [
+      [
+        2,
+        2
+      ],
+      482.21
+    ],
+    [
+      [
+        2,
+        3
+      ],
+      353.68
+    ],
+    [
+      [
+        2,
+        4
+      ],
+      417.94
+    ],
+    [
+      [
+        2,
+        6
+      ],
+      546.47
+    ],
+    [
+      [
+        2,
+        7
+      ],
+      610.73
+    ],
+    [
+      [
+        2,
+        8
+      ],
+      610.73
+    ],
+    [
+      [
+        2,
+        13
+      ],
+      225.15
+    ],
+    [
+      [
+        2,
+        16
+      ],
+      160.89
+    ]
+  ],
+  "solver_lower_bound": 410.0,
+  "solver_mip_gap": 0.5403587443946188,
+  "solver_objective": 892,
+  "solver_status": 9,
+  "status": "completed",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "4136af4559c17a740902dddd68b19b05751a28d7519beed8cc9760cf3d9e0c37",
+  "thermal_after": {
+    "frequencies_mhz": {
+      "cpu0": 4100.016,
+      "cpu1": 800.0,
+      "cpu2": 4099.993,
+      "cpu3": 800.0,
+      "cpu4": 800.0,
+      "cpu5": 800.0,
+      "cpu6": 800.0,
+      "cpu7": 800.0
+    },
+    "temperatures_c": {
+      "thermal_zone0:acpitz": 27.8,
+      "thermal_zone1:acpitz": 29.8,
+      "thermal_zone2:x86_pkg_temp": 59.0
+    },
+    "utc": "2026-09-19T02:17:34Z"
+  },
+  "time_limit_seconds": "1350",
+  "validation": {
+    "assignments": 14,
+    "feasible": true,
+    "objective_recomputed": 892
+  },
+  "wall_seconds": 1350.3759877789998,
+  "worker": {
+    "core_type": "homogeneous",
+    "logical_cpu": 1,
+    "max_mhz": 4200.0,
+    "physical_core": 1,
+    "sibling_logical_cpus": [
+      1,
+      5
+    ],
+    "socket": 0,
+    "worker_id": 1
+  }
+}

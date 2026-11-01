@@ -1,0 +1,729 @@
+\chapter{\MakeUppercase{Metodologia}}\label{sec:metodologia}
+
+\section{Delineamento e coleção experimental}\label{sec:met-delineamento}
+\label{sec:met-instancias}
+
+A investigação foi organizada em torno da Análise do Espaço de Instâncias
+(ISA), aplicada a uma coleção de instâncias do WSP e ao desempenho de seis
+abordagens (MIP, LBBD, ILS, IBS, CUTH e RS). Cada instância foi a unidade de
+análise; as execuções com diferentes sementes forneceram as repetições,
+agregadas por instância. O estudo começou pela exploração das 55 instâncias
+originais e pela construção de um mapa MATILDA de referência, mantido fixo.
+Em seguida, aplicou-se a geração orientada de instâncias: definiram-se
+pontos-alvo em regiões pouco ocupadas desse mapa, e um algoritmo genético,
+inspirado em \citeonline{SmithMilesBowly2015}, buscou configurações do gerador
+de \citeonline{DelazeriRitt2026} cujas instâncias se projetassem próximas
+desses alvos. As 19 instâncias aceitas ampliaram a coleção para 74,
+utilizada na avaliação das seis abordagens e no reajuste dos quatro modelos ISA,
+com e sem medidas topológicas adicionais. Como etapa complementar,
+registraram-se as trajetórias de busca do IBS, conforme a
+Seção~\ref{sec:met-trajetorias}.
+A Figura~\ref{fig:met-fluxo} sintetiza essa organização.
+
+\begin{figure}[htbp]
+\centering
+\caption{Etapas de caracterização, geração e análise experimental.}
+\label{fig:met-fluxo}
+\begin{singlespace}
+\begin{tikzpicture}[
+  etapa/.style={draw, align=center, text width=8.2cm, minimum height=0.85cm,
+    inner sep=5pt, font=\small},
+  fluxo/.style={-{Stealth[length=2mm]}, thick}]
+\node[etapa] (base) at (0,0) {Coleção inicial: 55 instâncias};
+\node[etapa,text width=3.6cm] (historicas) at (6.8,-1.5) {STNs históricas:\\16 instâncias clássicas;\\160 execuções};
+\node[etapa] (atributos) at (0,-1.5) {Caracterização original e topológica\\e análise exploratória};
+\node[etapa] (mapa) at (0,-3) {Mapa MATILDA de referência\\povoamento e cobertura};
+\node[etapa] (geracao) at (0,-4.5) {Povoamento orientado, validação\\e seleção de 19 instâncias adicionais};
+\node[etapa] (colecao) at (0,-6) {Coleção ampliada: 74 instâncias};
+\node[etapa,text width=5.4cm] (benchmark) at (-3.2,-7.5) {Comparação dos seis métodos\\nas 74 instâncias};
+\node[etapa,text width=5.4cm] (trajetorias) at (3.2,-7.5) {Registro de trajetórias do IBS\\nas 19 instâncias adicionais};
+\node[etapa,text width=5.4cm] (isa) at (-3.2,-9.15) {Modelos finais MATILDA:\\controle/topologia, 55/74 instâncias};
+\node[etapa,text width=5.4cm] (redes) at (3.2,-9.15) {Construção das STNs\\e cálculo dos descritores};
+\node[etapa] (analise) at (0,-11.3) {Análise comparativa dos desempenhos,\\das representações e das trajetórias};
+\draw[fluxo] (base) -- (atributos);
+\draw[fluxo] (base.east) -- ++(0.25,0) |- (historicas.west);
+\draw[fluxo] (atributos) -- (mapa);
+\draw[fluxo] (mapa) -- (geracao);
+\draw[fluxo] (geracao) -- (colecao);
+\draw[fluxo] (colecao) -- (benchmark);
+\draw[fluxo] (colecao) -- (trajetorias);
+\draw[fluxo] (benchmark) -- (isa);
+\draw[fluxo] (trajetorias) -- (redes);
+\draw[fluxo] (isa.south) -- (analise.north);
+\draw[fluxo] (redes.south) -- (analise.north);
+\draw[fluxo] (historicas.east) -- (9.05,-1.5) -- (9.05,-11.3) -- (analise.east);
+\end{tikzpicture}
+\par\smallskip
+{\fonte{elaboração própria.}}
+\end{singlespace}
+\end{figure}
+
+As entradas vieram da coleção de instâncias associada aos trabalhos de
+\citeauthoronline{DelazeriRitt2024} (\citeyear{DelazeriRitt2024,DelazeriRitt2026}). A consolidação em ordem
+determinística reteve a primeira ocorrência de cada identificador:
+16 casos clássicos LA0--LA7 e LB0--LB7 e 39 do gerador. A geração orientada
+acrescentou 19 casos, conforme a Seção~\ref{sec:met-geracao}.
+A coleção constituiu um conjunto dirigido de casos de teste do modelo computacional.
+
+A classe Small reuniu casos com até 400 vértices; Medium, Large e Huge
+corresponderam a 900, 1.600 e 6.400 vértices. A
+Tabela~\ref{tab:met-colecao} apresenta composição, repetições e orçamentos
+para a comparação dos seis métodos.
+
+\begin{table}[htbp]
+\centering
+\caption{Composição da coleção e protocolo da comparação dos seis métodos.}
+\label{tab:met-colecao}
+\normalsize
+\begin{tabular}{lrrrrr}
+\hline\hline
+Classe & Originais & Adicionais & Total & Repetições & Limite (s) \\
+\hline
+Small  & 19 & 1 & 20 & 10 & 600 \\
+Medium & 30 & 3 & 33 & 10 & 1.350 \\
+Large  & 3 & 6 & 9 & 10 & 2.400 \\
+Huge   & 3 & 9 & 12 & 3 & 9.600 \\
+\textbf{Total} & \textbf{55} & \textbf{19} & \textbf{74} & -- & -- \\
+\hline\hline
+\end{tabular}
+\par\smallskip
+{\singlespacing\fonte{elaboração própria a partir do planejamento experimental.}}
+\end{table}
+
+Cada arquivo no formato \textit{JavaScript Object Notation} (JSON) descreveu
+o grafo, os tempos dos arcos, as coordenadas, a ignição, o horizonte e os
+vetores de liberações, capacidades e atrasos. A validação das entradas
+considerou as dimensões do grafo, a unicidade dos identificadores e dos
+arcos, a positividade e a finitude dos tempos e a compatibilidade dos vetores.
+Seu comprimento definiu o número de pontos de liberação; a soma das
+capacidades forneceu o total de recursos. Nas 74 instâncias, os valores do
+vetor de atrasos são iguais dentro de cada instância e correspondem ao
+parâmetro $\Delta$ do modelo, embora possam variar entre instâncias.
+
+As entradas de ILS e LBBD foram convertidas para o formato utilizado nas
+implementações de \citeonline{HarrisForbesTaimre2023}, preservando ignição, arcos, tempos
+decimais, horizonte, atrasos e capacidades. Recursos simultâneos foram
+agregados quando necessário. A equivalência foi verificada por comparação
+semântica e avaliação das soluções; também se verificou a identidade dos
+arquivos de entrada utilizados nos dois computadores do experimento.
+
+\section{Caracterização original e topológica}\label{sec:met-topologia}
+
+Extraíram-se 36 atributos originais, agrupados em tamanho e estrutura,
+recursos e liberações, tempos dos arcos, coordenadas espaciais e propagação
+sem intervenções. Incluíram-se $|V|$, $|A|$, sua razão, horizonte,
+capacidade total, pontos de decisão e recursos por ponto; atraso e sua
+razão pelo horizonte; e primeira e última liberações e janela temporal,
+normalizadas pelo horizonte. A razão $|A|/|V|$ corresponde ao número médio
+de arcos por vértice, não à densidade usual normalizada por $|V|(|V|-1)$.
+
+A propagação livre foi calculada por Dijkstra. Seus descritores incluíram
+maior chegada finita sem recursos, razão pelo horizonte, fração queimada antes dele e
+quantis de 5\%, 50\% e 95\% normalizados. Também foram consideradas
+assimetria dos tempos recíprocos, amplitudes espaciais, dispersão vertical
+e estatísticas dos pesos. Nos instantes de liberação, o perímetro contou
+vértices atingidos com vizinhos ainda não atingidos; o número de chegadas
+entre liberações (janela frontal) contou os vértices atingidos entre
+liberações sucessivas, ou até o horizonte na última.
+Para ambos, extraíram-se média e máximo. Os atributos das 55 originais
+foram recalculados na ampliação e conferidos com tolerância $10^{-9}$.
+A Tabela~\ref{tab:met-atributos-originais} detalha os 36 atributos.
+
+\begin{table}[p]
+\centering
+\caption{Definição dos 36 atributos originais extraídos por instância.}
+\label{tab:met-atributos-originais}
+\begin{singlespace}
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{>{\raggedright\arraybackslash}p{2.35cm}r>{\raggedright\arraybackslash}p{9.8cm}}
+\hline\hline
+\textbf{Grupo} & \textbf{Qtd.} & \textbf{Atributos e cálculo}\\
+\hline
+Dimensão e horizonte & 4 & $|V|$, $|A|$, $|A|/|V|$ e $H$.\\
+Recursos e atraso & 5 & Total $k=\sum_i q_i$; número $T$ de liberações; $k/T$; atraso médio, igual a $\Delta$ nestas instâncias; e $\Delta/H$.\\
+Liberações & 3 & Primeira liberação/$H$ ($\tau_1/H$), última liberação/$H$ ($\tau_T/H$) e janela de liberação/$H$ ($(\tau_T-\tau_1)/H$). Esta última é o intervalo entre a primeira e a última liberação, relativo ao horizonte.\\
+Tempos dos arcos & 8 & Média, desvio padrão populacional, mínimo, máximo, quantis de 25\%, 50\% e 75\%, e coeficiente de variação (desvio dividido pela média) de $t_{uv}$.\\
+Assimetria & 2 & Média e máximo de $|t_{uv}-t_{vu}|/[(t_{uv}+t_{vu})/2]$, contando uma vez cada par de arcos recíprocos; zero se não houver pares.\\
+Coordenadas & 4 & Amplitudes das coordenadas $x$, $y$ e $z$ e desvio padrão populacional de $z$.\\
+Chegadas sem recursos & 6 & Maior chegada finita sem recursos e sua razão por $H$; fração dos vértices com chegada menor que $H$; percentil 5, mediana e percentil 95 das chegadas finitas, divididos por $H$.\\
+Perímetro nas liberações & 2 & Média e máximo do número de vértices queimados antes de $\tau_i$ com ao menos um sucessor ainda não queimado.\\
+Chegadas entre liberações & 2 & Média e máximo de chegadas entre liberações: número de vértices atingidos em $[\tau_i,\tau_{i+1})$; na última liberação, em $[\tau_T,H)$. Esse descritor também é denominado janela frontal.\\
+\hline
+\textbf{Total} & \textbf{36} & \\
+\hline\hline
+\end{tabular}
+\par\smallskip
+{\small Nota: chegadas e perímetro são calculados sem recursos, por Dijkstra.
+A janela de liberação é um intervalo temporal; chegadas entre liberações é uma contagem de vértices.
+O perímetro é um descritor de fronteira queimada; difere da
+janela de candidatos ainda não queimados usada pelo IBS. A fração queimada
+livre, constante na base, é retirada da entrada final da ISA.\par}
+{\fonte{elaboração própria a partir das definições implementadas na extração dos atributos.}}
+\end{singlespace}
+\end{table}
+
+A exploração inicial utilizou os desempenhos históricos das seis abordagens
+nas 55 instâncias originais
+(\citeauthor{DelazeriRitt2024}, \citeyear{DelazeriRitt2024,DelazeriRitt2026}),
+agregados por instância e família. Quando um método dispunha de mais de uma
+variante nesses dados, como o IBS, considerou-se em cada instância a de menor
+mediana de \textit{gap}, de modo a representar o melhor resultado histórico
+do método. Esses desempenhos serviram apenas a esta etapa exploratória; o
+experimento final adotou uma configuração fixa por método, descrita na
+Seção~\ref{sec:met-benchmark}. Após imputação pela mediana e padronização,
+aplicaram-se PCA bidimensional e florestas aleatórias para explorar a relação
+dos atributos com o melhor método e a menor mediana de \textit{gap}.
+
+A topologia acrescentou 17 medidas nodais: graus de entrada e saída,
+proporção de entrada e desequilíbrio entre graus; PageRank; hubs e
+authorities do HITS; intermediação; harmônicas de entrada e saída;
+e agrupamento direcionado. PageRank, HITS, intermediação e harmônicas
+foram calculados com e sem ponderação. Cada medida foi resumida por
+média, desvio padrão, mínimo, quantis de 25\%, 50\%, 75\% e 90\%,
+e máximo, totalizando 136 candidatos. Os resumos permitiram relacionar
+a topologia de cada instância ao desempenho dos algoritmos.
+
+Os tempos dos arcos foram usados como distâncias nos caminhos mínimos;
+nas medidas em que peso expressa força de conexão, PageRank e HITS,
+utilizaram-se seus inversos, conforme a Seção~\ref{sec:topologia}.
+O PageRank adotou amortecimento 0,85, valor convencional associado à
+proposta de \citeonline{BrinPage1998}. A tolerância de $10^{-12}$ e o
+limite de 1.000 iterações foram escolhas numéricas do estudo, para exigir
+convergência precisa e permitir a conclusão do cálculo nos grafos maiores.
+Esses valores não foram ajustados para maximizar associações com desempenho.
+Os escores de PageRank foram normalizados para soma um.
+
+O HITS foi obtido por decomposição esparsa em valores singulares, repetida
+com sementes 11, 23, 37, 53 e 71 para examinar a dependência do estado inicial.
+Os escores de cada execução foram normalizados para soma um e agregados
+pela média. Amplitudes superiores a $10^{-6}$ entre sementes indicaram
+instabilidade. Esse limiar absoluto é uma tolerância operacional para
+separar variações de arredondamento de diferenças maiores nos escores
+normalizados, e não um teste estatístico ou uma constante teórica do HITS.
+Sua sensibilidade a outros valores não foi avaliada.
+
+Intermediação e centralidades harmônicas foram calculadas exatamente,
+sem amostragem de pares, com igraph. O uso de rotinas compiladas tornou
+viável manter o cálculo exato nos grafos maiores e evitou que erro de
+amostragem alterasse os atributos usados na projeção das candidatas.
+As normalizações foram, respectivamente, $(|V|-1)(|V|-2)$ e $|V|-1$,
+com contribuição nula de pares inalcançáveis, permitindo comparar tamanhos
+distintos. PageRank e agrupamento direcionado de \citeonline{Fagiolo2007}
+utilizaram NetworkX, mantendo as definições adotadas para essas medidas.
+A escolha das bibliotecas foi computacional; não constituiu uma comparação
+de métodos topológicos ou de pacotes.
+
+A auditoria excluiu atributos constantes ou com variância numericamente
+nula, pois não discriminam instâncias; duplicatas exatas, por redundância;
+e atributos derivados de HITS instável, para não tratar variações numéricas
+como diferenças do problema. Também excluiu degenerações no deslocamento
+positivo do PRELIM: valores distintos em precisão de máquina podiam se
+tornar idênticos após subtrair o mínimo e somar um, inviabilizando Box--Cox
+e a padronização posterior.
+
+Dos 136 candidatos topológicos, 34 foram classificados como constantes
+ou degenerados, incluindo os oito resumos do agrupamento; 16 foram
+excluídos por HITS instável, 11 por duplicação exata e dois por degeneração
+numérica no PRELIM. Restaram 73, mantidos nas coleções de 55 e 74 instâncias.
+Dos 36 originais, retirou-se a fração queimada livre, constante, formando
+o controle com 35. Na combinação, removeu-se a média do grau de entrada,
+idêntica a $|A|/|V|$, pois a soma dos graus de entrada é $|A|$.
+Assim, a entrada combinada teve $35+73-1=107$ candidatos. A preparação
+exigiu matrizes completas e finitas, com desempenho medido para todas
+as combinações utilizadas.
+
+\section{Geração orientada e validação das adições}\label{sec:met-geracao}
+
+A geração orientada usou como referência o mapa MATILDA das 55 instâncias
+originais, construído com os atributos originais e topológicos e com os
+desempenhos históricos das seis abordagens. Esse mapa foi mantido fixo durante
+toda a geração, de modo que alvos, projeções e medidas de cobertura se
+referissem sempre à mesma representação. A evolução em direção aos alvos
+seguiu a estratégia de \citeonline{SmithMilesBowly2015}.
+
+O mapa foi ajustado a partir de 108 atributos candidatos (35 originais e 73
+topológicos), dos quais se selecionaram dez. A média do grau de entrada,
+redundante com $|A|/|V|$, só foi retirada dos 107 candidatos dos modelos
+finais (Seção~\ref{sec:met-topologia}). Foram considerados bons os
+desempenhos com \textit{gap} de até 10\% (limiar 0,10); os dados passaram por
+Box--Cox e padronização; o PILOT projetou as instâncias em duas dimensões,
+com cinco tentativas de otimização; e o PYTHIA ajustou os classificadores
+com cinco partições estratificadas. O número de partições foi limitado pela
+classe menos numerosa: nos rótulos históricos, apenas cinco instâncias não
+atingiram o critério de bom desempenho para o IBS, de modo que cinco
+partições estratificadas ainda permitem exemplos das duas classes em cada
+uma. Os modelos finais, ajustados com os desempenhos do experimento
+comparativo, têm configuração própria (Seção~\ref{sec:met-matilda}).
+
+Os alvos foram escolhidos em três etapas, de modo que fossem viáveis,
+ficassem em regiões pouco cobertas e se distribuíssem pelo mapa. Primeiro,
+delimitou-se o domínio dos alvos como a interseção entre o fecho convexo dos
+55 pontos do mapa e a região plausível estimada pelo CLOISTER
+(Seção~\ref{sec:matilda}), evitando alvos fora da região observada ou em
+combinações de atributos tidas como inviáveis. Nesse domínio, uma sequência
+de Sobol bidimensional embaralhada (semente 20260612,
+Quadro~\ref{qua:met-geracao}) forneceu 10.000 pontos admissíveis,
+distribuídos de forma quase uniforme.
+
+{\emergencystretch=2em\relax
+Segundo, identificaram-se os pontos pouco cobertos. Para cada instância
+original, calculou-se a distância no mapa até a instância mais próxima,
+excluindo ela mesma; o quantil de 90\% dessas distâncias definiu o limiar de
+subcobertura. Foram considerados pouco cobertos os pontos candidatos cuja
+distância à instância mais próxima excedia esse limiar, isto é, mais isolados
+do que 90\% das instâncias existentes.\par}
+
+Terceiro, entre os pontos pouco cobertos, selecionaram-se os alvos pelo
+critério maximin: escolhe-se o ponto mais distante das instâncias já
+presentes, que passa a ser tratado como ocupado, e o processo se repete.
+Isso espalha os alvos pelo mapa, evitando concentrá-los na mesma lacuna.
+
+Cada uma das três sementes tratou dois lotes de seis alvos. O primeiro
+foi comum; o segundo foi adaptativo, considerando as aceitações de cada
+semente e nova amostra Sobol. Os alvos adaptativos foram analisados
+segundo a semente e o lote de seleção. Cada indivíduo codificou
+oito fatores do gerador e uma semente: tamanho, inclinação, vento, atraso,
+quantidade de recursos e de pontos de liberação, primeira e última
+liberações. Os domínios categóricos originais foram preservados.
+
+A aptidão minimizou a distância euclidiana ao alvo. A projeção da candidata
+reutilizou deslocamento positivo, Box--Cox, padronização, seleção e matriz
+PILOT do mapa de referência, sem limitação de extremos. A projeção foi
+conferida nos 55 pontos com tolerância $10^{-8}$. Durante a busca,
+calcularam-se as famílias topológicas necessárias à seleção; os finalistas
+receberam extração completa e recomputação da projeção. O gerador utilizou
+Dijkstra com fila de prioridade, conservando a regra de caminhos mínimos.
+O Quadro~\ref{qua:met-geracao} apresenta a configuração; os 36 alvos
+consumiram 72.000 avaliações, repartidas entre evolução e exploração local.
+
+\begin{quadro}[htbp]
+\centering
+\caption{Configuração da geração orientada de instâncias.}
+\label{qua:met-geracao}
+\begin{singlespace}
+\normalsize
+\begin{tabular}{|p{5.0cm}|p{8.0cm}|}
+\hline
+\textbf{Componente} & \textbf{Configuração adotada} \\
+\hline
+Sementes principais & 20260612, 104729 e 1299709 \\
+\hline
+Alvos por semente & 12, organizados em dois lotes de seis \\
+\hline
+População e evolução & 40 indivíduos; 40 gerações \\
+\hline
+Seleção e elitismo & Torneio de tamanho três; dois indivíduos preservados \\
+\hline
+Cruzamento e mutação & Uniforme, com probabilidade 0,8; mutação independente por gene, com probabilidade $1/9$ \\
+\hline
+Orçamento por alvo & 1.600 avaliações genéticas e 400 locais; total de 2.000 \\
+\hline
+Aptidão & Minimização da distância euclidiana ao alvo no mapa fixo \\
+\hline
+\end{tabular}
+\par\smallskip
+{\fonte{elaboração própria a partir da configuração da geração.}}
+\end{singlespace}
+\end{quadro}
+
+Os valores do Quadro~\ref{qua:met-geracao} são configurações da adaptação
+ao WSP, registradas no experimento; não constituem reprodução integral dos
+parâmetros de \citeonline{SmithMilesBowly2015}. A inspiração desse trabalho
+é o uso da distância ao alvo no espaço de instâncias como objetivo da
+evolução. A codificação dos fatores do gerador, os operadores, a população
+e os orçamentos foram definidos para esta aplicação. A divisão de 80\%
+das avaliações para evolução e 20\% para exploração local segue uma
+adaptação da estratégia híbrida discutida por \citeonline{Bowly2019},
+com gerações síncronas e processos independentes por semente. Não houve
+comparação sistemática para determinar parâmetros ótimos para o WSP.
+
+Seja $\rho$ a distância do alvo ao ponto ocupado mais próximo no início do
+lote. Uma candidata foi \textit{hit} se sua distância foi até $0{,}25\rho$;
+\textit{improved} se superior a $0{,}25\rho$ e inferior a $\rho$; e
+\textit{missed} se não melhorou ou não passou pela validação.
+A aceitação exigiu consistência, projeção finita e pertencimento ao
+domínio interno após recomputação exata, com tolerância $10^{-10}$.
+A união das aceitações das três sementes foi deduplicada: arquivos de
+conteúdo idêntico seriam contados uma única vez, mediante hash SHA-256 do
+JSON em forma canônica, com chaves ordenadas e formatação padronizada.
+As 19 aceitações, sete, seis e seis por semente, já eram distintas;
+a deduplicação manteve 19 arquivos únicos.
+
+A cobertura foi avaliada no mesmo mapa fixo e nos mesmos 10.000 pontos
+Sobol. Mediram-se maior distância à coleção (\textit{fill distance}),
+média, mediana, quantil de 90\% e fração acima do limiar de subcobertura.
+Calculou-se também a proporção de células ocupadas em grades de
+$8\times8$, $10\times10$ e $12\times12$ sobre o retângulo delimitador
+do fecho convexo; os resultados apresentam a grade $10\times10$.
+As sequências foram avaliadas separadamente sobre a base original.
+A comparação entre a coleção original e a ampliada manteve fixos o domínio
+de análise e a transformação para o espaço de instâncias, permitindo
+quantificar o preenchimento das lacunas no mapa de referência.
+
+\section{Experimento comparativo e ambiente}\label{sec:met-benchmark}
+
+IBS, MIP, CUTH e RS utilizaram implementações em C++ associadas aos
+trabalhos de \citeauthoronline{DelazeriRitt2024} (\citeyear{DelazeriRitt2024,DelazeriRitt2026}); MIP correspondeu ao modelo básico associado
+a \citeonline{DelazeriRitt2026}. ILS e LBBD utilizaram a implementação
+Python de \citeonline{HarrisForbesTaimre2023}, com controle
+do tempo de execução e validação do objetivo. Os parâmetros estão no
+Quadro~\ref{qua:met-algoritmos}.
+
+\begin{quadro}[htbp]
+\centering
+\caption{Configurações dos métodos no experimento comparativo.}
+\label{qua:met-algoritmos}
+\begin{singlespace}
+\normalsize
+\begin{tabular}{|p{1.5cm}|p{11.5cm}|}
+\hline
+\textbf{Método} & \textbf{Configuração adotada} \\
+\hline
+IBS & $\beta=50$, $\eta=70$, $c=30$, $p=0{,}5$, $\hat{p}=1$ e $z_{\max}=3$; sem limite adicional de iterações \\
+\hline
+MIP & Modelo básico; Gurobi 10.0.3, uma \textit{thread}; limite global por classe; \texttt{Symmetry=-1}, \texttt{RINS=-1}, \texttt{MIPFocus=0}, \texttt{Heuristics=0.05}, \texttt{ImproveStartGap=0} e \texttt{ImproveStartTime} sem gatilho efetivo; pré-processamento habilitado \\
+\hline
+CUTH & Gurobi 10.0.3, uma \textit{thread}; tolerância absoluta de 0,01 na busca binária temporal; até 300 segundos por chamada ao modelo de corte, limitados pelo tempo global restante \\
+\hline
+RS & Semente da execução; limite global por classe \\
+\hline
+ILS & Até 50 reinícios na construção inicial; limites de cinco candidatos, 20 vizinhos, cinco modificações, 100 falhas e 50 passos sem melhoria; $p_1=0{,}075$ e $p_2=0{,}025$ \\
+\hline
+LBBD & Inicialização heurística e etapa exata sob um orçamento compartilhado; Gurobi 10.0.3, uma \textit{thread}; cortes por \textit{lazy constraints} \\
+\hline
+\end{tabular}
+\par\smallskip
+{\small Nota: Gurobi é um \textit{solver} comercial de otimização matemática. A MIP, a LBBD e o submodelo da CUTH utilizaram a versão 10.0.3. Os parâmetros listados para a MIP vieram da implementação empregada, sem ajuste neste estudo.\par}
+{\fonte{elaboração própria a partir dos parâmetros do experimento comparativo.}}
+\end{singlespace}
+\end{quadro}
+
+O IBS manteve os parâmetros de \citeonline{DelazeriRitt2024}, com
+$\hat p=1$ conforme \citeonline{DelazeriRitt2026}, sem limite adicional
+de iterações. A CUTH utilizou os valores padrão da implementação.
+Os mecanismos dos parâmetros de IBS e ILS foram descritos nas
+Seções~\ref{sec:ibs} e \ref{sec:ils}; seus valores no experimento estão
+no Quadro~\ref{qua:met-algoritmos}. As sementes foram repassadas aos
+procedimentos que admitiam esse controle.
+
+Na ILS, o relógio monotônico controlou o prazo, admitindo para pontuação
+somente candidatos completos produzidos dentro dele. Na LBBD,
+inicialização e etapa exata compartilharam o orçamento. Sem incumbente
+utilizável, retornou-se a alternativa viável sem recursos. Objetivo,
+limites e estado do modelo foram preservados separadamente da pontuação
+reavaliada no modelo nativo, conforme a Seção~\ref{sec:met-analise}.
+
+Os limites da Tabela~\ref{tab:met-colecao} seguiram o orçamento de
+1,5 segundo por célula de \citeonline{DelazeriRitt2026};
+os casos clássicos também receberam 600 segundos.
+Usaram-se sementes 1--10 em Small, Medium e Large e 1--3 em Huge,
+totalizando 656 execuções por método e 3.936 na comparação.
+As 190 trajetórias instrumentadas formaram uma fase separada.
+
+O experimento foi dividido entre dois computadores com Intel Core i7-7700
+3,60 GHz, quatro núcleos físicos, oito processadores lógicos e cerca de
+16 GB de memória. Os ambientes registraram Linux x86\_64, kernel
+\texttt{7.0.0-31-generic}, Gurobi/gurobipy 10.0.3, Python 3.11.16
+na otimização e 3.12.14 na preparação. Cada máquina recebeu 328 trabalhos
+por método e 95 trajetórias, sem duplicar pares instância--semente.
+Processos foram fixados em núcleos físicos distintos, com até quatro
+trabalhos sem \textit{solver} ou dois dependentes de Gurobi e bibliotecas numéricas
+restritas a uma thread. Entradas e executáveis foram confrontados por hashes.
+
+Registraram-se solução, objetivo, status, tempo de parede e pico de memória.
+O tempo de busca e a margem externa para encerramento e gravação foram
+registrados separadamente. Caracterização e geração utilizaram outro ambiente, com Python
+3.12.3, quatro processadores lógicos e cerca de 8 GB de memória.
+Os ajustes MATILDA usaram Python 3.12.3, dois trabalhadores por ajuste e
+uma implementação do fluxo baseada em \texttt{pyInstanceSpace} 0.2.1.
+As configurações efetivamente utilizadas foram registradas junto às
+entradas e saídas de cada ajuste.
+As bibliotecas utilizadas incluíram NumPy 1.26.4, pandas 2.2.3, SciPy
+1.14.1, scikit-learn 1.5.2, PyGAD 3.7.0, NetworkX 3.4.2 e igraph 1.0.0.
+
+\section{Reconstrução da ISA e avaliação das representações}\label{sec:met-matilda}
+
+Construíram-se quatro modelos MATILDA para comparar as coleções e as
+representações: o controle, com os atributos originais, e a combinação
+desses atributos com medidas topológicas adicionais. Assim, controle não
+significa ausência de estrutura do grafo, pois $|V|$, $|A|$ e sua razão
+já pertencem aos atributos originais. As entradas de desempenho das 55
+instâncias foram subconjuntos exatos das 74 linhas de \textit{gaps} auditados. Cada matriz teve seis colunas de
+algoritmos e 35 atributos candidatos no controle ou 107 com topologia.
+A contribuição preditiva foi examinada por diagnósticos internos de
+classificação dos rótulos de desempenho. Utilizaram-se máquinas de vetores
+de suporte (SVM, do inglês: \textit{support vector machines}) com núcleo
+de função de base radial (RBF, do inglês: \textit{radial basis function}).
+
+O desempenho de entrada foi a média do \textit{gap} relativo, em fração. O rótulo
+bom admitiu objetivo médio até 10\% acima do melhor valor conhecido
+(BKV, do inglês: \textit{best known value}). Esse critério foi mantido
+nos quatro modelos e aplicado por algoritmo, permitindo vários métodos
+bons na mesma instância. O PRELIM aplicou
+deslocamento positivo, Box--Cox e padronização, sem redução de instâncias
+ou limitação de extremos. As configurações estão no
+Quadro~\ref{qua:met-matilda}.
+
+\begin{quadro}[htbp]
+\centering
+\caption{Parâmetros do fluxo MATILDA nos quatro modelos.}
+\label{qua:met-matilda}
+\begin{singlespace}
+\normalsize
+\begin{tabular}{|p{2.2cm}|p{10.8cm}|}
+\hline
+\textbf{Etapa} & \textbf{Configuração adotada} \\
+\hline
+PRELIM & Deslocamento positivo, Box--Cox e padronização; sem limitação de valores extremos ou redução de instâncias \\
+\hline
+SIFTED & Correlação mínima 0,1 e significância 0,05; dez grupos, 100 inicializações e até 1.000 iterações do agrupamento \\
+\hline
+Seleção genética & População 50; até 100 gerações; parada após cinco gerações sem melhoria; torneio de tamanho quatro, dois pais e elitismo de dois; cruzamento \textit{scattered} 0,8; mutação aleatória 0,05; semente de base 0 \\
+\hline
+PILOT & Projeção numérica bidimensional; cinco tentativas de otimização \\
+\hline
+CLOISTER & Correlação 0,7; significância 0,05 \\
+\hline
+PYTHIA & SVM RBF; 30 configurações de $C$ e $\gamma$; quatro partições estratificadas; semente 0 \\
+\hline
+TRACE & \textit{Footprints} das classes previstas; pureza mínima 0,55 \\
+\hline
+\end{tabular}
+\par\smallskip
+{\fonte{elaboração própria a partir dos parâmetros adotados nos modelos.}}
+\end{singlespace}
+\end{quadro}
+
+Nos modelos finais, o SIFTED filtrou pela magnitude da correlação de
+Pearson significativa com desempenho, retendo também o atributo de maior
+correlação absoluta por algoritmo. Os sobreviventes foram
+agrupados por KMeans em dez grupos, e um algoritmo genético escolheu
+um atributo por grupo, totalizando dez atributos. Cada combinação foi avaliada por PILOT e classificadores de
+três vizinhos, em validação cruzada com cinco partições embaralhadas.
+A aptidão foi o negativo do maior erro médio de classificação entre os
+seis algoritmos; sua maximização buscou minimizar esse erro.
+
+\newpage
+Os parâmetros da seleção genética do Quadro~\ref{qua:met-matilda} foram
+mantidos da configuração do SIFTED em pyInstanceSpace
+\cite{PyInstanceSpace021} nos quatro ajustes, para aplicar o mesmo
+procedimento de seleção de atributos. Não foram calibrados para o WSP nem
+extraídos de \citeonline{SmithMilesBowly2015}, cuja busca genética gera
+instâncias para pontos-alvo, em vez de selecionar atributos. Nesta
+implementação, corrigiram-se localmente o filtro de correlação, a direção
+da aptidão e o mapeamento dos atributos, sem alterar os valores do quadro.
+
+A aptidão da combinação escolhida foi recalculada para conferir a seleção.
+Nessa etapa, os indivíduos do algoritmo genético representaram combinações
+de atributos; na geração da Seção~\ref{sec:met-geracao}, representaram
+configurações de instâncias.
+
+Após a projeção PILOT, PYTHIA padronizou as coordenadas e ajustou uma
+SVM RBF por algoritmo. Uma busca aleatória de hiperparâmetros com
+validação cruzada avaliou as configurações
+de $C$ e $\gamma$ do Quadro~\ref{qua:met-matilda}, geradas por hipercubo
+latino em $2^u$, $u\in[-10,4]$.
+Os pesos corresponderam ao desvio absoluto
+do desempenho em relação à média global dos \textit{gaps}; zeros foram substituídos
+pelo menor peso positivo. O protocolo dos modelos finais utiliza quatro
+partições estratificadas e embaralhadas, exigindo ao menos quatro exemplos
+de cada classe por algoritmo em cada coleção. As cinco partições do mapa
+de geração pertencem ao ajuste com rótulos históricos; os modelos finais
+utilizam os rótulos do experimento comparativo atualizado.
+CLOISTER estimou os limites, e TRACE construiu footprints das classes
+previstas por PYTHIA, registrando área, densidade e pureza.
+
+As predições finais na amostra foram auditadas contra os rótulos,
+reconstruindo matrizes de confusão, acurácia, acurácia balanceada,
+precisão e sensibilidade. Sem predições positivas, a precisão recebeu zero.
+Como diagnóstico auxiliar interno não aninhado, realizaram-se dez repetições
+de validação cruzada estratificada com quatro partições por modelo e
+algoritmo, com sementes 0--9. Reutilizaram-se
+$C$, $\gamma$ e coordenadas globais, sem a padronização adicional do
+PYTHIA e com pesos de classes balanceados. Calcularam-se média e desvio de
+acurácia balanceada, precisão, sensibilidade, F1, Matthews e área sob a curva
+(\textit{area under the curve}, AUC) da característica de operação do receptor
+(\textit{receiver operating characteristic}, ROC).
+As repetições avaliaram a variação entre partições na representação ajustada.
+A acurácia balanceada considerou as duas classes com igual peso,
+reduzindo a influência da classe majoritária na interpretação.
+
+Os contrastes controle/topologia e 55/74 compararam seleção pelo Jaccard,
+ordenação das distâncias por Spearman, sobreposição dos cinco vizinhos e
+deslocamento após Procrustes, com centralização, normalização e transformação
+ortogonal com escala. Em 55/74, apenas os 55 identificadores comuns
+participaram das distâncias e listas de vizinhos. Compararam-se também
+predições binárias e footprints. A concordância mediu a coincidência das
+predições entre modelos; a acurácia, os acertos em relação aos rótulos.
+Os footprints foram interpretados na escala de cada mapa.
+A sobreposição dos cinco vizinhos foi sensível a desempates numéricos e
+não foi utilizada na interpretação dos resultados. Como diagnóstico
+descritivo da associação com o tamanho, calcularam-se também correlações
+de Spearman entre os quatro atributos topológicos selecionados no modelo
+de 74 instâncias e as quantidades $|V|$ e $|A|$, usando os valores dos
+atributos antes das transformações da ISA.
+
+\section{Registro e análise das trajetórias do IBS}\label{sec:met-trajetorias}
+
+Durante a execução do IBS, registraram-se
+execução, objetivo e assinatura da solução devolvida ao fim de cada
+iteração completa, adotada como unidade de amostragem da busca.
+A construção seguiu o conceito de STN
+\cite{ChaconSartoriEtAl2023,OchoaMalanBlum2021}, com dois protocolos:
+\begin{alineas}
+ \item histórico: 16 instâncias clássicas, dez sementes cada (160 execuções),
+ $\beta=25$, $\eta=35$, $c=10$, até 30 segundos e dez iterações, com ótimo
+ conhecido como alvo de parada; assinatura pelo conjunto ordenado dos
+ vértices protegidos, sem instantes;
+ \item adicional: 19 instâncias, dez sementes cada (190 execuções), inclusive
+ Huge; parâmetros e limites do experimento principal, com assinatura de pares
+ vértice--instante.
+\end{alineas}
+
+Preservaram-se os registros brutos. O filtro não piorante reteve, na ordem
+original, registros com objetivo menor ou igual ao melhor já observado
+na execução, incluindo empates. A rede histórica utilizou essa filtragem;
+a análise adicional examinou tanto a sequência bruta quanto a filtrada.
+A solução de uma iteração podia ser pior que a incumbente. Por isso,
+guardaram-se tanto o último registro quanto a melhor solução acumulada.
+
+Assinaturas iguais foram fundidas em nós. Transições entre assinaturas
+diferentes formaram arestas direcionadas ponderadas pela frequência,
+excluindo laços, isto é, transições de uma assinatura para ela mesma.
+Essas repetições consecutivas não produziram arestas na rede;
+as transições entre assinaturas distintas conservaram suas frequências. Calcularam-se nós, arestas e transições, assinaturas
+de melhor objetivo observado e terminais fora desse conjunto. A recorrência
+foi medida pela fração de nós compartilhados entre execuções e pelo Jaccard
+médio entre pares de conjuntos visitados; registrou-se também a fração de
+execuções terminadas no conjunto de melhor avaliação.
+
+A força de entrada dos melhores nós somou os pesos recebidos e dividiu
+pelo número de execuções. Nas redes clássicas, utilizou-se a razão limitada
+a um; nas adições, calcularam-se a razão e sua versão limitada. A medida foi
+interpretada como frequência normalizada de transições para os melhores nós.
+
+Os descritores foram calculados em Python, e as figuras históricas foram
+elaboradas em R. Nas adições, as assinaturas das soluções definiram os nós,
+e os valores da função objetivo identificaram os nós de melhor avaliação
+e os nós terminais fora desse conjunto. Para verificar a consistência das
+trajetórias, compararam-se o melhor objetivo registrado, a solução final
+e o histórico de melhorias de cada execução, mantendo sua identificação
+por semente.
+
+A integração utilizou o identificador da instância para associar os
+descritores das STNs aos atributos e ao desempenho. Nas 16 clássicas,
+cruzaram-se as redes filtradas com as coordenadas da PCA exploratória e
+com o rótulo de melhor método da análise inicial, resumindo recorrência e
+terminais por grupo de desempenho. Nas 19 adições, contrastaram-se os
+perfis das redes com classe de tamanho e vantagem medida no experimento
+comparativo. Essa análise descritiva reuniu os resultados das STNs, dos
+atributos e do experimento. Os modelos MATILDA foram ajustados com os atributos
+das instâncias, enquanto os descritores das trajetórias foram examinados
+nessa comparação posterior.
+
+\section{Tratamento e verificação dos resultados}\label{sec:met-analise}
+
+A comparação utilizou soluções reavaliadas sob as mesmas restrições de
+capacidade, disponibilidade de recursos e viabilidade temporal. Para obter
+uma pontuação comum aos métodos, a propagação foi recalculada por Dijkstra
+com os atrasos das alocações, contando os vértices atingidos estritamente
+antes do horizonte. A análise utilizou essa pontuação e preservou os
+registros originais. A associação por instância e semente permitiu
+conferir a cobertura do plano experimental e evitar registros duplicados.
+
+As duas execuções da ILS que falharam receberam o objetivo da solução sem
+recursos e permaneceram na média principal, identificadas como falhas.
+Uma análise de sensibilidade comparou \textit{gaps} e rótulos com e sem esses
+registros. Na LBBD, distinguiram-se as soluções alternativas conforme o
+status e a etapa executada, para interpretar os limites de acordo com a
+formulação e a etapa que os produziram.
+
+Seja $f_{i\alpha}$ a média dos objetivos validados nas $r_i$ sementes do
+algoritmo $\alpha$ na instância $i$, e $b_i>0$ o menor objetivo validado
+em qualquer execução dos seis métodos. O \textit{gap} percentual foi
+\begin{equation}
+ \mathit{gap}^{\mathrm{BKV}}_{i\alpha}
+ =100\,\frac{f_{i\alpha}-b_i}{b_i}.
+ \label{eq:gap-relativo}
+\end{equation}
+\noindent O BKV expressa a melhor observação validada no experimento.
+A certificação de otimalidade exige adicionalmente um limite global válido.
+Para uma coleção $C$, calculou-se
+\begin{equation}
+ G_{\alpha,C}=\frac{1}{|C|}\sum_{i\in C}
+ \mathit{gap}^{\mathrm{BKV}}_{i\alpha}.
+ \label{eq:met-agregado}
+\end{equation}
+\noindent Cada instância recebeu o mesmo peso, apesar das diferentes
+quantidades de sementes. Médias por execução foram identificadas separadamente.
+
+Por instância e algoritmo, extraíram-se média, mediana, extremos e desvio
+padrão amostral, tempos e falhas. Os resumos abrangeram 55 originais,
+19 adicionais, 74 totais e classes de tamanho. Contaram-se obtenções do
+BKV, menores médias e vitórias exclusivas; empates de médias foram tratados
+por igualdade dos valores calculados e receberam posições médias no ranking.
+Origem, composição por classe e variabilidade acompanharam a interpretação.
+
+A inferência utilizou as 74 médias pareadas por instância. Para os
+15 pares de métodos, aplicou-se teste de sinal exato bicaudal, excluindo
+empates do número efetivo de pares, e correção de Holm para a família
+completa, com referência de 0,05. Contagens de vitórias, empates e derrotas
+e diferenças de \textit{gap} acompanharam os testes, que avaliaram
+a direção das diferenças na coleção dirigida.
+\textit{Gaps} internos dos \textit{solvers} foram analisados separadamente do \textit{gap} empírico.
+
+A integração manteve a associação entre cada instância, seus atributos,
+os desempenhos e as trajetórias. As tabelas e figuras foram calculadas a
+partir dos resultados correspondentes, preservando a identificação do
+experimento, do modelo e do protocolo de trajetórias. Essa associação permitiu
+interpretar conjuntamente as etapas sem confundir seus diferentes protocolos.
+
+\section{Escopo e limites da análise}\label{sec:met-limitacoes}
+
+O povoamento foi avaliado pela cobertura do domínio interno do mapa
+fixado para a geração. A medida descreve a ocupação dessa representação;
+a qualidade preditiva foi examinada pelos diagnósticos dos modelos finais.
+A geração não incluiu controle aleatório sob igual orçamento;
+o aumento de cobertura não demonstra superioridade sobre geração aleatória.
+A divisão do orçamento entre evolução e busca local não foi otimizada para o WSP.
+A validade das adições foi estabelecida pela consistência com o gerador e com o modelo WSP.
+
+A comparação entre métodos adotou parâmetros comuns às classes e
+orçamentos proporcionais ao tamanho das grades. Origem e tamanho foram
+considerados conjuntamente, pois 15 das 19 adições são Large ou Huge.
+A análise procura associações entre atributos e desempenho; a identificação
+de efeitos individuais exigiria variações controladas dessas propriedades.
+O orçamento por tempo avalia o conjunto formado pela estratégia de busca,
+pela implementação e por sua configuração. As diferenças de linguagem
+também participam desse resultado.
+A precisão das médias em Huge depende das três sementes utilizadas;
+a distribuição complementar dos trabalhos entre máquinas não constituiu
+um teste do efeito do equipamento.
+
+Os modelos ISA têm limites de interpretação. O contraste entre atributos
+originais e topológicos utilizou um único critério de bom desempenho:
+\textit{gap} de até 10\%. As classes e regiões dependem desse limiar, e
+os experimentos registrados não avaliaram sua sensibilidade a outros
+valores. Além disso, há muitos candidatos, 107, para 55 ou 74 instâncias,
+e classes desbalanceadas, o que pode tornar os classificadores sensíveis
+à partição dos dados. Os diagnósticos descrevem essa configuração e sua
+variação entre partições.
+
+A seleção foi executada com uma única semente. As repetições de validação
+cruzada não medem a estabilidade da seleção sob outras sementes do SIFTED.
+Assim, as diferenças entre controle e combinação topológica descrevem os
+ajustes obtidos nesta configuração, sem estabelecer um efeito estável
+ou universal da topologia.
+
+Transformações, seleção, projeção e hiperparâmetros foram estimados com
+todas as instâncias da respectiva coleção, sem repetir o fluxo completo
+separadamente nos dados de ajuste de cada partição. As métricas são,
+portanto, diagnósticos internos e podem ser otimistas; não demonstram
+generalização para instâncias novas. Essa avaliação exigiria dados externos
+ou validação aninhada, com todas as etapas ajustadas dentro das partições.
+
+As STNs históricas e adicionais foram interpretadas separadamente porque
+seus protocolos diferem na assinatura da solução, na parada e nos parâmetros
+(Seção~\ref{sec:met-trajetorias}). As redes não são diretamente comparáveis,
+e suas associações com atributos e desempenho têm caráter descritivo.

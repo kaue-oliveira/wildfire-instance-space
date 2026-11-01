@@ -1,0 +1,69 @@
+{
+  "algorithm": "ils",
+  "collection": "original_55",
+  "complete_candidates": 50,
+  "completed_utc": "2026-09-10T17:15:42Z",
+  "deadline_overshoot_seconds": 0.0,
+  "engine": "legacy_python",
+  "harris_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2/inputs/harris/Medium_Moderate_Light_High_Moderate_Moderate_Late_VeryEarly_123.json",
+  "instance": "Medium_Moderate_Light_High_Moderate_Moderate_Late_VeryEarly_123",
+  "instance_sha256": "3644e38e7974f4ca855d1a5119618e01b82c08cf694137a5d473770f716d532e",
+  "job_id": "job_01770",
+  "lower_bound": null,
+  "n_vertices": "900",
+  "native_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2/inputs/native/Medium_Moderate_Light_High_Moderate_Moderate_Late_VeryEarly_123.json",
+  "objective": 900,
+  "peak_rss_bytes": 44544000,
+  "phase": "benchmark",
+  "pilot": false,
+  "protocol_sha256": "221f596a97287cd01d7002ec17c48b4857603c27bef5b56a0dcf6e7a35a2c49f",
+  "result_provenance": "measured",
+  "search_limit_seconds": 1350,
+  "search_wall_seconds": 1298.5828623309499,
+  "seed": 4,
+  "shard_index": "1",
+  "size_class": "Medium",
+  "solution": [],
+  "solver_status": "no_improvement_limit",
+  "status": "completed",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "b268c97e51c246ea8695bf8a27076e0689bc668454bf5fa204ee69dfb7474298",
+  "termination_reason": "no_improvement_limit",
+  "thermal_after": {
+    "frequencies_mhz": {
+      "cpu0": 4096.671,
+      "cpu1": 4096.619,
+      "cpu2": 4096.651,
+      "cpu3": 800.0,
+      "cpu4": 4100.012,
+      "cpu5": 4096.549,
+      "cpu6": 800.0,
+      "cpu7": 800.0
+    },
+    "temperatures_c": {
+      "thermal_zone0:acpitz": 27.8,
+      "thermal_zone1:acpitz": 29.8,
+      "thermal_zone2:x86_pkg_temp": 79.0
+    },
+    "utc": "2026-09-10T17:15:42Z"
+  },
+  "time_limit_seconds": "1350",
+  "validation": {
+    "assignments": 0,
+    "feasible": true,
+    "objective_recomputed": 900
+  },
+  "wall_seconds": 1299.1151038289536,
+  "worker": {
+    "core_type": "homogeneous",
+    "logical_cpu": 3,
+    "max_mhz": 4200.0,
+    "physical_core": 3,
+    "sibling_logical_cpus": [
+      3,
+      7
+    ],
+    "socket": 0,
+    "worker_id": 3
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "algorithm": "lbbd",
+  "baseline_mip_starts": 1,
+  "budget_policy": "global_remaining_divided_among_remaining_greedy_stages",
+  "completed_utc": "2026-09-18T19:25:21Z",
+  "exact_started": false,
+  "feasibility_cuts": 2581,
+  "global_budget_seconds": 2400,
+  "greedy_wall_seconds": 2400.163535539992,
+  "lower_bound": 1112.0,
+  "mip_gap": 0.3032581453634085,
+  "objective": 1596,
+  "objective_consistency": "exact",
+  "objective_delta_vs_solver": 0,
+  "objective_source": "independent_shortest_path_validation",
+  "optimality_cuts": 130452,
+  "optimize_calls": 20,
+  "optimize_time_allocations_seconds": [
+    119.94235837265005,
+    119.939469960895,
+    119.93782341100126,
+    119.93612830058898,
+    119.9331225621263,
+    119.9039111744011,
+    119.90046674714333,
+    128.27630434761747,
+    128.2698691177502,
+    128.26229321463722,
+    128.2548238827003,
+    128.23651919177954,
+    128.22366035637606,
+    128.2140719725742,
+    128.20275939833664,
+    128.1909959882032,
+    128.1786450360014,
+    128.16287208366944,
+    128.13357686701056,
+    128.0702128180128
+  ],
+  "result_provenance": "measured",
+  "seed": 6,
+  "solution": [
+    [
+      [
+        1,
+        2
+      ],
+      462.26
+    ],
+    [
+      [
+        1,
+        4
+      ],
+      679.16
+    ],
+    [
+      [
+        2,
+        1
+      ],
+      592.4
+    ],
+    [
+      [
+        2,
+        2
+      ],
+      722.54
+    ],
+    [
+      [
+        2,
+        3
+      ],
+      635.78
+    ],
+    [
+      [
+        39,
+        12
+      ],
+      549.02
+    ],
+    [
+      [
+        40,
+        11
+      ],
+      418.88
+    ],
+    [
+      [
+        40,
+        13
+      ],
+      505.64
+    ]
+  ],
+  "solver_lower_bound": 1112.0,
+  "solver_mip_gap": 0.3032581453634085,
+  "solver_objective": 1596,
+  "solver_status": 9,
+  "status": "completed",
+  "validation": {
+    "assignments": 8,
+    "feasible": true,
+    "objective_recomputed": 1596
+  },
+  "wall_seconds": 2400.170163409988
+}

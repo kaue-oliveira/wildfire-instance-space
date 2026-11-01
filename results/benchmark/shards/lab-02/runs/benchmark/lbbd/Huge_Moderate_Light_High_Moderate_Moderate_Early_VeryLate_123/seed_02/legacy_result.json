@@ -1,0 +1,38 @@
+{
+  "algorithm": "lbbd",
+  "baseline_mip_starts": 1,
+  "budget_policy": "global_remaining_divided_among_remaining_greedy_stages",
+  "completed_utc": "2026-09-17T00:36:30Z",
+  "exact_started": false,
+  "feasibility_cuts": 216,
+  "global_budget_seconds": 9600,
+  "greedy_wall_seconds": 9600.417744225997,
+  "lower_bound": 1230.0,
+  "mip_gap": 0.8078125,
+  "objective": 6400,
+  "optimality_cuts": 1051991,
+  "optimize_calls": 10,
+  "optimize_time_allocations_seconds": [
+    959.7758811253996,
+    959.7031306758888,
+    959.6776880542493,
+    959.6296405677151,
+    959.5931118526665,
+    959.5539595437992,
+    959.4794792245011,
+    958.8363025350021,
+    958.6420272359974,
+    958.4060980740032
+  ],
+  "result_provenance": "measured",
+  "seed": 2,
+  "solution": [],
+  "solver_status": 9,
+  "status": "completed",
+  "validation": {
+    "assignments": 0,
+    "feasible": true,
+    "objective_recomputed": 6400
+  },
+  "wall_seconds": 9600.487394779004
+}

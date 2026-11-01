@@ -1,0 +1,10 @@
+{
+  "details_csv": "exact_ga_topology_recomputation_validation_by_instance.csv",
+  "features_checked": 136,
+  "instances_checked": 55,
+  "max_absolute_error": 0.0,
+  "result_provenance": "measured",
+  "status": "passed",
+  "tolerance": 1e-10,
+  "topology_backend_id": "hybrid_exact_igraph_betweenness_harmonic_scipy_svds_seeded_random_state_v2"
+}

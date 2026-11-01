@@ -1,0 +1,11 @@
+{
+  "details_csv": "baseline_feature_recomputation_validation_by_feature.csv",
+  "features_checked": 36,
+  "instances_checked": 55,
+  "max_absolute_error": 4.440892098500626e-16,
+  "missing_features": [],
+  "result_provenance": "measured",
+  "status": "passed",
+  "tolerance": 1e-09,
+  "worst_feature": "directional_asymmetry_mean"
+}

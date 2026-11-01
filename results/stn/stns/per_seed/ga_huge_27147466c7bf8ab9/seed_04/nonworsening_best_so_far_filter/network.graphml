@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d6" for="node" attr.name="seeds" attr.type="string" />
+  <key id="d5" for="node" attr.name="Type" attr.type="string" />
+  <key id="d4" for="node" attr.name="Count" attr.type="long" />
+  <key id="d3" for="node" attr.name="Fitness" attr.type="long" />
+  <key id="d2" for="graph" attr.name="best" attr.type="long" />
+  <key id="d1" for="graph" attr.name="representation" attr.type="string" />
+  <key id="d0" for="graph" attr.name="instance" attr.type="string" />
+  <graph edgedefault="directed">
+    <node id="255@1146.72-325@1216.16-334@1216.16-336@1146.72-337@1077.27-415@1181.44-418@1042.55-446@938.39-495@1181.44-497@1042.55-527@938.39-576@1111.99-578@1007.83-607@903.67-655@1111.99-658@973.11-688@868.94-736@1077.27-738@973.11-769@868.94-817@1007.83-850@903.67-1537@834.22-1618@799.50-1640@556.45-1659@834.22-1697@764.78-1721@556.45-1776@764.78-1855@799.50-1889@625.89-1970@625.89-3375@591.17-3455@591.17-4175@695.34-4256@660.61-4337@660.61-4417@695.34-4784@730.06-4863@730.06">
+      <data key="d3">6392</data>
+      <data key="d4">1</data>
+      <data key="d5">Best</data>
+      <data key="d6">4</data>
+    </node>
+    <data key="d0">ga_huge_27147466c7bf8ab9</data>
+    <data key="d1">nonworsening_best_so_far_filter</data>
+    <data key="d2">6392</data>
+  </graph>
+</graphml>

@@ -1,0 +1,12 @@
+{
+  "instances": 19,
+  "runs": 190,
+  "total_rows": 36593,
+  "all_logged_states_validated": true,
+  "per_seed_networks": 380,
+  "aggregate_networks": 38,
+  "representations": [
+    "RAW",
+    "nonworsening_best_so_far_filter"
+  ]
+}

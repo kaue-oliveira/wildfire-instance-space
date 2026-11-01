@@ -1,0 +1,100 @@
+\chapter{\MakeUppercase{Conclusão}}\label{sec:conclusao}
+
+Este trabalho caracterizou e ampliou a cobertura de uma representação do
+espaço de instâncias do WSP, relacionando propriedades dos casos de teste,
+desempenho de seis métodos e trajetórias do IBS. O estudo consolidou e
+caracterizou uma base de 55 instâncias por atributos do problema e medidas
+topológicas. A geração e a validação de 19 adições para regiões internas
+pouco ocupadas do mapa fixo ampliaram a coleção para 74 instâncias.
+Compararam-se seis abordagens e analisaram-se quatro famílias de instâncias
+nas configurações de ISA. As trajetórias do IBS foram caracterizadas por
+redes de soluções visitadas e transições entre elas. Essas contribuições
+atendem aos objetivos da Seção~\ref{sec:objetivos}, preservando a distinção
+entre o mapa fixo utilizado na geração, os modelos finais de desempenho
+e os diferentes protocolos de registro da busca.
+
+A geração orientada demonstrou a viabilidade de produzir instâncias
+válidas para regiões internas pouco ocupadas do mapa de referência.
+Das 36 buscas, que consumiram 72.000 avaliações, resultaram 19 instâncias
+aceitas e distintas. Na união das adições, a maior distância dos pontos
+amostrados à coleção diminuiu 20,92\%, e a distância média, 36,27\%.
+A ocupação da grade passou de 15\% para 20\%. O preenchimento foi parcial:
+52,54\% dos pontos amostrados ainda permaneceram acima do limiar de
+subcobertura. Esses resultados respondem ao objetivo de ampliar a cobertura
+da representação adotada, mas não demonstram cobertura do conjunto de
+instâncias possíveis do WSP nem superioridade sobre uma geração aleatória
+com orçamento equivalente.
+
+As 3.936 execuções comparativas mostraram que a ampliação da coleção
+revelou regimes de desempenho distintos. O IBS manteve o menor
+\textit{gap} médio global, de 3,49\%, e a melhor média, incluindo empates,
+em 44 das 74 instâncias. Nas 19 adições, a CUTH apresentou
+\textit{gap} médio de 3,23\% e liderou 15 casos. Assim, a liderança global
+de um método não substitui a análise dos grupos de instâncias em que
+outros são competitivos. Como as adições também alteraram tamanho,
+recursos, liberações e tempos de propagação, o estudo não identifica
+qual dessas propriedades explica isoladamente a mudança de regime.
+Além disso, um \textit{gap} pequeno pode coexistir com perda absoluta
+elevada, como ocorreu nas instâncias \textit{Huge} geradas.
+
+Nas duas famílias de instâncias com medidas topológicas adicionais,
+quatro dos dez atributos selecionados foram topológicos. Os descritores
+escolhidos não coincidiram entre as coleções, e parte deles acompanhou o
+tamanho dos grafos. Sua inclusão alterou moderadamente a geometria dos
+mapas, que permaneceram semelhantes aos de controle. Nas 74 instâncias,
+o diagnóstico auxiliar melhorou
+para ILS, LBBD e RS, enquanto CUTH e MIP apresentaram reduções e IBS
+permaneceu no mesmo patamar. Na própria amostra, os classificadores do IBS
+previram bom desempenho para todos os casos e tiveram acurácia balanceada
+de 50\%, apesar da alta acurácia simples. A conclusão sobre topologia é,
+portanto, descritiva e condicionada ao método e à configuração utilizada;
+a generalização do fluxo completo não foi demonstrada.
+
+As STNs acrescentaram uma perspectiva sobre o percurso da busca que o
+objetivo final não fornece. As 160 execuções clássicas e as 190 execuções
+nas adições evidenciaram diferenças de recorrência, compartilhamento e
+dispersão. Os registros brutos também mostraram retornos a soluções piores
+que a incumbente, reforçando a necessidade de distinguir a solução
+representativa de cada iteração da melhor solução acumulada. Contudo,
+número de nós, compartilhamento e força de entrada não funcionaram como
+substitutos diretos da qualidade: nas 19 adições, não se identificou uma
+associação monotônica sustentada entre os cinco descritores examinados
+e o \textit{gap} médio do IBS. As diferenças de assinatura, parâmetros,
+parada e duração efetiva impedem interpretar o contraste entre redes
+históricas e adicionais como efeito isolado da expansão.
+
+Em resposta à pergunta da Seção~\ref{sec:pergunta-pesquisa}, foi possível
+relacionar perfis estruturais e temporais a grupos de desempenho e
+caracterizar comportamentos de busca distintos na coleção ampliada.
+A hipótese recebeu sustentação descritiva na identificação do regime
+favorável à CUTH nas adições e na caracterização de percursos distintos
+de busca. Para a topologia, o resultado se restringe à seleção de
+descritores e às alterações moderadas na geometria, com ganhos preditivos
+heterogêneos, sem demonstrar informação independente do tamanho.
+Não se demonstrou que o aumento de cobertura tenha causado as diferenças
+observadas, nem que toda relação detectada dependa da ampliação.
+
+As limitações da Seção~\ref{sec:met-limitacoes} delimitam essas conclusões
+à coleção dirigida e aos protocolos avaliados.
+
+Como trabalhos futuros, recomenda-se avaliar o fluxo ISA em instâncias
+externas ou por validação aninhada, repetindo o fluxo completo dentro de
+cada partição de treinamento e considerando o compartilhamento de
+grafos na separação dos dados. Também são prioritárias a sensibilidade
+a outros limiares de \textit{gap}, a comparação da geração orientada com
+uma geração aleatória sob igual orçamento e a avaliação conjunta da perda
+absoluta e do ganho em relação à solução sem recursos. Experimentos que
+variem propriedades de forma controlada podem investigar os regimes
+favoráveis à CUTH. Para as trajetórias, um protocolo comum de assinatura,
+parada e amostragem permitiria comparações mais diretas entre coleções e,
+posteriormente, entre métodos.
+
+O contraste central foi a liderança de CUTH em 15 das 19 adições,
+incluindo as nove \textit{Huge} e três das seis \textit{Large}, apesar
+do menor \textit{gap} médio global do IBS. A média da coleção completa
+não evidencia, sozinha, esse regime favorável à CUTH. A ampliação da
+base mostrou, assim, que a avaliação dos métodos depende dos perfis
+representados e deve considerar seus resultados por grupo, além da
+classificação global.
+O alcance do estudo é computacional e experimental, sem validar cenários
+reais de incêndio nem prescrever decisões operacionais.

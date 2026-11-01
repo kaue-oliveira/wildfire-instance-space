@@ -1,0 +1,85 @@
+{
+    "allocation": {
+        "0": {
+            "base": "NA",
+            "protected": [
+                239,
+                334
+            ],
+            "time": 214.73
+        },
+        "1": {
+            "base": "NA",
+            "protected": [
+                258,
+                353
+            ],
+            "time": 356.74
+        },
+        "2": {
+            "base": "NA",
+            "protected": [
+                277,
+                296
+            ],
+            "time": 498.76
+        },
+        "3": {
+            "base": "NA",
+            "protected": [
+                315,
+                372
+            ],
+            "time": 640.77
+        },
+        "4": {
+            "base": "NA",
+            "protected": [
+                98,
+                119
+            ],
+            "time": 782.78
+        },
+        "5": {
+            "base": "NA",
+            "protected": [
+                77,
+                391
+            ],
+            "time": 924.79
+        },
+        "6": {
+            "base": "NA",
+            "protected": [
+                35,
+                56
+            ],
+            "time": 1066.8
+        },
+        "7": {
+            "base": "NA",
+            "protected": [
+                42,
+                80
+            ],
+            "time": 1208.82
+        },
+        "8": {
+            "base": "NA",
+            "protected": [
+                14,
+                61
+            ],
+            "time": 1350.83
+        },
+        "9": {
+            "base": "NA",
+            "protected": [
+                2,
+                23
+            ],
+            "time": 1492.84
+        }
+    },
+    "objv": 341.0
+}

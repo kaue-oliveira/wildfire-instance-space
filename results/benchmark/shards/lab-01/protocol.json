@@ -1,0 +1,310 @@
+{
+  "algorithms": [
+    "ibs",
+    "mip",
+    "cuth",
+    "rs",
+    "ils",
+    "lbbd"
+  ],
+  "amendment": {
+    "carry_forward_policy": "preserve all valid parent results and audited algorithm failures; discard failed/partial LBBD attempts",
+    "lbbd_budget_policy": "one global wall-clock budget divided among remaining greedy stages; exact receives only leftover time",
+    "lbbd_no_incumbent_policy": "inject no-deployment MIP start; if no incumbent is returned, emit the validated no-deployment baseline instead of failing",
+    "lbbd_objective_policy": "validated recomputation is canonical for scoring; model objective, delta, and model-reported gap are retained as audit telemetry",
+    "parent_profile": "benchmark74_v2_3",
+    "reason": "Score every feasible LBBD deployment by deterministic independent recomputation, while retaining the Gurobi master objective for audit"
+  },
+  "benchmark_replications": {
+    "Huge": 3,
+    "Large": 10,
+    "Medium": 10,
+    "Small": 10
+  },
+  "collections": {
+    "original": 55,
+    "supplementary": 19,
+    "total": 74
+  },
+  "cuth_parameters": {
+    "epsilon": 0.01,
+    "solver_time_seconds": 300,
+    "threads": 1
+  },
+  "deployment_git": {
+    "branch": "fix/benchmark74-v2-4-validated-objective-lab-01",
+    "head": "62bbd7fe53fb37d53ac2b03cbb72318a01237a85",
+    "status": [
+      "M analise-repositorios-wildfire-suppression/third_party/Logic-based-Benders-decomposition-for-wildfire-suppression",
+      "?? analise-repositorios-wildfire-suppression/.venv-gurobi",
+      "?? analise-repositorios-wildfire-suppression/.venv-isa"
+    ]
+  },
+  "hardware_policy": "official shards run only on the two identical LAB machines; local notebook artifacts are pilots and cannot be merged",
+  "ibs_parameters": {
+    "beta": 50,
+    "c": 30,
+    "eta": 70,
+    "p": 0.5,
+    "phat": 1.0,
+    "zmax": 3
+  },
+  "ils_parameters": {
+    "MaxCandidates": 5,
+    "MaxFailures": 100,
+    "MaxModifications": 5,
+    "MaxNeighbours": 20,
+    "MaxNoImprovements": 50,
+    "MultiStarts": 50,
+    "p1": 0.075,
+    "p2": 0.025
+  },
+  "lbbd_parameters": {
+    "greedy_warm_start": true,
+    "gurobi_seed_matches_run_seed": true,
+    "threads": 1
+  },
+  "license": {
+    "mode": "0o600",
+    "path": "{USER_HOME}/Downloads/gurobi.lic",
+    "sha256": "f392ad93aef32fe88ee9639fb4890f9cc6ec9dbba90c4f3891a5dff1cd59e801",
+    "size_bytes": 308
+  },
+  "matilda_policy": "refit PRELIM, SIFTED, PILOT, PYTHIA and footprints on the complete measured 74x6 matrix; preserve 55-instance analysis as baseline",
+  "mip_parameters": {
+    "gurobi_seed_matches_run_seed": true,
+    "model": "basic",
+    "threads": 1
+  },
+  "official": true,
+  "performance_metric": "relative gap to proven optimum when available, otherwise final BKV computed across measured runs",
+  "profile": "benchmark74_v2_4",
+  "protocol_sha256": "69bb95f3fd069d5f43bd71e091aabe0ce079cfe9ea8ba51ab07e691bfdca0f23",
+  "random_search_parameters": {
+    "threads": 1
+  },
+  "resume_policy": "reuse only completed results with exact protocol, source bundle, instance hash, command and shard",
+  "scope": "six algorithms measured on all 74 instances; IBS trajectories on the 19 supplementary instances",
+  "shard_count": 2,
+  "sharding": "deterministic longest-processing-time balance independently within each algorithm/phase",
+  "source_manifest": {
+    "bundle_sha256": "c6786c5f6477889015096d43506a571430bbdadb9783ba2089ce36c50064ca39",
+    "files": [
+      {
+        "path": "analysis_wsp/benchmark74/__init__.py",
+        "sha256": "4a2eae0c0cf30ffa20ab64b98bb016e8dd5463815003a783e79cb122c42e1a7a"
+      },
+      {
+        "path": "analysis_wsp/benchmark74/amend.py",
+        "sha256": "81ed4c19f29522b64a570062dff91bb50f9fb3451addd858d5090c3cbb1a5a59"
+      },
+      {
+        "path": "analysis_wsp/benchmark74/bootstrap.py",
+        "sha256": "4cc45714ae1af26727525bdeb4ea3eaa87b249a96d38a3cb8baf503ae5652999"
+      },
+      {
+        "path": "analysis_wsp/benchmark74/common.py",
+        "sha256": "227516c925cf19b0c03dd1d8f8e70526468d7effffcc5ae9cd76846a531e790b"
+      },
+      {
+        "path": "analysis_wsp/benchmark74/execute.py",
+        "sha256": "5215a9c5c8657aec3868089de8cd4f70b3c5b3c95f41f5163b2dc6f2eb1a9c14"
+      },
+      {
+        "path": "analysis_wsp/benchmark74/ils_strict_v2.py.template",
+        "sha256": "ca020668ce1e8d915d5f8d12be0ab7d30093bbfe94c08bfc04f4231b7bda44d9"
+      },
+      {
+        "path": "analysis_wsp/benchmark74/legacy_worker.py",
+        "sha256": "2fbaf469520db996ace13382bf3c3ea7b958f5b19272ec8bba79461ed34ab0f3"
+      },
+      {
+        "path": "analysis_wsp/benchmark74/prepare.py",
+        "sha256": "702fef74bad33aa55dba59d2d3f9e9538c75a3dbdc603f5fd3502ecfe7057ae4"
+      },
+      {
+        "path": "analysis_wsp/benchmark74/run.py",
+        "sha256": "e3f8f25d746360478076423072e1389edd7212c09b50a226b4182378ec512855"
+      },
+      {
+        "path": "analysis_wsp/caminho_c/__init__.py",
+        "sha256": "2f2572af0b67e4e34b6b32f713342a38dad83bc28fd5738702273a1f44990565"
+      },
+      {
+        "path": "analysis_wsp/caminho_c/analyze.py",
+        "sha256": "8ebd43cc2d64d1550634ac790c54a45ffdc065adb3122ca36c380cca7e886abf"
+      },
+      {
+        "path": "analysis_wsp/caminho_c/common.py",
+        "sha256": "fb48d0dd5d4a09fa60b04a3f01a5afb1c308fb23e4f36bd29bf3c5cb8afe1b66"
+      },
+      {
+        "path": "analysis_wsp/caminho_c/execute.py",
+        "sha256": "3032db28f9745a4359c93a5b298b019a3a2efa1921909c3181126367b3f57a76"
+      },
+      {
+        "path": "analysis_wsp/caminho_c/prepare.py",
+        "sha256": "92c07c2361b5ba2000ab167e858298e89b3bddda8041844b2f400dbe026d9d98"
+      },
+      {
+        "path": "analysis_wsp/caminho_c/run.py",
+        "sha256": "cdeef33250cbabc641f5be459ceed350f5f3507cf8dd7649257bc592f23fad03"
+      },
+      {
+        "path": "third_party/Iterated-Beam-Search/src/algorithm/algorithm.hpp",
+        "sha256": "5546a4990a336deb3b7692065967889a11081cdcbd1e242fe4cd9bb267488f89"
+      },
+      {
+        "path": "third_party/Iterated-Beam-Search/src/algorithm/heap.hpp",
+        "sha256": "06d85aaaf313c2d3f24a5229bb8598cd777f5c0a41d702e3898b9482754bd809"
+      },
+      {
+        "path": "third_party/Iterated-Beam-Search/src/main.cpp",
+        "sha256": "0ed2849fa63e86381ce44d7bac0f6fbbe590145eeb365e7e305ad026506bae6f"
+      },
+      {
+        "path": "third_party/Iterated-Beam-Search/src/problem/digraph.hpp",
+        "sha256": "1e149d44b109cf6d8b32625a1ba5911afbb4d6ed46da5deb276fe1770f81c937"
+      },
+      {
+        "path": "third_party/Iterated-Beam-Search/src/problem/instance.hpp",
+        "sha256": "e21b282696dfa8342307180823830501dd3ae0c6e08dcf3e948040613c7208ab"
+      },
+      {
+        "path": "third_party/Iterated-Beam-Search/src/problem/shortest_path_tree.hpp",
+        "sha256": "479a54b5bf5623cb6e442dcde9dd9870a51fb9e24376c0cc188b668a05eb1f4f"
+      },
+      {
+        "path": "third_party/Iterated-Beam-Search/src/problem/solution.hpp",
+        "sha256": "9ff8926dd48210342e6d805716b647a2ea427499c7a54ef016f8c29cc4f89f66"
+      },
+      {
+        "path": "third_party/Iterated-Beam-Search/src/util/feasibility.hpp",
+        "sha256": "d7c9677716a59e322d781599fe77a338a1a8840106603ac096ad7c4d813df32b"
+      },
+      {
+        "path": "third_party/Logic-based-Benders-decomposition-for-wildfire-suppression/IteratedLocalSearch.py",
+        "sha256": "ca020668ce1e8d915d5f8d12be0ab7d30093bbfe94c08bfc04f4231b7bda44d9"
+      },
+      {
+        "path": "third_party/Logic-based-Benders-decomposition-for-wildfire-suppression/mainILS.py",
+        "sha256": "7ecb691e76470467001eedeb8ef732549d1da10daa7fa16f413479b4fb3d5809"
+      },
+      {
+        "path": "third_party/Logic-based-Benders-decomposition-for-wildfire-suppression/mainLBBD.py",
+        "sha256": "3771cbbf601b65f56c6e67807ca32e5b7e6fff8b8adaaccd8c97a98fb52cc2d5"
+      },
+      {
+        "path": "third_party/Logic-based-Benders-decomposition-for-wildfire-suppression/mainMIP.py",
+        "sha256": "6813367afd14252e48dfc8da39983e35469a6a5b733f7cb5ffc51fe86a64773b"
+      },
+      {
+        "path": "third_party/Logic-based-Benders-decomposition-for-wildfire-suppression/model_LBBD.py",
+        "sha256": "ab6e5e30a518ecc88bb3bde537bb2e62a3d8ccea65d6fa1fdd6496e56fd88b87"
+      },
+      {
+        "path": "third_party/Logic-based-Benders-decomposition-for-wildfire-suppression/model_MIP.py",
+        "sha256": "3d8750a0185d8ec088c1c83e196464ff13089ff55bce54f4a5fb0bb2b0ccce6b"
+      },
+      {
+        "path": "third_party/Logic-based-Benders-decomposition-for-wildfire-suppression/parameters.py",
+        "sha256": "2ecbc6ebaee47478fd087d8b1f6665be61397f348c5e21b98e0562730ca74e9f"
+      },
+      {
+        "path": "third_party/Logic-based-Benders-decomposition-for-wildfire-suppression/shortest_paths.py",
+        "sha256": "3e8aca301b7d23b31ccdcef0320b956e0c38fa52f28c7d5c67fd1b6640856128"
+      },
+      {
+        "path": "third_party/Wildfire-Suppression/src/algorithm/algorithm.hpp",
+        "sha256": "c3a462331ee8b4b069b13f6de436a101c8789d9b0146f79718af15272eb31bed"
+      },
+      {
+        "path": "third_party/Wildfire-Suppression/src/algorithm/beam_search.hpp",
+        "sha256": "464a69d128e3983c9a80e3133452cf94671046372744bdcb2c4aac6467b7df8e"
+      },
+      {
+        "path": "third_party/Wildfire-Suppression/src/algorithm/cut_heuristic.hpp",
+        "sha256": "6f0a065a805ec24f08ad636a62202eae6a9f7649eb71942df5de581f264992d6"
+      },
+      {
+        "path": "third_party/Wildfire-Suppression/src/algorithm/mip.hpp",
+        "sha256": "d41eb12d5b1ab383f018fd7d9a9d3c5aaee5927f293e0ff9aa0757272d82f28e"
+      },
+      {
+        "path": "third_party/Wildfire-Suppression/src/algorithm/random_search.hpp",
+        "sha256": "94e43897768f1e81ff099a436d9b11c40a890c390865b86c1dd46a73ade4bbe4"
+      },
+      {
+        "path": "third_party/Wildfire-Suppression/src/common.hpp",
+        "sha256": "f42400e153054ceadea7c42e70cb651ad6ccb0d5c3ffcd0cbdb418075f6f8790"
+      },
+      {
+        "path": "third_party/Wildfire-Suppression/src/main.cpp",
+        "sha256": "9966e499e88716b5486e2fadf177cb71b3471611880b101aee5b43120ce8f5b2"
+      },
+      {
+        "path": "third_party/Wildfire-Suppression/src/model/basic_model.hpp",
+        "sha256": "49fe83d29e7e15e1ab8658fb010e481f4e96aa51085d2d185050c16a91d29f37"
+      },
+      {
+        "path": "third_party/Wildfire-Suppression/src/model/cut_model.hpp",
+        "sha256": "201e8d1be628802657df29cd55cfe82cbb177b0736c1ef0fc4a49043c8aa94b2"
+      },
+      {
+        "path": "third_party/Wildfire-Suppression/src/model/general_model.hpp",
+        "sha256": "2124a082f1e981ff59f49e6b7a4fe7997ac21564dfe5eccfd59e75194a8e7289"
+      },
+      {
+        "path": "third_party/Wildfire-Suppression/src/model/model.hpp",
+        "sha256": "99aa1b0a46b56141f52c55385d59276a9715fe5367a2c9a016cd8a2cb095f12a"
+      },
+      {
+        "path": "third_party/Wildfire-Suppression/src/problem/digraph.hpp",
+        "sha256": "812028ba86f0cd7f0ccae56b2593b0b40ba36468f8297bf3bfd7b8f36590a7a1"
+      },
+      {
+        "path": "third_party/Wildfire-Suppression/src/problem/instance.hpp",
+        "sha256": "4b45fb4600fc366305a3c0658120a7bab060039e5bd9c9b9c17b7d0f467db91b"
+      },
+      {
+        "path": "third_party/Wildfire-Suppression/src/problem/solution.hpp",
+        "sha256": "2f460712a8ef1e77e1c806f52e476952e119c584d412b32d937ff3c52a1a579d"
+      },
+      {
+        "path": "third_party/Wildfire-Suppression/src/util/clock.hpp",
+        "sha256": "93b9ec8393faf5ceaf0af2fed96a6eac82d0b172896822f9b460615f15ba44ec"
+      },
+      {
+        "path": "third_party/Wildfire-Suppression/src/util/heap.hpp",
+        "sha256": "7ccababc1f628f55e6f26fe4906e169bf8969c29cb4bf1f243d3d3ca6e8df040"
+      },
+      {
+        "path": "third_party/Wildfire-Suppression/src/util/parameters.hpp",
+        "sha256": "0447127c3b35290d7f5767d6d9081f889c3b5c62d6c6fc89f83b98a952b09937"
+      }
+    ]
+  },
+  "time_limit_semantics": "strict monotonic ILS deadline: incomplete candidates and work evaluated after the deadline are discarded; an empty feasible incumbent is always available; external grace is serialization/watchdog time only",
+  "time_limits_seconds": {
+    "Huge": 9600,
+    "Large": 2400,
+    "Medium": 1350,
+    "Small": 600
+  },
+  "trajectory_replications": {
+    "algorithm": "IBS",
+    "seeds": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "supplementary_instances": 19
+  }
+}

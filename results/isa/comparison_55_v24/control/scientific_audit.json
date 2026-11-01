@@ -1,0 +1,122 @@
+{
+  "status": "passed",
+  "name": "original55_control",
+  "instances": 55,
+  "algorithms": 6,
+  "epsilon": 0.1,
+  "cv_folds": 4,
+  "input_features": 35,
+  "selected_features": [
+    "feature_total_resources",
+    "feature_decision_points",
+    "feature_delta_over_h",
+    "feature_first_release_over_h",
+    "feature_release_window_over_h",
+    "feature_arrival_q50_over_h",
+    "feature_directional_asymmetry_mean",
+    "feature_arc_time_std",
+    "feature_arc_time_p25",
+    "feature_release_front_window_mean"
+  ],
+  "selected_topology_features": [],
+  "matilda_build_seconds": 535.5348744200019,
+  "full_model_seconds": 555.9377551650105,
+  "analysis_input_hash": "ef92c60e2e1344a470c13126094d0e97992ca6da1f778e76a61ac7c13df11e73",
+  "label_counts": {
+    "CUTH": {
+      "good": 7,
+      "not_good": 48
+    },
+    "IBS": {
+      "good": 51,
+      "not_good": 4
+    },
+    "ILS": {
+      "good": 21,
+      "not_good": 34
+    },
+    "LBBD": {
+      "good": 21,
+      "not_good": 34
+    },
+    "MIP": {
+      "good": 24,
+      "not_good": 31
+    },
+    "RS": {
+      "good": 6,
+      "not_good": 49
+    }
+  },
+  "in_sample_diagnostic_only": {
+    "CUTH": {
+      "accuracy": 0.9454545454545454,
+      "balanced_accuracy": 0.8467261904761905,
+      "precision": 0.8333333333333334,
+      "recall": 0.7142857142857143,
+      "errors": 3
+    },
+    "IBS": {
+      "accuracy": 0.9272727272727272,
+      "balanced_accuracy": 0.5,
+      "precision": 0.9272727272727272,
+      "recall": 1.0,
+      "errors": 4
+    },
+    "ILS": {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "errors": 0
+    },
+    "LBBD": {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "errors": 0
+    },
+    "MIP": {
+      "accuracy": 0.9272727272727272,
+      "balanced_accuracy": 0.9213709677419355,
+      "precision": 0.9545454545454546,
+      "recall": 0.875,
+      "errors": 4
+    },
+    "RS": {
+      "accuracy": 0.9636363636363636,
+      "balanced_accuracy": 0.9064625850340136,
+      "precision": 0.8333333333333334,
+      "recall": 0.8333333333333334,
+      "errors": 2
+    }
+  },
+  "pythia_repeated_cv_is_not_nested": true,
+  "footprint_areas_between_separate_maps_comparable": false,
+  "sifted_correction": {
+    "revision": "sifted-corrected-v1",
+    "upstream_commit": "289a940a79cee2001bd8c54621465ddc3e30a094",
+    "upstream_sifted_sha256": "4ba3a3cf49f46946600ca2acf54a911b9cc359e38d28f5b00f66d1cf8b3d2564",
+    "local_correction_sha256": "e054cd404b8ad2916332b4f5b547b3f4c30691622197517eaf2b1844a9a52520",
+    "fitness": "negative maximum cross-validated KNN classification MSE across algorithms",
+    "direction": "maximize negative loss, equivalent to minimizing worst algorithm loss",
+    "correlation_filter": "best feature per algorithm plus any significant absolute correlation >= rho",
+    "candidate_mapping": "cluster indices address filtered x and filtered feature names",
+    "reference": "https://github.com/andremun/InstanceSpace/blob/master/core/SIFTED.m",
+    "scope": "local correction of three confirmed defects, not an upgrade to current upstream"
+  },
+  "sifted_final_worst_cv_error": 0.09090909090909091,
+  "sifted_filtered_features": 35,
+  "same_inputs_and_scientific_options_outside_sifted_as_v1": true,
+  "parallel_execution_options": {
+    "v1": {
+      "flag": true,
+      "n_cores": 1
+    },
+    "v2": {
+      "flag": true,
+      "n_cores": 2
+    }
+  }
+}

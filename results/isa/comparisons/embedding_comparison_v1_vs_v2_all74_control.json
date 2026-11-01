@@ -1,0 +1,11 @@
+{
+  "comparison": "v1_vs_v2_all74_control",
+  "mean_aligned_displacement": 0.055625490397437874,
+  "mean_neighbor_overlap": 0.3054054054054054,
+  "median_aligned_displacement": 0.05439795815707238,
+  "n_instances": 74,
+  "neighbor_k": 5,
+  "pairwise_distance_spearman": 0.8759351606667395,
+  "procrustes_scale": 0.8499393992010343,
+  "result_provenance": "measured"
+}

@@ -1,0 +1,71 @@
+{
+  "command": [
+    "taskset",
+    "--cpu-list",
+    "3",
+    "{PROJECT_ROOT}/.venv-gurobi/bin/python",
+    "-m",
+    "analysis_wsp.benchmark74.legacy_worker",
+    "--algorithm",
+    "ils",
+    "--instance",
+    "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2_1/inputs/harris/LB6.json",
+    "--seed",
+    "10",
+    "--timelimit",
+    "600",
+    "--output",
+    "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2_1/runs/benchmark/ils/LB6/seed_10/legacy_result.json"
+  ],
+  "effective_time_limit_seconds": 600,
+  "job": {
+    "algorithm": "ils",
+    "collection": "original_55",
+    "engine": "legacy_python",
+    "harris_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2_1/inputs/harris/LB6.json",
+    "instance": "LB6",
+    "instance_sha256": "3c1c898d52521ca13c3ee11411be7666f45e2c3f3f83d0633b33e75b8b2a0295",
+    "job_id": "job_01943",
+    "n_vertices": "331",
+    "native_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2_1/inputs/native/LB6.json",
+    "phase": "benchmark",
+    "protocol_sha256": "9ac0471d22d99947e0cab1a50a93f2b4e680a7bb8aff2f52eef3a341e451a0ee",
+    "seed": "10",
+    "shard_index": "1",
+    "size_class": "Small",
+    "time_limit_seconds": "600"
+  },
+  "pilot_limit_seconds": null,
+  "shard_index": 1,
+  "started_utc": "2026-09-11T20:03:19Z",
+  "thermal_before": {
+    "frequencies_mhz": {
+      "cpu0": 4097.129,
+      "cpu1": 4097.122,
+      "cpu2": 4099.983,
+      "cpu3": 4000.091,
+      "cpu4": 4066.931,
+      "cpu5": 4016.492,
+      "cpu6": 4099.98,
+      "cpu7": 800.0
+    },
+    "temperatures_c": {
+      "thermal_zone0:acpitz": 27.8,
+      "thermal_zone1:acpitz": 29.8,
+      "thermal_zone2:x86_pkg_temp": 82.0
+    },
+    "utc": "2026-09-11T20:03:19Z"
+  },
+  "worker": {
+    "core_type": "homogeneous",
+    "logical_cpu": 3,
+    "max_mhz": 4200.0,
+    "physical_core": 3,
+    "sibling_logical_cpus": [
+      3,
+      7
+    ],
+    "socket": 0,
+    "worker_id": 3
+  }
+}

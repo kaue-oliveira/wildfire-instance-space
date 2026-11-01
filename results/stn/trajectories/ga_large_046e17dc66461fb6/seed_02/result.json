@@ -1,0 +1,45 @@
+{
+  "status": "completed",
+  "instance": "ga_large_046e17dc66461fb6",
+  "seed": 2,
+  "size_class": "Large",
+  "mode": "official",
+  "completed_utc": "2026-10-09T11:02:48.770883+00:00",
+  "input_sha256": "7824fbe83f5d0176760817ce62784f0d486fd5c227258bad69ee97e2975dc57c",
+  "protocol_sha256": "2687abdc7705411bfd5ba2ee81eeb4cb8b4b8da44a19f6417c2eb51721d0d90e",
+  "binary_sha256": "a55ddcc7ad15386f71c7d769584a08df0ff5116f171325f5cf212ddd7daafde6",
+  "time_limit_seconds": 2400,
+  "wall_seconds": 2406.174615783035,
+  "objective": 1561,
+  "audit": {
+    "rows": 364,
+    "unique_states": 4,
+    "best_objective": 1561,
+    "last_objective": 1561,
+    "all_states_feasible": true
+  },
+  "statistics_fields": [
+    "ga_large_046e17dc66461fb6",
+    "2",
+    "0.5",
+    "1",
+    "50",
+    "70",
+    "3",
+    "30",
+    "1561",
+    "15",
+    "3",
+    "364",
+    "2405",
+    "54157418",
+    "[(1569,4,1,111121), (1561,15,3,375649)]"
+  ],
+  "artifact_hashes": {
+    "trajectory_raw.csv": "baae47cb9588695a9fb223c621a82e9b3b7a3b89204c7e9fb2284aa775cbd20d",
+    "stdout.log": "c19a41378b9a9867d400e2c08e2883b34b578d01f54813effd678005e3eee413",
+    "run_manifest.json": "bfd8e189106beda09daa63aa14581b34115e2a24fa1a55acfc702598fe28bbc3",
+    "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Sol_ga_large_046e17dc66461fb6.json": "0c2657d6972bc6f98125e74f2d1aa492aec80fb296c6e14548d292a6ebaca25d"
+  }
+}

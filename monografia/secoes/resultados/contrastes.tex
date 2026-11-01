@@ -1,0 +1,23 @@
+\begin{table}[!htbp]
+\centering
+\caption{Comparação das seleções, distâncias e predições entre modelos.}
+\label{tab:res-contrastes}
+\begin{singlespace}
+\normalsize
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{lrrrrr}
+\hline\hline
+\textbf{Contraste} & \textbf{\shortstack{Casos\\comuns}} & \textbf{\shortstack{Atributos\\comuns}} & \textbf{Jaccard} & \textbf{$\rho$ distâncias} & \textbf{\shortstack{Concordância\\(\%)}} \\
+\hline
+55--74: controle & 55 & 4 & 0,250 & 0,8383 & 96,97 \\
+55--74: topologia & 55 & 2 & 0,111 & 0,9540 & 99,09 \\
+74: controle--topologia & 74 & 0 & 0,000 & 0,8484 & 94,59 \\
+55: controle--topologia & 55 & 4 & 0,250 & 0,9018 & 98,48 \\
+\hline\hline
+\end{tabular}
+\par\smallskip
+{\small Nota: o Jaccard compara os conjuntos de dez atributos. A correlação de Spearman compara distâncias dos mesmos identificadores, com quatro casas decimais. A concordância compara predições entre modelos e não os acertos contra os rótulos.\par}
+{\fonte{elaboração própria a partir dos dados experimentais.}}
+\end{singlespace}
+\end{table}

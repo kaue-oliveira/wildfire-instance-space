@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "{PROJECT_ROOT}/analysis_wsp/benchmark74/legacy_worker.py", line 169, in <module>
+    main()
+  File "{PROJECT_ROOT}/analysis_wsp/benchmark74/legacy_worker.py", line 163, in main
+    result = run_ils(args.instance, args.seed, args.timelimit) if args.algorithm == "ils" else run_lbbd(args.instance, args.seed, args.timelimit)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "{PROJECT_ROOT}/analysis_wsp/benchmark74/legacy_worker.py", line 91, in run_ils
+    validation = validate_solution(nodes, arcs, ignitions, delay, horizon, resources, assignments)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "{PROJECT_ROOT}/analysis_wsp/benchmark74/legacy_worker.py", line 43, in validate_solution
+    raise ValueError("A node received more than one resource")
+ValueError: A node received more than one resource

@@ -1,0 +1,168 @@
+{
+  "forest_top3": {
+    "best_algorithm": [
+      {
+        "feature": "resources_per_decision",
+        "importance": 0.09855249193403569
+      },
+      {
+        "feature": "total_resources",
+        "importance": 0.08594270294905182
+      },
+      {
+        "feature": "release_front_window_mean",
+        "importance": 0.05971244982422356
+      }
+    ],
+    "best_gap": [
+      {
+        "feature": "resources_per_decision",
+        "importance": 0.3670135422388362
+      },
+      {
+        "feature": "release_front_window_mean",
+        "importance": 0.20881991956510706
+      },
+      {
+        "feature": "release_perimeter_mean",
+        "importance": 0.11310336985522514
+      }
+    ]
+  },
+  "footprint_rows_checked": 24,
+  "procrustes": [
+    {
+      "contrast": "55_control_vs_74_control",
+      "instances": 55,
+      "mean": 0.048683317177248706,
+      "median": 0.04294757015850183
+    },
+    {
+      "contrast": "55_topology_vs_74_topology",
+      "instances": 55,
+      "mean": 0.021478652943882216,
+      "median": 0.020471598044968273
+    },
+    {
+      "contrast": "74_control_vs_74_topology",
+      "instances": 74,
+      "mean": 0.055065503197926885,
+      "median": 0.04453058663142419
+    },
+    {
+      "contrast": "55_control_vs_55_topology",
+      "instances": 55,
+      "mean": 0.0409278324680829,
+      "median": 0.03651643143044373
+    }
+  ],
+  "classical_groups": {
+    "IBS melhor": {
+      "instances": 10,
+      "labels": {
+        "IBS": 10
+      },
+      "mean_nend": 4.9,
+      "mean_overlap_ratio": 0.13082720484248497,
+      "mean_best_strength": 0.34,
+      "pc1_range": [
+        -7.189751519346496,
+        -6.3007919439558036
+      ],
+      "pc2_range": [
+        -0.05905172040168614,
+        0.6278174578757191
+      ]
+    },
+    "MIP/CUTH melhor": {
+      "instances": 3,
+      "labels": {
+        "MIP": 3
+      },
+      "mean_nend": 5.333333333333333,
+      "mean_overlap_ratio": 0.3890418353576248,
+      "mean_best_strength": 0.36666666666666664,
+      "pc1_range": [
+        -7.108704646506364,
+        -6.273261644234847
+      ],
+      "pc2_range": [
+        -0.15920531656824394,
+        0.343489628706669
+      ]
+    },
+    "Outro melhor": {
+      "instances": 3,
+      "labels": {
+        "LBBD": 2,
+        "ILS": 1
+      },
+      "mean_nend": 6.0,
+      "mean_overlap_ratio": 0.3564061669324827,
+      "mean_best_strength": 0.09999999999999999,
+      "pc1_range": [
+        -7.38712152728203,
+        -6.0000476402972724
+      ],
+      "pc2_range": [
+        -0.09902578575805669,
+        0.42992698383553823
+      ]
+    }
+  },
+  "supplementary_by_size": {
+    "Small": {
+      "instances": 1,
+      "ntotal": {
+        "min": 51.0,
+        "max": 51.0,
+        "median": 51.0
+      },
+      "mean_pairwise_jaccard": {
+        "min": 0.9411764705882353,
+        "max": 0.9411764705882353,
+        "median": 0.9411764705882353
+      }
+    },
+    "Medium": {
+      "instances": 3,
+      "ntotal": {
+        "min": 3.0,
+        "max": 6.0,
+        "median": 3.0
+      },
+      "mean_pairwise_jaccard": {
+        "min": 1.0,
+        "max": 1.0,
+        "median": 1.0
+      }
+    },
+    "Large": {
+      "instances": 6,
+      "ntotal": {
+        "min": 2.0,
+        "max": 106.0,
+        "median": 50.0
+      },
+      "mean_pairwise_jaccard": {
+        "min": 0.45004958824387387,
+        "max": 1.0,
+        "median": 0.6313965078554163
+      }
+    },
+    "Huge": {
+      "instances": 9,
+      "ntotal": {
+        "min": 184.0,
+        "max": 365.0,
+        "median": 240.0
+      },
+      "mean_pairwise_jaccard": {
+        "min": 0.0003968253968253968,
+        "max": 0.07743796748770156,
+        "median": 0.019644981492785554
+      }
+    }
+  },
+  "scope": "Resultados históricos e finais conferidos separadamente; sem novos ajustes."
+}

@@ -1,0 +1,34 @@
+\begin{table}[!htbp]
+\centering
+\caption{Comparações pareadas das médias nas 74 instâncias.}
+\label{tab:res-pares}
+\begin{singlespace}
+\normalsize
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{lrrrrr}
+\hline\hline
+\textbf{Par A--B} & \textbf{A vence} & \textbf{Empates} & \textbf{B vence} & \textbf{\shortstack{Diferença\\(p.p.)}} & \textbf{$p$ de Holm} \\
+\hline
+CUTH--IBS & 23 & 0 & 51 & 19,19 & 0,006065 \\
+CUTH--ILS & 58 & 0 & 16 & -9,31 & $6{,}77\times10^{-6}$ \\
+CUTH--LBBD & 58 & 0 & 16 & -8,14 & $6{,}77\times10^{-6}$ \\
+CUTH--MIP & 31 & 0 & 43 & 7,61 & 0,200678 \\
+CUTH--RS & 67 & 0 & 7 & -12,17 & $2{,}54\times10^{-12}$ \\
+IBS--ILS & 72 & 1 & 1 & -28,50 & $2{,}04\times10^{-19}$ \\
+IBS--LBBD & 59 & 7 & 8 & -27,32 & $1{,}02\times10^{-9}$ \\
+IBS--MIP & 42 & 5 & 27 & -11,57 & 0,182373 \\
+IBS--RS & 60 & 1 & 13 & -31,35 & $2{,}08\times10^{-7}$ \\
+ILS--LBBD & 13 & 6 & 55 & 1,17 & $2{,}20\times10^{-6}$ \\
+ILS--MIP & 0 & 1 & 73 & 16,92 & $2{,}96\times10^{-21}$ \\
+ILS--RS & 16 & 0 & 58 & -2,86 & $6{,}77\times10^{-6}$ \\
+LBBD--MIP & 7 & 6 & 61 & 15,75 & $8{,}13\times10^{-11}$ \\
+LBBD--RS & 24 & 0 & 50 & -4,03 & 0,010117 \\
+MIP--RS & 74 & 0 & 0 & -19,78 & $1{,}59\times10^{-21}$ \\
+\hline\hline
+\end{tabular}
+\par\smallskip
+{\small Nota: diferença média entre os \textit{gaps} de A e B; valores negativos favorecem A. Teste de sinal exato bicaudal, com ajuste de Holm para os 15 pares. Empates são excluídos do número efetivo de sinais; cada instância participa uma vez.\par}
+{\fonte{elaboração própria a partir dos dados experimentais.}}
+\end{singlespace}
+\end{table}

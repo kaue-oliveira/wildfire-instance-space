@@ -1,0 +1,70 @@
+{
+  "command": [
+    "taskset",
+    "--cpu-list",
+    "0",
+    "{PROJECT_ROOT}/third_party/Wildfire-Suppression/build/fire",
+    "--instance",
+    "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v1/inputs/native/Huge_Moderate_Light_High_Moderate_Few_Early_VeryLate_123.json",
+    "--alg",
+    "rs",
+    "--seed",
+    "1",
+    "--timelimit",
+    "9600",
+    "--output",
+    "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v1/runs/benchmark/rs/Huge_Moderate_Light_High_Moderate_Few_Early_VeryLate_123/seed_01/statistics.csv",
+    "--save_solution"
+  ],
+  "effective_time_limit_seconds": 9600,
+  "job": {
+    "algorithm": "rs",
+    "collection": "original_55",
+    "engine": "unified_cpp",
+    "harris_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v1/inputs/harris/Huge_Moderate_Light_High_Moderate_Few_Early_VeryLate_123.json",
+    "instance": "Huge_Moderate_Light_High_Moderate_Few_Early_VeryLate_123",
+    "instance_sha256": "b7d99630fffd2b0a689a563f5502332d87ff609a8db711e2b205edd92d20fa42",
+    "job_id": "job_03281",
+    "n_vertices": "6400",
+    "native_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v1/inputs/native/Huge_Moderate_Light_High_Moderate_Few_Early_VeryLate_123.json",
+    "phase": "benchmark",
+    "protocol_sha256": "913474b960afa5dea8d58b512fa942aa36965edb4fac608aa99208ac10e0442a",
+    "seed": "1",
+    "shard_index": "0",
+    "size_class": "Huge",
+    "time_limit_seconds": "9600"
+  },
+  "pilot_limit_seconds": null,
+  "shard_index": 0,
+  "started_utc": "2026-09-03T13:25:09Z",
+  "thermal_before": {
+    "frequencies_mhz": {
+      "cpu0": 3999.884,
+      "cpu1": 4096.263,
+      "cpu2": 4094.635,
+      "cpu3": 4098.383,
+      "cpu4": 800.0,
+      "cpu5": 4101.476,
+      "cpu6": 800.0,
+      "cpu7": 4041.708
+    },
+    "temperatures_c": {
+      "thermal_zone0:acpitz": 27.8,
+      "thermal_zone1:acpitz": 29.8,
+      "thermal_zone2:x86_pkg_temp": 48.0
+    },
+    "utc": "2026-09-03T13:25:09Z"
+  },
+  "worker": {
+    "core_type": "homogeneous",
+    "logical_cpu": 0,
+    "max_mhz": 4200.0,
+    "physical_core": 0,
+    "sibling_logical_cpus": [
+      0,
+      4
+    ],
+    "socket": 0,
+    "worker_id": 0
+  }
+}

@@ -1,0 +1,3 @@
+Row,feature_decision_points,feature_resources_per_decision,feature_delta_over_h,feature_first_release_over_h,feature_last_release_over_h,feature_free_burning_over_h,feature_directional_asymmetry_mean,feature_y_span,feature_arc_time_p50,feature_release_front_window_max
+Z_{1},-0.2996,-0.1659,-0.0675,0.0664,0.02246,5.516,-0.05756,5.613,-0.308,-0.08234
+Z_{2},0.0977,-0.346,-0.0855,0.0999,0.2703,-9.586,0.1548,-8.414,-0.2003,0.3596

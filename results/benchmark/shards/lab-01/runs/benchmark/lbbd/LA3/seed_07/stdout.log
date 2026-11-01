@@ -1,0 +1,93 @@
+Set parameter WLSAccessID
+Set parameter WLSSecret
+Set parameter LicenseID to value 2857088
+Academic license 2857088 - for non-commercial use only - registered to ka___@estudante.ufla.br
+Set parameter Threads to value 1
+Set parameter LazyConstraints to value 1
+Set parameter Seed to value 7
+Set parameter TimeLimit to value 600
+Set parameter Threads to value 1
+Set parameter LazyConstraints to value 1
+Set parameter Seed to value 7
+Set parameter TimeLimit to value 564.276643167017
+Set parameter TimeLimit to value 5.6425218642700929e+02
+Gurobi Optimizer version 10.0.3 build v10.0.3rc0 (linux64)
+
+CPU model: Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 4 physical cores, 8 logical processors, using up to 1 threads
+
+Academic license 2857088 - for non-commercial use only - registered to ka___@estudante.ufla.br
+Optimize a model with 592 rows, 1470 columns and 6752 nonzeros
+Model fingerprint: 0x87d897b5
+Variable types: 0 continuous, 1470 integer (1470 binary)
+Coefficient statistics:
+  Matrix range     [5e-01, 1e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 3e+00]
+
+Loaded user MIP start with objective 225
+
+Presolve removed 14 rows and 17 columns
+Presolve time: 0.01s
+Presolved: 578 rows, 1453 columns, 6699 nonzeros
+Variable types: 0 continuous, 1453 integer (1453 binary)
+
+Root relaxation: objective 5.250000e+01, 465 iterations, 0.01 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   52.50000    0   15  225.00000   52.50000  76.7%     -    0s
+     0     0   83.95270    0  105  225.00000   83.95270  62.7%     -    0s
+     0     0  109.00000    0    8  225.00000  109.00000  51.6%     -    0s
+     0     0  119.73810    0   91  225.00000  119.73810  46.8%     -    0s
+     0     0  138.35897    0  205  225.00000  138.35897  38.5%     -    0s
+     0     0  138.92163    0  210  225.00000  138.92163  38.3%     -    0s
+     0     0  140.84420    0  233  225.00000  140.84420  37.4%     -    0s
+     0     0  145.02083    0  251  225.00000  145.02083  35.5%     -    0s
+     0     0  145.03750    0  251  225.00000  145.03750  35.5%     -    0s
+     0     0  145.63974    0  250  225.00000  145.63974  35.3%     -    0s
+     0     0  145.72424    0  252  225.00000  145.72424  35.2%     -    0s
+     0     0  145.76190    0  251  225.00000  145.76190  35.2%     -    0s
+     0     0  145.76190    0  247  225.00000  145.76190  35.2%     -    0s
+     0     2  145.76190    0  247  225.00000  145.76190  35.2%     -    0s
+   519   366  174.27647   19  345  225.00000  174.27647  22.5%  71.7    5s
+   612   419  196.60476   20  279  225.00000  181.91092  19.2%  89.0   10s
+   941   503  212.19686   40  210  225.00000  186.00399  17.3%  87.5   15s
+H 1205   566                     224.0000000  187.46821  16.3%  86.0   18s
+  1285   605  205.57287   27  284  224.00000  187.71533  16.2%  87.2   20s
+* 1555   668              33     223.0000000  188.45675  15.5%  88.6   23s
+  1654   732  195.21074   24  299  223.00000  188.83831  15.3%  89.4   25s
+  2058  1012  217.93371   36  307  223.00000  190.25641  14.7%  88.3   30s
+  2426  1201     cutoff   27       223.00000  191.93819  13.9%  89.7   35s
+H 2757   983                     218.0000000  193.03125  11.5%  91.0   40s
+H 2958   977                     217.0000000  194.12419  10.5%  92.0   45s
+* 3044   918              55     216.0000000  194.65797  9.88%  92.0   46s
+  3243   974  204.80208   27  299  216.00000  196.02252  9.25%  94.0   51s
+  3471  1017  211.72894   39  260  216.00000  197.48705  8.57%  96.0   55s
+H 3727   683                     212.0000000  198.34328  6.44%  96.9   58s
+  3804   701  208.87236   31  279  212.00000  198.70491  6.27%  97.1   60s
+* 3914   384              36     208.0000000  199.50906  4.08%  97.5   61s
+  4134   300     cutoff   31       208.00000  202.20263  2.79%  98.3   65s
+* 4204   186              31     207.0000000  203.08661  1.89%  98.0   65s
+
+Cutting planes:
+  Gomory: 4
+  Cover: 7
+  MIR: 3
+  Flow cover: 14
+  GUB cover: 5
+  Zero half: 27
+  Lazy constraints: 1155
+
+Explored 4405 nodes (422151 simplex iterations) in 66.99 seconds (112.62 work units)
+Thread count was 1 (of 8 available processors)
+
+Solution count 9: 207 208 212 ... 225
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.070000000000e+02, best bound 2.070000000000e+02, gap 0.0000%
+
+User-callback calls 23430, time in user-callback 0.41 sec
+Warning: environment still referenced so free is deferred (Continue to use WLS)

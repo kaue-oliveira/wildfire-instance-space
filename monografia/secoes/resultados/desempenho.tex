@@ -1,0 +1,25 @@
+\begin{table}[!htbp]
+\centering
+\caption{Desempenho dos seis métodos por coleção.}
+\label{tab:res-desempenho}
+\begin{singlespace}
+\normalsize
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{lrrrrrr}
+\hline\hline
+\textbf{Método} & \textbf{\shortstack{\textit{Gap} 55\\(\%)}} & \textbf{\shortstack{\textit{Gap} 19\\(\%)}} & \textbf{\shortstack{\textit{Gap} 74\\(\%)}} & \textbf{\shortstack{Posição\\média}} & \textbf{\shortstack{Melhor\\média}} & \textbf{\shortstack{Melhor média\\exclusiva}} \\
+\hline
+IBS & 2,65 & 5,92 & 3,49 & 2,07 & 44 & 37 \\
+MIP & 18,52 & 5,04 & 15,06 & 2,16 & 11 & 6 \\
+CUTH & 29,39 & 3,23 & 22,67 & 2,80 & 20 & 20 \\
+LBBD & 38,11 & 9,67 & 30,81 & 4,39 & 11 & 4 \\
+ILS & 39,57 & 10,03 & 31,98 & 5,32 & 1 & 0 \\
+RS & 43,75 & 9,05 & 34,84 & 4,26 & 0 & 0 \\
+\hline\hline
+\end{tabular}
+\par\smallskip
+{\small Nota: \textit{gaps} médios com peso igual por instância. As duas falhas ILS permanecem na análise com a solução viável sem recursos. A coluna melhor média inclui empates; a última coluna conta somente vitórias exclusivas.\par}
+{\fonte{elaboração própria a partir dos dados experimentais.}}
+\end{singlespace}
+\end{table}

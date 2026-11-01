@@ -1,0 +1,71 @@
+{
+  "command": [
+    "taskset",
+    "--cpu-list",
+    "1",
+    "{PROJECT_ROOT}/.venv-gurobi/bin/python",
+    "-m",
+    "analysis_wsp.benchmark74.legacy_worker",
+    "--algorithm",
+    "lbbd",
+    "--instance",
+    "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2_3/inputs/harris/Large_Moderate_Light_High_Moderate_Many_Early_VeryLate_123.json",
+    "--seed",
+    "3",
+    "--timelimit",
+    "2400",
+    "--output",
+    "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2_3/runs/benchmark/lbbd/Large_Moderate_Light_High_Moderate_Many_Early_VeryLate_123/seed_03/legacy_result.json"
+  ],
+  "effective_time_limit_seconds": 2400,
+  "job": {
+    "algorithm": "lbbd",
+    "collection": "original_55",
+    "engine": "legacy_python",
+    "harris_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2_3/inputs/harris/Large_Moderate_Light_High_Moderate_Many_Early_VeryLate_123.json",
+    "instance": "Large_Moderate_Light_High_Moderate_Many_Early_VeryLate_123",
+    "instance_sha256": "c6cbcccb411f4ab203d1703a906dff2bdf89fc065c408ff11335f13d7c199b2a",
+    "job_id": "job_01993",
+    "n_vertices": "1600",
+    "native_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2_3/inputs/native/Large_Moderate_Light_High_Moderate_Many_Early_VeryLate_123.json",
+    "phase": "benchmark",
+    "protocol_sha256": "c75f81f0bfbee0299e404671cf30234624467fb61dcd56086dd429650aac0a55",
+    "seed": "3",
+    "shard_index": "0",
+    "size_class": "Large",
+    "time_limit_seconds": "2400"
+  },
+  "pilot_limit_seconds": null,
+  "shard_index": 0,
+  "started_utc": "2026-09-17T19:29:01Z",
+  "thermal_before": {
+    "frequencies_mhz": {
+      "cpu0": 4098.355,
+      "cpu1": 800.0,
+      "cpu2": 800.0,
+      "cpu3": 800.0,
+      "cpu4": 4135.664,
+      "cpu5": 800.0,
+      "cpu6": 800.0,
+      "cpu7": 4099.983
+    },
+    "temperatures_c": {
+      "thermal_zone0:acpitz": 27.8,
+      "thermal_zone1:acpitz": 29.8,
+      "thermal_zone2:x86_pkg_temp": 59.0
+    },
+    "utc": "2026-09-17T19:29:01Z"
+  },
+  "worker": {
+    "core_type": "homogeneous",
+    "logical_cpu": 1,
+    "max_mhz": 4200.0,
+    "physical_core": 1,
+    "sibling_logical_cpus": [
+      1,
+      5
+    ],
+    "socket": 0,
+    "worker_id": 1
+  }
+}

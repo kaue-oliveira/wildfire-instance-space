@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "identical_files": 435,
+  "performance_cells_checked": 444,
+  "isa_stn_relations_checked": 76,
+  "sifted_revision": "sifted-corrected-v1",
+  "auxiliary_cv_repetitions_recomputed": 240,
+  "ga_reference_map_scope": "historical generation basis, not current predictive performance"
+}

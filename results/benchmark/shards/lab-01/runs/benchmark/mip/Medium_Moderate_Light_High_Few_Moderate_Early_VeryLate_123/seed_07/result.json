@@ -1,0 +1,189 @@
+{
+  "algorithm": "mip",
+  "collection": "original_55",
+  "completed_utc": "2026-09-12T23:11:58Z",
+  "engine": "unified_cpp",
+  "harris_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2/inputs/harris/Medium_Moderate_Light_High_Few_Moderate_Early_VeryLate_123.json",
+  "improvement_trajectory": [
+    [
+      2,
+      900.0,
+      391.0
+    ],
+    [
+      3,
+      895.0,
+      407.0
+    ],
+    [
+      6,
+      894.0,
+      443.0
+    ],
+    [
+      9,
+      891.0,
+      444.0
+    ],
+    [
+      14,
+      888.0,
+      444.0
+    ],
+    [
+      48,
+      886.0,
+      448.0
+    ],
+    [
+      70,
+      884.0,
+      464.0
+    ],
+    [
+      71,
+      883.0,
+      465.0
+    ],
+    [
+      74,
+      882.0,
+      465.0
+    ],
+    [
+      79,
+      880.0,
+      466.0
+    ],
+    [
+      88,
+      878.0,
+      468.0
+    ],
+    [
+      93,
+      877.0,
+      468.0
+    ],
+    [
+      172,
+      876.0,
+      482.0
+    ],
+    [
+      198,
+      874.0,
+      482.0
+    ],
+    [
+      288,
+      871.0,
+      486.0
+    ],
+    [
+      295,
+      868.0,
+      486.0
+    ],
+    [
+      419,
+      867.0,
+      488.0
+    ],
+    [
+      1350,
+      866.0,
+      495.0
+    ]
+  ],
+  "instance": "Medium_Moderate_Light_High_Few_Moderate_Early_VeryLate_123",
+  "instance_sha256": "a1ac3c6ceac4f887b04b3050a4f7246c8452909110d20666ec711f083bd1d891",
+  "job_id": "job_02706",
+  "lower_bound": 495.0,
+  "n_vertices": "900",
+  "native_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2/inputs/native/Medium_Moderate_Light_High_Few_Moderate_Early_VeryLate_123.json",
+  "objective": 866,
+  "peak_rss_bytes": 367951872,
+  "phase": "benchmark",
+  "pilot": false,
+  "protocol_sha256": "221f596a97287cd01d7002ec17c48b4857603c27bef5b56a0dcf6e7a35a2c49f",
+  "result_provenance": "measured",
+  "seed": 7,
+  "shard_index": "0",
+  "size_class": "Medium",
+  "solution_file": "sol_mip_Medium_Moderate_Light_High_Few_Moderate_Early_VeryLate_123_7.json",
+  "solution_sha256": "57ff3f9e8816becf516ab9e684478230136ec0d4b65883b1527b60f57323062a",
+  "statistics_fields": [
+    "Medium_Moderate_Light_High_Few_Moderate_Early_VeryLate_123",
+    "7",
+    "866.000000",
+    "1350.011015",
+    "1.10085e+06",
+    "866",
+    "495.000000",
+    "0.428406",
+    "31143.000000",
+    "10",
+    "27996.000000",
+    "14287",
+    "10800",
+    "9900",
+    "79513",
+    "1991.810000",
+    "0.000502",
+    "1.000000",
+    "1.000000",
+    "1.000000",
+    "1.000000",
+    "102.360000",
+    "1.000000",
+    "-",
+    "-",
+    "-",
+    "-",
+    "-",
+    "-",
+    "-",
+    "-",
+    "-",
+    "-",
+    "-",
+    "-",
+    "[(2,900.000000,391.000000), (3,895.000000,407.000000), (6,894.000000,443.000000), (9,891.000000,444.000000), (14,888.000000,444.000000), (48,886.000000,448.000000), (70,884.000000,464.000000), (71,883.000000,465.000000), (74,882.000000,465.000000), (79,880.000000,466.000000), (88,878.000000,468.000000), (93,877.000000,468.000000), (172,876.000000,482.000000), (198,874.000000,482.000000), (288,871.000000,486.000000), (295,868.000000,486.000000), (419,867.000000,488.000000), (1350,866.000000,495.000000)]"
+  ],
+  "status": "completed",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "389b5cc85b74449de4b5d3d53b7b687822aa26f6ef4aae6a977c312f87860dcf",
+  "thermal_after": {
+    "frequencies_mhz": {
+      "cpu0": 800.0,
+      "cpu1": 4099.988,
+      "cpu2": 800.0,
+      "cpu3": 800.0,
+      "cpu4": 4099.995,
+      "cpu5": 800.0,
+      "cpu6": 800.0,
+      "cpu7": 800.0
+    },
+    "temperatures_c": {
+      "thermal_zone0:acpitz": 27.8,
+      "thermal_zone1:acpitz": 29.8,
+      "thermal_zone2:x86_pkg_temp": 66.0
+    },
+    "utc": "2026-09-12T23:11:58Z"
+  },
+  "time_limit_seconds": "1350",
+  "wall_seconds": 1350.5890643360326,
+  "worker": {
+    "core_type": "homogeneous",
+    "logical_cpu": 0,
+    "max_mhz": 4200.0,
+    "physical_core": 0,
+    "sibling_logical_cpus": [
+      0,
+      4
+    ],
+    "socket": 0,
+    "worker_id": 0
+  }
+}

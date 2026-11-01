@@ -1,0 +1,14 @@
+{
+  "original55": {
+    "baseline_gap_mean": 51.12329355636526,
+    "baseline_good_at_10pct": 5
+  },
+  "supplementary19": {
+    "baseline_gap_mean": 10.099776327495523,
+    "baseline_good_at_10pct": 14
+  },
+  "union19_reduction_mean_distance_pct": 36.27027715773942,
+  "union19_reduction_fill_distance_pct": 20.92465926165587,
+  "source_package": "results_tcc_final_20261012",
+  "figures_recomputed_from_archived_coordinates_and_networks": true
+}

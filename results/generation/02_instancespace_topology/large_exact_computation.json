@@ -1,0 +1,17 @@
+{
+  "graphs_computed": 1,
+  "minimum_vertices": 1601,
+  "result_provenance": "measured",
+  "results": [
+    {
+      "cache_path": "{USER_HOME}/Área de Trabalho/TTC/analise-repositorios-wildfire-suppression/analysis_wsp/results_extended/tcc_essential_topology_oldpc_v1/02_instancespace_topology/graph_cache/26dd19e106f6551897fb7cd42018326544bd70175e5e4db4e4a38c04999aa723_exact.json",
+      "elapsed_seconds": 16.6928521359805,
+      "graph_sha256": "26dd19e106f6551897fb7cd42018326544bd70175e5e4db4e4a38c04999aa723",
+      "n_vertices": 6400,
+      "result_provenance": "measured",
+      "status": "completed"
+    }
+  ],
+  "workers_effective": 1,
+  "workers_requested": 3
+}

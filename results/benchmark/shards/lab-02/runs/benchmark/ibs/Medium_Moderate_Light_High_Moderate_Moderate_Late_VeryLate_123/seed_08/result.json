@@ -1,0 +1,194 @@
+{
+  "algorithm": "ibs",
+  "collection": "original_55",
+  "completed_utc": "2026-09-03T01:44:01Z",
+  "engine": "unified_cpp",
+  "harris_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v1/inputs/harris/Medium_Moderate_Light_High_Moderate_Moderate_Late_VeryLate_123.json",
+  "improvement_trajectory": [
+    [
+      36,
+      1,
+      652.0
+    ],
+    [
+      73,
+      2,
+      649.0
+    ],
+    [
+      109,
+      3,
+      648.0
+    ],
+    [
+      148,
+      4,
+      664.0
+    ],
+    [
+      209,
+      5,
+      650.0
+    ],
+    [
+      302,
+      6,
+      641.0
+    ],
+    [
+      393,
+      7,
+      644.0
+    ],
+    [
+      430,
+      8,
+      652.0
+    ],
+    [
+      500,
+      9,
+      640.0
+    ],
+    [
+      562,
+      10,
+      652.0
+    ],
+    [
+      640,
+      11,
+      656.0
+    ],
+    [
+      677,
+      12,
+      652.0
+    ],
+    [
+      738,
+      13,
+      650.0
+    ],
+    [
+      817,
+      14,
+      656.0
+    ],
+    [
+      855,
+      15,
+      653.0
+    ],
+    [
+      916,
+      16,
+      650.0
+    ],
+    [
+      1010,
+      17,
+      643.0
+    ],
+    [
+      1046,
+      18,
+      651.0
+    ],
+    [
+      1116,
+      19,
+      639.0
+    ],
+    [
+      1177,
+      20,
+      649.0
+    ],
+    [
+      1255,
+      21,
+      657.0
+    ],
+    [
+      1294,
+      22,
+      664.0
+    ],
+    [
+      1350,
+      23,
+      719.0
+    ]
+  ],
+  "instance": "Medium_Moderate_Light_High_Moderate_Moderate_Late_VeryLate_123",
+  "instance_sha256": "2034fcfe2db59d09aea837dff3ae331507026970e658b69ce68b55299d1d1794",
+  "job_id": "job_01121",
+  "lower_bound": null,
+  "n_vertices": "900",
+  "native_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v1/inputs/native/Medium_Moderate_Light_High_Moderate_Moderate_Late_VeryLate_123.json",
+  "objective": 639,
+  "peak_rss_bytes": 68845568,
+  "phase": "benchmark",
+  "pilot": false,
+  "protocol_sha256": "913474b960afa5dea8d58b512fa942aa36965edb4fac608aa99208ac10e0442a",
+  "result_provenance": "measured",
+  "seed": 8,
+  "shard_index": "1",
+  "size_class": "Medium",
+  "solution_file": "sol_ibs_Medium_Moderate_Light_High_Moderate_Moderate_Late_VeryLate_123_8.json",
+  "solution_sha256": "06630d47b04ff39a7e931929d490ba72084c6d1cfa4494af5898e8698560c278",
+  "statistics_fields": [
+    "Medium_Moderate_Light_High_Moderate_Moderate_Late_VeryLate_123",
+    "8",
+    "50",
+    "70",
+    "0.5",
+    "1",
+    "30",
+    "3",
+    "639",
+    "19",
+    "868684.92",
+    "639",
+    "23",
+    "1350",
+    "22747039",
+    "[(36,1,652.000000), (73,2,649.000000), (109,3,648.000000), (148,4,664.000000), (209,5,650.000000), (302,6,641.000000), (393,7,644.000000), (430,8,652.000000), (500,9,640.000000), (562,10,652.000000), (640,11,656.000000), (677,12,652.000000), (738,13,650.000000), (817,14,656.000000), (855,15,653.000000), (916,16,650.000000), (1010,17,643.000000), (1046,18,651.000000), (1116,19,639.000000), (1177,20,649.000000), (1255,21,657.000000), (1294,22,664.000000), (1350,23,719.000000)]"
+  ],
+  "status": "completed",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "thermal_after": {
+    "frequencies_mhz": {
+      "cpu0": 4098.407,
+      "cpu1": 800.0,
+      "cpu2": 4098.397,
+      "cpu3": 4098.443,
+      "cpu4": 4099.029,
+      "cpu5": 800.0,
+      "cpu6": 4099.977,
+      "cpu7": 4099.977
+    },
+    "temperatures_c": {
+      "thermal_zone0:acpitz": 27.8,
+      "thermal_zone1:acpitz": 29.8,
+      "thermal_zone2:x86_pkg_temp": 77.0
+    },
+    "utc": "2026-09-03T01:44:01Z"
+  },
+  "time_limit_seconds": "1350",
+  "wall_seconds": 1350.4249465979956,
+  "worker": {
+    "core_type": "homogeneous",
+    "logical_cpu": 1,
+    "max_mhz": 4200.0,
+    "physical_core": 1,
+    "sibling_logical_cpus": [
+      1,
+      5
+    ],
+    "socket": 0,
+    "worker_id": 1
+  }
+}

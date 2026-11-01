@@ -1,0 +1,8 @@
+{
+  "repository": "https://github.com/mitchopt/Logic-based-Benders-decomposition-for-wildfire-suppression",
+  "commit": "7a7b76ff03548f622c41308cff60ed65451bf0b5",
+  "source": "gitlink preserved in main and IBS source branch",
+  "files": 10,
+  "bytes": 462732,
+  "solver_reexecuted": false
+}

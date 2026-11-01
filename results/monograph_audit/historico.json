@@ -1,0 +1,1344 @@
+{
+  "rows_checked": 35284,
+  "distinct_states": 2513,
+  "run_pairs": 190,
+  "quality_counts": {
+    "new_better": 58,
+    "new_worse": 85,
+    "equal": 47
+  },
+  "states_with_temporal_violations_after_decimal_rescoring": [],
+  "comparisons": [
+    {
+      "instance": "ga_huge_07952568c0427d4f",
+      "seed": 1,
+      "new_best": 6355,
+      "legacy_best_decimal": 6371,
+      "difference": -16
+    },
+    {
+      "instance": "ga_huge_07952568c0427d4f",
+      "seed": 2,
+      "new_best": 6367,
+      "legacy_best_decimal": 6371,
+      "difference": -4
+    },
+    {
+      "instance": "ga_huge_07952568c0427d4f",
+      "seed": 3,
+      "new_best": 6376,
+      "legacy_best_decimal": 6368,
+      "difference": 8
+    },
+    {
+      "instance": "ga_huge_07952568c0427d4f",
+      "seed": 4,
+      "new_best": 6365,
+      "legacy_best_decimal": 6369,
+      "difference": -4
+    },
+    {
+      "instance": "ga_huge_07952568c0427d4f",
+      "seed": 5,
+      "new_best": 6375,
+      "legacy_best_decimal": 6380,
+      "difference": -5
+    },
+    {
+      "instance": "ga_huge_07952568c0427d4f",
+      "seed": 6,
+      "new_best": 6364,
+      "legacy_best_decimal": 6372,
+      "difference": -8
+    },
+    {
+      "instance": "ga_huge_07952568c0427d4f",
+      "seed": 7,
+      "new_best": 6379,
+      "legacy_best_decimal": 6368,
+      "difference": 11
+    },
+    {
+      "instance": "ga_huge_07952568c0427d4f",
+      "seed": 8,
+      "new_best": 6381,
+      "legacy_best_decimal": 6378,
+      "difference": 3
+    },
+    {
+      "instance": "ga_huge_07952568c0427d4f",
+      "seed": 9,
+      "new_best": 6380,
+      "legacy_best_decimal": 6379,
+      "difference": 1
+    },
+    {
+      "instance": "ga_huge_07952568c0427d4f",
+      "seed": 10,
+      "new_best": 6380,
+      "legacy_best_decimal": 6372,
+      "difference": 8
+    },
+    {
+      "instance": "ga_huge_08f36a78df5ef139",
+      "seed": 1,
+      "new_best": 6388,
+      "legacy_best_decimal": 6380,
+      "difference": 8
+    },
+    {
+      "instance": "ga_huge_08f36a78df5ef139",
+      "seed": 2,
+      "new_best": 6388,
+      "legacy_best_decimal": 6380,
+      "difference": 8
+    },
+    {
+      "instance": "ga_huge_08f36a78df5ef139",
+      "seed": 3,
+      "new_best": 6388,
+      "legacy_best_decimal": 6380,
+      "difference": 8
+    },
+    {
+      "instance": "ga_huge_08f36a78df5ef139",
+      "seed": 4,
+      "new_best": 6388,
+      "legacy_best_decimal": 6380,
+      "difference": 8
+    },
+    {
+      "instance": "ga_huge_08f36a78df5ef139",
+      "seed": 5,
+      "new_best": 6388,
+      "legacy_best_decimal": 6380,
+      "difference": 8
+    },
+    {
+      "instance": "ga_huge_08f36a78df5ef139",
+      "seed": 6,
+      "new_best": 6387,
+      "legacy_best_decimal": 6380,
+      "difference": 7
+    },
+    {
+      "instance": "ga_huge_08f36a78df5ef139",
+      "seed": 7,
+      "new_best": 6387,
+      "legacy_best_decimal": 6380,
+      "difference": 7
+    },
+    {
+      "instance": "ga_huge_08f36a78df5ef139",
+      "seed": 8,
+      "new_best": 6388,
+      "legacy_best_decimal": 6380,
+      "difference": 8
+    },
+    {
+      "instance": "ga_huge_08f36a78df5ef139",
+      "seed": 9,
+      "new_best": 6387,
+      "legacy_best_decimal": 6380,
+      "difference": 7
+    },
+    {
+      "instance": "ga_huge_08f36a78df5ef139",
+      "seed": 10,
+      "new_best": 6387,
+      "legacy_best_decimal": 6380,
+      "difference": 7
+    },
+    {
+      "instance": "ga_huge_0d17d5af452b039f",
+      "seed": 1,
+      "new_best": 6399,
+      "legacy_best_decimal": 6399,
+      "difference": 0
+    },
+    {
+      "instance": "ga_huge_0d17d5af452b039f",
+      "seed": 2,
+      "new_best": 6399,
+      "legacy_best_decimal": 6399,
+      "difference": 0
+    },
+    {
+      "instance": "ga_huge_0d17d5af452b039f",
+      "seed": 3,
+      "new_best": 6399,
+      "legacy_best_decimal": 6399,
+      "difference": 0
+    },
+    {
+      "instance": "ga_huge_0d17d5af452b039f",
+      "seed": 4,
+      "new_best": 6399,
+      "legacy_best_decimal": 6399,
+      "difference": 0
+    },
+    {
+      "instance": "ga_huge_0d17d5af452b039f",
+      "seed": 5,
+      "new_best": 6399,
+      "legacy_best_decimal": 6399,
+      "difference": 0
+    },
+    {
+      "instance": "ga_huge_0d17d5af452b039f",
+      "seed": 6,
+      "new_best": 6399,
+      "legacy_best_decimal": 6399,
+      "difference": 0
+    },
+    {
+      "instance": "ga_huge_0d17d5af452b039f",
+      "seed": 7,
+      "new_best": 6399,
+      "legacy_best_decimal": 6399,
+      "difference": 0
+    },
+    {
+      "instance": "ga_huge_0d17d5af452b039f",
+      "seed": 8,
+      "new_best": 6399,
+      "legacy_best_decimal": 6399,
+      "difference": 0
+    },
+    {
+      "instance": "ga_huge_0d17d5af452b039f",
+      "seed": 9,
+      "new_best": 6399,
+      "legacy_best_decimal": 6399,
+      "difference": 0
+    },
+    {
+      "instance": "ga_huge_0d17d5af452b039f",
+      "seed": 10,
+      "new_best": 6399,
+      "legacy_best_decimal": 6399,
+      "difference": 0
+    },
+    {
+      "instance": "ga_huge_0d95e898e8429729",
+      "seed": 1,
+      "new_best": 6398,
+      "legacy_best_decimal": 6397,
+      "difference": 1
+    },
+    {
+      "instance": "ga_huge_0d95e898e8429729",
+      "seed": 2,
+      "new_best": 6397,
+      "legacy_best_decimal": 6397,
+      "difference": 0
+    },
+    {
+      "instance": "ga_huge_0d95e898e8429729",
+      "seed": 3,
+      "new_best": 6398,
+      "legacy_best_decimal": 6397,
+      "difference": 1
+    },
+    {
+      "instance": "ga_huge_0d95e898e8429729",
+      "seed": 4,
+      "new_best": 6398,
+      "legacy_best_decimal": 6398,
+      "difference": 0
+    },
+    {
+      "instance": "ga_huge_0d95e898e8429729",
+      "seed": 5,
+      "new_best": 6398,
+      "legacy_best_decimal": 6397,
+      "difference": 1
+    },
+    {
+      "instance": "ga_huge_0d95e898e8429729",
+      "seed": 6,
+      "new_best": 6397,
+      "legacy_best_decimal": 6398,
+      "difference": -1
+    },
+    {
+      "instance": "ga_huge_0d95e898e8429729",
+      "seed": 7,
+      "new_best": 6398,
+      "legacy_best_decimal": 6398,
+      "difference": 0
+    },
+    {
+      "instance": "ga_huge_0d95e898e8429729",
+      "seed": 8,
+      "new_best": 6398,
+      "legacy_best_decimal": 6397,
+      "difference": 1
+    },
+    {
+      "instance": "ga_huge_0d95e898e8429729",
+      "seed": 9,
+      "new_best": 6398,
+      "legacy_best_decimal": 6397,
+      "difference": 1
+    },
+    {
+      "instance": "ga_huge_0d95e898e8429729",
+      "seed": 10,
+      "new_best": 6398,
+      "legacy_best_decimal": 6397,
+      "difference": 1
+    },
+    {
+      "instance": "ga_huge_0eab522ae8106ce1",
+      "seed": 1,
+      "new_best": 6393,
+      "legacy_best_decimal": 6388,
+      "difference": 5
+    },
+    {
+      "instance": "ga_huge_0eab522ae8106ce1",
+      "seed": 2,
+      "new_best": 6394,
+      "legacy_best_decimal": 6388,
+      "difference": 6
+    },
+    {
+      "instance": "ga_huge_0eab522ae8106ce1",
+      "seed": 3,
+      "new_best": 6396,
+      "legacy_best_decimal": 6393,
+      "difference": 3
+    },
+    {
+      "instance": "ga_huge_0eab522ae8106ce1",
+      "seed": 4,
+      "new_best": 6394,
+      "legacy_best_decimal": 6388,
+      "difference": 6
+    },
+    {
+      "instance": "ga_huge_0eab522ae8106ce1",
+      "seed": 5,
+      "new_best": 6397,
+      "legacy_best_decimal": 6388,
+      "difference": 9
+    },
+    {
+      "instance": "ga_huge_0eab522ae8106ce1",
+      "seed": 6,
+      "new_best": 6394,
+      "legacy_best_decimal": 6388,
+      "difference": 6
+    },
+    {
+      "instance": "ga_huge_0eab522ae8106ce1",
+      "seed": 7,
+      "new_best": 6396,
+      "legacy_best_decimal": 6395,
+      "difference": 1
+    },
+    {
+      "instance": "ga_huge_0eab522ae8106ce1",
+      "seed": 8,
+      "new_best": 6397,
+      "legacy_best_decimal": 6388,
+      "difference": 9
+    },
+    {
+      "instance": "ga_huge_0eab522ae8106ce1",
+      "seed": 9,
+      "new_best": 6397,
+      "legacy_best_decimal": 6388,
+      "difference": 9
+    },
+    {
+      "instance": "ga_huge_0eab522ae8106ce1",
+      "seed": 10,
+      "new_best": 6393,
+      "legacy_best_decimal": 6388,
+      "difference": 5
+    },
+    {
+      "instance": "ga_huge_22042b4a132c44f7",
+      "seed": 1,
+      "new_best": 6395,
+      "legacy_best_decimal": 6393,
+      "difference": 2
+    },
+    {
+      "instance": "ga_huge_22042b4a132c44f7",
+      "seed": 2,
+      "new_best": 6395,
+      "legacy_best_decimal": 6393,
+      "difference": 2
+    },
+    {
+      "instance": "ga_huge_22042b4a132c44f7",
+      "seed": 3,
+      "new_best": 6395,
+      "legacy_best_decimal": 6393,
+      "difference": 2
+    },
+    {
+      "instance": "ga_huge_22042b4a132c44f7",
+      "seed": 4,
+      "new_best": 6395,
+      "legacy_best_decimal": 6393,
+      "difference": 2
+    },
+    {
+      "instance": "ga_huge_22042b4a132c44f7",
+      "seed": 5,
+      "new_best": 6395,
+      "legacy_best_decimal": 6393,
+      "difference": 2
+    },
+    {
+      "instance": "ga_huge_22042b4a132c44f7",
+      "seed": 6,
+      "new_best": 6395,
+      "legacy_best_decimal": 6393,
+      "difference": 2
+    },
+    {
+      "instance": "ga_huge_22042b4a132c44f7",
+      "seed": 7,
+      "new_best": 6395,
+      "legacy_best_decimal": 6393,
+      "difference": 2
+    },
+    {
+      "instance": "ga_huge_22042b4a132c44f7",
+      "seed": 8,
+      "new_best": 6395,
+      "legacy_best_decimal": 6393,
+      "difference": 2
+    },
+    {
+      "instance": "ga_huge_22042b4a132c44f7",
+      "seed": 9,
+      "new_best": 6393,
+      "legacy_best_decimal": 6393,
+      "difference": 0
+    },
+    {
+      "instance": "ga_huge_22042b4a132c44f7",
+      "seed": 10,
+      "new_best": 6395,
+      "legacy_best_decimal": 6393,
+      "difference": 2
+    },
+    {
+      "instance": "ga_huge_27147466c7bf8ab9",
+      "seed": 1,
+      "new_best": 6393,
+      "legacy_best_decimal": 6383,
+      "difference": 10
+    },
+    {
+      "instance": "ga_huge_27147466c7bf8ab9",
+      "seed": 2,
+      "new_best": 6392,
+      "legacy_best_decimal": 6383,
+      "difference": 9
+    },
+    {
+      "instance": "ga_huge_27147466c7bf8ab9",
+      "seed": 3,
+      "new_best": 6393,
+      "legacy_best_decimal": 6384,
+      "difference": 9
+    },
+    {
+      "instance": "ga_huge_27147466c7bf8ab9",
+      "seed": 4,
+      "new_best": 6392,
+      "legacy_best_decimal": 6383,
+      "difference": 9
+    },
+    {
+      "instance": "ga_huge_27147466c7bf8ab9",
+      "seed": 5,
+      "new_best": 6390,
+      "legacy_best_decimal": 6336,
+      "difference": 54
+    },
+    {
+      "instance": "ga_huge_27147466c7bf8ab9",
+      "seed": 6,
+      "new_best": 6393,
+      "legacy_best_decimal": 6383,
+      "difference": 10
+    },
+    {
+      "instance": "ga_huge_27147466c7bf8ab9",
+      "seed": 7,
+      "new_best": 6393,
+      "legacy_best_decimal": 6336,
+      "difference": 57
+    },
+    {
+      "instance": "ga_huge_27147466c7bf8ab9",
+      "seed": 8,
+      "new_best": 6390,
+      "legacy_best_decimal": 6380,
+      "difference": 10
+    },
+    {
+      "instance": "ga_huge_27147466c7bf8ab9",
+      "seed": 9,
+      "new_best": 6393,
+      "legacy_best_decimal": 6392,
+      "difference": 1
+    },
+    {
+      "instance": "ga_huge_27147466c7bf8ab9",
+      "seed": 10,
+      "new_best": 6392,
+      "legacy_best_decimal": 6384,
+      "difference": 8
+    },
+    {
+      "instance": "ga_huge_440928b0105c6439",
+      "seed": 1,
+      "new_best": 6397,
+      "legacy_best_decimal": 6398,
+      "difference": -1
+    },
+    {
+      "instance": "ga_huge_440928b0105c6439",
+      "seed": 2,
+      "new_best": 6398,
+      "legacy_best_decimal": 6398,
+      "difference": 0
+    },
+    {
+      "instance": "ga_huge_440928b0105c6439",
+      "seed": 3,
+      "new_best": 6398,
+      "legacy_best_decimal": 6394,
+      "difference": 4
+    },
+    {
+      "instance": "ga_huge_440928b0105c6439",
+      "seed": 4,
+      "new_best": 6397,
+      "legacy_best_decimal": 6383,
+      "difference": 14
+    },
+    {
+      "instance": "ga_huge_440928b0105c6439",
+      "seed": 5,
+      "new_best": 6398,
+      "legacy_best_decimal": 6397,
+      "difference": 1
+    },
+    {
+      "instance": "ga_huge_440928b0105c6439",
+      "seed": 6,
+      "new_best": 6398,
+      "legacy_best_decimal": 6398,
+      "difference": 0
+    },
+    {
+      "instance": "ga_huge_440928b0105c6439",
+      "seed": 7,
+      "new_best": 6397,
+      "legacy_best_decimal": 6398,
+      "difference": -1
+    },
+    {
+      "instance": "ga_huge_440928b0105c6439",
+      "seed": 8,
+      "new_best": 6397,
+      "legacy_best_decimal": 6398,
+      "difference": -1
+    },
+    {
+      "instance": "ga_huge_440928b0105c6439",
+      "seed": 9,
+      "new_best": 6398,
+      "legacy_best_decimal": 6398,
+      "difference": 0
+    },
+    {
+      "instance": "ga_huge_440928b0105c6439",
+      "seed": 10,
+      "new_best": 6398,
+      "legacy_best_decimal": 6397,
+      "difference": 1
+    },
+    {
+      "instance": "ga_huge_5f3aab8d1be7f6ca",
+      "seed": 1,
+      "new_best": 6377,
+      "legacy_best_decimal": 6346,
+      "difference": 31
+    },
+    {
+      "instance": "ga_huge_5f3aab8d1be7f6ca",
+      "seed": 2,
+      "new_best": 6381,
+      "legacy_best_decimal": 6346,
+      "difference": 35
+    },
+    {
+      "instance": "ga_huge_5f3aab8d1be7f6ca",
+      "seed": 3,
+      "new_best": 6377,
+      "legacy_best_decimal": 6346,
+      "difference": 31
+    },
+    {
+      "instance": "ga_huge_5f3aab8d1be7f6ca",
+      "seed": 4,
+      "new_best": 6377,
+      "legacy_best_decimal": 6349,
+      "difference": 28
+    },
+    {
+      "instance": "ga_huge_5f3aab8d1be7f6ca",
+      "seed": 5,
+      "new_best": 6377,
+      "legacy_best_decimal": 6346,
+      "difference": 31
+    },
+    {
+      "instance": "ga_huge_5f3aab8d1be7f6ca",
+      "seed": 6,
+      "new_best": 6384,
+      "legacy_best_decimal": 6349,
+      "difference": 35
+    },
+    {
+      "instance": "ga_huge_5f3aab8d1be7f6ca",
+      "seed": 7,
+      "new_best": 6387,
+      "legacy_best_decimal": 6349,
+      "difference": 38
+    },
+    {
+      "instance": "ga_huge_5f3aab8d1be7f6ca",
+      "seed": 8,
+      "new_best": 6387,
+      "legacy_best_decimal": 6346,
+      "difference": 41
+    },
+    {
+      "instance": "ga_huge_5f3aab8d1be7f6ca",
+      "seed": 9,
+      "new_best": 6377,
+      "legacy_best_decimal": 6346,
+      "difference": 31
+    },
+    {
+      "instance": "ga_huge_5f3aab8d1be7f6ca",
+      "seed": 10,
+      "new_best": 6377,
+      "legacy_best_decimal": 6346,
+      "difference": 31
+    },
+    {
+      "instance": "ga_large_00d0559ecb16596d",
+      "seed": 1,
+      "new_best": 1556,
+      "legacy_best_decimal": 1558,
+      "difference": -2
+    },
+    {
+      "instance": "ga_large_00d0559ecb16596d",
+      "seed": 2,
+      "new_best": 1556,
+      "legacy_best_decimal": 1558,
+      "difference": -2
+    },
+    {
+      "instance": "ga_large_00d0559ecb16596d",
+      "seed": 3,
+      "new_best": 1556,
+      "legacy_best_decimal": 1558,
+      "difference": -2
+    },
+    {
+      "instance": "ga_large_00d0559ecb16596d",
+      "seed": 4,
+      "new_best": 1556,
+      "legacy_best_decimal": 1558,
+      "difference": -2
+    },
+    {
+      "instance": "ga_large_00d0559ecb16596d",
+      "seed": 5,
+      "new_best": 1556,
+      "legacy_best_decimal": 1558,
+      "difference": -2
+    },
+    {
+      "instance": "ga_large_00d0559ecb16596d",
+      "seed": 6,
+      "new_best": 1556,
+      "legacy_best_decimal": 1558,
+      "difference": -2
+    },
+    {
+      "instance": "ga_large_00d0559ecb16596d",
+      "seed": 7,
+      "new_best": 1556,
+      "legacy_best_decimal": 1558,
+      "difference": -2
+    },
+    {
+      "instance": "ga_large_00d0559ecb16596d",
+      "seed": 8,
+      "new_best": 1556,
+      "legacy_best_decimal": 1558,
+      "difference": -2
+    },
+    {
+      "instance": "ga_large_00d0559ecb16596d",
+      "seed": 9,
+      "new_best": 1556,
+      "legacy_best_decimal": 1558,
+      "difference": -2
+    },
+    {
+      "instance": "ga_large_00d0559ecb16596d",
+      "seed": 10,
+      "new_best": 1556,
+      "legacy_best_decimal": 1558,
+      "difference": -2
+    },
+    {
+      "instance": "ga_large_027de0520f085509",
+      "seed": 1,
+      "new_best": 1262,
+      "legacy_best_decimal": 1301,
+      "difference": -39
+    },
+    {
+      "instance": "ga_large_027de0520f085509",
+      "seed": 2,
+      "new_best": 1262,
+      "legacy_best_decimal": 1301,
+      "difference": -39
+    },
+    {
+      "instance": "ga_large_027de0520f085509",
+      "seed": 3,
+      "new_best": 1262,
+      "legacy_best_decimal": 1301,
+      "difference": -39
+    },
+    {
+      "instance": "ga_large_027de0520f085509",
+      "seed": 4,
+      "new_best": 1262,
+      "legacy_best_decimal": 1301,
+      "difference": -39
+    },
+    {
+      "instance": "ga_large_027de0520f085509",
+      "seed": 5,
+      "new_best": 1262,
+      "legacy_best_decimal": 1301,
+      "difference": -39
+    },
+    {
+      "instance": "ga_large_027de0520f085509",
+      "seed": 6,
+      "new_best": 1262,
+      "legacy_best_decimal": 1301,
+      "difference": -39
+    },
+    {
+      "instance": "ga_large_027de0520f085509",
+      "seed": 7,
+      "new_best": 1262,
+      "legacy_best_decimal": 1301,
+      "difference": -39
+    },
+    {
+      "instance": "ga_large_027de0520f085509",
+      "seed": 8,
+      "new_best": 1262,
+      "legacy_best_decimal": 1301,
+      "difference": -39
+    },
+    {
+      "instance": "ga_large_027de0520f085509",
+      "seed": 9,
+      "new_best": 1262,
+      "legacy_best_decimal": 1301,
+      "difference": -39
+    },
+    {
+      "instance": "ga_large_027de0520f085509",
+      "seed": 10,
+      "new_best": 1262,
+      "legacy_best_decimal": 1301,
+      "difference": -39
+    },
+    {
+      "instance": "ga_large_046e17dc66461fb6",
+      "seed": 1,
+      "new_best": 1561,
+      "legacy_best_decimal": 1559,
+      "difference": 2
+    },
+    {
+      "instance": "ga_large_046e17dc66461fb6",
+      "seed": 2,
+      "new_best": 1561,
+      "legacy_best_decimal": 1559,
+      "difference": 2
+    },
+    {
+      "instance": "ga_large_046e17dc66461fb6",
+      "seed": 3,
+      "new_best": 1561,
+      "legacy_best_decimal": 1559,
+      "difference": 2
+    },
+    {
+      "instance": "ga_large_046e17dc66461fb6",
+      "seed": 4,
+      "new_best": 1561,
+      "legacy_best_decimal": 1559,
+      "difference": 2
+    },
+    {
+      "instance": "ga_large_046e17dc66461fb6",
+      "seed": 5,
+      "new_best": 1561,
+      "legacy_best_decimal": 1559,
+      "difference": 2
+    },
+    {
+      "instance": "ga_large_046e17dc66461fb6",
+      "seed": 6,
+      "new_best": 1561,
+      "legacy_best_decimal": 1559,
+      "difference": 2
+    },
+    {
+      "instance": "ga_large_046e17dc66461fb6",
+      "seed": 7,
+      "new_best": 1561,
+      "legacy_best_decimal": 1559,
+      "difference": 2
+    },
+    {
+      "instance": "ga_large_046e17dc66461fb6",
+      "seed": 8,
+      "new_best": 1561,
+      "legacy_best_decimal": 1559,
+      "difference": 2
+    },
+    {
+      "instance": "ga_large_046e17dc66461fb6",
+      "seed": 9,
+      "new_best": 1561,
+      "legacy_best_decimal": 1559,
+      "difference": 2
+    },
+    {
+      "instance": "ga_large_046e17dc66461fb6",
+      "seed": 10,
+      "new_best": 1561,
+      "legacy_best_decimal": 1559,
+      "difference": 2
+    },
+    {
+      "instance": "ga_large_0f4ee0629f3e34f5",
+      "seed": 1,
+      "new_best": 1530,
+      "legacy_best_decimal": 1530,
+      "difference": 0
+    },
+    {
+      "instance": "ga_large_0f4ee0629f3e34f5",
+      "seed": 2,
+      "new_best": 1530,
+      "legacy_best_decimal": 1530,
+      "difference": 0
+    },
+    {
+      "instance": "ga_large_0f4ee0629f3e34f5",
+      "seed": 3,
+      "new_best": 1530,
+      "legacy_best_decimal": 1530,
+      "difference": 0
+    },
+    {
+      "instance": "ga_large_0f4ee0629f3e34f5",
+      "seed": 4,
+      "new_best": 1530,
+      "legacy_best_decimal": 1530,
+      "difference": 0
+    },
+    {
+      "instance": "ga_large_0f4ee0629f3e34f5",
+      "seed": 5,
+      "new_best": 1530,
+      "legacy_best_decimal": 1530,
+      "difference": 0
+    },
+    {
+      "instance": "ga_large_0f4ee0629f3e34f5",
+      "seed": 6,
+      "new_best": 1530,
+      "legacy_best_decimal": 1530,
+      "difference": 0
+    },
+    {
+      "instance": "ga_large_0f4ee0629f3e34f5",
+      "seed": 7,
+      "new_best": 1530,
+      "legacy_best_decimal": 1530,
+      "difference": 0
+    },
+    {
+      "instance": "ga_large_0f4ee0629f3e34f5",
+      "seed": 8,
+      "new_best": 1530,
+      "legacy_best_decimal": 1530,
+      "difference": 0
+    },
+    {
+      "instance": "ga_large_0f4ee0629f3e34f5",
+      "seed": 9,
+      "new_best": 1530,
+      "legacy_best_decimal": 1530,
+      "difference": 0
+    },
+    {
+      "instance": "ga_large_0f4ee0629f3e34f5",
+      "seed": 10,
+      "new_best": 1530,
+      "legacy_best_decimal": 1530,
+      "difference": 0
+    },
+    {
+      "instance": "ga_large_239f3d8094ef98fe",
+      "seed": 1,
+      "new_best": 1233,
+      "legacy_best_decimal": 1231,
+      "difference": 2
+    },
+    {
+      "instance": "ga_large_239f3d8094ef98fe",
+      "seed": 2,
+      "new_best": 1229,
+      "legacy_best_decimal": 1238,
+      "difference": -9
+    },
+    {
+      "instance": "ga_large_239f3d8094ef98fe",
+      "seed": 3,
+      "new_best": 1229,
+      "legacy_best_decimal": 1231,
+      "difference": -2
+    },
+    {
+      "instance": "ga_large_239f3d8094ef98fe",
+      "seed": 4,
+      "new_best": 1229,
+      "legacy_best_decimal": 1238,
+      "difference": -9
+    },
+    {
+      "instance": "ga_large_239f3d8094ef98fe",
+      "seed": 5,
+      "new_best": 1233,
+      "legacy_best_decimal": 1243,
+      "difference": -10
+    },
+    {
+      "instance": "ga_large_239f3d8094ef98fe",
+      "seed": 6,
+      "new_best": 1233,
+      "legacy_best_decimal": 1243,
+      "difference": -10
+    },
+    {
+      "instance": "ga_large_239f3d8094ef98fe",
+      "seed": 7,
+      "new_best": 1233,
+      "legacy_best_decimal": 1234,
+      "difference": -1
+    },
+    {
+      "instance": "ga_large_239f3d8094ef98fe",
+      "seed": 8,
+      "new_best": 1232,
+      "legacy_best_decimal": 1243,
+      "difference": -11
+    },
+    {
+      "instance": "ga_large_239f3d8094ef98fe",
+      "seed": 9,
+      "new_best": 1232,
+      "legacy_best_decimal": 1243,
+      "difference": -11
+    },
+    {
+      "instance": "ga_large_239f3d8094ef98fe",
+      "seed": 10,
+      "new_best": 1229,
+      "legacy_best_decimal": 1243,
+      "difference": -14
+    },
+    {
+      "instance": "ga_large_3a3b79bc5175196c",
+      "seed": 1,
+      "new_best": 1597,
+      "legacy_best_decimal": 1598,
+      "difference": -1
+    },
+    {
+      "instance": "ga_large_3a3b79bc5175196c",
+      "seed": 2,
+      "new_best": 1597,
+      "legacy_best_decimal": 1598,
+      "difference": -1
+    },
+    {
+      "instance": "ga_large_3a3b79bc5175196c",
+      "seed": 3,
+      "new_best": 1597,
+      "legacy_best_decimal": 1598,
+      "difference": -1
+    },
+    {
+      "instance": "ga_large_3a3b79bc5175196c",
+      "seed": 4,
+      "new_best": 1597,
+      "legacy_best_decimal": 1598,
+      "difference": -1
+    },
+    {
+      "instance": "ga_large_3a3b79bc5175196c",
+      "seed": 5,
+      "new_best": 1597,
+      "legacy_best_decimal": 1598,
+      "difference": -1
+    },
+    {
+      "instance": "ga_large_3a3b79bc5175196c",
+      "seed": 6,
+      "new_best": 1597,
+      "legacy_best_decimal": 1598,
+      "difference": -1
+    },
+    {
+      "instance": "ga_large_3a3b79bc5175196c",
+      "seed": 7,
+      "new_best": 1597,
+      "legacy_best_decimal": 1598,
+      "difference": -1
+    },
+    {
+      "instance": "ga_large_3a3b79bc5175196c",
+      "seed": 8,
+      "new_best": 1597,
+      "legacy_best_decimal": 1598,
+      "difference": -1
+    },
+    {
+      "instance": "ga_large_3a3b79bc5175196c",
+      "seed": 9,
+      "new_best": 1597,
+      "legacy_best_decimal": 1598,
+      "difference": -1
+    },
+    {
+      "instance": "ga_large_3a3b79bc5175196c",
+      "seed": 10,
+      "new_best": 1597,
+      "legacy_best_decimal": 1598,
+      "difference": -1
+    },
+    {
+      "instance": "ga_medium_2210c22f9e05921c",
+      "seed": 1,
+      "new_best": 889,
+      "legacy_best_decimal": 883,
+      "difference": 6
+    },
+    {
+      "instance": "ga_medium_2210c22f9e05921c",
+      "seed": 2,
+      "new_best": 889,
+      "legacy_best_decimal": 883,
+      "difference": 6
+    },
+    {
+      "instance": "ga_medium_2210c22f9e05921c",
+      "seed": 3,
+      "new_best": 889,
+      "legacy_best_decimal": 883,
+      "difference": 6
+    },
+    {
+      "instance": "ga_medium_2210c22f9e05921c",
+      "seed": 4,
+      "new_best": 889,
+      "legacy_best_decimal": 883,
+      "difference": 6
+    },
+    {
+      "instance": "ga_medium_2210c22f9e05921c",
+      "seed": 5,
+      "new_best": 889,
+      "legacy_best_decimal": 883,
+      "difference": 6
+    },
+    {
+      "instance": "ga_medium_2210c22f9e05921c",
+      "seed": 6,
+      "new_best": 889,
+      "legacy_best_decimal": 883,
+      "difference": 6
+    },
+    {
+      "instance": "ga_medium_2210c22f9e05921c",
+      "seed": 7,
+      "new_best": 889,
+      "legacy_best_decimal": 883,
+      "difference": 6
+    },
+    {
+      "instance": "ga_medium_2210c22f9e05921c",
+      "seed": 8,
+      "new_best": 889,
+      "legacy_best_decimal": 883,
+      "difference": 6
+    },
+    {
+      "instance": "ga_medium_2210c22f9e05921c",
+      "seed": 9,
+      "new_best": 889,
+      "legacy_best_decimal": 883,
+      "difference": 6
+    },
+    {
+      "instance": "ga_medium_2210c22f9e05921c",
+      "seed": 10,
+      "new_best": 889,
+      "legacy_best_decimal": 883,
+      "difference": 6
+    },
+    {
+      "instance": "ga_medium_72fa8fa3f38f8995",
+      "seed": 1,
+      "new_best": 870,
+      "legacy_best_decimal": 871,
+      "difference": -1
+    },
+    {
+      "instance": "ga_medium_72fa8fa3f38f8995",
+      "seed": 2,
+      "new_best": 870,
+      "legacy_best_decimal": 871,
+      "difference": -1
+    },
+    {
+      "instance": "ga_medium_72fa8fa3f38f8995",
+      "seed": 3,
+      "new_best": 870,
+      "legacy_best_decimal": 871,
+      "difference": -1
+    },
+    {
+      "instance": "ga_medium_72fa8fa3f38f8995",
+      "seed": 4,
+      "new_best": 870,
+      "legacy_best_decimal": 871,
+      "difference": -1
+    },
+    {
+      "instance": "ga_medium_72fa8fa3f38f8995",
+      "seed": 5,
+      "new_best": 870,
+      "legacy_best_decimal": 871,
+      "difference": -1
+    },
+    {
+      "instance": "ga_medium_72fa8fa3f38f8995",
+      "seed": 6,
+      "new_best": 870,
+      "legacy_best_decimal": 871,
+      "difference": -1
+    },
+    {
+      "instance": "ga_medium_72fa8fa3f38f8995",
+      "seed": 7,
+      "new_best": 870,
+      "legacy_best_decimal": 871,
+      "difference": -1
+    },
+    {
+      "instance": "ga_medium_72fa8fa3f38f8995",
+      "seed": 8,
+      "new_best": 870,
+      "legacy_best_decimal": 871,
+      "difference": -1
+    },
+    {
+      "instance": "ga_medium_72fa8fa3f38f8995",
+      "seed": 9,
+      "new_best": 870,
+      "legacy_best_decimal": 871,
+      "difference": -1
+    },
+    {
+      "instance": "ga_medium_72fa8fa3f38f8995",
+      "seed": 10,
+      "new_best": 870,
+      "legacy_best_decimal": 871,
+      "difference": -1
+    },
+    {
+      "instance": "ga_medium_94c1bb8938f7c2bc",
+      "seed": 1,
+      "new_best": 894,
+      "legacy_best_decimal": 894,
+      "difference": 0
+    },
+    {
+      "instance": "ga_medium_94c1bb8938f7c2bc",
+      "seed": 2,
+      "new_best": 894,
+      "legacy_best_decimal": 894,
+      "difference": 0
+    },
+    {
+      "instance": "ga_medium_94c1bb8938f7c2bc",
+      "seed": 3,
+      "new_best": 894,
+      "legacy_best_decimal": 894,
+      "difference": 0
+    },
+    {
+      "instance": "ga_medium_94c1bb8938f7c2bc",
+      "seed": 4,
+      "new_best": 894,
+      "legacy_best_decimal": 894,
+      "difference": 0
+    },
+    {
+      "instance": "ga_medium_94c1bb8938f7c2bc",
+      "seed": 5,
+      "new_best": 894,
+      "legacy_best_decimal": 894,
+      "difference": 0
+    },
+    {
+      "instance": "ga_medium_94c1bb8938f7c2bc",
+      "seed": 6,
+      "new_best": 894,
+      "legacy_best_decimal": 894,
+      "difference": 0
+    },
+    {
+      "instance": "ga_medium_94c1bb8938f7c2bc",
+      "seed": 7,
+      "new_best": 894,
+      "legacy_best_decimal": 894,
+      "difference": 0
+    },
+    {
+      "instance": "ga_medium_94c1bb8938f7c2bc",
+      "seed": 8,
+      "new_best": 894,
+      "legacy_best_decimal": 894,
+      "difference": 0
+    },
+    {
+      "instance": "ga_medium_94c1bb8938f7c2bc",
+      "seed": 9,
+      "new_best": 894,
+      "legacy_best_decimal": 894,
+      "difference": 0
+    },
+    {
+      "instance": "ga_medium_94c1bb8938f7c2bc",
+      "seed": 10,
+      "new_best": 894,
+      "legacy_best_decimal": 894,
+      "difference": 0
+    },
+    {
+      "instance": "ga_small_05e4983100f5eeb1",
+      "seed": 1,
+      "new_best": 388,
+      "legacy_best_decimal": 388,
+      "difference": 0
+    },
+    {
+      "instance": "ga_small_05e4983100f5eeb1",
+      "seed": 2,
+      "new_best": 388,
+      "legacy_best_decimal": 388,
+      "difference": 0
+    },
+    {
+      "instance": "ga_small_05e4983100f5eeb1",
+      "seed": 3,
+      "new_best": 388,
+      "legacy_best_decimal": 388,
+      "difference": 0
+    },
+    {
+      "instance": "ga_small_05e4983100f5eeb1",
+      "seed": 4,
+      "new_best": 388,
+      "legacy_best_decimal": 388,
+      "difference": 0
+    },
+    {
+      "instance": "ga_small_05e4983100f5eeb1",
+      "seed": 5,
+      "new_best": 388,
+      "legacy_best_decimal": 388,
+      "difference": 0
+    },
+    {
+      "instance": "ga_small_05e4983100f5eeb1",
+      "seed": 6,
+      "new_best": 388,
+      "legacy_best_decimal": 388,
+      "difference": 0
+    },
+    {
+      "instance": "ga_small_05e4983100f5eeb1",
+      "seed": 7,
+      "new_best": 388,
+      "legacy_best_decimal": 388,
+      "difference": 0
+    },
+    {
+      "instance": "ga_small_05e4983100f5eeb1",
+      "seed": 8,
+      "new_best": 388,
+      "legacy_best_decimal": 388,
+      "difference": 0
+    },
+    {
+      "instance": "ga_small_05e4983100f5eeb1",
+      "seed": 9,
+      "new_best": 388,
+      "legacy_best_decimal": 388,
+      "difference": 0
+    },
+    {
+      "instance": "ga_small_05e4983100f5eeb1",
+      "seed": 10,
+      "new_best": 388,
+      "legacy_best_decimal": 388,
+      "difference": 0
+    }
+  ],
+  "errors": []
+}

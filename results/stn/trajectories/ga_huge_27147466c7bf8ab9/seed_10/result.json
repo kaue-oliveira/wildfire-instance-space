@@ -1,0 +1,45 @@
+{
+  "status": "completed",
+  "instance": "ga_huge_27147466c7bf8ab9",
+  "seed": 10,
+  "size_class": "Huge",
+  "mode": "official",
+  "completed_utc": "2026-10-08T13:30:10.755462+00:00",
+  "input_sha256": "c134d3585d772b1698bf051eac33f5842ca394398b244d12650aa059368ca220",
+  "protocol_sha256": "2687abdc7705411bfd5ba2ee81eeb4cb8b4b8da44a19f6417c2eb51721d0d90e",
+  "binary_sha256": "a55ddcc7ad15386f71c7d769584a08df0ff5116f171325f5cf212ddd7daafde6",
+  "time_limit_seconds": 9600,
+  "wall_seconds": 9748.548128799011,
+  "objective": 6392,
+  "audit": {
+    "rows": 41,
+    "unique_states": 41,
+    "best_objective": 6392,
+    "last_objective": 6398,
+    "all_states_feasible": true
+  },
+  "statistics_fields": [
+    "ga_huge_27147466c7bf8ab9",
+    "10",
+    "0.5",
+    "1",
+    "50",
+    "70",
+    "3",
+    "30",
+    "6392",
+    "275",
+    "2",
+    "41",
+    "9746",
+    "232066981",
+    "[(6397,138,1,3473705), (6392,275,2,6821985)]"
+  ],
+  "artifact_hashes": {
+    "trajectory_raw.csv": "31c41b7db833bbed4eda6e02a5f372d2b37c8f3b1b74f5caafd368faea9843d0",
+    "stdout.log": "5638ccaa901383f075456f962ff75313a75055a4df62da986bde82e230a6aa2d",
+    "run_manifest.json": "dcb8eac0107bc4c9f01af50f8fc50cf74a98c071f82cced6c135512d1c271bf6",
+    "Sol_ga_huge_27147466c7bf8ab9.json": "9437300c57818050200f18900038ec519e45d5dbe867257ee41bdfddd4810533",
+    "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

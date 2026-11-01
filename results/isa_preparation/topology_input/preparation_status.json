@@ -1,0 +1,31 @@
+{
+  "approximation_used_for_new_graphs": false,
+  "combined_audit_decisions": {
+    "constant_or_degenerate": 1,
+    "exact_duplicate": 1,
+    "kept": 107
+  },
+  "combined_features_after_audit": 107,
+  "elapsed_seconds": 1.4161262020061258,
+  "historical_diagnostics_sha256": "136852bc16d9e3547c23b5e95d5b2003e3fea60d21dacd5892960d4ae98c369e",
+  "historical_table_sha256": "3e9aae1c4ec429a87f27705a679a69ca4dd79d2aca7c4774ecbeada1bcea7b34",
+  "new_graphs_exact": 19,
+  "new_size_classes": {
+    "Huge": 9,
+    "Large": 6,
+    "Medium": 3,
+    "Small": 1
+  },
+  "old_graphs_reused_and_verified": 55,
+  "status": "completed",
+  "topology_audit_decisions": {
+    "constant_or_degenerate": 34,
+    "exact_duplicate": 11,
+    "hits_numerically_unstable": 16,
+    "kept": 73,
+    "prelim_numeric_degenerate": 2
+  },
+  "topology_backend_id": "hybrid_exact_igraph_betweenness_harmonic_scipy_svds_seeded_random_state_v2",
+  "topology_candidate_features": 136,
+  "topology_features_after_audit": 73
+}

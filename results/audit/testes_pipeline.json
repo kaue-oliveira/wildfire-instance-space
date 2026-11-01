@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "tests_passed": 8,
+  "warnings": 14,
+  "seconds": 3.28,
+  "execution": "PYTHONDONTWRITEBYTECODE=1 analysis_wsp/.venv-isa/bin/python -m pytest -q -p no:cacheprovider <snapshot>/analysis_wsp/ibs_decimal_pipeline/test_pipeline.py",
+  "warning_scope": "Pyparsing deprecations from existing matplotlib installation"
+}

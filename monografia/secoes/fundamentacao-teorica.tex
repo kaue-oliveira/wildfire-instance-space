@@ -1,0 +1,656 @@
+\chapter{\MakeUppercase{Fundamentação Teórica}}\label{sec:fundamentacao}
+
+Esta seção apresenta o modelo do WSP, os métodos de solução e as técnicas usadas para estudar as instâncias
+e a busca. A análise do espaço de instâncias (ISA), as medidas topológicas
+e as redes de trajetórias de busca (STNs) fornecem a base para relacionar
+propriedades dos problemas ao desempenho dos algoritmos.
+
+\section{Problema de Supressão de Incêndios Florestais}\label{sec:wsp}
+
+O WSP integra propagação do fogo e alocação temporal de recursos sobre um
+grafo direcionado. A formulação com liberações de recursos ao longo do tempo
+foi introduzida por \citeonline{Alvelos2018} e posteriormente resolvida por
+métodos exatos e heurísticos
+\cite{DelazeriRitt2024,HarrisForbesTaimre2023,MendesAlvelos2023}.
+
+Seja $G=(V,A)$ um grafo direcionado cujos vértices representam células de uma paisagem
+discretizada e cujos arcos indicam direções possíveis de propagação.
+Cada arco $(u,v)$ possui tempo positivo $t_{uv}$, que pode incorporar
+vento, inclinação e propriedades do combustível. Não se exige
+$t_{uv}=t_{vu}$: a direção e a assimetria dos tempos participam do modelo.
+Dado um vértice de ignição $s$, o fogo começa no instante zero e, sem
+supressão, alcança $v$ no instante:
+\begin{equation}
+ a_v=d_G(s,v)=\min_{p\in\mathcal{P}_{sv}}\sum_{(u,w)\in p}t_{uw},
+ \label{eq:tempo-chegada-livre}
+\end{equation}
+\noindent em que $\mathcal{P}_{sv}$ contém os caminhos direcionados de $s$
+a $v$. Adota-se $a_v=+\infty$ quando $v$ é inalcançável. As intervenções de supressão, representadas pela aplicação de recursos
+para retardar a propagação, podem modificar os caminhos que determinam esses tempos
+(\citeauthor{DelazeriRitt2024}, \citeyear{DelazeriRitt2024,DelazeriRitt2026}).
+
+Considere $k$ recursos, identificados por $R=\{1,\ldots,k\}$, com instantes
+de liberação $r_j$. Uma alocação parcial é uma função injetiva
+$\Lambda:R'\rightarrow V$, em que $R'\subseteq R$ reúne os recursos
+efetivamente empregados. Cada recurso é associado a um vértice, e cada
+vértice recebe no máximo um recurso. O conjunto protegido
+$P^{\Lambda}=\operatorname{im}(\Lambda)$ é o conjunto dos vértices
+que receberam essas alocações. No modelo básico,
+cada recurso acrescenta o mesmo atraso $\Delta\geq0$ aos arcos de saída
+do vértice que o recebe:
+\begin{equation}
+ t_{uv}^{\Lambda}=t_{uv}+\Delta\,\mathbb{I}[u\in P^{\Lambda}],
+ \qquad (u,v)\in A.
+ \label{eq:tempo-propagacao-alocacao}
+\end{equation}
+\noindent A função indicadora $\mathbb{I}[u\in P^{\Lambda}]$ vale um quando
+$u$ pertence ao conjunto protegido e zero caso contrário. Assim, o atraso
+é acrescentado apenas aos arcos que saem de vértices protegidos. Os novos
+tempos de chegada são denotados por $a_v^{\Lambda}$. A viabilidade temporal exige
+$a_{\Lambda(j)}^{\Lambda}\geq r_j$ para todo recurso empregado
+(\citeauthor{DelazeriRitt2024}, \citeyear{DelazeriRitt2024,DelazeriRitt2026}). Portanto, proteger um vértice
+significa retardar a propagação, sem necessariamente torná-lo imune.
+O benefício pode ocorrer em vértices posteriores, e caminhos alternativos
+podem passar a ser os mais rápidos.
+
+Para um horizonte $H$, o objetivo é minimizar o número de vértices
+atingidos estritamente antes dele:
+\begin{equation}
+ \min_{\Lambda\ \text{viável}} |B_H^{\Lambda}|,
+ \qquad B_H^{\Lambda}=\{v\in V:a_v^{\Lambda}<H\}.
+ \label{eq:objetivo-wsp}
+\end{equation}
+\noindent Todos os vértices têm o mesmo custo; quando as células possuem
+áreas uniformes, a contagem aproxima a área queimada. A representação é
+determinística, com tempos fixos durante o horizonte, e não incorpora toda
+a incerteza ambiental ou as restrições operacionais de incêndios reais.
+
+Embora os tempos de chegada possam ser calculados por caminhos mínimos
+para uma alocação fixa, escolher as proteções é combinatoriamente difícil.
+Cada decisão altera a propagação e a viabilidade das decisões seguintes.
+\citeonline{DelazeriRitt2026} demonstram que a versão de decisão do WSP
+é NP-completa, mesmo no caso em que todos os recursos são liberados
+simultaneamente. Assim, a dificuldade do problema não se deve apenas à
+variação das liberações, e não se espera um algoritmo exato eficiente para
+todas as instâncias. Entretanto, a complexidade de pior caso não implica
+que toda instância seja igualmente difícil: a estrutura do grafo, os
+recursos, os atrasos e as liberações afetam o esforço de solução. Essa
+variabilidade motiva a análise das características que tornam uma instância
+mais ou menos custosa de resolver.
+
+Essa heterogeneidade justifica diversificar os testes. Os benchmarks
+clássicos tornaram-se pequenos e pouco discriminantes para métodos atuais.
+\citeonline{DelazeriRitt2026} propuseram um gerador fundamentado no modelo
+de propagação superficial de \citeonline{Rothermel1972}, com controle de
+tamanho, relevo, vento e configuração dos recursos. Os casos produzidos
+permitem estudar essas combinações em condições computacionais controladas.
+
+O WSP se relaciona ao \textit{firefighter problem}, proposto por Hartnell
+em 1995, conforme \citeonline{FinbowMacGillivray2009}. Nesse problema, o
+incêndio começa em um ou mais vértices de um grafo e evolui em passos
+discretos: a cada passo, até $d$ vértices ainda não afetados são defendidos
+e, em seguida, o fogo se propaga de cada vértice queimado a todos os seus
+vizinhos não defendidos. Vértices queimados ou defendidos mantêm esse estado,
+e o processo termina quando o fogo não pode mais avançar. Entre os objetivos
+usuais estão maximizar o número de vértices salvos, o que equivale a
+minimizar os queimados, e minimizar o tempo até o fim do processo
+\cite{FinbowMacGillivray2009}. O WSP, por sua vez, é definido sobre um grafo
+direcionado cujos arcos têm tempos de propagação reais não negativos, que
+determinam o instante de chegada do fogo a cada vértice a partir da ignição
+\cite{DelazeriRitt2026}. Cada recurso de supressão tem um instante de
+liberação e só pode ser alocado a um vértice que ainda não queimou nesse
+instante, com no máximo um recurso por vértice. O recurso, porém, não bloqueia
+o vértice: acrescenta um atraso finito aos arcos de saída, e o próprio
+vértice protegido ainda pode queimar. O objetivo é minimizar o número de
+vértices queimados antes de um horizonte $H$. Assim, o atraso finito, os
+tempos de propagação, as liberações e o horizonte do WSP impedem transferir
+diretamente soluções e resultados de complexidade entre as formulações
+\cite{DelazeriRitt2026,FinbowMacGillivray2009}.
+
+\subsection{Formulação em programação inteira mista}\label{sec:modelo-mip}
+
+A formulação de \citeonline{DelazeriRitt2026} agrupa os recursos pelos
+instantes distintos de liberação $\tau_1<\cdots<\tau_T$. Seja $q_i$ a
+quantidade liberada em $\tau_i$, de modo que $\sum_{i=1}^{T}q_i=k$.
+A variável binária $x_{iv}$ indica a alocação de um recurso de $\tau_i$
+ao vértice $v$; $y_v$ indica que $v$ queima antes de $H>0$; e $a_v$ é
+uma variável contínua não negativa associada à chegada do fogo. Com o
+mesmo atraso $\Delta$ para os recursos da instância, o modelo é
+\begin{align}
+ \min\quad &\sum_{v\in V}y_v \label{eq:mip-objetivo}\\
+ \text{sujeito a}\quad &a_s=0, \label{eq:mip-ignicao}\\
+ &a_v\leq a_u+t_{uv}+\Delta\sum_{i=1}^{T}x_{iu},
+       &&(u,v)\in A, \label{eq:mip-propagacao}\\
+ &\sum_{v\in V}x_{iv}\leq q_i,
+       &&i=1,\ldots,T, \label{eq:mip-capacidade}\\
+ &\sum_{i=1}^{T}x_{iv}\leq1,
+       &&v\in V, \label{eq:mip-unicidade}\\
+ &a_v\geq\tau_i x_{iv},
+       &&i=1,\ldots,T,\ v\in V, \label{eq:mip-temporal}\\
+ &y_v\geq1-a_v/H,
+       &&v\in V, \label{eq:mip-queima}\\
+ &x_{iv},y_v\in\{0,1\},\quad a_v\geq0.
+       \label{eq:mip-dominios}
+\end{align}
+
+A restrição~\eqref{eq:mip-ignicao} fixa a ignição, e
+\eqref{eq:mip-propagacao} limita a chegada a cada sucessor pelo tempo
+do predecessor mais o deslocamento e o eventual atraso. As restrições
+\eqref{eq:mip-capacidade} e \eqref{eq:mip-unicidade} controlam a
+capacidade por liberação e impedem duas alocações no mesmo vértice.
+A condição~\eqref{eq:mip-temporal} exige que o recurso esteja disponível
+antes ou no instante da chegada, quando $x_{iv}=1$.
+Por fim, \eqref{eq:mip-queima} obriga $y_v=1$ se $a_v<H$.
+
+Na definição por caminhos mínimos, a chegada é uma igualdade; no modelo,
+as desigualdades de propagação apenas a limitam superiormente. Para uma
+alocação fixa, os tempos reais de caminhos mínimos satisfazem essas
+restrições, e qualquer solução do modelo tem $a_v$ no máximo igual a
+esses tempos nos vértices alcançáveis. O objetivo favorece valores que
+permitam reduzir $y_v$, preservando a contagem ótima de queima.
+Isso não exige que todos os valores de $a_v$ retornados pelo
+\textit{solver} sejam tempos exatos, especialmente após o horizonte.
+Por isso, as soluções são reavaliadas por caminhos mínimos neste estudo.
+
+Para $n=|V|$ e $m=|A|$, há $nT+n$ variáveis binárias e $n$ contínuas,
+totalizando $n(T+2)$. Excluídos os domínios, há
+$m+nT+2n+T+1$ restrições: a ordem é $O(nT+n)$ para variáveis e
+$O(m+nT+n+T)$ para restrições. Trata-se de uma formulação compacta,
+o que não implica tempo polinomial para sua resolução inteira.
+
+\section{Métodos de solução para o WSP}\label{sec:metodos-wsp}
+
+A comparação reúne métodos exatos (MIP e LBBD), heurísticos (ILS e IBS),
+uma matheurística (CUTH) e uma linha de base aleatória (RS).
+O Quadro~\ref{quad:metodos-wsp} apresenta suas características.
+As subseções explicam os mecanismos e os parâmetros; os valores efetivamente
+utilizados estão no Quadro~\ref{qua:met-algoritmos}.
+
+\begin{quadro}[htbp]
+\centering
+\caption{Abordagens consideradas para o WSP.}\label{quad:metodos-wsp}
+\begin{singlespace}
+\begin{tabular}{|p{1.4cm}|p{2.4cm}|p{8.4cm}|}
+\hline
+Método & Natureza & Mecanismo principal\\ \hline
+MIP & Exato & Otimização conjunta de alocações e propagação por um \textit{solver}.\\ \hline
+LBBD & Exato & Alocação no problema mestre e avaliação da propagação no subproblema, com cortes lógicos.\\ \hline
+ILS & Heurístico & Busca local e perturbação de alocações.\\ \hline
+IBS & Heurístico & Feixe de alocações parciais ordenadas por avaliação heurística.\\ \hline
+CUTH & Matheurístico & Corte estático seguido de alocação gulosa temporal.\\ \hline
+RS & Heurístico & Construções aleatórias de alocações viáveis, como linha de base.\\ \hline
+\end{tabular}
+\par\smallskip
+{\fonte{elaboração própria, com base em \citeonline{Alvelos2018}, \citeonline{Delazeri2025}, \citeonline{DelazeriRitt2024}, \citeonline{HarrisForbesTaimre2023} e \citeonline{MendesAlvelos2023}.}}
+\end{singlespace}
+\end{quadro}
+
+\subsection{Programação Inteira Mista}\label{sec:metodo-mip}
+
+A MIP combina decisões discretas de alocação e queima com variáveis
+contínuas de chegada, permitindo utilizar um \textit{solver} gratuito ou
+comercial de otimização inteira. O modelo inicial de
+\citeonline{Alvelos2018} emprega dualidade de programação linear para
+impor tempos exatos de caminhos mínimos. A formulação de
+\citeonline{DelazeriRitt2026}, apresentada na Seção~\ref{sec:modelo-mip},
+utiliza desigualdades de propagação mais simples, suficientes para a
+contagem de vértices queimados no objetivo. Essa diferença reduz o esforço
+de modelagem da propagação, sem remover a dificuldade combinatória.
+
+Neste trabalho, MIP designa a resolução dessa segunda formulação pelo
+Gurobi. O termo modelo básico indica que uma única constante $\Delta$
+vale para todas as alocações de uma instância. Não se trata de um modelo
+com defesa permanente nem com atraso dependente do recurso.
+As decisões $x_{iv}$ determinam $\Lambda$, e os tempos e a queima resultantes
+são conferidos sob o modelo de caminhos mínimos.
+
+Durante a resolução, uma alocação viável fornece um limite superior para
+$|B_H^{\Lambda}|$, e a exploração do modelo produz limites inferiores.
+A diferença entre a melhor incumbente e um limite inferior global válido
+origina o \textit{gap} interno do \textit{solver}. Sua redução a zero,
+consideradas as tolerâncias numéricas, permite certificar otimalidade.
+Já o \textit{gap} empírico da Seção~\ref{sec:met-analise} compara o método
+com a melhor solução observada entre as execuções e não constitui essa prova.
+
+A classificação como exato descreve a garantia do método quando a
+resolução é concluída, não assegura uma solução ótima dentro do orçamento.
+Se o limite de tempo for atingido, podem restar uma solução viável e um
+intervalo de otimalidade ainda aberto. O orçamento e a configuração usados
+são apresentados no Quadro~\ref{qua:met-algoritmos}.
+
+\subsection{Decomposição de Benders Baseada em Lógica}\label{sec:lbbd}
+
+A LBBD de \citeonline{HarrisForbesTaimre2023} separa as decisões de alocação
+da avaliação da propagação. O problema mestre decide onde e em qual
+liberação empregar os recursos, respeitando capacidades e unicidade.
+Também mantém variáveis de queima que inicialmente aproximam o efeito
+das alocações. O subproblema recebe o conjunto protegido, recalcula os
+tempos $a_v^{\Lambda}$ por caminhos mínimos e confronta a propagação real
+com a solução proposta pelo mestre.
+
+Quando uma proteção ocorre após a chegada do fogo, o subproblema identifica
+a incompatibilidade temporal e acrescenta um corte de viabilidade.
+Quando a estimativa de queima é otimista, acrescenta cortes de otimalidade
+que obrigam o mestre a reconhecer a perda ou modificar as proteções.
+Os cortes são derivados da estrutura dos caminhos responsáveis pela
+propagação. O procedimento alterna exploração do mestre e separação de
+cortes até comprovar a solução ou atingir o critério de parada.
+
+A implementação empregada inclui uma inicialização heurística. Nessa
+fase, as alocações são construídas progressivamente pelas liberações,
+utilizando uma versão restrita do mestre e verificações de propagação.
+A solução resultante inicializa a etapa exata, que permite reconsiderar
+as decisões. Essa inicialização pode consumir parte substancial do tempo;
+por isso, as duas fases compartilham o orçamento no experimento, conforme
+o Quadro~\ref{qua:met-algoritmos} e a Seção~\ref{sec:met-benchmark}.
+Um limite da versão heurística restrita não deve ser interpretado como
+limite global do problema completo.
+
+A força dos cortes depende do quanto as proteções alteram os caminhos.
+Quando o atraso de um único recurso não basta para deslocar a chegada além
+de $H$, várias proteções podem ser necessárias para salvar um vértice,
+dificultando a identificação de condições fortes de queima e não queima.
+Assim, a decomposição pode exigir muitas verificações e cortes.
+A LBBD é exata quando sua etapa completa converge com limites válidos;
+como na MIP, essa classificação não garante otimalidade dentro do tempo
+permitido. Solução, limite, estado de término e fase executada precisam
+ser interpretados conjuntamente.
+
+\subsection{Busca Local Iterada}\label{sec:ils}
+
+A ILS de \citeonline{MendesAlvelos2023} alterna melhoria de alocações
+completas e perturbações, buscando linhas de contenção de boa qualidade.
+Na implementação utilizada \cite{HarrisForbesTaimre2023}, a construção
+inicial percorre as liberações e sorteia o próximo vértice entre os
+candidatos viáveis de chegada mais próxima. Repete-se essa construção em
+múltiplos reinícios e conserva-se a melhor solução inicial.
+
+A busca local tenta deslocar um recurso para a vizinhança dos demais
+vértices protegidos, incluindo vizinhos espaciais diagonais existentes
+na grade. Os candidatos são ordenados pela chegada do fogo e limitados
+pelo parâmetro de vizinhos. Cada movimento é reavaliado por caminhos
+mínimos e só pode ser aceito se preservar todas as alocações temporais.
+Passagens de melhoria são repetidas até que não se encontre redução
+estrita de $|B_H^{\Lambda}|$ na vizinhança examinada.
+
+A perturbação remove uma alocação com probabilidade $p_1$, adiciona um
+recurso disponível com probabilidade $p_2$, quando aplicável, ou reposiciona
+recursos em uma vizinhança ampliada. O número máximo de modificações limita
+os deslocamentos aceitos; o número máximo de falhas interrompe tentativas
+inviáveis consecutivas. Após a perturbação, aplica-se novamente a busca
+local. A melhor solução é atualizada quando há melhoria, e um contador
+controla as iterações consecutivas sem progresso. O experimento também
+impõe o limite global de tempo. Os valores desses parâmetros e dos
+reinícios e candidatos iniciais estão no Quadro~\ref{qua:met-algoritmos}.
+
+\begin{quadro}[htbp]
+\centering
+\caption{Pseudocódigo da ILS: construção, melhoria e perturbação.}
+\label{qua:pseudo-ils}
+\begin{minipage}{0.95\textwidth}
+\begin{singlespace}
+\textbf{Entrada:} instância, limites de construção e busca, $p_1$, $p_2$.\\
+\textbf{Saída:} melhor alocação viável $\Lambda^\star$ registrada.
+\begin{enumerate}
+ \item Construa alocações aleatórias viáveis em múltiplos reinícios e retenha a melhor.
+ \item Aplique busca local e inicialize $\Lambda^\star$; faça $\ell\leftarrow0$.
+ \item Enquanto houver tempo e $\ell$ for menor que o limite sem melhoria:
+ \begin{enumerate}
+  \item Perturbe $\Lambda^\star$ por remoção, adição ou reposicionamento.
+  \item Aplique busca local à alocação perturbada, respeitando a viabilidade.
+  \item Se o objetivo melhorar, atualize $\Lambda^\star$ e faça $\ell\leftarrow0$; caso contrário, faça $\ell\leftarrow\ell+1$.
+ \end{enumerate}
+ \item Retorne $\Lambda^\star$.
+\end{enumerate}
+{\fonte{elaboração própria a partir de \citeonline{MendesAlvelos2023} e da implementação de \citeonline{HarrisForbesTaimre2023}.}}
+\end{singlespace}
+\end{minipage}
+\end{quadro}
+
+\subsection{Busca em Feixe Iterada}\label{sec:ibs}
+
+O IBS de \citeonline{DelazeriRitt2024} explora uma árvore cuja raiz é a
+alocação vazia, cujos níveis acompanham os recursos liberados e cujos nós
+representam alocações parciais. A largura $\beta$ limita o número de
+alocações mantidas por nível, enquanto $\eta$ limita as expansões
+preservadas de cada alocação antes da seleção do feixe seguinte.
+
+A avaliação $h_1(\Lambda)=|B_H^{\Lambda}|$ coincide com o objetivo do WSP.
+Nos primeiros níveis, porém, decisões que atrasam o fogo podem manter a
+mesma contagem de queimados. Para discriminar essas alocações, utiliza-se
+\begin{equation}
+ h_2(\Lambda)=\sum_{v\in V}\max\{H-a_v^{\Lambda},0\}.
+ \label{eq:ibs-h2}
+\end{equation}
+\noindent Valores menores indicam chegada agregada mais tardia aos
+vértices ainda atingidos antes de $H$; vértices inalcançáveis contribuem
+com zero. A ordenação inicia com $h_2$ e passa a $h_1$ no instante
+$\hat p$ vezes o tempo de queima livre. O parâmetro $\hat p$ controla,
+portanto, quando se passa a priorizar diretamente a contagem final.
+
+Em cada expansão, os candidatos são restringidos a um perímetro definido
+por uma janela de chegada posterior à liberação. O parâmetro $z$ amplia
+essa janela para incluir vértices que serão alcançados mais tarde.
+O fator $c$ multiplica o tamanho do perímetro para determinar as tentativas
+de construção, e $p$ controla a preferência por candidatos vizinhos de
+vértices já protegidos. Quando uma busca em feixe não melhora a incumbente,
+atualiza-se $z\leftarrow(z+1)\bmod z_{\max}$; no experimento,
+$z_{\max}=3$ produz o ciclo $0,1,2$. Se houver melhoria, mantém-se $z$.
+Os demais valores estão no Quadro~\ref{qua:met-algoritmos}.
+
+\begin{quadro}[htbp]
+\centering
+\caption{Pseudocódigo do IBS com buscas em feixe sucessivas.}
+\label{qua:pseudo-ibs}
+\begin{minipage}{0.95\textwidth}
+\begin{singlespace}
+\textbf{Entrada:} instância, $\beta$, $\eta$, $c$, $p$, $\hat p$, $z_{\max}$ e parada.\\
+\textbf{Saída:} melhor alocação viável $\Lambda^\star$.
+\begin{enumerate}
+ \item Inicialize $\Lambda^\star$ com a alocação vazia e faça $z\leftarrow0$.
+ \item Enquanto o critério de parada não for satisfeito:
+ \begin{enumerate}
+  \item Inicie o feixe com a alocação vazia.
+  \item Para cada recurso, em ordem de liberação, expanda as alocações do feixe usando o perímetro $z$, o esforço $c$ e a preferência $p$.
+  \item Em cada nível, preserve até $\eta$ expansões por alocação e até $\beta$ alocações no novo feixe, ordenadas por $h_2$ ou $h_1$ conforme $\hat p$.
+  \item Ao concluir a busca, registre sua solução representativa $\Lambda$.
+  \item Se $\Lambda$ melhorar o objetivo, atualize $\Lambda^\star$; caso contrário, faça $z\leftarrow(z+1)\bmod z_{\max}$.
+ \end{enumerate}
+ \item Retorne $\Lambda^\star$.
+\end{enumerate}
+{\fonte{elaboração própria a partir de \citeonline{DelazeriRitt2024,Delazeri2025}.}}
+\end{singlespace}
+\end{minipage}
+\end{quadro}
+
+O IBS é estocástico e não prova otimalidade. A solução devolvida por uma
+busca em feixe pode ser pior que a incumbente. A distinção entre a sequência
+dessas soluções e a sequência de melhores valores sustenta a análise
+por STNs, pois apenas as melhorias não conservam todo o percurso registrado.
+
+\subsection{Heurística Baseada em Cortes}\label{sec:cuth}
+
+A CUTH de \citeonline{Delazeri2025} combina um corte estático de vértices
+com uma construção gulosa temporal. Para um instante $\bar t$, calcula-se
+$B_{\bar t}^{\Lambda_0}$, o conjunto queimado sem recursos antes desse
+instante. Busca-se um corte com até $k$ vértices que minimize quantos
+vértices permanecem alcançáveis a partir desse conjunto. A variável
+binária $\chi_v$ indica participação no corte e $\omega_v$ indica
+alcançabilidade. O submodelo é
+\begin{align}
+ \min\quad &\sum_{v\in V}\omega_v \label{eq:cuth-objetivo}\\
+ \text{sujeito a}\quad &\omega_v=1,\quad\chi_v=0,
+       &&v\in B_{\bar t}^{\Lambda_0}, \label{eq:cuth-fontes}\\
+ &\omega_u\leq\omega_v+\chi_u,
+       &&(u,v)\in A, \label{eq:cuth-propagacao}\\
+ &\sum_{v\in V}\chi_v\leq k, \label{eq:cuth-capacidade}\\
+ &\chi_v,\omega_v\in\{0,1\},&&v\in V.
+\end{align}
+
+Os vértices já queimados são alcançáveis e não podem integrar o corte.
+A condição~\eqref{eq:cuth-propagacao} estende a alcançabilidade pelos arcos,
+exceto quando o vértice de origem pertence ao corte. O próprio vértice do
+corte pode ser alcançado, mas seus sucessores podem deixar de sê-lo.
+A Figura~\ref{fig:corte-estatico} ilustra essa separação. O limite de
+$k$ proteções usa a capacidade total e ainda não assegura que todos os
+recursos estejam disponíveis antes da chegada do fogo.
+
+\begin{figure}[htbp]
+\centering
+\caption{Exemplo de corte estático utilizado como candidato à contenção.}
+\label{fig:corte-estatico}
+\begin{singlespace}
+\begin{tikzpicture}[v/.style={circle,draw,minimum size=8mm},
+ seta/.style={-{Stealth[length=2mm]},thick}]
+\node[v,fill=black!15] (s) at (0,0) {$s$};
+\node[v,fill=black!15] (b) at (1.8,0) {$b$};
+\node[v,fill=blue!15] (c1) at (3.6,0.9) {$c_1$};
+\node[v,fill=blue!15] (c2) at (3.6,-0.9) {$c_2$};
+\node[v] (d1) at (5.8,0.9) {$d_1$};
+\node[v] (d2) at (5.8,-0.9) {$d_2$};
+\draw[seta] (s)--(b);
+\draw[seta] (b)--(c1);\draw[seta] (b)--(c2);
+\draw[seta,dashed] (c1)--(d1);\draw[seta,dashed] (c2)--(d2);
+\node[font=\small] at (0.9,-1.8) {já queimados};
+\node[font=\small] at (3.6,-1.8) {corte};
+\node[font=\small] at (5.8,-1.8) {separados};
+\end{tikzpicture}
+\par\smallskip
+{\small Nota: cinza indica os vértices já queimados em $\bar t$; azul, o corte
+$P=\{c_1,c_2\}$; branco, a região separada. Os arcos tracejados deixam de
+propagar alcançabilidade no submodelo. No WSP, a proteção produz atraso
+finito e depende da alocação temporal dos recursos.\par}
+{\fonte{elaboração própria, com base em \citeonline{Delazeri2025}.}}
+\end{singlespace}
+\end{figure}
+
+Após obter $P=\{v:\chi_v=1\}$, recalculam-se as chegadas considerando
+os atrasos em $P$. A construção gulosa associa o recurso de liberação
+mais próxima ao vértice de $P$ com menor chegada do fogo, desde que a
+liberação não seja posterior à chegada. Repete-se até alocar todo o corte
+ou identificar inviabilidade. Uma busca binária sobre $\bar t$ procura um
+corte que possa ser implantado. A tolerância temporal, o tempo por chamada
+do submodelo e o orçamento global estão no Quadro~\ref{qua:met-algoritmos}.
+
+A CUTH é matheurística porque resolve um submodelo exato dentro de uma
+estratégia heurística para o WSP. Os tempos definem o conjunto queimado
+e a viabilidade temporal, mas não entram na propagação de alcançabilidade
+do corte estático. Seu ótimo não é um limite inferior certificado do WSP;
+a alocação viável obtida fornece um limite superior para $|B_H^{\Lambda}|$.
+
+\subsection{Busca Aleatória}\label{sec:rs}
+
+A RS serve de linha de base para avaliar o ganho das estratégias orientadas
+\cite{DelazeriRitt2026}. A cada construção, começa com a alocação vazia,
+percorre as liberações em ordem e sorteia vértices elegíveis, respeitando
+a capacidade e a unicidade. As chegadas são atualizadas à medida que as
+proteções alteram a propagação. Ao fim, compara-se o objetivo com a melhor
+solução anterior. A construção é repetida até a parada.
+
+\begin{quadro}[htbp]
+\centering
+\caption{Pseudocódigo da RS como linha de base de desempenho.}
+\label{qua:pseudo-rs}
+\begin{minipage}{0.95\textwidth}
+\begin{singlespace}
+\begin{enumerate}
+ \item Inicialize $\Lambda^\star$ com a alocação vazia.
+ \item Enquanto houver tempo, inicie uma nova alocação vazia $\Lambda$.
+ \item Para cada liberação e recurso disponível, recalcule os vértices sem proteção que ainda não queimaram, sorteie um deles e aloque o recurso; se não houver candidato, deixe-o sem uso.
+ \item Ao concluir a construção, atualize $\Lambda^\star$ se $|B_H^{\Lambda}|$ for menor; retorne à etapa 2 enquanto houver tempo.
+ \item Retorne $\Lambda^\star$.
+\end{enumerate}
+{\fonte{elaboração própria a partir de \citeonline{DelazeriRitt2026}.}}
+\end{singlespace}
+\end{minipage}
+\end{quadro}
+
+O IBS é o método de referência para o estudo das trajetórias; a RS é o
+método de base usado como ponto de comparação de desempenho. A semente
+controla a amostragem, e suas soluções viáveis fornecem limites superiores,
+sem certificar otimalidade. A configuração da RS está no
+Quadro~\ref{qua:met-algoritmos}.
+
+\section{Análise de espaço de instâncias}\label{sec:isa}
+
+Médias de desempenho podem ocultar regiões favoráveis a diferentes
+algoritmos. A ISA torna essa heterogeneidade explícita ao
+relacionar atributos mensuráveis dos problemas ao desempenho
+\cite{MunozEtAl2018,SmithMilesMunoz2023}. Essa abordagem se relaciona
+à seleção de algoritmos de \citeonline{Rice1976} e à avaliação objetiva
+em diferentes regiões desenvolvida por \citeonline{SmithMilesEtAl2014}.
+
+Cada instância $I_i$ é representada por um vetor
+$\phi(I_i)\in\mathbb{R}^m$ de atributos e por medidas de desempenho
+$y_{i\alpha}$ dos algoritmos $\alpha$. No WSP, os atributos descrevem
+tamanho, tempos, recursos, queima livre e topologia. O desempenho pode
+expressar qualidade ou tempo; quando há repetições estocásticas, deve ser
+agregado por instância, preservando também sua dispersão. A definição do
+\textit{gap} adotado neste trabalho está na Seção~\ref{sec:met-analise}.
+
+Uma projeção $\psi:\mathbb{R}^m\rightarrow\mathbb{R}^2$ associa cada
+instância a $z_i=\psi(\phi(I_i))$. Proximidade no mapa expressa similaridade
+nos atributos após as transformações utilizadas. A sobreposição do desempenho permite
+examinar agrupamentos, lacunas e \textit{footprints}: regiões associadas
+ao critério de bom desempenho. Na configuração deste estudo, essas
+regiões são inferidas a partir de predições, não medidas em todos os pontos.
+Sua interpretação depende da coleção, dos atributos e dos modelos.
+
+\subsection{O fluxo MATILDA}\label{sec:matilda}
+
+A \textit{Melbourne Algorithm Test Instance Library with Data Analytics}
+(MATILDA) organiza a ISA em preparação, seleção, projeção,
+predição e análise de regiões \cite{SmithMilesMunoz2023}. As etapas
+possuem os seguintes papéis:
+\begin{alineas}
+ \item \textbf{PRELIM}: verifica e transforma os dados para tratar assimetrias e escalas;
+ \item \textbf{SIFTED}: seleciona atributos informativos e reduz redundâncias;
+ \item \textbf{PILOT}: projeta atributos e tendências de desempenho em duas dimensões;
+ \item \textbf{CLOISTER}: estima limites plausíveis a partir das relações entre atributos;
+ \item \textbf{PYTHIA}: ajusta classificadores do critério de bom desempenho;
+ \item \textbf{TRACE}: constrói e descreve os footprints segundo as classes utilizadas.
+\end{alineas}
+
+A análise de componentes principais (\textit{Principal Component Analysis},
+PCA) teve finalidade exploratória, enquanto PILOT utiliza informação de
+desempenho. No pyInstanceSpace, PYTHIA e CLOISTER dependem de PILOT,
+mas não uma da outra. TRACE utiliza as predições de PYTHIA, sem depender
+diretamente da saída de CLOISTER \cite{PyInstanceSpace021}.
+A Seção~\ref{sec:met-matilda} apresenta a configuração adotada.
+
+Transformações e seleção afetam a geometria; o limiar de bom desempenho
+afeta os rótulos; e poucas observações ou classes desbalanceadas podem
+tornar os classificadores pouco informativos. Por isso, mapas e regiões
+precisam ser acompanhados de diagnósticos. Avaliação na própria coleção
+não demonstra generalização para novas instâncias.
+
+\subsection{Geração orientada pelo espaço de instâncias}
+
+Lacunas no mapa podem refletir combinações inviáveis de atributos ou
+insuficiência dos testes existentes. \citeonline{SmithMilesBowly2015}
+propõem investigar a segunda possibilidade definindo pontos-alvo e
+utilizando busca evolutiva para gerar instâncias próximas a eles.
+Para uma candidata $I(\theta)$, produzida pelos parâmetros $\theta$,
+um objetivo de geração é
+\begin{equation}
+ \min_{\theta}\left\|\psi\bigl(\phi(I(\theta))\bigr)-z^{\star}\right\|_2,
+ \label{eq:geracao-alvo-isa}
+\end{equation}
+\noindent sendo $z^{\star}$ o alvo. Seleção, recombinação e mutação
+exploram configurações do gerador sujeitas às restrições do domínio.
+
+A projeção das candidatas deve reutilizar as transformações e atributos
+do mapa que definiu os alvos. Mantida essa referência e verificada a validade
+das instâncias, a redução das distâncias aos pontos do domínio demonstra
+maior cobertura da representação. A dificuldade dos casos e sua contribuição
+à discriminação de algoritmos são avaliadas pelo desempenho medido.
+Um reajuste da ISA define outra geometria. A cobertura é medida no mapa
+que orientou a geração; o mapa reajustado permite analisar as relações
+entre atributos e desempenho na coleção ampliada.
+
+\section{Caracterização topológica de grafos direcionados}\label{sec:topologia}
+
+O tamanho e as estatísticas dos pesos não determinam a organização dos caminhos
+de um grafo. Medidas de redes complementam esses descritores ao representar
+conectividade local, influência e acessibilidade \cite{Newman2018}.
+A semântica dos pesos é essencial: $t_{uv}$ é uma distância temporal,
+adequada às medidas de caminhos mínimos. Para medidas em que peso significa
+intensidade da conexão, emprega-se $w_{uv}=1/t_{uv}$, fazendo arcos rápidos
+corresponderem a ligações fortes.
+
+Os graus de entrada e saída contam, respectivamente, os arcos que chegam
+a um vértice e os que dele partem. Razões e diferenças normalizadas
+descrevem a assimetria entre recepção e disseminação. Em grades regulares,
+fronteiras e remoção de regiões inalcançáveis introduzem variação nessas
+medidas. O PageRank resume influência global de entrada por um passeio
+aleatório com teletransporte e tratamento de vértices sem saída
+\cite{BrinPage1998}. A Busca de Tópicos Induzida por Hiperligações (HITS, do inglês:
+\textit{hyperlink-induced topic search}) distingue \textit{authorities}, que recebem
+ligações de bons \textit{hubs}, e \textit{hubs}, que apontam para boas \textit{authorities};
+seus escores derivam dos vetores singulares dominantes da matriz de
+adjacência ou de forças \cite{Kleinberg1999}.
+
+A intermediação quantifica a participação de um vértice nos caminhos
+mínimos entre pares:
+\begin{equation}
+ C_B(v)=\sum_{\substack{p\neq q\\p,q\neq v}}
+ \frac{\sigma_{pq}(v)}{\sigma_{pq}},
+ \label{eq:betweenness}
+\end{equation}
+\noindent em que $\sigma_{pq}$ conta os caminhos mínimos de $p$ a $q$,
+e $\sigma_{pq}(v)$, aqueles que atravessam $v$. Pares desconectados
+contribuem com zero. Em um dígrafo com $n>2$, a normalização por
+$(n-1)(n-2)$ considera pares ordenados. Alta intermediação pode sinalizar
+gargalos, mas a medida agrega pares diversos, enquanto o fogo parte de
+uma ignição específica.
+
+A centralidade harmônica mede acessibilidade mesmo sem conexão forte:
+\begin{equation}
+ C_H^{\mathrm{out}}(v)=\sum_{u\neq v}\frac{1}{d_G(v,u)},\qquad
+ C_H^{\mathrm{in}}(v)=\sum_{u\neq v}\frac{1}{d_G(u,v)},
+ \label{eq:centralidade-harmonica}
+\end{equation}
+\noindent Vértices inalcançáveis têm distância infinita e contribuem
+com zero para a soma. As formas de saída e entrada expressam
+facilidade de alcançar a rede e de ser alcançado. Com tempos como distância,
+incorporam a rapidez da propagação; a normalização aplicada às instâncias
+está na Seção~\ref{sec:met-topologia}.
+
+O agrupamento direcionado mede fechamento de vizinhanças por triângulos.
+A variante binária de \citeonline{Fagiolo2007} considera suas diferentes
+orientações. Em grades sem diagonais, a ausência de triângulos pode tornar
+a medida constante. Essa propriedade ilustra por que uma métrica de rede
+não deve ser considerada informativa antes de examinar os grafos utilizados.
+
+As medidas são nodais, mas a ISA utiliza uma observação por instância.
+Por isso, suas distribuições são resumidas por média, dispersão, quantis e
+extremos. A agregação conserva aspectos do perfil estrutural, mas perde
+localização dos vértices e pode introduzir redundância com tamanho e pesos.
+Filtros de variância, correlação e estabilidade numérica são necessários.
+
+O benefício de proteger um vértice depende da ignição, do horizonte, das
+liberações e da interação entre alocações. As centralidades fornecem
+hipóteses sobre sua importância estrutural, que podem ser examinadas
+na representação das instâncias e nos diagnósticos de desempenho.
+
+\section{Redes de trajetórias de busca}\label{sec:stn}
+
+As STNs representam percursos de busca por grafos direcionados
+\cite{OchoaMalanBlum2021}. Enquanto uma curva de convergência mostra quando
+a melhor qualidade muda, a rede permite examinar se execuções compartilham
+estados e transições, retornam a soluções anteriores ou permanecem dispersas.
+
+Uma solução representativa resume a busca em um instante de registro,
+como a incumbente de um método de ponto único ou a melhor solução de uma
+população. Uma localização é uma parte não vazia de uma partição do espaço
+de soluções: pode corresponder a uma solução ou agrupar soluções consideradas
+equivalentes. A trajetória é a sequência de localizações registradas.
+A STN $\mathcal{G}_{\mathrm{STN}}=(N,E)$ reúne essas localizações como nós
+e as transições consecutivas como arestas, ponderadas por sua frequência.
+Atributos dos nós podem indicar qualidade, frequência de visita e condição
+inicial ou terminal. Trajetórias de várias execuções podem ser agregadas
+quando compartilham a mesma definição de localização
+\cite{ChaconSartoriEtAl2023,OchoaMalanBlum2021}.
+
+A codificação e a frequência de registro determinam o que a rede representa.
+Uma partição muito fina reduz sobreposições; uma partição grosseira pode
+fundir estados relevantes para a análise. No WSP, o instante também faz
+parte da decisão de proteção de um vértice. Registrar apenas
+melhorias também produz uma rede diferente daquela formada por todas as
+soluções devolvidas pelas iterações. O protocolo específico deste trabalho
+é definido na Seção~\ref{sec:met-trajetorias}.
+
+Entre os descritores estão o número de nós e arestas, os nós de melhor
+avaliação observada ($n_{\mathrm{best}}$), os terminais fora desse conjunto
+($n_{\mathrm{end}}$) e o compartilhamento entre execuções. A
+\textit{best-strength} soma os pesos das arestas que chegam aos melhores
+nós e divide pelo número de execuções. Transições repetidas podem fazer
+essa razão exceder um: trata-se de frequência normalizada de transições.
+
+Nenhuma dessas métricas determina isoladamente a qualidade da busca.
+Uma rede pequena pode representar convergência ou estagnação; uma rede
+grande, diversificação produtiva ou dispersão. Qualidade, recorrência,
+compartilhamento e evolução precisam ser interpretados conjuntamente.
+Assim, a topologia descreve o grafo do problema, a ISA situa a instância
+em relação às demais e a STN descreve as soluções visitadas por um algoritmo. Neste trabalho,
+ela é aplicada ao IBS.

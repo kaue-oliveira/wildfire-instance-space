@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "completed_utc": "2026-10-05T20:21:45.707371+00:00",
+  "jobs": [
+    {
+      "instance": "ga_small_05e4983100f5eeb1",
+      "seed": 1
+    },
+    {
+      "instance": "ga_medium_2210c22f9e05921c",
+      "seed": 1
+    },
+    {
+      "instance": "ga_huge_07952568c0427d4f",
+      "seed": 1
+    }
+  ],
+  "pipeline": "input -> reader -> actual IBS -> every logged state -> saved solution -> STN -> metrics/figures/ISA join"
+}

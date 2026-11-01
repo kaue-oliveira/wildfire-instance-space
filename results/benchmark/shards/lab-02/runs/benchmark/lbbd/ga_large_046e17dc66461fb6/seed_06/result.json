@@ -1,0 +1,200 @@
+{
+  "algorithm": "lbbd",
+  "baseline_mip_starts": 1,
+  "budget_policy": "global_remaining_divided_among_remaining_greedy_stages",
+  "collection": "supplementary_19",
+  "completed_utc": "2026-09-18T17:57:19Z",
+  "engine": "legacy_python",
+  "exact_started": false,
+  "feasibility_cuts": 2379,
+  "global_budget_seconds": 2400,
+  "greedy_wall_seconds": 2400.1703396039957,
+  "harris_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2_4/inputs/harris/ga_large_046e17dc66461fb6.json",
+  "instance": "ga_large_046e17dc66461fb6",
+  "instance_sha256": "1c9b56d770ccad3449d8a2d408b889e4e0b330796a0a2e7422fdfc45b7e63e73",
+  "job_id": "job_02342",
+  "lower_bound": 1129.0,
+  "mip_gap": 0.289490245437382,
+  "n_vertices": "1600",
+  "native_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2_4/inputs/native/ga_large_046e17dc66461fb6.json",
+  "objective": 1589,
+  "objective_consistency": "exact",
+  "objective_delta_vs_solver": 0,
+  "objective_source": "independent_shortest_path_validation",
+  "optimality_cuts": 138858,
+  "optimize_calls": 20,
+  "optimize_time_allocations_seconds": [
+    119.94369604995009,
+    119.94165474347353,
+    119.92199693816656,
+    119.92057875758859,
+    119.89938739187528,
+    127.15735227493376,
+    127.15186704549913,
+    127.1458047434616,
+    127.1390495152494,
+    127.13182116163608,
+    127.12497047630022,
+    127.11758126599791,
+    127.10814515449965,
+    127.1001363055714,
+    127.0920114795008,
+    127.08210402139812,
+    127.07190314900072,
+    127.05929474299774,
+    127.04198968299897,
+    127.00720244899276
+  ],
+  "peak_rss_bytes": 640327680,
+  "phase": "benchmark",
+  "pilot": false,
+  "protocol_sha256": "e3d18d9a7f1ac04276df98b5306333bdae4db2effd6fb8c90ee3ea6a126329fc",
+  "result_provenance": "measured",
+  "seed": 6,
+  "shard_index": "1",
+  "size_class": "Large",
+  "solution": [
+    [
+      [
+        1,
+        2
+      ],
+      403.36
+    ],
+    [
+      [
+        1,
+        3
+      ],
+      483.97
+    ],
+    [
+      [
+        1,
+        5
+      ],
+      564.59
+    ],
+    [
+      [
+        1,
+        38
+      ],
+      806.42
+    ],
+    [
+      [
+        2,
+        2
+      ],
+      887.04
+    ],
+    [
+      [
+        2,
+        3
+      ],
+      604.89
+    ],
+    [
+      [
+        2,
+        4
+      ],
+      524.28
+    ],
+    [
+      [
+        2,
+        39
+      ],
+      685.5
+    ],
+    [
+      [
+        3,
+        1
+      ],
+      363.05
+    ],
+    [
+      [
+        3,
+        3
+      ],
+      645.2
+    ],
+    [
+      [
+        3,
+        40
+      ],
+      443.67
+    ],
+    [
+      [
+        39,
+        39
+      ],
+      766.12
+    ],
+    [
+      [
+        39,
+        40
+      ],
+      725.81
+    ],
+    [
+      [
+        40,
+        38
+      ],
+      846.73
+    ]
+  ],
+  "solver_lower_bound": 1129.0,
+  "solver_mip_gap": 0.289490245437382,
+  "solver_objective": 1589,
+  "solver_status": 9,
+  "status": "completed",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "5a1a620fabbccba27118a18bf470236822aaa972a398c18a35ac19388981fcd5",
+  "thermal_after": {
+    "frequencies_mhz": {
+      "cpu0": 4099.989,
+      "cpu1": 800.0,
+      "cpu2": 4099.993,
+      "cpu3": 800.0,
+      "cpu4": 800.0,
+      "cpu5": 800.0,
+      "cpu6": 800.0,
+      "cpu7": 800.0
+    },
+    "temperatures_c": {
+      "thermal_zone0:acpitz": 27.8,
+      "thermal_zone1:acpitz": 29.8,
+      "thermal_zone2:x86_pkg_temp": 66.0
+    },
+    "utc": "2026-09-18T17:57:19Z"
+  },
+  "time_limit_seconds": "2400",
+  "validation": {
+    "assignments": 14,
+    "feasible": true,
+    "objective_recomputed": 1589
+  },
+  "wall_seconds": 2400.5927109410113,
+  "worker": {
+    "core_type": "homogeneous",
+    "logical_cpu": 1,
+    "max_mhz": 4200.0,
+    "physical_core": 1,
+    "sibling_logical_cpus": [
+      1,
+      5
+    ],
+    "socket": 0,
+    "worker_id": 1
+  }
+}

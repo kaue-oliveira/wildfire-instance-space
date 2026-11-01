@@ -1,0 +1,858 @@
+{
+  "status": "passed",
+  "scope": "corrected SIFTED invariants, archived inputs, options, artifacts and diagnostic consistency",
+  "models": {
+    "all74_control": {
+      "status": "passed",
+      "name": "all74_control",
+      "instances": 74,
+      "algorithms": 6,
+      "epsilon": 0.1,
+      "cv_folds": 4,
+      "input_features": 35,
+      "selected_features": [
+        "feature_decision_points",
+        "feature_resources_per_decision",
+        "feature_delta_over_h",
+        "feature_first_release_over_h",
+        "feature_last_release_over_h",
+        "feature_free_burning_over_h",
+        "feature_directional_asymmetry_mean",
+        "feature_y_span",
+        "feature_arc_time_p50",
+        "feature_release_front_window_max"
+      ],
+      "selected_topology_features": [],
+      "matilda_build_seconds": 619.539184764988,
+      "full_model_seconds": 629.1199794019922,
+      "analysis_input_hash": "19152f979e8834cf816554865a3f5ca7afdb7e124bf1caaecb30c46fe4ace9a5",
+      "label_counts": {
+        "CUTH": {
+          "good": 24,
+          "not_good": 50
+        },
+        "IBS": {
+          "good": 70,
+          "not_good": 4
+        },
+        "ILS": {
+          "good": 35,
+          "not_good": 39
+        },
+        "LBBD": {
+          "good": 36,
+          "not_good": 38
+        },
+        "MIP": {
+          "good": 42,
+          "not_good": 32
+        },
+        "RS": {
+          "good": 23,
+          "not_good": 51
+        }
+      },
+      "in_sample_diagnostic_only": {
+        "CUTH": {
+          "accuracy": 0.9459459459459459,
+          "balanced_accuracy": 0.9383333333333332,
+          "precision": 0.9166666666666666,
+          "recall": 0.9166666666666666,
+          "errors": 4
+        },
+        "IBS": {
+          "accuracy": 0.9459459459459459,
+          "balanced_accuracy": 0.5,
+          "precision": 0.9459459459459459,
+          "recall": 1.0,
+          "errors": 4
+        },
+        "ILS": {
+          "accuracy": 0.9324324324324325,
+          "balanced_accuracy": 0.932967032967033,
+          "precision": 0.9166666666666666,
+          "recall": 0.9428571428571428,
+          "errors": 5
+        },
+        "LBBD": {
+          "accuracy": 0.9459459459459459,
+          "balanced_accuracy": 0.945906432748538,
+          "precision": 0.9444444444444444,
+          "recall": 0.9444444444444444,
+          "errors": 4
+        },
+        "MIP": {
+          "accuracy": 0.9594594594594594,
+          "balanced_accuracy": 0.9605654761904762,
+          "precision": 0.975609756097561,
+          "recall": 0.9523809523809523,
+          "errors": 3
+        },
+        "RS": {
+          "accuracy": 0.9459459459459459,
+          "balanced_accuracy": 0.948849104859335,
+          "precision": 0.88,
+          "recall": 0.9565217391304348,
+          "errors": 4
+        }
+      },
+      "pythia_repeated_cv_is_not_nested": true,
+      "footprint_areas_between_separate_maps_comparable": false,
+      "sifted_correction": {
+        "revision": "sifted-corrected-v1",
+        "upstream_commit": "289a940a79cee2001bd8c54621465ddc3e30a094",
+        "upstream_sifted_sha256": "4ba3a3cf49f46946600ca2acf54a911b9cc359e38d28f5b00f66d1cf8b3d2564",
+        "local_correction_sha256": "e054cd404b8ad2916332b4f5b547b3f4c30691622197517eaf2b1844a9a52520",
+        "fitness": "negative maximum cross-validated KNN classification MSE across algorithms",
+        "direction": "maximize negative loss, equivalent to minimizing worst algorithm loss",
+        "correlation_filter": "best feature per algorithm plus any significant absolute correlation >= rho",
+        "candidate_mapping": "cluster indices address filtered x and filtered feature names",
+        "reference": "https://github.com/andremun/InstanceSpace/blob/master/core/SIFTED.m",
+        "scope": "local correction of three confirmed defects, not an upgrade to current upstream"
+      },
+      "sifted_final_worst_cv_error": 0.0819047619047619,
+      "sifted_filtered_features": 34,
+      "same_inputs_and_scientific_options_outside_sifted_as_v1": true,
+      "parallel_execution_options": {
+        "v1": {
+          "flag": true,
+          "n_cores": 2
+        },
+        "v2": {
+          "flag": true,
+          "n_cores": 2
+        }
+      }
+    },
+    "all74_topology": {
+      "status": "passed",
+      "name": "all74_topology",
+      "instances": 74,
+      "algorithms": 6,
+      "epsilon": 0.1,
+      "cv_folds": 4,
+      "input_features": 107,
+      "selected_features": [
+        "feature_total_resources",
+        "feature_arrival_q05_over_h",
+        "feature_x_span",
+        "feature_arc_time_mean",
+        "feature_arc_time_cv",
+        "feature_release_front_window_mean",
+        "feature_topo_harmonic_in_distance_mean",
+        "feature_topo_hits_authority_strength_q75",
+        "feature_topo_hits_authority_strength_std",
+        "feature_topo_pagerank_strength_min"
+      ],
+      "selected_topology_features": [
+        "feature_topo_harmonic_in_distance_mean",
+        "feature_topo_hits_authority_strength_q75",
+        "feature_topo_hits_authority_strength_std",
+        "feature_topo_pagerank_strength_min"
+      ],
+      "matilda_build_seconds": 596.438164969004,
+      "full_model_seconds": 607.4689285089844,
+      "analysis_input_hash": "238f2fca2b71b741a8c73baf45eddca05b65128d9d1391cc1bf8d90db5412206",
+      "label_counts": {
+        "CUTH": {
+          "good": 24,
+          "not_good": 50
+        },
+        "IBS": {
+          "good": 70,
+          "not_good": 4
+        },
+        "ILS": {
+          "good": 35,
+          "not_good": 39
+        },
+        "LBBD": {
+          "good": 36,
+          "not_good": 38
+        },
+        "MIP": {
+          "good": 42,
+          "not_good": 32
+        },
+        "RS": {
+          "good": 23,
+          "not_good": 51
+        }
+      },
+      "in_sample_diagnostic_only": {
+        "CUTH": {
+          "accuracy": 0.9324324324324325,
+          "balanced_accuracy": 0.9283333333333332,
+          "precision": 0.88,
+          "recall": 0.9166666666666666,
+          "errors": 5
+        },
+        "IBS": {
+          "accuracy": 0.9459459459459459,
+          "balanced_accuracy": 0.5,
+          "precision": 0.9459459459459459,
+          "recall": 1.0,
+          "errors": 4
+        },
+        "ILS": {
+          "accuracy": 0.9324324324324325,
+          "balanced_accuracy": 0.9358974358974359,
+          "precision": 0.875,
+          "recall": 1.0,
+          "errors": 5
+        },
+        "LBBD": {
+          "accuracy": 0.9459459459459459,
+          "balanced_accuracy": 0.9473684210526316,
+          "precision": 0.9,
+          "recall": 1.0,
+          "errors": 4
+        },
+        "MIP": {
+          "accuracy": 0.9324324324324325,
+          "balanced_accuracy": 0.9367559523809523,
+          "precision": 0.9743589743589743,
+          "recall": 0.9047619047619048,
+          "errors": 5
+        },
+        "RS": {
+          "accuracy": 0.9864864864864865,
+          "balanced_accuracy": 0.9782608695652174,
+          "precision": 1.0,
+          "recall": 0.9565217391304348,
+          "errors": 1
+        }
+      },
+      "pythia_repeated_cv_is_not_nested": true,
+      "footprint_areas_between_separate_maps_comparable": false,
+      "sifted_correction": {
+        "revision": "sifted-corrected-v1",
+        "upstream_commit": "289a940a79cee2001bd8c54621465ddc3e30a094",
+        "upstream_sifted_sha256": "4ba3a3cf49f46946600ca2acf54a911b9cc359e38d28f5b00f66d1cf8b3d2564",
+        "local_correction_sha256": "e054cd404b8ad2916332b4f5b547b3f4c30691622197517eaf2b1844a9a52520",
+        "fitness": "negative maximum cross-validated KNN classification MSE across algorithms",
+        "direction": "maximize negative loss, equivalent to minimizing worst algorithm loss",
+        "correlation_filter": "best feature per algorithm plus any significant absolute correlation >= rho",
+        "candidate_mapping": "cluster indices address filtered x and filtered feature names",
+        "reference": "https://github.com/andremun/InstanceSpace/blob/master/core/SIFTED.m",
+        "scope": "local correction of three confirmed defects, not an upgrade to current upstream"
+      },
+      "sifted_final_worst_cv_error": 0.06761904761904762,
+      "sifted_filtered_features": 104,
+      "same_inputs_and_scientific_options_outside_sifted_as_v1": true,
+      "parallel_execution_options": {
+        "v1": {
+          "flag": true,
+          "n_cores": 2
+        },
+        "v2": {
+          "flag": true,
+          "n_cores": 2
+        }
+      }
+    },
+    "original55_control": {
+      "status": "passed",
+      "name": "original55_control",
+      "instances": 55,
+      "algorithms": 6,
+      "epsilon": 0.1,
+      "cv_folds": 4,
+      "input_features": 35,
+      "selected_features": [
+        "feature_total_resources",
+        "feature_decision_points",
+        "feature_delta_over_h",
+        "feature_first_release_over_h",
+        "feature_release_window_over_h",
+        "feature_arrival_q50_over_h",
+        "feature_directional_asymmetry_mean",
+        "feature_arc_time_std",
+        "feature_arc_time_p25",
+        "feature_release_front_window_mean"
+      ],
+      "selected_topology_features": [],
+      "matilda_build_seconds": 535.5348744200019,
+      "full_model_seconds": 555.9377551650105,
+      "analysis_input_hash": "ef92c60e2e1344a470c13126094d0e97992ca6da1f778e76a61ac7c13df11e73",
+      "label_counts": {
+        "CUTH": {
+          "good": 7,
+          "not_good": 48
+        },
+        "IBS": {
+          "good": 51,
+          "not_good": 4
+        },
+        "ILS": {
+          "good": 21,
+          "not_good": 34
+        },
+        "LBBD": {
+          "good": 21,
+          "not_good": 34
+        },
+        "MIP": {
+          "good": 24,
+          "not_good": 31
+        },
+        "RS": {
+          "good": 6,
+          "not_good": 49
+        }
+      },
+      "in_sample_diagnostic_only": {
+        "CUTH": {
+          "accuracy": 0.9454545454545454,
+          "balanced_accuracy": 0.8467261904761905,
+          "precision": 0.8333333333333334,
+          "recall": 0.7142857142857143,
+          "errors": 3
+        },
+        "IBS": {
+          "accuracy": 0.9272727272727272,
+          "balanced_accuracy": 0.5,
+          "precision": 0.9272727272727272,
+          "recall": 1.0,
+          "errors": 4
+        },
+        "ILS": {
+          "accuracy": 1.0,
+          "balanced_accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "errors": 0
+        },
+        "LBBD": {
+          "accuracy": 1.0,
+          "balanced_accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "errors": 0
+        },
+        "MIP": {
+          "accuracy": 0.9272727272727272,
+          "balanced_accuracy": 0.9213709677419355,
+          "precision": 0.9545454545454546,
+          "recall": 0.875,
+          "errors": 4
+        },
+        "RS": {
+          "accuracy": 0.9636363636363636,
+          "balanced_accuracy": 0.9064625850340136,
+          "precision": 0.8333333333333334,
+          "recall": 0.8333333333333334,
+          "errors": 2
+        }
+      },
+      "pythia_repeated_cv_is_not_nested": true,
+      "footprint_areas_between_separate_maps_comparable": false,
+      "sifted_correction": {
+        "revision": "sifted-corrected-v1",
+        "upstream_commit": "289a940a79cee2001bd8c54621465ddc3e30a094",
+        "upstream_sifted_sha256": "4ba3a3cf49f46946600ca2acf54a911b9cc359e38d28f5b00f66d1cf8b3d2564",
+        "local_correction_sha256": "e054cd404b8ad2916332b4f5b547b3f4c30691622197517eaf2b1844a9a52520",
+        "fitness": "negative maximum cross-validated KNN classification MSE across algorithms",
+        "direction": "maximize negative loss, equivalent to minimizing worst algorithm loss",
+        "correlation_filter": "best feature per algorithm plus any significant absolute correlation >= rho",
+        "candidate_mapping": "cluster indices address filtered x and filtered feature names",
+        "reference": "https://github.com/andremun/InstanceSpace/blob/master/core/SIFTED.m",
+        "scope": "local correction of three confirmed defects, not an upgrade to current upstream"
+      },
+      "sifted_final_worst_cv_error": 0.09090909090909091,
+      "sifted_filtered_features": 35,
+      "same_inputs_and_scientific_options_outside_sifted_as_v1": true,
+      "parallel_execution_options": {
+        "v1": {
+          "flag": true,
+          "n_cores": 1
+        },
+        "v2": {
+          "flag": true,
+          "n_cores": 2
+        }
+      }
+    },
+    "original55_topology": {
+      "status": "passed",
+      "name": "original55_topology",
+      "instances": 55,
+      "algorithms": 6,
+      "epsilon": 0.1,
+      "cv_folds": 4,
+      "input_features": 107,
+      "selected_features": [
+        "feature_total_resources",
+        "feature_release_window_over_h",
+        "feature_arrival_q95_over_h",
+        "feature_directional_asymmetry_mean",
+        "feature_arc_time_p75",
+        "feature_release_front_window_mean",
+        "feature_topo_harmonic_out_distance_mean",
+        "feature_topo_hits_authority_strength_q50",
+        "feature_topo_hits_hub_strength_std",
+        "feature_topo_pagerank_strength_mean"
+      ],
+      "selected_topology_features": [
+        "feature_topo_harmonic_out_distance_mean",
+        "feature_topo_hits_authority_strength_q50",
+        "feature_topo_hits_hub_strength_std",
+        "feature_topo_pagerank_strength_mean"
+      ],
+      "matilda_build_seconds": 569.4208711760002,
+      "full_model_seconds": 579.5708823769819,
+      "analysis_input_hash": "dc9685c3e24693b5071c31bc5e068ed548be9fa929b8df629622bbebce5997ee",
+      "label_counts": {
+        "CUTH": {
+          "good": 7,
+          "not_good": 48
+        },
+        "IBS": {
+          "good": 51,
+          "not_good": 4
+        },
+        "ILS": {
+          "good": 21,
+          "not_good": 34
+        },
+        "LBBD": {
+          "good": 21,
+          "not_good": 34
+        },
+        "MIP": {
+          "good": 24,
+          "not_good": 31
+        },
+        "RS": {
+          "good": 6,
+          "not_good": 49
+        }
+      },
+      "in_sample_diagnostic_only": {
+        "CUTH": {
+          "accuracy": 0.9272727272727272,
+          "balanced_accuracy": 0.8363095238095238,
+          "precision": 0.7142857142857143,
+          "recall": 0.7142857142857143,
+          "errors": 4
+        },
+        "IBS": {
+          "accuracy": 0.9272727272727272,
+          "balanced_accuracy": 0.5,
+          "precision": 0.9272727272727272,
+          "recall": 1.0,
+          "errors": 4
+        },
+        "ILS": {
+          "accuracy": 0.9818181818181818,
+          "balanced_accuracy": 0.9852941176470589,
+          "precision": 0.9545454545454546,
+          "recall": 1.0,
+          "errors": 1
+        },
+        "LBBD": {
+          "accuracy": 1.0,
+          "balanced_accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "errors": 0
+        },
+        "MIP": {
+          "accuracy": 0.9090909090909091,
+          "balanced_accuracy": 0.905241935483871,
+          "precision": 0.9130434782608695,
+          "recall": 0.875,
+          "errors": 5
+        },
+        "RS": {
+          "accuracy": 0.9636363636363636,
+          "balanced_accuracy": 0.9064625850340136,
+          "precision": 0.8333333333333334,
+          "recall": 0.8333333333333334,
+          "errors": 2
+        }
+      },
+      "pythia_repeated_cv_is_not_nested": true,
+      "footprint_areas_between_separate_maps_comparable": false,
+      "sifted_correction": {
+        "revision": "sifted-corrected-v1",
+        "upstream_commit": "289a940a79cee2001bd8c54621465ddc3e30a094",
+        "upstream_sifted_sha256": "4ba3a3cf49f46946600ca2acf54a911b9cc359e38d28f5b00f66d1cf8b3d2564",
+        "local_correction_sha256": "e054cd404b8ad2916332b4f5b547b3f4c30691622197517eaf2b1844a9a52520",
+        "fitness": "negative maximum cross-validated KNN classification MSE across algorithms",
+        "direction": "maximize negative loss, equivalent to minimizing worst algorithm loss",
+        "correlation_filter": "best feature per algorithm plus any significant absolute correlation >= rho",
+        "candidate_mapping": "cluster indices address filtered x and filtered feature names",
+        "reference": "https://github.com/andremun/InstanceSpace/blob/master/core/SIFTED.m",
+        "scope": "local correction of three confirmed defects, not an upgrade to current upstream"
+      },
+      "sifted_final_worst_cv_error": 0.14545454545454545,
+      "sifted_filtered_features": 105,
+      "same_inputs_and_scientific_options_outside_sifted_as_v1": true,
+      "parallel_execution_options": {
+        "v1": {
+          "flag": true,
+          "n_cores": 2
+        },
+        "v2": {
+          "flag": true,
+          "n_cores": 2
+        }
+      }
+    }
+  },
+  "comparisons": {
+    "55_control_vs_74_control": {
+      "comparison": "55_control_vs_74_control",
+      "n_instances": 55,
+      "procrustes_scale": 0.8861736023629833,
+      "mean_aligned_displacement": 0.048683317177248706,
+      "median_aligned_displacement": 0.04294757015850184,
+      "neighbor_k": 5,
+      "mean_neighbor_overlap": 0.49090909090909096,
+      "pairwise_distance_spearman": 0.8383324949399835,
+      "result_provenance": "measured",
+      "selected_feature_intersection": [
+        "feature_decision_points",
+        "feature_delta_over_h",
+        "feature_directional_asymmetry_mean",
+        "feature_first_release_over_h"
+      ],
+      "selected_feature_intersection_count": 4,
+      "selected_feature_jaccard": 0.25,
+      "pythia_in_sample_prediction_agreement_on_shared_cases": 0.9696969696969697,
+      "prediction_cases_compared": 330
+    },
+    "55_topology_vs_74_topology": {
+      "comparison": "55_topology_vs_74_topology",
+      "n_instances": 55,
+      "procrustes_scale": 0.9825824370383845,
+      "mean_aligned_displacement": 0.021478652943882216,
+      "median_aligned_displacement": 0.020471598044968262,
+      "neighbor_k": 5,
+      "mean_neighbor_overlap": 0.5781818181818182,
+      "pairwise_distance_spearman": 0.9540443868279629,
+      "result_provenance": "measured",
+      "selected_feature_intersection": [
+        "feature_release_front_window_mean",
+        "feature_total_resources"
+      ],
+      "selected_feature_intersection_count": 2,
+      "selected_feature_jaccard": 0.1111111111111111,
+      "pythia_in_sample_prediction_agreement_on_shared_cases": 0.990909090909091,
+      "prediction_cases_compared": 330
+    },
+    "74_control_vs_74_topology": {
+      "comparison": "74_control_vs_74_topology",
+      "n_instances": 74,
+      "procrustes_scale": 0.8404885368347501,
+      "mean_aligned_displacement": 0.055065503197926885,
+      "median_aligned_displacement": 0.044530586631424195,
+      "neighbor_k": 5,
+      "mean_neighbor_overlap": 0.37567567567567567,
+      "pairwise_distance_spearman": 0.8483861286082075,
+      "result_provenance": "measured",
+      "selected_feature_intersection": [],
+      "selected_feature_intersection_count": 0,
+      "selected_feature_jaccard": 0.0,
+      "pythia_in_sample_prediction_agreement_on_shared_cases": 0.9459459459459459,
+      "prediction_cases_compared": 444
+    },
+    "55_control_vs_55_topology": {
+      "comparison": "55_control_vs_55_topology",
+      "n_instances": 55,
+      "procrustes_scale": 0.9401393969518079,
+      "mean_aligned_displacement": 0.0409278324680829,
+      "median_aligned_displacement": 0.03651643143044373,
+      "neighbor_k": 5,
+      "mean_neighbor_overlap": 0.49090909090909096,
+      "pairwise_distance_spearman": 0.9017554577788737,
+      "result_provenance": "measured",
+      "selected_feature_intersection": [
+        "feature_directional_asymmetry_mean",
+        "feature_release_front_window_mean",
+        "feature_release_window_over_h",
+        "feature_total_resources"
+      ],
+      "selected_feature_intersection_count": 4,
+      "selected_feature_jaccard": 0.25,
+      "pythia_in_sample_prediction_agreement_on_shared_cases": 0.9848484848484849,
+      "prediction_cases_compared": 330
+    }
+  },
+  "before_after_v1": {
+    "all74_control": {
+      "comparison": "v1_vs_v2_all74_control",
+      "n_instances": 74,
+      "procrustes_scale": 0.8499393992010343,
+      "mean_aligned_displacement": 0.055625490397437874,
+      "median_aligned_displacement": 0.05439795815707238,
+      "neighbor_k": 5,
+      "mean_neighbor_overlap": 0.3054054054054054,
+      "pairwise_distance_spearman": 0.8759351606667395,
+      "result_provenance": "measured",
+      "selected_feature_intersection": [
+        "feature_delta_over_h",
+        "feature_first_release_over_h",
+        "feature_release_front_window_max",
+        "feature_resources_per_decision"
+      ],
+      "selected_feature_intersection_count": 4,
+      "selected_feature_jaccard": 0.25,
+      "pythia_in_sample_prediction_agreement_on_shared_cases": 0.9527027027027027,
+      "prediction_cases_compared": 444
+    },
+    "all74_topology": {
+      "comparison": "v1_vs_v2_all74_topology",
+      "n_instances": 74,
+      "procrustes_scale": 0.9478968258041145,
+      "mean_aligned_displacement": 0.03294621444719046,
+      "median_aligned_displacement": 0.03275223343824123,
+      "neighbor_k": 5,
+      "mean_neighbor_overlap": 0.38108108108108113,
+      "pairwise_distance_spearman": 0.9139023834271942,
+      "result_provenance": "measured",
+      "selected_feature_intersection": [
+        "feature_arc_time_cv",
+        "feature_arrival_q05_over_h"
+      ],
+      "selected_feature_intersection_count": 2,
+      "selected_feature_jaccard": 0.1111111111111111,
+      "pythia_in_sample_prediction_agreement_on_shared_cases": 0.9256756756756757,
+      "prediction_cases_compared": 444
+    },
+    "original55_control": {
+      "comparison": "v1_vs_v2_original55_control",
+      "n_instances": 55,
+      "procrustes_scale": 0.9508529252663909,
+      "mean_aligned_displacement": 0.03500886758605143,
+      "median_aligned_displacement": 0.029017709104740313,
+      "neighbor_k": 5,
+      "mean_neighbor_overlap": 0.45090909090909104,
+      "pairwise_distance_spearman": 0.8974247193582339,
+      "result_provenance": "measured",
+      "selected_feature_intersection": [
+        "feature_decision_points",
+        "feature_delta_over_h",
+        "feature_first_release_over_h",
+        "feature_release_front_window_mean",
+        "feature_release_window_over_h"
+      ],
+      "selected_feature_intersection_count": 5,
+      "selected_feature_jaccard": 0.3333333333333333,
+      "pythia_in_sample_prediction_agreement_on_shared_cases": 0.9393939393939394,
+      "prediction_cases_compared": 330
+    },
+    "original55_topology": {
+      "comparison": "v1_vs_v2_original55_topology",
+      "n_instances": 55,
+      "procrustes_scale": 0.9466373694850241,
+      "mean_aligned_displacement": 0.0351424148065419,
+      "median_aligned_displacement": 0.027962313817181787,
+      "neighbor_k": 5,
+      "mean_neighbor_overlap": 0.48363636363636364,
+      "pairwise_distance_spearman": 0.9236485606427253,
+      "result_provenance": "measured",
+      "selected_feature_intersection": [
+        "feature_arrival_q95_over_h",
+        "feature_directional_asymmetry_mean"
+      ],
+      "selected_feature_intersection_count": 2,
+      "selected_feature_jaccard": 0.1111111111111111,
+      "pythia_in_sample_prediction_agreement_on_shared_cases": 0.9878787878787879,
+      "prediction_cases_compared": 330
+    }
+  },
+  "historical_filter_and_mapping_audit": {
+    "all74_control": {
+      "old_filtered_count": 34,
+      "corrected_filtered_count": 34,
+      "filter_added_labels": [
+        "feature_release_front_window_mean"
+      ],
+      "filter_removed_labels": [
+        "feature_release_window_over_h"
+      ],
+      "old_selected_labels": [
+        "feature_resources_per_decision",
+        "feature_delta_over_h",
+        "feature_first_release_over_h",
+        "feature_release_window_over_h",
+        "feature_arrival_q05_over_h",
+        "feature_directional_asymmetry_max",
+        "feature_z_span",
+        "feature_arc_time_std",
+        "feature_release_perimeter_max",
+        "feature_release_front_window_max"
+      ],
+      "old_actually_evaluated_labels": [
+        "feature_resources_per_decision",
+        "feature_delta_over_h",
+        "feature_first_release_over_h",
+        "feature_release_window_over_h",
+        "feature_arrival_q05_over_h",
+        "feature_directional_asymmetry_max",
+        "feature_z_span",
+        "feature_arc_time_std",
+        "feature_release_perimeter_max",
+        "feature_release_front_window_mean"
+      ],
+      "old_column_positions_mismatched": 1,
+      "corrected_evaluated_and_returned_columns_identical": true
+    },
+    "all74_topology": {
+      "old_filtered_count": 98,
+      "corrected_filtered_count": 104,
+      "filter_added_labels": [
+        "feature_n_vertices",
+        "feature_n_arcs",
+        "feature_release_perimeter_mean",
+        "feature_topo_betweenness_distance_q75",
+        "feature_topo_harmonic_in_distance_q25",
+        "feature_topo_harmonic_in_unweighted_min",
+        "feature_topo_hits_authority_strength_q75",
+        "feature_topo_hits_hub_strength_max",
+        "feature_topo_in_degree_std"
+      ],
+      "filter_removed_labels": [
+        "feature_release_window_over_h",
+        "feature_topo_hits_authority_strength_min",
+        "feature_topo_hits_hub_strength_min"
+      ],
+      "old_selected_labels": [
+        "feature_last_release_over_h",
+        "feature_arrival_q05_over_h",
+        "feature_y_span",
+        "feature_arc_time_cv",
+        "feature_release_front_window_max",
+        "feature_topo_betweenness_distance_max",
+        "feature_topo_betweenness_distance_min",
+        "feature_topo_harmonic_in_distance_std",
+        "feature_topo_hits_authority_strength_min",
+        "feature_topo_hits_hub_strength_std"
+      ],
+      "old_actually_evaluated_labels": [
+        "feature_delta_over_h",
+        "feature_free_burning_time",
+        "feature_directional_asymmetry_max",
+        "feature_arc_time_p50",
+        "feature_release_perimeter_mean",
+        "feature_release_perimeter_max",
+        "feature_release_front_window_max",
+        "feature_topo_harmonic_in_distance_min",
+        "feature_topo_harmonic_out_distance_q50",
+        "feature_topo_hits_authority_strength_q90"
+      ],
+      "old_column_positions_mismatched": 10,
+      "corrected_evaluated_and_returned_columns_identical": true
+    },
+    "original55_control": {
+      "old_filtered_count": 34,
+      "corrected_filtered_count": 35,
+      "filter_added_labels": [
+        "feature_total_resources"
+      ],
+      "filter_removed_labels": [],
+      "old_selected_labels": [
+        "feature_decision_points",
+        "feature_delta_over_h",
+        "feature_first_release_over_h",
+        "feature_release_window_over_h",
+        "feature_free_burning_time",
+        "feature_arrival_q95_over_h",
+        "feature_arc_time_min",
+        "feature_arc_time_cv",
+        "feature_release_perimeter_mean",
+        "feature_release_front_window_mean"
+      ],
+      "old_actually_evaluated_labels": [
+        "feature_total_resources",
+        "feature_delta_mean",
+        "feature_delta_over_h",
+        "feature_last_release_over_h",
+        "feature_release_window_over_h",
+        "feature_arrival_q50_over_h",
+        "feature_arc_time_std",
+        "feature_arc_time_p75",
+        "feature_arc_time_cv",
+        "feature_release_perimeter_max"
+      ],
+      "old_column_positions_mismatched": 10,
+      "corrected_evaluated_and_returned_columns_identical": true
+    },
+    "original55_topology": {
+      "old_filtered_count": 71,
+      "corrected_filtered_count": 105,
+      "filter_added_labels": [
+        "feature_n_vertices",
+        "feature_delta_over_h",
+        "feature_release_window_over_h",
+        "feature_directional_asymmetry_max",
+        "feature_z_span",
+        "feature_z_std",
+        "feature_arc_time_min",
+        "feature_arc_time_cv",
+        "feature_release_perimeter_mean",
+        "feature_release_perimeter_max",
+        "feature_release_front_window_max",
+        "feature_topo_betweenness_distance_max",
+        "feature_topo_betweenness_distance_min",
+        "feature_topo_betweenness_distance_q25",
+        "feature_topo_betweenness_distance_q50",
+        "feature_topo_betweenness_unweighted_min",
+        "feature_topo_harmonic_in_distance_q25",
+        "feature_topo_harmonic_in_unweighted_q90",
+        "feature_topo_hits_authority_strength_max",
+        "feature_topo_hits_authority_strength_mean",
+        "feature_topo_hits_authority_strength_q50",
+        "feature_topo_hits_authority_strength_q75",
+        "feature_topo_hits_authority_strength_std",
+        "feature_topo_hits_hub_strength_max",
+        "feature_topo_hits_hub_strength_q75",
+        "feature_topo_hits_hub_strength_std",
+        "feature_topo_in_degree_min",
+        "feature_topo_in_degree_std",
+        "feature_topo_pagerank_strength_max",
+        "feature_topo_pagerank_strength_mean",
+        "feature_topo_pagerank_strength_q50",
+        "feature_topo_pagerank_strength_std",
+        "feature_topo_pagerank_unweighted_mean",
+        "feature_topo_pagerank_unweighted_q90"
+      ],
+      "filter_removed_labels": [],
+      "old_selected_labels": [
+        "feature_arc_density",
+        "feature_decision_points",
+        "feature_resources_per_decision",
+        "feature_last_release_over_h",
+        "feature_arrival_q95_over_h",
+        "feature_directional_asymmetry_mean",
+        "feature_arc_time_max",
+        "feature_topo_harmonic_in_unweighted_q75",
+        "feature_topo_harmonic_out_distance_q50",
+        "feature_topo_hits_hub_strength_q50"
+      ],
+      "old_actually_evaluated_labels": [
+        "feature_n_arcs",
+        "feature_total_resources",
+        "feature_decision_points",
+        "feature_delta_over_h",
+        "feature_free_burning_over_h",
+        "feature_arrival_q05_over_h",
+        "feature_x_span",
+        "feature_topo_betweenness_unweighted_q50",
+        "feature_topo_harmonic_in_distance_min",
+        "feature_topo_harmonic_in_unweighted_max"
+      ],
+      "old_column_positions_mismatched": 10,
+      "corrected_evaluated_and_returned_columns_identical": true
+    }
+  },
+  "joint_corrections_not_sign_only": true,
+  "archived_experimental_data_modified": false,
+  "interpretation_limits": [
+    "in-sample and non-nested diagnostics, not external predictive validation",
+    "GA instances retain their historical generation provenance",
+    "coverage measured in historical map is not corrected-map coverage"
+  ]
+}

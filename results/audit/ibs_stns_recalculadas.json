@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "runs": 190,
+  "trajectory_rows": 36593,
+  "distinct_states_checked": 2682,
+  "saved_incumbents_checked": 190,
+  "networks_rebuilt_and_compared": 418
+}

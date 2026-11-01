@@ -1,0 +1,136 @@
+{
+  "algorithm": "lbbd",
+  "baseline_mip_starts": 1,
+  "budget_policy": "global_remaining_divided_among_remaining_greedy_stages",
+  "completed_utc": "2026-09-19T16:28:40Z",
+  "exact_started": false,
+  "feasibility_cuts": 469,
+  "global_budget_seconds": 1350,
+  "greedy_wall_seconds": 1350.0488347639912,
+  "lower_bound": 351.0,
+  "mip_gap": 0.606942889137738,
+  "objective": 893,
+  "objective_consistency": "exact",
+  "objective_delta_vs_solver": 0,
+  "objective_source": "independent_shortest_path_validation",
+  "optimality_cuts": 199422,
+  "optimize_calls": 10,
+  "optimize_time_allocations_seconds": [
+    134.98514388069742,
+    134.98374409744025,
+    134.97785745812143,
+    134.97300233543086,
+    134.96848207782992,
+    134.9621424935991,
+    134.95639403449604,
+    134.94990908399146,
+    134.93995455550612,
+    134.92297262698412
+  ],
+  "result_provenance": "measured",
+  "seed": 8,
+  "solution": [
+    [
+      [
+        1,
+        2
+      ],
+      423.3
+    ],
+    [
+      [
+        1,
+        28
+      ],
+      296.48
+    ],
+    [
+      [
+        2,
+        1
+      ],
+      296.48
+    ],
+    [
+      [
+        2,
+        29
+      ],
+      42.83
+    ],
+    [
+      [
+        3,
+        30
+      ],
+      296.48
+    ],
+    [
+      [
+        4,
+        30
+      ],
+      169.65
+    ],
+    [
+      [
+        5,
+        29
+      ],
+      423.3
+    ],
+    [
+      [
+        6,
+        30
+      ],
+      423.3
+    ],
+    [
+      [
+        29,
+        15
+      ],
+      550.12
+    ],
+    [
+      [
+        29,
+        30
+      ],
+      169.65
+    ],
+    [
+      [
+        30,
+        14
+      ],
+      550.12
+    ],
+    [
+      [
+        30,
+        16
+      ],
+      550.12
+    ],
+    [
+      [
+        30,
+        29
+      ],
+      169.65
+    ]
+  ],
+  "solver_lower_bound": 351.0,
+  "solver_mip_gap": 0.606942889137738,
+  "solver_objective": 893,
+  "solver_status": 9,
+  "status": "completed",
+  "validation": {
+    "assignments": 13,
+    "feasible": true,
+    "objective_recomputed": 893
+  },
+  "wall_seconds": 1350.0524788200273
+}

@@ -1,0 +1,247 @@
+{
+  "analysis_input_hash": "b9d76327682bbae44061e46dc1e8b209b863a8c3a0422070c881ebf37f3f6679",
+  "auto": {
+    "preproc": true
+  },
+  "bound": {
+    "flag": false
+  },
+  "cloister": {
+    "c_thres": 0.7,
+    "p_val": 0.05
+  },
+  "commit_compatibility_normalization": {
+    "pythia.input_alias": "uselibsvm",
+    "selvars.type": "Ftr&Good"
+  },
+  "concrete_cv_folds": 5,
+  "implementation_identity": {
+    "known_internal_random_seeds": {
+      "PYTHIA_cv": 0,
+      "PYTHIA_optimizer": 0,
+      "PYTHIA_parameter_space": 0,
+      "SIFTED": 0
+    },
+    "pyinstancespace_commit": "289a940a79cee2001bd8c54621465ddc3e30a094",
+    "pyinstancespace_version": "0.2.1",
+    "serializer_compatibility_view": "x_raw restricted by sifted.selvars because commit serializer uses the unmodified idx field"
+  },
+  "labels": [
+    {
+      "algorithm": "CUTH",
+      "cv_folds": 5,
+      "missing": 0,
+      "negative": 48,
+      "positive": 7,
+      "result_provenance": "measured",
+      "status": "estimable",
+      "threshold": 0.1
+    },
+    {
+      "algorithm": "IBS",
+      "cv_folds": 5,
+      "missing": 0,
+      "negative": 5,
+      "positive": 50,
+      "result_provenance": "measured",
+      "status": "estimable",
+      "threshold": 0.1
+    },
+    {
+      "algorithm": "ILS",
+      "cv_folds": 5,
+      "missing": 0,
+      "negative": 34,
+      "positive": 21,
+      "result_provenance": "measured",
+      "status": "estimable",
+      "threshold": 0.1
+    },
+    {
+      "algorithm": "LBBD",
+      "cv_folds": 5,
+      "missing": 0,
+      "negative": 34,
+      "positive": 21,
+      "result_provenance": "measured",
+      "status": "estimable",
+      "threshold": 0.1
+    },
+    {
+      "algorithm": "MIP",
+      "cv_folds": 5,
+      "missing": 0,
+      "negative": 31,
+      "positive": 24,
+      "result_provenance": "measured",
+      "status": "estimable",
+      "threshold": 0.1
+    },
+    {
+      "algorithm": "RS",
+      "cv_folds": 5,
+      "missing": 0,
+      "negative": 49,
+      "positive": 6,
+      "result_provenance": "measured",
+      "status": "estimable",
+      "threshold": 0.1
+    }
+  ],
+  "norm": {
+    "flag": true
+  },
+  "outputs": {
+    "csv": true,
+    "png": true,
+    "web": true
+  },
+  "parallel": {
+    "flag": true,
+    "n_cores": 3
+  },
+  "perf": {
+    "abs_perf": true,
+    "beta_threshold": 0.55,
+    "epsilon": 0.1,
+    "max_perf": false
+  },
+  "pilot": {
+    "alpha": null,
+    "analytic": false,
+    "n_tries": 5,
+    "x0": null
+  },
+  "prelim": {
+    "abs_perf": true,
+    "beta_threshold": 0.55,
+    "bound": false,
+    "epsilon": 0.1,
+    "max_perf": false,
+    "norm": true
+  },
+  "pythia": {
+    "cv_folds": 5,
+    "is_poly_krnl": false,
+    "params": null,
+    "use_grid_search": true,
+    "use_weights": true
+  },
+  "pythia_implementation": {
+    "class_weighting": "absolute deviation of algorithm performance from its mean, passed as sample_weight",
+    "cross_validation": "StratifiedKFold(shuffle=True, random_state=0)",
+    "estimator": "sklearn.svm.SVC",
+    "fitted_parameters": [
+      {
+        "C": 0.5513221596629,
+        "algorithm": "algo_cuth",
+        "gamma": 0.09427497862723228,
+        "kernel": "rbf",
+        "result_provenance": "predicted"
+      },
+      {
+        "C": 0.021079762560079096,
+        "algorithm": "algo_ibs",
+        "gamma": 0.03210892303569942,
+        "kernel": "rbf",
+        "result_provenance": "predicted"
+      },
+      {
+        "C": 3.9286528161806737,
+        "algorithm": "algo_ils",
+        "gamma": 8.521456531991047,
+        "kernel": "rbf",
+        "result_provenance": "predicted"
+      },
+      {
+        "C": 9.364489636540592,
+        "algorithm": "algo_lbbd",
+        "gamma": 0.40694695700050765,
+        "kernel": "rbf",
+        "result_provenance": "predicted"
+      },
+      {
+        "C": 10.082423086739503,
+        "algorithm": "algo_mip",
+        "gamma": 0.04684527460100828,
+        "kernel": "rbf",
+        "result_provenance": "predicted"
+      },
+      {
+        "C": 15.204515336254756,
+        "algorithm": "algo_rs",
+        "gamma": 4.446782770602745,
+        "kernel": "rbf",
+        "result_provenance": "predicted"
+      }
+    ],
+    "kernel": "rbf",
+    "n_iter": 30,
+    "optimizer_random_state": 0,
+    "optimizer_when_use_grid_search_true": "sklearn.model_selection.RandomizedSearchCV",
+    "parameter_space_generation": "LatinHypercube(d=2, n=30), C and gamma = 2**U[-10,4]",
+    "parameter_space_seed": 0
+  },
+  "requested_notation": {
+    "pythia.use_grid_search": true,
+    "selvars.type": "Ftr&&Good"
+  },
+  "selvars": {
+    "algos": null,
+    "density_flag": false,
+    "feats": null,
+    "file_idx": "",
+    "file_idx_flag": false,
+    "min_distance": 0.1,
+    "selvars_type": "Ftr&Good",
+    "small_scale": 0.5,
+    "small_scale_flag": false
+  },
+  "sifted": {
+    "cross_over_probability": 0.8,
+    "crossover_type": "scattered",
+    "flag": true,
+    "k": 10,
+    "k_tournament": 4,
+    "keep_elitism": 2,
+    "max_iter": 1000,
+    "mutation_probability": 0.05,
+    "mutation_type": "random",
+    "n_trees": 50,
+    "num_generations": 100,
+    "num_parents_mating": 2,
+    "parent_selection_type": "tournament",
+    "replicates": 100,
+    "rho": 0.1,
+    "selected_feature_indices": [
+      0,
+      6,
+      10,
+      15,
+      25,
+      26,
+      49,
+      57,
+      85,
+      90
+    ],
+    "selected_feature_names": [
+      "feature_n_vertices",
+      "feature_resources_per_decision",
+      "feature_last_release_over_h",
+      "feature_arrival_q50_over_h",
+      "feature_arc_time_min",
+      "feature_arc_time_max",
+      "feature_topo_betweenness_unweighted_q90",
+      "feature_topo_harmonic_in_distance_q90",
+      "feature_topo_hits_hub_strength_q50",
+      "feature_topo_in_degree_min"
+    ],
+    "sol_per_pop": 50,
+    "stop_criteria": "saturate_5"
+  },
+  "trace": {
+    "purity": 0.55,
+    "use_sim": true
+  }
+}

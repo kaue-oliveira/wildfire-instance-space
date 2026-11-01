@@ -1,0 +1,159 @@
+{
+  "status": "prepared",
+  "created_utc": "2026-09-28T01:10:01.972253+00:00",
+  "base_commit": "d2e630f6d6e54e4d6ea3cde0e5e3c041faa41460",
+  "branch": "analysis/matilda74-sifted-corrected-20260927",
+  "implementation": {
+    "revision": "sifted-corrected-v1",
+    "upstream_commit": "289a940a79cee2001bd8c54621465ddc3e30a094",
+    "upstream_sifted_sha256": "4ba3a3cf49f46946600ca2acf54a911b9cc359e38d28f5b00f66d1cf8b3d2564",
+    "local_correction_sha256": "e054cd404b8ad2916332b4f5b547b3f4c30691622197517eaf2b1844a9a52520",
+    "fitness": "negative maximum cross-validated KNN classification MSE across algorithms",
+    "direction": "maximize negative loss, equivalent to minimizing worst algorithm loss",
+    "correlation_filter": "best feature per algorithm plus any significant absolute correlation >= rho",
+    "candidate_mapping": "cluster indices address filtered x and filtered feature names",
+    "reference": "https://github.com/andremun/InstanceSpace/blob/master/core/SIFTED.m",
+    "scope": "local correction of three confirmed defects, not an upgrade to current upstream"
+  },
+  "python_executable": "{USER_HOME}/.cache/tcc-matilda74-venv/bin/python",
+  "inputs_copied_byte_identically": [
+    {
+      "source": "analysis_wsp/results_matilda74/matilda74_v1_20260927/inputs/augmented_candidates_74.csv",
+      "destination": "analysis_wsp/results_matilda74/matilda74_sifted_corrected_v2_20260927/inputs/augmented_candidates_74.csv",
+      "sha256": "2b02b887bd827c67eb7ddb816dd6fa8bbe754b1b52158732add4794572d2c316"
+    },
+    {
+      "source": "analysis_wsp/results_matilda74/matilda74_v1_20260927/inputs/base_features_74.csv",
+      "destination": "analysis_wsp/results_matilda74/matilda74_sifted_corrected_v2_20260927/inputs/base_features_74.csv",
+      "sha256": "ed2bde6d85858fe6e61f21cb42558e26ce3220cbe3f844c6ab8cc9cea3dd9a12"
+    },
+    {
+      "source": "analysis_wsp/results_matilda74/matilda74_v1_20260927/inputs/ils_failure_label_sensitivity.json",
+      "destination": "analysis_wsp/results_matilda74/matilda74_sifted_corrected_v2_20260927/inputs/ils_failure_label_sensitivity.json",
+      "sha256": "1d34357adc375579e514259dd531b2c6cacdc8c69bcda314926317f197458da1"
+    },
+    {
+      "source": "analysis_wsp/results_matilda74/matilda74_v1_20260927/inputs/label_counts_10pct.csv",
+      "destination": "analysis_wsp/results_matilda74/matilda74_sifted_corrected_v2_20260927/inputs/label_counts_10pct.csv",
+      "sha256": "fc94a2a5e58b9458748dde09f86e602f2a55022c1884a75e3fa94311a405bf7b"
+    },
+    {
+      "source": "analysis_wsp/results_matilda74/matilda74_v1_20260927/inputs/native_source_manifest.csv",
+      "destination": "analysis_wsp/results_matilda74/matilda74_sifted_corrected_v2_20260927/inputs/native_source_manifest.csv",
+      "sha256": "80258627d0779da26fe3e056074314d703cd61d9aaa84ea00bfc3efb4dab1b81"
+    },
+    {
+      "source": "analysis_wsp/results_matilda74/matilda74_v1_20260927/inputs/original_74_feature_audit.csv",
+      "destination": "analysis_wsp/results_matilda74/matilda74_sifted_corrected_v2_20260927/inputs/original_74_feature_audit.csv",
+      "sha256": "5fd752bc872f06067ccc08dbd5daaec7123759c6cf0919ffb644fb3ec4d01cca"
+    },
+    {
+      "source": "analysis_wsp/results_matilda74/matilda74_v1_20260927/inputs/original_74_features_for_isa.csv",
+      "destination": "analysis_wsp/results_matilda74/matilda74_sifted_corrected_v2_20260927/inputs/original_74_features_for_isa.csv",
+      "sha256": "b0c2a05bfba6af64b6e9963594079b520ce3df3f08db977796aa1653b593714a"
+    },
+    {
+      "source": "analysis_wsp/results_matilda74/matilda74_v1_20260927/inputs/performance_74x6.csv",
+      "destination": "analysis_wsp/results_matilda74/matilda74_sifted_corrected_v2_20260927/inputs/performance_74x6.csv",
+      "sha256": "e8e64a07f9547df6c8c0892ee00c58df36fb1c35953d4eb7a0051797a421ca11"
+    },
+    {
+      "source": "analysis_wsp/results_matilda74/matilda74_v1_20260927/inputs/performance_source_444.csv",
+      "destination": "analysis_wsp/results_matilda74/matilda74_sifted_corrected_v2_20260927/inputs/performance_source_444.csv",
+      "sha256": "3766dcbc9ed658c8682916ca9019bd13cd00537a10c5b38cbf465ca24f839dd4"
+    },
+    {
+      "source": "analysis_wsp/results_matilda74/matilda74_v1_20260927/inputs/preparation_status.json",
+      "destination": "analysis_wsp/results_matilda74/matilda74_sifted_corrected_v2_20260927/inputs/preparation_status.json",
+      "sha256": "db478de94e41ff1b156a2360e87f7cd0bc76c488bd4f662d9144135ed71494c5"
+    },
+    {
+      "source": "analysis_wsp/results_matilda74/matilda74_v1_20260927/inputs/topology_74_feature_audit.csv",
+      "destination": "analysis_wsp/results_matilda74/matilda74_sifted_corrected_v2_20260927/inputs/topology_74_feature_audit.csv",
+      "sha256": "46b8576ff05b93bc97e5d6bb31768a3d7689e9a7448a9170e6ebc516625a5e05"
+    },
+    {
+      "source": "analysis_wsp/results_matilda74/matilda74_v1_20260927/inputs/topology_74_features_for_isa.csv",
+      "destination": "analysis_wsp/results_matilda74/matilda74_sifted_corrected_v2_20260927/inputs/topology_74_features_for_isa.csv",
+      "sha256": "4a4cfb64cc7b17611e35af3f0e7605538ab8a1da0d9d07cdfa432a399ab348e3"
+    },
+    {
+      "source": "analysis_wsp/results_matilda74/matilda74_v1_20260927/comparison_55_v24/inputs/augmented_candidates_55.csv",
+      "destination": "analysis_wsp/results_matilda74/matilda74_sifted_corrected_v2_20260927/comparison_55_v24/inputs/augmented_candidates_55.csv",
+      "sha256": "a15e82f717ca4a60bd780b4398303a886de0f22b7cd5eb3d4454bb0342b0d3ee"
+    },
+    {
+      "source": "analysis_wsp/results_matilda74/matilda74_v1_20260927/comparison_55_v24/inputs/base_features_55.csv",
+      "destination": "analysis_wsp/results_matilda74/matilda74_sifted_corrected_v2_20260927/comparison_55_v24/inputs/base_features_55.csv",
+      "sha256": "71636f7934476bc674e558dd53ccd63fdfdeb8c1dab816999c3c0ceb38e0b279"
+    },
+    {
+      "source": "analysis_wsp/results_matilda74/matilda74_v1_20260927/comparison_55_v24/inputs/label_counts_10pct.csv",
+      "destination": "analysis_wsp/results_matilda74/matilda74_sifted_corrected_v2_20260927/comparison_55_v24/inputs/label_counts_10pct.csv",
+      "sha256": "d70c1647b6a8730ee277843210ff9b6f41f56570f9830ad60927539734a8636e"
+    },
+    {
+      "source": "analysis_wsp/results_matilda74/matilda74_v1_20260927/comparison_55_v24/inputs/original_55_feature_audit.csv",
+      "destination": "analysis_wsp/results_matilda74/matilda74_sifted_corrected_v2_20260927/comparison_55_v24/inputs/original_55_feature_audit.csv",
+      "sha256": "f12ad67cc61b0e5aa6d1227ad62c2dc93173508186b4524b393ff62d52f533b3"
+    },
+    {
+      "source": "analysis_wsp/results_matilda74/matilda74_v1_20260927/comparison_55_v24/inputs/original_55_features_for_isa.csv",
+      "destination": "analysis_wsp/results_matilda74/matilda74_sifted_corrected_v2_20260927/comparison_55_v24/inputs/original_55_features_for_isa.csv",
+      "sha256": "ae1404a1d0cb74f6ca0463dfc56db13d960540ab6706f0f8b69cd808b6c5578a"
+    },
+    {
+      "source": "analysis_wsp/results_matilda74/matilda74_v1_20260927/comparison_55_v24/inputs/performance_55x6.csv",
+      "destination": "analysis_wsp/results_matilda74/matilda74_sifted_corrected_v2_20260927/comparison_55_v24/inputs/performance_55x6.csv",
+      "sha256": "93dee784ed5ef5ab17622e89c9f06b8b240f46f8743e265b38110ac670478a82"
+    },
+    {
+      "source": "analysis_wsp/results_matilda74/matilda74_v1_20260927/comparison_55_v24/inputs/preparation_status.json",
+      "destination": "analysis_wsp/results_matilda74/matilda74_sifted_corrected_v2_20260927/comparison_55_v24/inputs/preparation_status.json",
+      "sha256": "5de2d0220613e416b23417b2f1c3288773a3f8114d9b71be6221c2b439a4ec8b"
+    },
+    {
+      "source": "analysis_wsp/results_matilda74/matilda74_v1_20260927/comparison_55_v24/inputs/topology_55_feature_audit.csv",
+      "destination": "analysis_wsp/results_matilda74/matilda74_sifted_corrected_v2_20260927/comparison_55_v24/inputs/topology_55_feature_audit.csv",
+      "sha256": "3dd933ba6997cbd0e4ca29525340e2be9292778fba0bde98a3cfe273b92f19db"
+    },
+    {
+      "source": "analysis_wsp/results_matilda74/matilda74_v1_20260927/comparison_55_v24/inputs/topology_55_features_for_isa.csv",
+      "destination": "analysis_wsp/results_matilda74/matilda74_sifted_corrected_v2_20260927/comparison_55_v24/inputs/topology_55_features_for_isa.csv",
+      "sha256": "997a64cdbb686bea6b7821ed0339d184184f412e6802c89ed96bd2dccc265590"
+    },
+    {
+      "source": "analysis_wsp/results_matilda74/matilda74_v1_20260927/comparison_55_v24/inputs/topology_feature_audit.csv",
+      "destination": "analysis_wsp/results_matilda74/matilda74_sifted_corrected_v2_20260927/comparison_55_v24/inputs/topology_feature_audit.csv",
+      "sha256": "205d114bf91434d0de3d100d17fbb30e5d59de3fd76668a4160bbc3703ff57bd"
+    },
+    {
+      "source": "analysis_wsp/results_matilda74/matilda74_v1_20260927/comparison_55_v24/inputs/topology_features_for_isa.csv",
+      "destination": "analysis_wsp/results_matilda74/matilda74_sifted_corrected_v2_20260927/comparison_55_v24/inputs/topology_features_for_isa.csv",
+      "sha256": "5be68329c485e6b25f955b084e563d65509c6a51af00e28882098e9ee85aea23"
+    },
+    {
+      "source": "analysis_wsp/results_matilda74/matilda74_v1_20260927/comparison_55_v24/inputs/topology_transformations.csv",
+      "destination": "analysis_wsp/results_matilda74/matilda74_sifted_corrected_v2_20260927/comparison_55_v24/inputs/topology_transformations.csv",
+      "sha256": "14310c93adbc950beba09fd6f6678b12fa37623a6d1ccd9ca7a8e3e7cf6ad134"
+    }
+  ],
+  "protected_git_trees": {
+    "analysis_wsp/results_benchmark74": "4da412724dd5b1a30a393ad1e7c870b885742b63",
+    "analysis_wsp/results_extended": "b11d245da916f52766a8740aa039c67131775c70",
+    "analysis_wsp/results_matilda74/matilda74_v1_20260927": "0c213ef16497213b10aeb576aed4ebb9f3c10e31",
+    "third_party": "b75ae9645aedee3a518d5b177ad23ae593a2ee00"
+  },
+  "wsp_solvers_executed": false,
+  "stn_searches_executed": false,
+  "topology_recomputed": false,
+  "instance_generation_ga_executed": false,
+  "planned_fits": [
+    "all74/control",
+    "all74/topology",
+    "original55_v24/control",
+    "original55_v24/topology"
+  ],
+  "comparison_scope": "joint correction of sign, correlation-filter indexing and filtered-matrix mapping",
+  "not_an_ablation_of_sign_alone": true
+}

@@ -1,0 +1,3 @@
+Row,feature_total_resources,feature_arrival_q05_over_h,feature_x_span,feature_arc_time_mean,feature_arc_time_cv,feature_release_front_window_mean,feature_topo_harmonic_in_distance_mean,feature_topo_hits_authority_strength_q75,feature_topo_hits_authority_strength_std,feature_topo_pagerank_strength_min
+Z_{1},0.6777,-0.349,-0.889,1.558,-0.1285,-0.302,0.6514,-0.1797,0.02905,-0.3643
+Z_{2},-0.05948,-0.1024,-1.335,0.5234,-0.1868,-0.2996,0.222,0.2142,0.1172,-0.01399

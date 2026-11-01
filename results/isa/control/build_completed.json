@@ -1,0 +1,19 @@
+{
+  "analysis_input_hash": "19152f979e8834cf816554865a3f5ca7afdb7e124bf1caaecb30c46fe4ace9a5",
+  "elapsed_seconds": 619.539184764988,
+  "result_provenance": "measured",
+  "sifted_correction": {
+    "candidate_mapping": "cluster indices address filtered x and filtered feature names",
+    "correlation_filter": "best feature per algorithm plus any significant absolute correlation >= rho",
+    "direction": "maximize negative loss, equivalent to minimizing worst algorithm loss",
+    "fitness": "negative maximum cross-validated KNN classification MSE across algorithms",
+    "local_correction_sha256": "e054cd404b8ad2916332b4f5b547b3f4c30691622197517eaf2b1844a9a52520",
+    "reference": "https://github.com/andremun/InstanceSpace/blob/master/core/SIFTED.m",
+    "revision": "sifted-corrected-v1",
+    "scope": "local correction of three confirmed defects, not an upgrade to current upstream",
+    "upstream_commit": "289a940a79cee2001bd8c54621465ddc3e30a094",
+    "upstream_sifted_sha256": "4ba3a3cf49f46946600ca2acf54a911b9cc359e38d28f5b00f66d1cf8b3d2564"
+  },
+  "sifted_revision": "sifted-corrected-v1",
+  "status": "completed"
+}

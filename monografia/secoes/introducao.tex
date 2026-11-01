@@ -1,0 +1,194 @@
+\chapter{\MakeUppercase{Introdução}}
+
+Incêndios florestais constituem um problema de grande relevância ambiental,
+econômica e social. Além de afetarem a vegetação, a biodiversidade e os serviços
+ecossistêmicos, esses eventos podem ameaçar comunidades, infraestruturas e
+atividades produtivas. Em diversas regiões, as mudanças climáticas tendem a
+intensificar condições meteorológicas favoráveis à ocorrência de incêndios
+\cite{IPCC2023}. Esse cenário reforça a necessidade de estratégias de prevenção,
+planejamento e resposta.
+
+Durante uma operação de supressão, a disponibilidade limitada de equipes,
+equipamentos e tempo impede, em geral, que todas as regiões ameaçadas sejam
+atendidas simultaneamente. Torna-se necessário decidir onde e quando empregar
+os recursos, considerando que cada intervenção pode modificar a propagação do
+fogo e, consequentemente, a viabilidade e a qualidade das decisões posteriores.
+Problemas dessa natureza motivam modelos de otimização e métodos computacionais
+para estudar a alocação de recursos de combate
+\cite{Alvelos2018,MendesAlvelos2023}. Neste trabalho, esse processo decisório é investigado por meio de
+abordagens exatas e heurísticas, comparadas quanto à qualidade das soluções
+e ao custo computacional. Essa comparação permite analisar sistematicamente
+diferentes configurações do problema.
+
+Neste trabalho, a paisagem é discretizada em células ou regiões e representada
+por um grafo direcionado. Os vértices correspondem a essas unidades do terreno,
+e os arcos indicam possíveis direções de propagação do fogo. Os pesos dos arcos expressam
+tempos de deslocamento da frente de fogo e podem refletir fatores como vento,
+inclinação e características da vegetação. A partir de um vértice de ignição, os
+tempos de chegada do fogo são aproximados por caminhos mínimos; em instantes
+predeterminados, recursos de supressão tornam-se disponíveis para alocação em
+vértices ainda não atingidos (\citeauthor{Alvelos2018}, \citeyear{Alvelos2018}; \citeauthor{DelazeriRitt2024}, \citeyear{DelazeriRitt2024,DelazeriRitt2026}).
+
+Esse modelo define o Problema de Supressão de Incêndios Florestais
+(WSP, do inglês: \textit{wildfire suppression problem}), cujo objetivo
+é encontrar uma alocação temporalmente viável dos recursos que minimize o
+número de vértices queimados até um horizonte de planejamento. A aplicação de
+um recurso a um vértice acrescenta um atraso à propagação pelos seus arcos de
+saída, podendo alterar os tempos de chegada do fogo em outras partes do grafo.
+Como as decisões são interdependentes e o número de alocações possíveis cresce
+rapidamente com o tamanho da instância, encontrar uma solução ótima é
+computacionalmente difícil. \citeonline{DelazeriRitt2026} demonstram que a versão de decisão do WSP
+é NP-completa por redução polinomial do Problema dos Nós Mais Vitais
+(MVNP, do inglês: \textit{most vital nodes problem}), fortemente
+NP-completo segundo \citeonline{BarNoyKhullerSchieber1995}. A dificuldade
+do WSP persiste mesmo quando todos os recursos de supressão são liberados
+simultaneamente.
+
+O WSP foi introduzido na literatura por meio de uma formulação de
+Programação Inteira Mista (MIP, do inglês: \textit{mixed-integer programming})
+\cite{Alvelos2018}, resolvida por \textit{solvers} de propósito geral.
+Posteriormente, foram propostas a Busca Local Iterada (ILS, do inglês:
+\textit{iterated local search}) \cite{MendesAlvelos2023}, a Decomposição de
+Benders Baseada em Lógica (LBBD, do inglês: \textit{logic-based benders
+decomposition}) \cite{HarrisForbesTaimre2023} e a Busca em Feixe Iterada
+(IBS, do inglês: \textit{iterated beam search}) \cite{DelazeriRitt2024}.
+O IBS explora uma árvore de alocações parciais, mantém um conjunto limitado
+de soluções promissoras e prioriza regiões próximas à frente de avanço do
+fogo. Nos experimentos de \citeonline{DelazeriRitt2024}, o método alcançou soluções
+ótimas em quase todas as instâncias utilizadas na literatura, com tempo
+computacional consideravelmente menor que o das abordagens comparadas.
+
+Este trabalho considera também a Heurística Baseada em Cortes (CUTH,
+do inglês: \textit{cut-based heuristic}) \cite{Delazeri2025}, uma
+matheurística que combina um corte estático de vértices com uma alocação
+gulosa ao longo do tempo, e a Busca Aleatória (RS, do inglês:
+\textit{random search}), utilizada como linha de base de exploração
+aleatória viável \cite{DelazeriRitt2026}. A comparação envolve, assim,
+seis abordagens: os métodos exatos MIP e LBBD, os heurísticos ILS, IBS e RS
+e a matheurística CUTH.
+
+\citeonline{DelazeriRitt2026} apresentaram uma nova formulação de programação
+inteira mista e propuseram um gerador de instâncias fundamentado em um modelo
+físico de propagação. Os autores também mostraram que os \textit{benchmarks}
+clássicos eram pequenos, pouco diversos e pouco desafiadores para os métodos
+atuais. O novo gerador permite variar fatores como tamanho da grade, condições
+ambientais e configuração dos recursos, produzindo casos capazes de revelar regimes de
+desempenho antes ocultos pelas limitações da base clássica.
+
+Dentre as abordagens consideradas, o IBS é adotado neste trabalho como método
+de referência. Essa escolha decorre dos resultados de
+\citeonline{DelazeriRitt2026}, que mostraram experimentalmente que esse
+algoritmo obteve o melhor desempenho entre os métodos comparados. Por ser
+estocástico e não provar otimalidade, o IBS dificilmente pode ser compreendido
+apenas pelo valor final de suas soluções. Sua estrutura de buscas em feixe
+sucessivas permite registrar as soluções devolvidas a cada iteração, o que
+viabiliza a análise de suas trajetórias. O desempenho dos seis métodos é
+comparado sob um mesmo protocolo, sem tratamento privilegiado do IBS.
+
+Os resultados de \citeonline{DelazeriRitt2026} sobre os \textit{benchmarks}
+clássicos evidenciam que eles cobrem apenas uma parcela restrita dos casos
+produzíveis pelo modelo. À luz desse diagnóstico e dos princípios da avaliação por
+espaços de instâncias \cite{MunozEtAl2018,SmithMilesMunoz2023}, identificam-se
+três lacunas experimentais relacionadas: a cobertura limitada da coleção; a
+caracterização parcial da estrutura dos grafos; e a dependência de indicadores
+finais de qualidade e tempo. Esses indicadores são essenciais para comparar os
+métodos, mas, isoladamente, não permitem associar o desempenho às propriedades
+das instâncias nem reconstruir a dinâmica da busca que levou aos resultados
+\cite{OchoaMalanBlum2021,SmithMilesMunoz2023}.
+
+A Análise do Espaço de Instâncias (ISA, do inglês:
+\textit{instance space analysis}) permite tratar a primeira lacuna ao
+representar cada instância por suas características e relacionar sua posição no
+espaço ao desempenho dos algoritmos. Assim, é possível examinar a diversidade dos
+casos de teste, identificar diferentes níveis de dificuldade, delimitar regiões
+de competência dos métodos e localizar porções insuficientemente cobertas
+\cite{MunozEtAl2018,SmithMilesMunoz2023}. Neste trabalho, a ISA é operacionalizada
+por meio do fluxo associado ao \textit{framework}
+\textit{Melbourne Algorithm Test Instance Library
+with Data Analytics} (MATILDA), que integra preparação dos dados, seleção de
+atributos, projeção, predição de desempenho e construção de \textit{footprints}
+\cite{SmithMilesMunoz2023}.
+
+Para tratar a segunda lacuna, a caracterização pode ser enriquecida por medidas
+estruturais de grafos. Grafos com
+dimensões semelhantes podem apresentar distribuições distintas de graus,
+centralidade e conectividade, propriedades que descrevem a organização de
+caminhos e regiões estruturalmente relevantes \cite{Newman2018}. Incorporá-las à
+ISA permite avaliar se a estrutura direcionada acrescenta informação aos
+atributos originais do problema, sem pressupor melhora preditiva para todos os
+algoritmos.
+
+Por fim, as Redes de Trajetórias de Busca (STNs, do inglês:
+\textit{search trajectory networks}) tratam a terceira lacuna ao representar
+o comportamento de um algoritmo de busca como uma rede direcionada
+\cite{ChaconSartoriEtAl2023,OchoaMalanBlum2021}. Enquanto a ISA indica onde uma
+instância se posiciona no espaço e as medidas topológicas descrevem como seu
+grafo se organiza, as STNs permitem examinar como o algoritmo se comporta durante
+a busca. Seus nós correspondem a soluções representativas registradas ao longo das
+execuções, e suas arestas registram transições consecutivas entre essas soluções.
+Essa modelagem evidencia convergência, recorrência e sobreposição entre
+execuções. Neste trabalho, a técnica é aplicada ao IBS.
+
+\section{Pergunta de pesquisa e hipótese}\label{sec:pergunta-pesquisa}
+
+A pesquisa é orientada pela seguinte pergunta: que relações podem ser
+identificadas entre as propriedades das instâncias do WSP, o desempenho
+dos algoritmos e as trajetórias de busca do IBS quando a cobertura desse
+espaço é ampliada de forma orientada?
+A questão articula a caracterização das instâncias pela ISA e pelas medidas
+topológicas à análise das trajetórias do IBS. A cobertura é avaliada no
+mapa fixado para a geração; as relações com desempenho são examinadas
+na coleção ampliada e nos modelos ISA finais.
+
+A hipótese deste trabalho é que a ampliação orientada da cobertura do
+espaço de instâncias do WSP, aliada à caracterização por atributos do
+problema e medidas topológicas, torna observáveis relações entre as
+propriedades das instâncias, o desempenho dos algoritmos e o comportamento
+de busca do IBS que a coleção original não permitia distinguir.
+A hipótese é examinada pelo contraste entre as coleções, pelos modelos ISA
+e pelos descritores das STNs. Esses contrastes buscam evidências descritivas
+e associações; não isolam efeitos causais da geração ou da topologia.
+
+\section{Objetivos}\label{sec:objetivos}
+
+O objetivo geral é caracterizar, interpretar e ampliar a cobertura de uma
+representação do espaço de instâncias do WSP, relacionando seus atributos
+ao desempenho dos algoritmos e às trajetórias de busca do IBS.
+Para alcançá-lo, estabeleceram-se os seguintes objetivos específicos:
+\begin{alineas}
+ \item consolidar e caracterizar a base experimental;
+ \item avaliar a contribuição descritiva e preditiva interna das medidas topológicas;
+ \item construir e interpretar a ISA com a MATILDA;
+ \item gerar e validar instâncias para regiões internas insuficientemente cobertas do mapa de referência;
+ \item comparar as seis abordagens na coleção ampliada;
+ \item caracterizar as trajetórias do IBS, respeitando as limitações de comparabilidade entre os protocolos.
+\end{alineas}
+
+\section{Contribuição e organização do trabalho}\label{sec:contribuicao}
+
+A principal contribuição consiste em integrar técnicas existentes de
+caracterização de instâncias, análise de desempenho, povoamento orientado de
+uma representação fixa e investigação de trajetórias em um fluxo experimental
+aplicado ao WSP. A análise empírica resultante situa o desempenho dos métodos em
+diferentes tipos de instância e examina o comportamento do IBS. Trata-se,
+contudo, de uma investigação computacional sobre instâncias de \textit{benchmark}:
+a validade das instâncias sintéticas
+refere-se à consistência com o gerador e com os critérios adotados, não à
+validação de cenários reais de incêndio ou à prescrição direta de decisões
+operacionais.
+
+A pesquisa foi organizada em três etapas. Primeiro, consolidaram-se 55 instâncias
+do WSP, sendo 16 clássicas e 39 produzidas pelo gerador de
+\citeonline{DelazeriRitt2026}, com resultados históricos de seis abordagens e STNs
+do IBS nas instâncias clássicas. Em seguida, um mapa com atributos originais e topológicos forneceu alvos
+em regiões internas pouco ocupadas. Um algoritmo genético inspirado em
+\citeonline{SmithMilesBowly2015} orientou a geração de 19 novas instâncias
+sintéticas, ampliando a coleção para 74 casos. Na etapa final,
+as seis abordagens foram avaliadas na coleção ampliada sob um protocolo homogêneo,
+a MATILDA foi recalculada com a matriz completa de desempenho e novas STNs do IBS
+foram construídas. As STNs clássicas permaneceram como contexto descritivo devido
+às diferenças de protocolo e ambiente computacional.
+
+O trabalho segue com a fundamentação teórica, a metodologia, a apresentação
+e discussão dos resultados e as conclusões, que retomam os objetivos e as
+limitações da pesquisa.

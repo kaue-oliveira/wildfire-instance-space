@@ -1,0 +1,45 @@
+{
+  "captured_utc": "2026-09-28T01:35:52.320706+00:00",
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "executable": "{USER_HOME}/.cache/tcc-matilda74-venv/bin/python",
+  "branch": "analysis/matilda74-sifted-corrected-20260927",
+  "execution_code_commit": "b6c88e703",
+  "libraries": {
+    "instancespace": "0.2.1",
+    "numpy": "1.26.4",
+    "scipy": "1.14.1",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.5.2",
+    "pygad": "3.7.0",
+    "matplotlib": "3.9.2"
+  },
+  "implementation": {
+    "revision": "sifted-corrected-v1",
+    "upstream_commit": "289a940a79cee2001bd8c54621465ddc3e30a094",
+    "upstream_sifted_sha256": "4ba3a3cf49f46946600ca2acf54a911b9cc359e38d28f5b00f66d1cf8b3d2564",
+    "local_correction_sha256": "e054cd404b8ad2916332b4f5b547b3f4c30691622197517eaf2b1844a9a52520",
+    "fitness": "negative maximum cross-validated KNN classification MSE across algorithms",
+    "direction": "maximize negative loss, equivalent to minimizing worst algorithm loss",
+    "correlation_filter": "best feature per algorithm plus any significant absolute correlation >= rho",
+    "candidate_mapping": "cluster indices address filtered x and filtered feature names",
+    "reference": "https://github.com/andremun/InstanceSpace/blob/master/core/SIFTED.m",
+    "scope": "local correction of three confirmed defects, not an upgrade to current upstream"
+  },
+  "code_sha256": {
+    "analysis_wsp/extended_analysis/isa.py": "c0b07109cadb092a1cf8d04e6eacc080e8caae0e6bac8382651af827eb1eaedc",
+    "analysis_wsp/matilda74/__init__.py": "939c08d8f9c0bcb2d1b18d00cb3a46e2a9d90864af8b30b1bc3563d01ebcd9f5",
+    "analysis_wsp/matilda74/capture_manifest.py": "f8a96e593f9fa02782eb60e28b4d9e7751bf668d88dd9fb2e1cbf53fc1dc8b52",
+    "analysis_wsp/matilda74/plots.py": "882dd8a41116cc697b5c7f8c769ca9185fc298f9b65bc09083e88aef473d92e8",
+    "analysis_wsp/matilda74/prepare.py": "fdc45c8421d21564d3458bd436629978a62d2e8217c6ae71adc4f32779134e5d",
+    "analysis_wsp/matilda74/prepare_comparison.py": "6439fd98a5015ccba8184371498ed30417eb6b716118fbc708e8d371474da13a",
+    "analysis_wsp/matilda74/prepare_corrected.py": "5564bac552667e16607a78f7daf08a192f7a7807ad346fb757981ce3b9932656",
+    "analysis_wsp/matilda74/prepare_topology.py": "8ffb30591b34566315c97471968a9a085489eda1666e317988f73cfd9dbbb94f",
+    "analysis_wsp/matilda74/report_corrected.py": "6f6c522d800bc92fdbf8a44f3e3af03e601c14c31b4ec8a41c7db729616c65ed",
+    "analysis_wsp/matilda74/run_corrected_batch.py": "5ac494e86a48038bb0c68da54c64df0e822de13920b2c355e15858d0f34fdb58",
+    "analysis_wsp/matilda74/run_model.py": "1c27e90b3827abade2a099f21626f2bfb2cf994fdbd7f39c0334612b4ed57337",
+    "analysis_wsp/matilda74/sensitivity.py": "8b2119208f1533b073aae2a05a5bfa7c0dc90007aff6b164148ad33509199891",
+    "analysis_wsp/matilda74/sifted_correction.py": "e054cd404b8ad2916332b4f5b547b3f4c30691622197517eaf2b1844a9a52520",
+    "analysis_wsp/matilda74/summarize.py": "0fc34e3260b7e2049f1173749956e19ca11ec8411d82bbf9fe1d449cd21b2bfd",
+    "analysis_wsp/matilda74/summarize_corrected.py": "bbb2bb86608c7d514fed1c288b49cf1be1a37c029ff89b094850e24d922e9b7d"
+  }
+}

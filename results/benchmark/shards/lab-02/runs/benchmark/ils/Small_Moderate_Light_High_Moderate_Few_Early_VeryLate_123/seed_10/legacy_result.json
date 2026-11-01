@@ -1,0 +1,163 @@
+{
+  "algorithm": "ils",
+  "complete_candidates": 50,
+  "completed_utc": "2026-09-11T20:18:58Z",
+  "deadline_overshoot_seconds": 0.0,
+  "lower_bound": null,
+  "objective": 373,
+  "result_provenance": "measured",
+  "search_limit_seconds": 600,
+  "search_wall_seconds": 396.9221460709814,
+  "seed": 10,
+  "solution": [
+    [
+      [
+        11,
+        9
+      ],
+      214.73
+    ],
+    [
+      [
+        12,
+        8
+      ],
+      534.26
+    ],
+    [
+      [
+        12,
+        10
+      ],
+      214.73
+    ],
+    [
+      [
+        13,
+        7
+      ],
+      534.26
+    ],
+    [
+      [
+        13,
+        11
+      ],
+      214.73
+    ],
+    [
+      [
+        14,
+        6
+      ],
+      853.79
+    ],
+    [
+      [
+        14,
+        10
+      ],
+      534.26
+    ],
+    [
+      [
+        15,
+        5
+      ],
+      853.79
+    ],
+    [
+      [
+        15,
+        10
+      ],
+      214.73
+    ],
+    [
+      [
+        16,
+        1
+      ],
+      1492.84
+    ],
+    [
+      [
+        16,
+        2
+      ],
+      1173.31
+    ],
+    [
+      [
+        16,
+        6
+      ],
+      1173.31
+    ],
+    [
+      [
+        16,
+        9
+      ],
+      853.79
+    ],
+    [
+      [
+        17,
+        2
+      ],
+      1492.84
+    ],
+    [
+      [
+        17,
+        3
+      ],
+      1173.31
+    ],
+    [
+      [
+        17,
+        7
+      ],
+      853.79
+    ],
+    [
+      [
+        17,
+        8
+      ],
+      534.26
+    ],
+    [
+      [
+        18,
+        4
+      ],
+      1173.31
+    ],
+    [
+      [
+        19,
+        5
+      ],
+      1492.84
+    ],
+    [
+      [
+        20,
+        6
+      ],
+      1492.84
+    ]
+  ],
+  "solver_status": "no_improvement_limit",
+  "status": "completed",
+  "termination_reason": "no_improvement_limit",
+  "validation": {
+    "assignments": 20,
+    "feasible": true,
+    "objective_recomputed": 373
+  },
+  "wall_seconds": 396.92383363097906
+}

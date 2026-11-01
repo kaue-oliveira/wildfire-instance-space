@@ -1,0 +1,125 @@
+{
+  "algorithm": "lbbd",
+  "baseline_mip_starts": 1,
+  "budget_policy": "global_remaining_divided_among_remaining_greedy_stages",
+  "completed_utc": "2026-09-18T23:25:26Z",
+  "exact_started": false,
+  "feasibility_cuts": 108,
+  "global_budget_seconds": 2400,
+  "greedy_wall_seconds": 2400.2188976629986,
+  "lower_bound": 770.0,
+  "mip_gap": 0.5163316582914573,
+  "objective": 1592,
+  "objective_consistency": "exact",
+  "objective_delta_vs_solver": 0,
+  "objective_source": "independent_shortest_path_validation",
+  "optimality_cuts": 321226,
+  "optimize_calls": 20,
+  "optimize_time_allocations_seconds": [
+    119.97055332489981,
+    119.96681398431629,
+    119.9460495901666,
+    119.94088671176509,
+    119.937483030375,
+    119.93440700580055,
+    123.92073876221548,
+    123.91462698253991,
+    123.90827016749972,
+    123.89992102063579,
+    123.89310568130168,
+    123.88352852577938,
+    123.87617281112762,
+    123.86227316699971,
+    123.85268718166724,
+    123.8399495569989,
+    123.82596215625381,
+    123.80663121900095,
+    123.78267218499968,
+    123.72167373201228
+  ],
+  "result_provenance": "measured",
+  "seed": 10,
+  "solution": [
+    [
+      [
+        1,
+        4
+      ],
+      423.54
+    ],
+    [
+      [
+        1,
+        9
+      ],
+      262.78
+    ],
+    [
+      [
+        2,
+        1
+      ],
+      369.95
+    ],
+    [
+      [
+        2,
+        2
+      ],
+      316.37
+    ],
+    [
+      [
+        2,
+        3
+      ],
+      477.12
+    ],
+    [
+      [
+        2,
+        4
+      ],
+      530.71
+    ],
+    [
+      [
+        2,
+        5
+      ],
+      637.88
+    ],
+    [
+      [
+        2,
+        6
+      ],
+      209.19
+    ],
+    [
+      [
+        2,
+        7
+      ],
+      584.29
+    ],
+    [
+      [
+        2,
+        8
+      ],
+      691.47
+    ]
+  ],
+  "solver_lower_bound": 770.0,
+  "solver_mip_gap": 0.5163316582914573,
+  "solver_objective": 1592,
+  "solver_status": 9,
+  "status": "completed",
+  "validation": {
+    "assignments": 10,
+    "feasible": true,
+    "objective_recomputed": 1592
+  },
+  "wall_seconds": 2400.2251840349927
+}

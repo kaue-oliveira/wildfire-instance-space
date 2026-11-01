@@ -1,0 +1,27 @@
+{
+  "algorithm": "ils",
+  "baseline_solution": [],
+  "baseline_validation": {
+    "assignments": 0,
+    "feasible": true,
+    "objective_recomputed": 400
+  },
+  "complete_candidates": 50,
+  "completed_utc": "2026-09-11T20:28:59Z",
+  "deadline_overshoot_seconds": 0.0009896040428429842,
+  "failure_category": "infeasible_final_solution",
+  "fallback_policy": "discard_invalid_and_score_no_deployment_baseline",
+  "invalid_candidate_assignments": 20,
+  "lower_bound": null,
+  "objective": null,
+  "result_provenance": "measured_algorithm_failure",
+  "scored_objective": 400,
+  "search_limit_seconds": 600,
+  "search_wall_seconds": 600.0009896040428,
+  "seed": 10,
+  "solver_status": "invalid_final_candidate",
+  "status": "algorithm_failure",
+  "termination_reason": "invalid_final_candidate",
+  "validation_error": "A node received more than one resource",
+  "wall_seconds": 600.0031730310293
+}

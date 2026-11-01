@@ -1,0 +1,309 @@
+{
+  "selected_features": {
+    "55-controle": [
+      "feature_total_resources",
+      "feature_decision_points",
+      "feature_delta_over_h",
+      "feature_first_release_over_h",
+      "feature_release_window_over_h",
+      "feature_arrival_q50_over_h",
+      "feature_directional_asymmetry_mean",
+      "feature_arc_time_std",
+      "feature_arc_time_p25",
+      "feature_release_front_window_mean"
+    ],
+    "55-topologia": [
+      "feature_total_resources",
+      "feature_release_window_over_h",
+      "feature_arrival_q95_over_h",
+      "feature_directional_asymmetry_mean",
+      "feature_arc_time_p75",
+      "feature_release_front_window_mean",
+      "feature_topo_harmonic_out_distance_mean",
+      "feature_topo_hits_authority_strength_q50",
+      "feature_topo_hits_hub_strength_std",
+      "feature_topo_pagerank_strength_mean"
+    ],
+    "74-controle": [
+      "feature_decision_points",
+      "feature_resources_per_decision",
+      "feature_delta_over_h",
+      "feature_first_release_over_h",
+      "feature_last_release_over_h",
+      "feature_free_burning_over_h",
+      "feature_directional_asymmetry_mean",
+      "feature_y_span",
+      "feature_arc_time_p50",
+      "feature_release_front_window_max"
+    ],
+    "74-topologia": [
+      "feature_total_resources",
+      "feature_arrival_q05_over_h",
+      "feature_x_span",
+      "feature_arc_time_mean",
+      "feature_arc_time_cv",
+      "feature_release_front_window_mean",
+      "feature_topo_harmonic_in_distance_mean",
+      "feature_topo_hits_authority_strength_q75",
+      "feature_topo_hits_authority_strength_std",
+      "feature_topo_pagerank_strength_min"
+    ]
+  },
+  "shared_55_74_topology": [
+    "feature_release_front_window_mean",
+    "feature_total_resources"
+  ],
+  "recurrence_by_attribute": {
+    "feature_total_resources": 3,
+    "feature_decision_points": 2,
+    "feature_delta_over_h": 2,
+    "feature_first_release_over_h": 2,
+    "feature_release_window_over_h": 2,
+    "feature_arrival_q50_over_h": 1,
+    "feature_directional_asymmetry_mean": 3,
+    "feature_arc_time_std": 1,
+    "feature_arc_time_p25": 1,
+    "feature_release_front_window_mean": 3,
+    "feature_arrival_q95_over_h": 1,
+    "feature_arc_time_p75": 1,
+    "feature_topo_harmonic_out_distance_mean": 1,
+    "feature_topo_hits_authority_strength_q50": 1,
+    "feature_topo_hits_hub_strength_std": 1,
+    "feature_topo_pagerank_strength_mean": 1,
+    "feature_resources_per_decision": 1,
+    "feature_last_release_over_h": 1,
+    "feature_free_burning_over_h": 1,
+    "feature_y_span": 1,
+    "feature_arc_time_p50": 1,
+    "feature_release_front_window_max": 1,
+    "feature_arrival_q05_over_h": 1,
+    "feature_x_span": 1,
+    "feature_arc_time_mean": 1,
+    "feature_arc_time_cv": 1,
+    "feature_topo_harmonic_in_distance_mean": 1,
+    "feature_topo_hits_authority_strength_q75": 1,
+    "feature_topo_hits_authority_strength_std": 1,
+    "feature_topo_pagerank_strength_min": 1
+  },
+  "attribute_counts_by_number_of_models": {
+    "3": 3,
+    "2": 4,
+    "1": 23
+  },
+  "family_presence_by_model": {
+    "Recursos e atraso": {
+      "55-controle": true,
+      "55-topologia": true,
+      "74-controle": true,
+      "74-topologia": true
+    },
+    "Liberações": {
+      "55-controle": true,
+      "55-topologia": true,
+      "74-controle": true,
+      "74-topologia": false
+    },
+    "Tempos dos arcos": {
+      "55-controle": true,
+      "55-topologia": true,
+      "74-controle": true,
+      "74-topologia": true
+    },
+    "Assimetria e coordenadas": {
+      "55-controle": true,
+      "55-topologia": true,
+      "74-controle": true,
+      "74-topologia": true
+    },
+    "Chegadas sem recursos": {
+      "55-controle": true,
+      "55-topologia": true,
+      "74-controle": true,
+      "74-topologia": true
+    },
+    "Chegadas entre liberações": {
+      "55-controle": true,
+      "55-topologia": true,
+      "74-controle": true,
+      "74-topologia": true
+    },
+    "Centralidade harmônica": {
+      "55-controle": false,
+      "55-topologia": true,
+      "74-controle": false,
+      "74-topologia": true
+    },
+    "HITS": {
+      "55-controle": false,
+      "55-topologia": true,
+      "74-controle": false,
+      "74-topologia": true
+    },
+    "PageRank": {
+      "55-controle": false,
+      "55-topologia": true,
+      "74-controle": false,
+      "74-topologia": true
+    }
+  },
+  "shared_topological_55_74": [],
+  "size_correlations_74_topology": [
+    {
+      "model": "74-topologia",
+      "instances": 74,
+      "feature": "feature_topo_harmonic_in_distance_mean",
+      "size_feature": "feature_n_vertices",
+      "spearman": -0.35694604708061245
+    },
+    {
+      "model": "74-topologia",
+      "instances": 74,
+      "feature": "feature_topo_harmonic_in_distance_mean",
+      "size_feature": "feature_n_arcs",
+      "spearman": -0.35694604708061245
+    },
+    {
+      "model": "74-topologia",
+      "instances": 74,
+      "feature": "feature_topo_hits_authority_strength_q75",
+      "size_feature": "feature_n_vertices",
+      "spearman": -0.9205840986149234
+    },
+    {
+      "model": "74-topologia",
+      "instances": 74,
+      "feature": "feature_topo_hits_authority_strength_q75",
+      "size_feature": "feature_n_arcs",
+      "spearman": -0.9205840986149234
+    },
+    {
+      "model": "74-topologia",
+      "instances": 74,
+      "feature": "feature_topo_hits_authority_strength_std",
+      "size_feature": "feature_n_vertices",
+      "spearman": -0.4870357857615853
+    },
+    {
+      "model": "74-topologia",
+      "instances": 74,
+      "feature": "feature_topo_hits_authority_strength_std",
+      "size_feature": "feature_n_arcs",
+      "spearman": -0.4870357857615853
+    },
+    {
+      "model": "74-topologia",
+      "instances": 74,
+      "feature": "feature_topo_pagerank_strength_min",
+      "size_feature": "feature_n_vertices",
+      "spearman": -0.9600133596171977
+    },
+    {
+      "model": "74-topologia",
+      "instances": 74,
+      "feature": "feature_topo_pagerank_strength_min",
+      "size_feature": "feature_n_arcs",
+      "spearman": -0.9600133596171977
+    }
+  ],
+  "size_ordering_74": {
+    "identical_vertex_and_arc_ranks": true,
+    "spearman_vertices_arcs": 1.0,
+    "distinct_vertex_arc_pairs": [
+      [
+        282,
+        1054
+      ],
+      [
+        289,
+        1078
+      ],
+      [
+        294,
+        1100
+      ],
+      [
+        312,
+        1172
+      ],
+      [
+        317,
+        1192
+      ],
+      [
+        327,
+        1232
+      ],
+      [
+        331,
+        1246
+      ],
+      [
+        400,
+        1520
+      ],
+      [
+        900,
+        3480
+      ],
+      [
+        1600,
+        6240
+      ],
+      [
+        6400,
+        25280
+      ]
+    ]
+  },
+  "pagerank_mean_55_max_absolute_error_vs_inverse_vertices": 1.3010426069826053e-18,
+  "prediction_comparison": {
+    "total": 444,
+    "agreements": 420,
+    "agreement_fraction": 0.9459459459459459,
+    "archived_agreement_fraction": 0.9459459459459459,
+    "by_algorithm": [
+      {
+        "algorithm": "algo_cuth",
+        "total": 74,
+        "agreements": 71,
+        "disagreements": 3
+      },
+      {
+        "algorithm": "algo_ibs",
+        "total": 74,
+        "agreements": 74,
+        "disagreements": 0
+      },
+      {
+        "algorithm": "algo_ils",
+        "total": 74,
+        "agreements": 68,
+        "disagreements": 6
+      },
+      {
+        "algorithm": "algo_lbbd",
+        "total": 74,
+        "agreements": 68,
+        "disagreements": 6
+      },
+      {
+        "algorithm": "algo_mip",
+        "total": 74,
+        "agreements": 70,
+        "disagreements": 4
+      },
+      {
+        "algorithm": "algo_rs",
+        "total": 74,
+        "agreements": 69,
+        "disagreements": 5
+      }
+    ]
+  },
+  "ibs_in_sample_accuracy_74_both_models": {
+    "correct": 70,
+    "total": 74,
+    "accuracy": 0.9459459459459459
+  },
+  "scope": "Associações descritivas nas 74 instâncias; nenhum modelo foi reajustado."
+}

@@ -1,0 +1,63 @@
+\begin{table}[!htbp]
+\centering
+\caption{Atributos selecionados nos quatro modelos de ISA.}
+\label{tab:res-atributos-isa}
+\begin{singlespace}
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.02}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.46\textwidth}ccccr}
+\hline\hline
+\noalign{\vskip 4pt}
+\textbf{Atributo} & \textbf{\shortstack{55\\controle}} & \textbf{\shortstack{55\\topologia}} & \textbf{\shortstack{74\\controle}} & \textbf{\shortstack{74\\topologia}} & \textbf{\shortstack{Nº de\\modelos}} \\
+\hline
+\multicolumn{6}{l}{\textbf{Originais}} \\
+\multicolumn{6}{l}{\textit{Recursos e atraso}} \\
+Recursos totais & $\times$ & $\times$ &  & $\times$ & 3 \\
+Número de liberações de recursos & $\times$ &  & $\times$ &  & 2 \\
+Recursos por liberação &  &  & $\times$ &  & 1 \\
+Atraso/$H$ & $\times$ &  & $\times$ &  & 2 \\
+\multicolumn{6}{l}{\textit{Liberações}} \\
+Primeira liberação/$H$ & $\times$ &  & $\times$ &  & 2 \\
+Última liberação/$H$ &  &  & $\times$ &  & 1 \\
+Janela de liberação/$H$ & $\times$ & $\times$ &  &  & 2 \\
+\multicolumn{6}{l}{\textit{Tempos dos arcos}} \\
+Média dos tempos dos arcos &  &  &  & $\times$ & 1 \\
+Desvio padrão dos tempos dos arcos & $\times$ &  &  &  & 1 \\
+Primeiro quartil dos tempos dos arcos & $\times$ &  &  &  & 1 \\
+Mediana dos tempos dos arcos &  &  & $\times$ &  & 1 \\
+Terceiro quartil dos tempos dos arcos &  & $\times$ &  &  & 1 \\
+CV dos tempos dos arcos &  &  &  & $\times$ & 1 \\
+\multicolumn{6}{l}{\textit{Assimetria e coordenadas}} \\
+Assimetria direcional média & $\times$ & $\times$ & $\times$ &  & 3 \\
+Amplitude das coordenadas $x$ &  &  &  & $\times$ & 1 \\
+Amplitude das coordenadas $y$ &  &  & $\times$ &  & 1 \\
+\multicolumn{6}{l}{\textit{Chegadas sem recursos}} \\
+Maior chegada sem recursos/$H$ &  &  & $\times$ &  & 1 \\
+Percentil 5 das chegadas/$H$ &  &  &  & $\times$ & 1 \\
+Mediana das chegadas/$H$ & $\times$ &  &  &  & 1 \\
+Percentil 95 das chegadas/$H$ &  & $\times$ &  &  & 1 \\
+\multicolumn{6}{l}{\textit{Chegadas entre liberações}} \\
+Média de chegadas entre liberações & $\times$ & $\times$ &  & $\times$ & 3 \\
+Máximo de chegadas entre liberações &  &  & $\times$ &  & 1 \\
+\multicolumn{6}{l}{\textbf{Topológicos}} \\
+\multicolumn{6}{l}{\textit{Centralidade harmônica}} \\
+Harmônica de saída (distância): média &  & $\times$ &  &  & 1 \\
+Harmônica de entrada (distância): média &  &  &  & $\times$ & 1 \\
+\multicolumn{6}{l}{\textit{HITS}} \\
+Autoridade HITS (força): mediana &  & $\times$ &  &  & 1 \\
+Autoridade HITS (força): terceiro quartil &  &  &  & $\times$ & 1 \\
+Autoridade HITS (força): desvio padrão &  &  &  & $\times$ & 1 \\
+\textit{Hub} HITS (força): desvio padrão &  & $\times$ &  &  & 1 \\
+\multicolumn{6}{l}{\textit{PageRank}} \\
+PageRank ponderado: média &  & $\times$ &  &  & 1 \\
+PageRank ponderado: mínimo &  &  &  & $\times$ & 1 \\
+\hline
+\textbf{Total selecionado} & 10 & 10 & 10 & 10 & \\
+\hline\hline
+\end{tabular}
+\par\smallskip
+{\small Nota: $\times$ indica seleção; célula vazia, ausência. Nº de modelos indica em quantos dos quatro modelos o atributo foi selecionado. Grupos originais seguem a Tabela~\ref{tab:met-atributos-originais}, reunindo assimetria e coordenadas. Harmônica designa a centralidade harmônica; distância usa os tempos dos arcos e força, seus inversos. Chegadas são calculadas sem recursos.\par}
+{\fonte{elaboração própria a partir das seleções dos modelos finais.}}
+\end{singlespace}
+\end{table}

@@ -1,0 +1,22 @@
+{
+  "algorithm": "ils",
+  "complete_candidates": 8,
+  "completed_utc": "2026-09-10T10:25:18Z",
+  "deadline_overshoot_seconds": 3.694786251988262,
+  "lower_bound": null,
+  "objective": 1600,
+  "result_provenance": "measured",
+  "search_limit_seconds": 2400,
+  "search_wall_seconds": 2403.6947862519883,
+  "seed": 1,
+  "solution": [],
+  "solver_status": "time_limit",
+  "status": "completed",
+  "termination_reason": "time_limit",
+  "validation": {
+    "assignments": 0,
+    "feasible": true,
+    "objective_recomputed": 1600
+  },
+  "wall_seconds": 2403.705008481047
+}

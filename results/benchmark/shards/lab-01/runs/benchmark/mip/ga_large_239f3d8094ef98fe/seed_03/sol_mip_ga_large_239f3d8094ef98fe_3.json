@@ -1,0 +1,165 @@
+{
+    "allocation": {
+        "0": {
+            "base": "NA",
+            "protected": [
+                800,
+                963
+            ],
+            "time": 406.49
+        },
+        "1": {
+            "base": "NA",
+            "protected": [
+                1276,
+                1432
+            ],
+            "time": 443.81
+        },
+        "10": {
+            "base": "NA",
+            "protected": [
+                1393,
+                1510
+            ],
+            "time": 779.64
+        },
+        "11": {
+            "base": "NA",
+            "protected": [
+                9,
+                841
+            ],
+            "time": 816.96
+        },
+        "12": {
+            "base": "NA",
+            "protected": [
+                1002,
+                1549
+            ],
+            "time": 854.27
+        },
+        "13": {
+            "base": "NA",
+            "protected": [
+                167,
+                284
+            ],
+            "time": 891.59
+        },
+        "14": {
+            "base": "NA",
+            "protected": [
+                245,
+                482
+            ],
+            "time": 928.9
+        },
+        "15": {
+            "base": "NA",
+            "protected": [
+                76,
+                1041
+            ],
+            "time": 966.22
+        },
+        "16": {
+            "base": "NA",
+            "protected": [
+                35,
+                521
+            ],
+            "time": 1003.53
+        },
+        "17": {
+            "base": "NA",
+            "protected": [
+                443,
+                1080
+            ],
+            "time": 1040.85
+        },
+        "18": {
+            "base": "NA",
+            "protected": [
+                323,
+                403
+            ],
+            "time": 1078.16
+        },
+        "19": {
+            "base": "NA",
+            "protected": [
+                362,
+                480
+            ],
+            "time": 1115.48
+        },
+        "2": {
+            "base": "NA",
+            "protected": [
+                1159,
+                1198
+            ],
+            "time": 481.12
+        },
+        "3": {
+            "base": "NA",
+            "protected": [
+                128,
+                1237
+            ],
+            "time": 518.44
+        },
+        "4": {
+            "base": "NA",
+            "protected": [
+                882,
+                1471
+            ],
+            "time": 555.75
+        },
+        "5": {
+            "base": "NA",
+            "protected": [
+                117,
+                1588
+            ],
+            "time": 593.07
+        },
+        "6": {
+            "base": "NA",
+            "protected": [
+                199,
+                206
+            ],
+            "time": 630.38
+        },
+        "7": {
+            "base": "NA",
+            "protected": [
+                1315,
+                1354
+            ],
+            "time": 667.7
+        },
+        "8": {
+            "base": "NA",
+            "protected": [
+                158,
+                923
+            ],
+            "time": 705.01
+        },
+        "9": {
+            "base": "NA",
+            "protected": [
+                50,
+                89
+            ],
+            "time": 742.33
+        }
+    },
+    "objv": 1442.0
+}

@@ -1,0 +1,18 @@
+{
+  "accepted_instances": 0,
+  "coverage_domain": "empirical_hull_intersection_cloister",
+  "coverage_domain_area": 4.343083220363796,
+  "empirical_hull_area_context_only": 4.947576566604976,
+  "fill_distance": 1.2401496118905513,
+  "nearest_mean": 0.5284222122396816,
+  "nearest_median": 0.49777066978441464,
+  "nearest_q90": 1.0283159635895156,
+  "occupancy_10x10": 0.15,
+  "occupancy_12x12": 0.125,
+  "occupancy_8x8": 0.203125,
+  "result_provenance": "measured",
+  "sobol_points_observed": 10000,
+  "sobol_points_requested": 10000,
+  "undercoverage_threshold": 0.2373897579616101,
+  "undercovered_fraction": 0.717
+}

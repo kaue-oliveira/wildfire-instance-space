@@ -1,0 +1,6 @@
+metric,performance,n,spearman_rho,p_value,inference
+ntotal,benchmark_IBS_gap_pct,19,0.051799844371537326,0.8331976499066257,exploratory directed collection; no causal or external-generalization claim
+nedges,benchmark_IBS_gap_pct,19,-0.13333333333333333,0.586324449796729,exploratory directed collection; no causal or external-generalization claim
+nend,benchmark_IBS_gap_pct,19,0.03139802780443459,0.8984653543983724,exploratory directed collection; no causal or external-generalization claim
+best_strength_uncapped,benchmark_IBS_gap_pct,19,0.32791287987749274,0.17051391675835517,exploratory directed collection; no causal or external-generalization claim
+mean_pairwise_jaccard,benchmark_IBS_gap_pct,19,0.0035399616270239435,0.9885246363933722,exploratory directed collection; no causal or external-generalization claim

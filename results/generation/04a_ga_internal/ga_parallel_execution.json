@@ -1,0 +1,12 @@
+{
+  "parallel_unit": "independent root seed",
+  "result_provenance": "measured",
+  "root_seeds": [
+    20260612,
+    104729,
+    1299709
+  ],
+  "shared_evolutionary_state": false,
+  "workers_effective": 3,
+  "workers_requested": 3
+}

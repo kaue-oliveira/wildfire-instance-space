@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "rows": 4126,
+  "benchmark_rows": 3936,
+  "corrected_trajectory_rows": 190,
+  "cells_checked": 444,
+  "summaries_checked": 42,
+  "sign_tests_and_holm_checked": 15,
+  "artifact_hashes_checked": 4126,
+  "ils_failures_preserved": 2,
+  "mip_job_03267_raw": 295,
+  "mip_job_03267_audited": 283,
+  "bkv_changed_instances": 0
+}

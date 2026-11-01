@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d8" for="edge" attr.name="Type" attr.type="string" />
+  <key id="d7" for="edge" attr.name="Count" attr.type="long" />
+  <key id="d6" for="node" attr.name="seeds" attr.type="string" />
+  <key id="d5" for="node" attr.name="Type" attr.type="string" />
+  <key id="d4" for="node" attr.name="Count" attr.type="long" />
+  <key id="d3" for="node" attr.name="Fitness" attr.type="long" />
+  <key id="d2" for="graph" attr.name="best" attr.type="long" />
+  <key id="d1" for="graph" attr.name="representation" attr.type="string" />
+  <key id="d0" for="graph" attr.name="instance" attr.type="string" />
+  <graph edgedefault="directed">
+    <node id="8@1299.02-39@1169.40-70@1082.98-80@1212.60-101@1039.77-111@910.15-132@953.36-140@866.95-163@823.74-168@737.33-169@780.53-194@694.12-195@564.50-197@650.91-226@521.29">
+      <data key="d3">870</data>
+      <data key="d4">166</data>
+      <data key="d5">Best</data>
+      <data key="d6">5</data>
+    </node>
+    <node id="8@1299.02-39@1212.60-70@1082.98-101@1039.77-110@1169.40-132@953.36-141@910.15-163@866.95-168@737.33-169@780.53-170@823.74-194@694.12-195@564.50-197@650.91-226@521.29">
+      <data key="d3">875</data>
+      <data key="d4">2</data>
+      <data key="d5">Medium</data>
+      <data key="d6">5</data>
+    </node>
+    <node id="8@1299.02-39@1212.60-70@1169.40-80@1039.77-101@1082.98-132@953.36-139@910.15-160@823.74-163@866.95-168@780.53-191@737.33-194@694.12-196@564.50-197@650.91-225@521.29">
+      <data key="d3">891</data>
+      <data key="d4">2</data>
+      <data key="d5">Start</data>
+      <data key="d6">5</data>
+    </node>
+    <edge source="8@1299.02-39@1212.60-70@1082.98-101@1039.77-110@1169.40-132@953.36-141@910.15-163@866.95-168@737.33-169@780.53-170@823.74-194@694.12-195@564.50-197@650.91-226@521.29" target="8@1299.02-39@1169.40-70@1082.98-80@1212.60-101@1039.77-111@910.15-132@953.36-140@866.95-163@823.74-168@737.33-169@780.53-194@694.12-195@564.50-197@650.91-226@521.29">
+      <data key="d7">1</data>
+      <data key="d8">Improving</data>
+    </edge>
+    <edge source="8@1299.02-39@1212.60-70@1169.40-80@1039.77-101@1082.98-132@953.36-139@910.15-160@823.74-163@866.95-168@780.53-191@737.33-194@694.12-196@564.50-197@650.91-225@521.29" target="8@1299.02-39@1212.60-70@1082.98-101@1039.77-110@1169.40-132@953.36-141@910.15-163@866.95-168@737.33-169@780.53-170@823.74-194@694.12-195@564.50-197@650.91-226@521.29">
+      <data key="d7">1</data>
+      <data key="d8">Improving</data>
+    </edge>
+    <data key="d0">ga_medium_72fa8fa3f38f8995</data>
+    <data key="d1">nonworsening_best_so_far_filter</data>
+    <data key="d2">870</data>
+  </graph>
+</graphml>

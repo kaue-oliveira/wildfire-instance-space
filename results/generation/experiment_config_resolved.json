@@ -1,0 +1,27 @@
+{
+  "baseline_sobol_seed": 20260612,
+  "batch_size": 6,
+  "crossover_probability": 0.8,
+  "elitism": 2,
+  "exact_topology": true,
+  "extra": {},
+  "ga_priority": 0.8,
+  "generations": 40,
+  "local_search_evaluations": 400,
+  "mutation_probability": 0.1111111111111111,
+  "population": 40,
+  "primary_threshold": 0.1,
+  "profile": "tcc_essential_topology_oldpc_v1",
+  "root_seeds": [
+    20260612,
+    104729,
+    1299709
+  ],
+  "sobol_points": 10000,
+  "target_budget": 12,
+  "thresholds": [
+    0.1
+  ],
+  "tournament_size": 3,
+  "workers": 3
+}

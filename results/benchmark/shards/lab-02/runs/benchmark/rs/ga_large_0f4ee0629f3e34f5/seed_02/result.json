@@ -1,0 +1,117 @@
+{
+  "algorithm": "rs",
+  "collection": "supplementary_19",
+  "completed_utc": "2026-09-04T07:49:20Z",
+  "engine": "unified_cpp",
+  "harris_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v1/inputs/harris/ga_large_0f4ee0629f3e34f5.json",
+  "improvement_trajectory": [
+    [
+      0,
+      1,
+      1600.0
+    ],
+    [
+      0,
+      124,
+      1599.0
+    ],
+    [
+      0,
+      291,
+      1598.0
+    ],
+    [
+      0,
+      523,
+      1597.0
+    ],
+    [
+      0,
+      804,
+      1595.0
+    ],
+    [
+      13,
+      64642,
+      1594.0
+    ],
+    [
+      15,
+      74825,
+      1591.0
+    ],
+    [
+      84,
+      404734,
+      1583.0
+    ],
+    [
+      817,
+      3891063,
+      1579.0
+    ]
+  ],
+  "instance": "ga_large_0f4ee0629f3e34f5",
+  "instance_sha256": "bdfa86403beb55982d7024bd2f474cff688f80e0f4951767e8ea5748ae362a40",
+  "job_id": "job_03657",
+  "lower_bound": null,
+  "n_vertices": "1600",
+  "native_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v1/inputs/native/ga_large_0f4ee0629f3e34f5.json",
+  "objective": 1579,
+  "peak_rss_bytes": 8359936,
+  "phase": "benchmark",
+  "pilot": false,
+  "protocol_sha256": "913474b960afa5dea8d58b512fa942aa36965edb4fac608aa99208ac10e0442a",
+  "result_provenance": "measured",
+  "seed": 2,
+  "shard_index": "1",
+  "size_class": "Large",
+  "solution_file": "sol_rs_ga_large_0f4ee0629f3e34f5_2.json",
+  "solution_sha256": "93f62a0d542c63c870d99fcf3031c17fc3af2824b9f2a162b832205ec9b52346",
+  "statistics_fields": [
+    "ga_large_0f4ee0629f3e34f5",
+    "2",
+    "1579",
+    "3891063",
+    "1419524.38",
+    "1579",
+    "11396059",
+    "2400",
+    "[(0,1,1600.000000), (0,124,1599.000000), (0,291,1598.000000), (0,523,1597.000000), (0,804,1595.000000), (13,64642,1594.000000), (15,74825,1591.000000), (84,404734,1583.000000), (817,3891063,1579.000000)]"
+  ],
+  "status": "completed",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "thermal_after": {
+    "frequencies_mhz": {
+      "cpu0": 4000.004,
+      "cpu1": 4000.017,
+      "cpu2": 4000.013,
+      "cpu3": 4000.004,
+      "cpu4": 800.0,
+      "cpu5": 3999.979,
+      "cpu6": 4000.042,
+      "cpu7": 3999.873
+    },
+    "temperatures_c": {
+      "thermal_zone0:acpitz": 27.8,
+      "thermal_zone1:acpitz": 29.8,
+      "thermal_zone2:x86_pkg_temp": 77.0
+    },
+    "utc": "2026-09-04T07:49:20Z"
+  },
+  "time_limit_seconds": "2400",
+  "wall_seconds": 2400.014885711018,
+  "worker": {
+    "core_type": "homogeneous",
+    "logical_cpu": 1,
+    "max_mhz": 4200.0,
+    "physical_core": 1,
+    "sibling_logical_cpus": [
+      1,
+      5
+    ],
+    "socket": 0,
+    "worker_id": 1
+  }
+}

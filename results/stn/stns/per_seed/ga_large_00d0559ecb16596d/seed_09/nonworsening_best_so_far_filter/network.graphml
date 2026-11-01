@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d8" for="edge" attr.name="Type" attr.type="string" />
+  <key id="d7" for="edge" attr.name="Count" attr.type="long" />
+  <key id="d6" for="node" attr.name="seeds" attr.type="string" />
+  <key id="d5" for="node" attr.name="Type" attr.type="string" />
+  <key id="d4" for="node" attr.name="Count" attr.type="long" />
+  <key id="d3" for="node" attr.name="Fitness" attr.type="long" />
+  <key id="d2" for="graph" attr.name="best" attr.type="long" />
+  <key id="d1" for="graph" attr.name="representation" attr.type="string" />
+  <key id="d0" for="graph" attr.name="instance" attr.type="string" />
+  <graph edgedefault="directed">
+    <node id="162@1129.45-203@1089.79-244@1050.12-285@1010.45-325@970.78-366@931.12-406@891.45-447@851.78-487@812.11-528@772.45-568@732.78-609@693.11-650@613.78-691@534.44-732@455.11-773@415.44-813@375.77-852@494.77-891@574.11-931@653.44">
+      <data key="d3">1556</data>
+      <data key="d4">234</data>
+      <data key="d5">Best</data>
+      <data key="d6">9</data>
+    </node>
+    <node id="243@1129.45-284@1050.12-325@1010.45-366@931.12-406@891.45-447@851.78-488@772.45-529@732.78-569@693.11-610@653.44-651@574.11-691@534.44-727@1089.79-732@455.11-769@970.78-773@415.44-813@375.77-850@812.11-852@494.77-891@613.78">
+      <data key="d3">1577</data>
+      <data key="d4">2</data>
+      <data key="d5">Start</data>
+      <data key="d6">9</data>
+    </node>
+    <edge source="243@1129.45-284@1050.12-325@1010.45-366@931.12-406@891.45-447@851.78-488@772.45-529@732.78-569@693.11-610@653.44-651@574.11-691@534.44-727@1089.79-732@455.11-769@970.78-773@415.44-813@375.77-850@812.11-852@494.77-891@613.78" target="162@1129.45-203@1089.79-244@1050.12-285@1010.45-325@970.78-366@931.12-406@891.45-447@851.78-487@812.11-528@772.45-568@732.78-609@693.11-650@613.78-691@534.44-732@455.11-773@415.44-813@375.77-852@494.77-891@574.11-931@653.44">
+      <data key="d7">1</data>
+      <data key="d8">Improving</data>
+    </edge>
+    <data key="d0">ga_large_00d0559ecb16596d</data>
+    <data key="d1">nonworsening_best_so_far_filter</data>
+    <data key="d2">1556</data>
+  </graph>
+</graphml>

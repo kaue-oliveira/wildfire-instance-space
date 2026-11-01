@@ -1,0 +1,44 @@
+[
+  {
+    "C": 2.7416860015677615,
+    "algorithm": "algo_cuth",
+    "gamma": 0.7597039490234361,
+    "kernel": "rbf",
+    "result_provenance": "predicted"
+  },
+  {
+    "C": 0.021079762560079096,
+    "algorithm": "algo_ibs",
+    "gamma": 0.03210892303569942,
+    "kernel": "rbf",
+    "result_provenance": "predicted"
+  },
+  {
+    "C": 14.32885481197413,
+    "algorithm": "algo_ils",
+    "gamma": 0.4102989777462893,
+    "kernel": "rbf",
+    "result_provenance": "predicted"
+  },
+  {
+    "C": 4.207387211498246,
+    "algorithm": "algo_lbbd",
+    "gamma": 1.739229960451656,
+    "kernel": "rbf",
+    "result_provenance": "predicted"
+  },
+  {
+    "C": 4.41220801972546,
+    "algorithm": "algo_mip",
+    "gamma": 0.880896962541638,
+    "kernel": "rbf",
+    "result_provenance": "predicted"
+  },
+  {
+    "C": 15.204515336254756,
+    "algorithm": "algo_rs",
+    "gamma": 4.446782770602745,
+    "kernel": "rbf",
+    "result_provenance": "predicted"
+  }
+]

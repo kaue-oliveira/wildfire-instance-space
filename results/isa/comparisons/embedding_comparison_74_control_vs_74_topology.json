@@ -1,0 +1,11 @@
+{
+  "comparison": "74_control_vs_74_topology",
+  "mean_aligned_displacement": 0.055065503197926885,
+  "mean_neighbor_overlap": 0.37567567567567567,
+  "median_aligned_displacement": 0.044530586631424195,
+  "n_instances": 74,
+  "neighbor_k": 5,
+  "pairwise_distance_spearman": 0.8483861286082075,
+  "procrustes_scale": 0.8404885368347501,
+  "result_provenance": "measured"
+}

@@ -1,0 +1,9 @@
+Row,Avg_Perf_all_instances,Std_Perf_all_instances,Probability_of_good,Avg_Perf_selected_instances,Std_Perf_selected_instances,CV_model_accuracy,CV_model_precision,CV_model_recall,BoxConstraint,KernelScale
+algo_cuth,0.227,0.217,0.324,0.036,0.068,88.0,93.243,91.667,11.45,0.392
+algo_ibs,0.035,0.05,0.946,0.035,0.05,94.595,94.595,100.0,0.021,0.032
+algo_ils,0.32,0.344,0.473,0.073,0.066,87.5,93.243,100.0,14.329,0.41
+algo_lbbd,0.308,0.337,0.486,0.061,0.07,90.0,94.595,100.0,9.364,0.407
+algo_mip,0.151,0.166,0.568,0.033,0.051,97.436,93.243,90.476,10.082,0.047
+algo_rs,0.348,0.291,0.311,0.068,0.015,100.0,98.649,95.652,15.205,4.447
+Oracle,0.014,0.034,1.0,,,,,,,
+Selector,0.187,0.227,0.527,0.187,0.227,,52.703,16.957,,

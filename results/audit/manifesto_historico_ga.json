@@ -1,0 +1,15 @@
+{
+  "status": "passed_with_documented_archive_exceptions",
+  "matching_historical_hashes": 72684,
+  "operational_files_not_versioned": [
+    ".pipeline.lock",
+    "logs/stderr_20260824T163342.log",
+    "logs/stdout_20260824T163342.log"
+  ],
+  "historical_manifest_metadata_hash_outdated": [
+    "04a_ga_internal/figures/reach_figure_manifest.json"
+  ],
+  "policy": "Não alterar manifesto original; integridade atual verificada contra blobs do commit e manifesto deste pacote",
+  "experimental_artifact_hash_mismatches": 0,
+  "accepted_instances": 19
+}

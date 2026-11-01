@@ -1,0 +1,163 @@
+{
+  "algorithm": "ils",
+  "complete_candidates": 50,
+  "completed_utc": "2026-09-11T20:16:35Z",
+  "deadline_overshoot_seconds": 0.0,
+  "lower_bound": null,
+  "objective": 380,
+  "result_provenance": "measured",
+  "search_limit_seconds": 600,
+  "search_wall_seconds": 283.18461190292146,
+  "seed": 8,
+  "solution": [
+    [
+      [
+        1,
+        5
+      ],
+      1492.84
+    ],
+    [
+      [
+        2,
+        4
+      ],
+      1492.84
+    ],
+    [
+      [
+        3,
+        3
+      ],
+      1492.84
+    ],
+    [
+      [
+        4,
+        2
+      ],
+      1173.31
+    ],
+    [
+      [
+        5,
+        1
+      ],
+      1173.31
+    ],
+    [
+      [
+        6,
+        10
+      ],
+      534.26
+    ],
+    [
+      [
+        11,
+        8
+      ],
+      214.73
+    ],
+    [
+      [
+        11,
+        19
+      ],
+      214.73
+    ],
+    [
+      [
+        13,
+        13
+      ],
+      214.73
+    ],
+    [
+      [
+        13,
+        14
+      ],
+      214.73
+    ],
+    [
+      [
+        14,
+        8
+      ],
+      534.26
+    ],
+    [
+      [
+        17,
+        1
+      ],
+      1492.84
+    ],
+    [
+      [
+        18,
+        2
+      ],
+      1173.31
+    ],
+    [
+      [
+        18,
+        11
+      ],
+      534.26
+    ],
+    [
+      [
+        19,
+        3
+      ],
+      853.79
+    ],
+    [
+      [
+        19,
+        10
+      ],
+      853.79
+    ],
+    [
+      [
+        19,
+        12
+      ],
+      853.79
+    ],
+    [
+      [
+        20,
+        4
+      ],
+      1173.31
+    ],
+    [
+      [
+        20,
+        9
+      ],
+      853.79
+    ],
+    [
+      [
+        20,
+        13
+      ],
+      534.26
+    ]
+  ],
+  "solver_status": "no_improvement_limit",
+  "status": "completed",
+  "termination_reason": "no_improvement_limit",
+  "validation": {
+    "assignments": 20,
+    "feasible": true,
+    "objective_recomputed": 380
+  },
+  "wall_seconds": 283.1862673900323
+}

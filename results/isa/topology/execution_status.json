@@ -1,0 +1,31 @@
+{
+  "algorithms": [
+    "CUTH",
+    "IBS",
+    "ILS",
+    "LBBD",
+    "MIP",
+    "RS"
+  ],
+  "analysis_input_hash": "238f2fca2b71b741a8c73baf45eddca05b65128d9d1391cc1bf8d90db5412206",
+  "elapsed_seconds_matilda_build": 596.438164969004,
+  "elapsed_seconds_total": 607.4689285089844,
+  "ended_utc": "2026-09-28T01:20:59.044915+00:00",
+  "epsilon": 0.1,
+  "feature_count": 107,
+  "folds": 4,
+  "ga_rerun": false,
+  "input_feature_sha256": "4a4cfb64cc7b17611e35af3f0e7605538ab8a1da0d9d07cdfa432a399ab348e3",
+  "input_label_sha256": "fc94a2a5e58b9458748dde09f86e602f2a55022c1884a75e3fa94311a405bf7b",
+  "input_performance_sha256": "e8e64a07f9547df6c8c0892ee00c58df36fb1c35953d4eb7a0051797a421ca11",
+  "instance_generation_ga_rerun": false,
+  "instances": 74,
+  "model": "topology",
+  "scope": "all74",
+  "selected_features": 10,
+  "sifted_revision": "sifted-corrected-v1",
+  "started_utc": "2026-09-28T01:10:51.573405+00:00",
+  "status": "completed",
+  "workers": 2,
+  "wsp_solvers_rerun": false
+}

@@ -1,0 +1,208 @@
+{
+  "algorithm": "lbbd",
+  "baseline_mip_starts": 1,
+  "budget_policy": "global_remaining_divided_among_remaining_greedy_stages",
+  "collection": "original_55",
+  "completed_utc": "2026-09-18T10:30:46Z",
+  "engine": "legacy_python",
+  "exact_started": false,
+  "feasibility_cuts": 288,
+  "global_budget_seconds": 1350,
+  "greedy_wall_seconds": 1350.0790772430191,
+  "harris_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2_3/inputs/harris/Medium_Moderate_Light_High_Moderate_Many_Early_VeryLate_123.json",
+  "instance": "Medium_Moderate_Light_High_Moderate_Many_Early_VeryLate_123",
+  "instance_sha256": "7a3d87dd2af7e0f957057d2042121c22bab9398f6dbb5c630c17df422c0395ee",
+  "job_id": "job_02063",
+  "lower_bound": 293.0,
+  "mip_gap": 0.6711560044893379,
+  "n_vertices": "900",
+  "native_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2_3/inputs/native/Medium_Moderate_Light_High_Moderate_Many_Early_VeryLate_123.json",
+  "objective": 891,
+  "optimality_cuts": 238524,
+  "optimize_calls": 20,
+  "optimize_time_allocations_seconds": [
+    67.48810198555002,
+    67.48593077363176,
+    67.48356435738808,
+    67.48231379823547,
+    67.48158558831165,
+    67.47894795866644,
+    67.4760456933561,
+    67.47217935069169,
+    67.46777001758407,
+    67.46374835363663,
+    67.45924552360084,
+    67.45396564622125,
+    67.44706596299875,
+    67.44177424128533,
+    67.43605667550098,
+    67.42652690919931,
+    67.41887425924506,
+    67.40787463600282,
+    67.39351559749048,
+    67.29340190198855
+  ],
+  "peak_rss_bytes": 761257984,
+  "phase": "benchmark",
+  "pilot": false,
+  "protocol_sha256": "c75f81f0bfbee0299e404671cf30234624467fb61dcd56086dd429650aac0a55",
+  "result_provenance": "measured",
+  "seed": 3,
+  "shard_index": "0",
+  "size_class": "Medium",
+  "solution": [
+    [
+      [
+        1,
+        5
+      ],
+      546.47
+    ],
+    [
+      [
+        1,
+        18
+      ],
+      225.15
+    ],
+    [
+      [
+        1,
+        25
+      ],
+      160.89
+    ],
+    [
+      [
+        1,
+        29
+      ],
+      739.26
+    ],
+    [
+      [
+        2,
+        1
+      ],
+      610.73
+    ],
+    [
+      [
+        2,
+        2
+      ],
+      417.94
+    ],
+    [
+      [
+        2,
+        3
+      ],
+      417.94
+    ],
+    [
+      [
+        2,
+        4
+      ],
+      674.99
+    ],
+    [
+      [
+        2,
+        26
+      ],
+      353.68
+    ],
+    [
+      [
+        2,
+        27
+      ],
+      610.73
+    ],
+    [
+      [
+        2,
+        28
+      ],
+      353.68
+    ],
+    [
+      [
+        2,
+        30
+      ],
+      739.26
+    ],
+    [
+      [
+        14,
+        30
+      ],
+      160.89
+    ],
+    [
+      [
+        15,
+        29
+      ],
+      289.42
+    ],
+    [
+      [
+        16,
+        30
+      ],
+      225.15
+    ],
+    [
+      [
+        30,
+        15
+      ],
+      482.21
+    ]
+  ],
+  "solver_status": 9,
+  "status": "completed",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "ae5a47cc789f84053996c96a22b7ab8806188b9fc64ce272d56932d3e438eab5",
+  "thermal_after": {
+    "frequencies_mhz": {
+      "cpu0": 4094.95,
+      "cpu1": 4100.005,
+      "cpu2": 800.0,
+      "cpu3": 800.0,
+      "cpu4": 4100.049,
+      "cpu5": 800.0,
+      "cpu6": 800.0,
+      "cpu7": 4100.0
+    },
+    "temperatures_c": {
+      "thermal_zone0:acpitz": 27.8,
+      "thermal_zone1:acpitz": 29.8,
+      "thermal_zone2:x86_pkg_temp": 63.0
+    },
+    "utc": "2026-09-18T10:30:46Z"
+  },
+  "time_limit_seconds": "1350",
+  "validation": {
+    "assignments": 16,
+    "feasible": true,
+    "objective_recomputed": 891
+  },
+  "wall_seconds": 1350.3088639900088,
+  "worker": {
+    "core_type": "homogeneous",
+    "logical_cpu": 0,
+    "max_mhz": 4200.0,
+    "physical_core": 0,
+    "sibling_logical_cpus": [
+      0,
+      4
+    ],
+    "socket": 0,
+    "worker_id": 0
+  }
+}

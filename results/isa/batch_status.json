@@ -1,0 +1,92 @@
+{
+  "status": "completed",
+  "ended_utc": "2026-09-28T01:31:02.698184+00:00",
+  "fits": [
+    {
+      "scope": "all74",
+      "model": "topology",
+      "returncode": 0,
+      "command": [
+        "{USER_HOME}/.cache/tcc-matilda74-venv/bin/python",
+        "-u",
+        "-m",
+        "analysis_wsp.matilda74.run_model",
+        "topology",
+        "--scope",
+        "all74",
+        "--workers",
+        "2",
+        "--output-root",
+        "{USER_HOME}/Área de Trabalho/TTC/analise-repositorios-wildfire-suppression/analysis_wsp/results_matilda74/matilda74_sifted_corrected_v2_20260927",
+        "--sifted-revision",
+        "sifted-corrected-v1"
+      ],
+      "log": "topology_run.log"
+    },
+    {
+      "scope": "all74",
+      "model": "control",
+      "returncode": 0,
+      "command": [
+        "{USER_HOME}/.cache/tcc-matilda74-venv/bin/python",
+        "-u",
+        "-m",
+        "analysis_wsp.matilda74.run_model",
+        "control",
+        "--scope",
+        "all74",
+        "--workers",
+        "2",
+        "--output-root",
+        "{USER_HOME}/Área de Trabalho/TTC/analise-repositorios-wildfire-suppression/analysis_wsp/results_matilda74/matilda74_sifted_corrected_v2_20260927",
+        "--sifted-revision",
+        "sifted-corrected-v1"
+      ],
+      "log": "control_run.log"
+    },
+    {
+      "scope": "original55_v24",
+      "model": "control",
+      "returncode": 0,
+      "command": [
+        "{USER_HOME}/.cache/tcc-matilda74-venv/bin/python",
+        "-u",
+        "-m",
+        "analysis_wsp.matilda74.run_model",
+        "control",
+        "--scope",
+        "original55_v24",
+        "--workers",
+        "2",
+        "--output-root",
+        "{USER_HOME}/Área de Trabalho/TTC/analise-repositorios-wildfire-suppression/analysis_wsp/results_matilda74/matilda74_sifted_corrected_v2_20260927",
+        "--sifted-revision",
+        "sifted-corrected-v1"
+      ],
+      "log": "comparison_55_v24/control_run.log"
+    },
+    {
+      "scope": "original55_v24",
+      "model": "topology",
+      "returncode": 0,
+      "command": [
+        "{USER_HOME}/.cache/tcc-matilda74-venv/bin/python",
+        "-u",
+        "-m",
+        "analysis_wsp.matilda74.run_model",
+        "topology",
+        "--scope",
+        "original55_v24",
+        "--workers",
+        "2",
+        "--output-root",
+        "{USER_HOME}/Área de Trabalho/TTC/analise-repositorios-wildfire-suppression/analysis_wsp/results_matilda74/matilda74_sifted_corrected_v2_20260927",
+        "--sifted-revision",
+        "sifted-corrected-v1"
+      ],
+      "log": "comparison_55_v24/topology_run.log"
+    }
+  ],
+  "wsp_solvers_executed": false,
+  "stn_searches_executed": false
+}

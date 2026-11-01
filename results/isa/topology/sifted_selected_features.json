@@ -1,0 +1,27 @@
+{
+  "features": [
+    "feature_total_resources",
+    "feature_arrival_q05_over_h",
+    "feature_x_span",
+    "feature_arc_time_mean",
+    "feature_arc_time_cv",
+    "feature_release_front_window_mean",
+    "feature_topo_harmonic_in_distance_mean",
+    "feature_topo_hits_authority_strength_q75",
+    "feature_topo_hits_authority_strength_std",
+    "feature_topo_pagerank_strength_min"
+  ],
+  "indices": [
+    4,
+    14,
+    19,
+    23,
+    30,
+    33,
+    52,
+    79,
+    81,
+    93
+  ],
+  "result_provenance": "measured"
+}

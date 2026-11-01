@@ -1,0 +1,25 @@
+\begin{table}[!htbp]
+\centering
+\caption{Rótulos de bom desempenho e acurácia balanceada em amostra.}
+\label{tab:res-rotulos}
+\begin{singlespace}
+\normalsize
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{lrrrr}
+\hline\hline
+\textbf{Método} & \textbf{\shortstack{Bons na\\coleção 55}} & \textbf{\shortstack{Bons na\\coleção 74}} & \textbf{\shortstack{BA controle 74\\(\%)}} & \textbf{\shortstack{BA topologia 74\\(\%)}} \\
+\hline
+IBS & 51/55 & 70/74 & 50,00 & 50,00 \\
+MIP & 24/55 & 42/74 & 96,06 & 93,68 \\
+CUTH & 7/55 & 24/74 & 93,83 & 92,83 \\
+LBBD & 21/55 & 36/74 & 94,59 & 94,74 \\
+ILS & 21/55 & 35/74 & 93,30 & 93,59 \\
+RS & 6/55 & 23/74 & 94,88 & 97,83 \\
+\hline\hline
+\end{tabular}
+\par\smallskip
+{\small Nota: bom desempenho corresponde a \textit{gap} médio de até 10\%. BA é a acurácia balanceada. As métricas das duas últimas colunas usam as próprias instâncias do ajuste, sem avaliação externa.\par}
+{\fonte{elaboração própria a partir dos dados experimentais.}}
+\end{singlespace}
+\end{table}

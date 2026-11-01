@@ -1,0 +1,163 @@
+{
+  "algorithm": "ils",
+  "complete_candidates": 50,
+  "completed_utc": "2026-09-11T20:17:51Z",
+  "deadline_overshoot_seconds": 0.0,
+  "lower_bound": null,
+  "objective": 364,
+  "result_provenance": "measured",
+  "search_limit_seconds": 600,
+  "search_wall_seconds": 378.48120709799696,
+  "seed": 6,
+  "solution": [
+    [
+      [
+        1,
+        8
+      ],
+      853.79
+    ],
+    [
+      [
+        2,
+        7
+      ],
+      853.79
+    ],
+    [
+      [
+        3,
+        6
+      ],
+      1173.31
+    ],
+    [
+      [
+        4,
+        5
+      ],
+      1173.31
+    ],
+    [
+      [
+        5,
+        4
+      ],
+      853.79
+    ],
+    [
+      [
+        6,
+        3
+      ],
+      853.79
+    ],
+    [
+      [
+        6,
+        10
+      ],
+      534.26
+    ],
+    [
+      [
+        7,
+        2
+      ],
+      1173.31
+    ],
+    [
+      [
+        7,
+        8
+      ],
+      534.26
+    ],
+    [
+      [
+        8,
+        1
+      ],
+      1173.31
+    ],
+    [
+      [
+        11,
+        9
+      ],
+      214.73
+    ],
+    [
+      [
+        12,
+        8
+      ],
+      214.73
+    ],
+    [
+      [
+        12,
+        10
+      ],
+      214.73
+    ],
+    [
+      [
+        13,
+        9
+      ],
+      534.26
+    ],
+    [
+      [
+        13,
+        11
+      ],
+      214.73
+    ],
+    [
+      [
+        14,
+        10
+      ],
+      534.26
+    ],
+    [
+      [
+        17,
+        1
+      ],
+      1492.84
+    ],
+    [
+      [
+        18,
+        2
+      ],
+      1492.84
+    ],
+    [
+      [
+        19,
+        3
+      ],
+      1492.84
+    ],
+    [
+      [
+        20,
+        4
+      ],
+      1492.84
+    ]
+  ],
+  "solver_status": "no_improvement_limit",
+  "status": "completed",
+  "termination_reason": "no_improvement_limit",
+  "validation": {
+    "assignments": 20,
+    "feasible": true,
+    "objective_recomputed": 364
+  },
+  "wall_seconds": 378.48283819598146
+}

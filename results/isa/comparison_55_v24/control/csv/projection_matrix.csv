@@ -1,0 +1,3 @@
+Row,feature_total_resources,feature_decision_points,feature_delta_over_h,feature_first_release_over_h,feature_release_window_over_h,feature_arrival_q50_over_h,feature_directional_asymmetry_mean,feature_arc_time_std,feature_arc_time_p25,feature_release_front_window_mean
+Z_{1},1.037,-0.0875,0.3716,-0.3257,-0.3835,0.01044,-0.09595,0.325,0.0552,-0.904
+Z_{2},0.05707,0.1895,-0.02013,-0.11145,0.308,-0.2874,0.4092,0.3267,0.2717,0.7236

@@ -1,0 +1,2 @@
+job_id,field,source_value,final_value,reason
+job_03267,canonical_analysis_objective,295.0,283.0,Align canonical field with independently audited analysis_objective; raw objective preserved

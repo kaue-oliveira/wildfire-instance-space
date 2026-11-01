@@ -1,0 +1,24 @@
+\begin{table}[!htbp]
+\centering
+\caption{Cobertura antes e depois das adições no mapa de geração fixo.}
+\label{tab:res-cobertura}
+\begin{singlespace}
+\normalsize
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{lrrrrr}
+\hline\hline
+\textbf{Coleção} & \textbf{Adições} & \textbf{\shortstack{Distância\\máxima}} & \textbf{\shortstack{Distância\\média}} & \textbf{\shortstack{Subcobertura\\(\%)}} & \textbf{\shortstack{Ocupação\\(\%)}} \\
+\hline
+Base original & 0 & 1,2401 & 0,5284 & 71,70 & 15 \\
+20260612 & 7 & 0,9875 & 0,3426 & 54,29 & 19 \\
+104729 & 6 & 0,9853 & 0,3615 & 57,44 & 18 \\
+1299709 & 6 & 0,9807 & 0,3640 & 59,86 & 18 \\
+União das 19 & 19 & 0,9807 & 0,3368 & 52,54 & 20 \\
+\hline\hline
+\end{tabular}
+\par\smallskip
+{\small Nota: mesmas transformações, mesmo domínio interno e mesmos 10.000 pontos Sobol em todas as linhas. A ocupação usa uma grade $10\times10$. A linha da união foi recalculada com as coordenadas das 19 aceitações, sem repetir a geração.\par}
+{\fonte{elaboração própria a partir dos dados experimentais.}}
+\end{singlespace}
+\end{table}

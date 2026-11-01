@@ -1,0 +1,118 @@
+{
+  "algorithm": "lbbd",
+  "baseline_mip_starts": 1,
+  "budget_policy": "global_remaining_divided_among_remaining_greedy_stages",
+  "completed_utc": "2026-09-18T23:17:24Z",
+  "exact_started": false,
+  "feasibility_cuts": 41,
+  "global_budget_seconds": 2400,
+  "greedy_wall_seconds": 2400.142474956985,
+  "lower_bound": 804.0,
+  "mip_gap": 0.4952919020715631,
+  "objective": 1593,
+  "objective_consistency": "exact",
+  "objective_delta_vs_solver": 0,
+  "objective_source": "independent_shortest_path_validation",
+  "optimality_cuts": 312679,
+  "optimize_calls": 20,
+  "optimize_time_allocations_seconds": [
+    119.9694317327012,
+    119.96724747763304,
+    119.96465254188904,
+    119.96075925006025,
+    119.9597210710017,
+    119.95511680180013,
+    123.71991602292941,
+    123.7114735793864,
+    123.70407463316708,
+    123.69516514890975,
+    123.6831748969009,
+    123.6756524633351,
+    123.66749255300238,
+    123.65746321600247,
+    123.64787486583616,
+    123.63688194500283,
+    123.62390591525036,
+    123.60959972500375,
+    123.58287656900939,
+    122.74940622900613
+  ],
+  "result_provenance": "measured",
+  "seed": 8,
+  "solution": [
+    [
+      [
+        1,
+        4
+      ],
+      209.19
+    ],
+    [
+      [
+        1,
+        6
+      ],
+      477.12
+    ],
+    [
+      [
+        1,
+        7
+      ],
+      584.29
+    ],
+    [
+      [
+        2,
+        1
+      ],
+      262.78
+    ],
+    [
+      [
+        2,
+        3
+      ],
+      369.95
+    ],
+    [
+      [
+        2,
+        4
+      ],
+      637.88
+    ],
+    [
+      [
+        2,
+        5
+      ],
+      423.54
+    ],
+    [
+      [
+        2,
+        6
+      ],
+      530.71
+    ],
+    [
+      [
+        3,
+        2
+      ],
+      316.37
+    ]
+  ],
+  "solver_lower_bound": 804.0,
+  "solver_mip_gap": 0.4952919020715631,
+  "solver_objective": 1593,
+  "solver_status": 9,
+  "status": "completed",
+  "validation": {
+    "assignments": 9,
+    "feasible": true,
+    "objective_recomputed": 1593
+  },
+  "wall_seconds": 2400.1498581709748
+}

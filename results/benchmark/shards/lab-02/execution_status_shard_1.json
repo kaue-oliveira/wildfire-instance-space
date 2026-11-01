@@ -1,0 +1,32 @@
+{
+  "algorithm_failure": 2,
+  "by_algorithm": {
+    "cuth": {
+      "completed": 328
+    },
+    "ibs": {
+      "completed": 328
+    },
+    "ibs_stn": {
+      "completed": 95
+    },
+    "ils": {
+      "algorithm_failure": 2,
+      "completed": 326
+    },
+    "lbbd": {
+      "completed": 328
+    },
+    "mip": {
+      "completed": 328
+    },
+    "rs": {
+      "completed": 328
+    }
+  },
+  "completed": 2061,
+  "profile": "benchmark74_v2_4",
+  "shard_index": 1,
+  "total": 2063,
+  "updated_utc": "2026-09-21T11:50:07Z"
+}

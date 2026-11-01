@@ -1,0 +1,160 @@
+{
+  "algorithm": "lbbd",
+  "baseline_mip_starts": 1,
+  "budget_policy": "global_remaining_divided_among_remaining_greedy_stages",
+  "completed_utc": "2026-09-18T22:45:25Z",
+  "exact_started": false,
+  "feasibility_cuts": 86,
+  "global_budget_seconds": 2400,
+  "greedy_wall_seconds": 2400.1248022039945,
+  "lower_bound": 923.0,
+  "mip_gap": 0.41876574307304787,
+  "objective": 1588,
+  "objective_consistency": "exact",
+  "objective_delta_vs_solver": 0,
+  "objective_source": "independent_shortest_path_validation",
+  "optimality_cuts": 323410,
+  "optimize_calls": 20,
+  "optimize_time_allocations_seconds": [
+    119.9703263593503,
+    119.9676443191573,
+    119.96265936499952,
+    119.9435111455301,
+    119.94255074537432,
+    119.93805523526584,
+    124.44576175549966,
+    124.43965211892366,
+    124.43302867408299,
+    124.42637496463563,
+    124.41867059890065,
+    124.40991826444386,
+    124.40214737862698,
+    124.38779111428552,
+    124.3685412783331,
+    124.35728123540176,
+    124.32881774500129,
+    124.29959762233193,
+    124.21108442249533,
+    124.1633133449941
+  ],
+  "result_provenance": "measured",
+  "seed": 6,
+  "solution": [
+    [
+      [
+        1,
+        4
+      ],
+      369.95
+    ],
+    [
+      [
+        1,
+        6
+      ],
+      477.12
+    ],
+    [
+      [
+        1,
+        7
+      ],
+      637.88
+    ],
+    [
+      [
+        1,
+        8
+      ],
+      745.05
+    ],
+    [
+      [
+        1,
+        9
+      ],
+      852.22
+    ],
+    [
+      [
+        1,
+        10
+      ],
+      959.4
+    ],
+    [
+      [
+        2,
+        2
+      ],
+      316.37
+    ],
+    [
+      [
+        2,
+        3
+      ],
+      209.19
+    ],
+    [
+      [
+        2,
+        4
+      ],
+      530.71
+    ],
+    [
+      [
+        2,
+        5
+      ],
+      423.54
+    ],
+    [
+      [
+        2,
+        6
+      ],
+      584.29
+    ],
+    [
+      [
+        2,
+        9
+      ],
+      905.81
+    ],
+    [
+      [
+        3,
+        1
+      ],
+      262.78
+    ],
+    [
+      [
+        3,
+        7
+      ],
+      691.47
+    ],
+    [
+      [
+        3,
+        8
+      ],
+      798.64
+    ]
+  ],
+  "solver_lower_bound": 923.0,
+  "solver_mip_gap": 0.41876574307304787,
+  "solver_objective": 1588,
+  "solver_status": 9,
+  "status": "completed",
+  "validation": {
+    "assignments": 15,
+    "feasible": true,
+    "objective_recomputed": 1588
+  },
+  "wall_seconds": 2400.131943505985
+}

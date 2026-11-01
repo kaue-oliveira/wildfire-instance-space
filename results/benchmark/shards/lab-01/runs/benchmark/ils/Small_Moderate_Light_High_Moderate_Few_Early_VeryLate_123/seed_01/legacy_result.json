@@ -1,0 +1,163 @@
+{
+  "algorithm": "ils",
+  "complete_candidates": 50,
+  "completed_utc": "2026-09-11T02:53:46Z",
+  "deadline_overshoot_seconds": 0.0,
+  "lower_bound": null,
+  "objective": 330,
+  "result_provenance": "measured",
+  "search_limit_seconds": 600,
+  "search_wall_seconds": 360.77839714998845,
+  "seed": 1,
+  "solution": [
+    [
+      [
+        1,
+        11
+      ],
+      1492.84
+    ],
+    [
+      [
+        2,
+        12
+      ],
+      1173.31
+    ],
+    [
+      [
+        3,
+        12
+      ],
+      534.26
+    ],
+    [
+      [
+        4,
+        11
+      ],
+      853.79
+    ],
+    [
+      [
+        5,
+        10
+      ],
+      534.26
+    ],
+    [
+      [
+        6,
+        3
+      ],
+      1492.84
+    ],
+    [
+      [
+        6,
+        9
+      ],
+      853.79
+    ],
+    [
+      [
+        7,
+        2
+      ],
+      1492.84
+    ],
+    [
+      [
+        7,
+        8
+      ],
+      534.26
+    ],
+    [
+      [
+        8,
+        1
+      ],
+      1492.84
+    ],
+    [
+      [
+        8,
+        4
+      ],
+      1173.31
+    ],
+    [
+      [
+        8,
+        7
+      ],
+      853.79
+    ],
+    [
+      [
+        8,
+        11
+      ],
+      214.73
+    ],
+    [
+      [
+        9,
+        2
+      ],
+      1173.31
+    ],
+    [
+      [
+        9,
+        3
+      ],
+      1173.31
+    ],
+    [
+      [
+        9,
+        5
+      ],
+      534.26
+    ],
+    [
+      [
+        9,
+        6
+      ],
+      853.79
+    ],
+    [
+      [
+        9,
+        10
+      ],
+      214.73
+    ],
+    [
+      [
+        10,
+        9
+      ],
+      214.73
+    ],
+    [
+      [
+        11,
+        9
+      ],
+      214.73
+    ]
+  ],
+  "solver_status": "no_improvement_limit",
+  "status": "completed",
+  "termination_reason": "no_improvement_limit",
+  "validation": {
+    "assignments": 20,
+    "feasible": true,
+    "objective_recomputed": 330
+  },
+  "wall_seconds": 360.7799745040247
+}

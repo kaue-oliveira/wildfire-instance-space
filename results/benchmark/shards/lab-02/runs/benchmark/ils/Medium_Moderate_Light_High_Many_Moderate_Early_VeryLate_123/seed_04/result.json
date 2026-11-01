@@ -1,0 +1,490 @@
+{
+  "algorithm": "ils",
+  "collection": "original_55",
+  "complete_candidates": 25,
+  "completed_utc": "2026-09-10T13:21:34Z",
+  "deadline_overshoot_seconds": 0.1256481478922069,
+  "engine": "legacy_python",
+  "harris_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2/inputs/harris/Medium_Moderate_Light_High_Many_Moderate_Early_VeryLate_123.json",
+  "instance": "Medium_Moderate_Light_High_Many_Moderate_Early_VeryLate_123",
+  "instance_sha256": "e81a6ccc3ad99e3ac175d9a0e53203783889eaa0d39c3b40a2e217a13cf5a660",
+  "job_id": "job_01725",
+  "lower_bound": null,
+  "n_vertices": "900",
+  "native_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2/inputs/native/Medium_Moderate_Light_High_Many_Moderate_Early_VeryLate_123.json",
+  "objective": 897,
+  "peak_rss_bytes": 44216320,
+  "phase": "benchmark",
+  "pilot": false,
+  "protocol_sha256": "221f596a97287cd01d7002ec17c48b4857603c27bef5b56a0dcf6e7a35a2c49f",
+  "result_provenance": "measured",
+  "search_limit_seconds": 1350,
+  "search_wall_seconds": 1350.1256481478922,
+  "seed": 4,
+  "shard_index": "1",
+  "size_class": "Medium",
+  "solution": [
+    [
+      [
+        1,
+        18
+      ],
+      974.89
+    ],
+    [
+      [
+        2,
+        6
+      ],
+      1246.22
+    ],
+    [
+      [
+        2,
+        22
+      ],
+      974.89
+    ],
+    [
+      [
+        3,
+        8
+      ],
+      1110.56
+    ],
+    [
+      [
+        4,
+        8
+      ],
+      974.89
+    ],
+    [
+      [
+        4,
+        13
+      ],
+      839.22
+    ],
+    [
+      [
+        4,
+        19
+      ],
+      703.56
+    ],
+    [
+      [
+        4,
+        24
+      ],
+      839.22
+    ],
+    [
+      [
+        6,
+        29
+      ],
+      839.22
+    ],
+    [
+      [
+        7,
+        1
+      ],
+      1246.22
+    ],
+    [
+      [
+        8,
+        14
+      ],
+      432.22
+    ],
+    [
+      [
+        9,
+        24
+      ],
+      432.22
+    ],
+    [
+      [
+        10,
+        8
+      ],
+      703.56
+    ],
+    [
+      [
+        10,
+        12
+      ],
+      432.22
+    ],
+    [
+      [
+        11,
+        18
+      ],
+      160.89
+    ],
+    [
+      [
+        12,
+        25
+      ],
+      296.56
+    ],
+    [
+      [
+        13,
+        1
+      ],
+      1110.56
+    ],
+    [
+      [
+        13,
+        9
+      ],
+      567.89
+    ],
+    [
+      [
+        13,
+        13
+      ],
+      296.56
+    ],
+    [
+      [
+        13,
+        20
+      ],
+      160.89
+    ],
+    [
+      [
+        13,
+        28
+      ],
+      432.22
+    ],
+    [
+      [
+        14,
+        21
+      ],
+      160.89
+    ],
+    [
+      [
+        14,
+        26
+      ],
+      296.56
+    ],
+    [
+      [
+        15,
+        12
+      ],
+      296.56
+    ],
+    [
+      [
+        15,
+        14
+      ],
+      160.89
+    ],
+    [
+      [
+        15,
+        23
+      ],
+      160.89
+    ],
+    [
+      [
+        17,
+        29
+      ],
+      296.56
+    ],
+    [
+      [
+        18,
+        12
+      ],
+      432.22
+    ],
+    [
+      [
+        18,
+        14
+      ],
+      296.56
+    ],
+    [
+      [
+        18,
+        19
+      ],
+      160.89
+    ],
+    [
+      [
+        19,
+        2
+      ],
+      1110.56
+    ],
+    [
+      [
+        19,
+        29
+      ],
+      432.22
+    ],
+    [
+      [
+        21,
+        10
+      ],
+      703.56
+    ],
+    [
+      [
+        21,
+        13
+      ],
+      567.89
+    ],
+    [
+      [
+        21,
+        28
+      ],
+      567.89
+    ],
+    [
+      [
+        22,
+        2
+      ],
+      1246.22
+    ],
+    [
+      [
+        22,
+        6
+      ],
+      974.89
+    ],
+    [
+      [
+        22,
+        11
+      ],
+      703.56
+    ],
+    [
+      [
+        23,
+        17
+      ],
+      567.89
+    ],
+    [
+      [
+        23,
+        18
+      ],
+      567.89
+    ],
+    [
+      [
+        23,
+        20
+      ],
+      567.89
+    ],
+    [
+      [
+        24,
+        1
+      ],
+      1381.89
+    ],
+    [
+      [
+        24,
+        23
+      ],
+      703.56
+    ],
+    [
+      [
+        25,
+        2
+      ],
+      1381.89
+    ],
+    [
+      [
+        25,
+        4
+      ],
+      1246.22
+    ],
+    [
+      [
+        25,
+        12
+      ],
+      839.22
+    ],
+    [
+      [
+        25,
+        13
+      ],
+      839.22
+    ],
+    [
+      [
+        25,
+        17
+      ],
+      703.56
+    ],
+    [
+      [
+        26,
+        3
+      ],
+      1381.89
+    ],
+    [
+      [
+        26,
+        4
+      ],
+      1381.89
+    ],
+    [
+      [
+        27,
+        5
+      ],
+      1381.89
+    ],
+    [
+      [
+        27,
+        15
+      ],
+      839.22
+    ],
+    [
+      [
+        27,
+        26
+      ],
+      974.89
+    ],
+    [
+      [
+        28,
+        9
+      ],
+      1246.22
+    ],
+    [
+      [
+        28,
+        11
+      ],
+      1110.56
+    ],
+    [
+      [
+        28,
+        21
+      ],
+      974.89
+    ],
+    [
+      [
+        29,
+        8
+      ],
+      1381.89
+    ],
+    [
+      [
+        29,
+        13
+      ],
+      1110.56
+    ],
+    [
+      [
+        29,
+        28
+      ],
+      1110.56
+    ],
+    [
+      [
+        30,
+        12
+      ],
+      1246.22
+    ]
+  ],
+  "solver_status": "time_limit",
+  "status": "completed",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "370708c599977c468453450b19b70ec758202d5538bc87fc4160c62932837b9b",
+  "termination_reason": "time_limit",
+  "thermal_after": {
+    "frequencies_mhz": {
+      "cpu0": 800.0,
+      "cpu1": 4098.441,
+      "cpu2": 4098.415,
+      "cpu3": 4098.425,
+      "cpu4": 4000.009,
+      "cpu5": 4098.426,
+      "cpu6": 800.0,
+      "cpu7": 800.0
+    },
+    "temperatures_c": {
+      "thermal_zone0:acpitz": 27.8,
+      "thermal_zone1:acpitz": 29.8,
+      "thermal_zone2:x86_pkg_temp": 79.0
+    },
+    "utc": "2026-09-10T13:21:34Z"
+  },
+  "time_limit_seconds": "1350",
+  "validation": {
+    "assignments": 60,
+    "feasible": true,
+    "objective_recomputed": 897
+  },
+  "wall_seconds": 1350.59435668902,
+  "worker": {
+    "core_type": "homogeneous",
+    "logical_cpu": 0,
+    "max_mhz": 4200.0,
+    "physical_core": 0,
+    "sibling_logical_cpus": [
+      0,
+      4
+    ],
+    "socket": 0,
+    "worker_id": 0
+  }
+}

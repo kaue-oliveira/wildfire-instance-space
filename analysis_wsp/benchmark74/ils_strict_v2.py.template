@@ -1,0 +1,342 @@
+# -*- coding: utf-8 -*-
+"""Strict-deadline instrumentation for the benchmark74 v2 FireILS run."""
+
+from shortest_paths import ShortestPaths
+import numpy as np
+import time
+
+
+def FireILS(Nodes, Arcs, ResAtTime, Ignitions, Delay, ArrivalTimeTarget,
+            MultiStarts, p1, p2, MaxNeighbours, MaxModifications,
+            MaxFailures, MaxNoImprovements, MaxCandidates, Deadline=None,
+            Clock=None):
+    """Run ILS without accepting work completed after ``Deadline``.
+
+    The returned tuple contains the solution, objective, and strict-deadline
+    telemetry.  A zero-deployment solution is installed as the initial feasible
+    incumbent, so expiration during the first construction still yields a
+    validated result.
+    """
+    EPS = 0.0001
+    Clock = time.monotonic if Clock is None else Clock
+    Started = Clock()
+    NodeSet = set(Nodes)
+    TotalResources = sum(ResAtTime.values())
+    CompleteCandidates = 0
+
+    def TimeExpired():
+        return Deadline is not None and Clock() >= Deadline
+
+    def Finish(ZSol, ObjVal, reason):
+        ended = Clock()
+        return ZSol, ObjVal, {
+            "search_limit_seconds": None if Deadline is None else max(0.0, Deadline - Started),
+            "search_wall_seconds": max(0.0, ended - Started),
+            "deadline_overshoot_seconds": 0.0 if Deadline is None else max(0.0, ended - Deadline),
+            "termination_reason": reason,
+            "complete_candidates": CompleteCandidates,
+        }
+
+    InArcs = {n: [] for n in Nodes}
+    OutArcs = {n: [] for n in Nodes}
+    for a in Arcs:
+        OutArcs[a[0]].append((a[0], a[1]))
+        InArcs[a[1]].append((a[0], a[1]))
+
+    def ProtectedNodes(ZSol):
+        return set(n for (n, t) in ZSol if ZSol[n, t] > 0.5)
+
+    def ObjectiveFromArrival(ArrivalTime):
+        return len([n for n in Nodes if ArrivalTime[n] < ArrivalTimeTarget])
+
+    def EvaluateCompleteSolution(ZSol):
+        if TimeExpired():
+            return None
+        ArrivalTime, _, __ = ShortestPaths(
+            Nodes, Arcs, InArcs, OutArcs, ProtectedNodes(ZSol),
+            Ignitions, Delay)
+        if TimeExpired():
+            return None
+        return ObjectiveFromArrival(ArrivalTime)
+
+    # The no-deployment incumbent is feasible because resource capacities are
+    # upper bounds.  Its objective must be computed even if this indivisible
+    # shortest-path call crosses the deadline.
+    BaseSol = {(n, t): 0 for n in Nodes for t in ResAtTime}
+    BaseArrival, _, __ = ShortestPaths(
+        Nodes, Arcs, InArcs, OutArcs, set(), Ignitions, Delay)
+    BaseObj = ObjectiveFromArrival(BaseArrival)
+
+    def ConstructRandomSolution(MaxCandidates):
+        ZSol = BaseSol.copy()
+        while sum(ZSol.values()) < TotalResources:
+            if TimeExpired():
+                return ZSol, False
+            tt = min(t for (n, t) in ZSol if sum(
+                ZSol[n, t] for n in Nodes) < ResAtTime[t])
+            Incumbent = ProtectedNodes(ZSol)
+            if TimeExpired():
+                return ZSol, False
+            ArrivalTime, _, __ = ShortestPaths(
+                Nodes, Arcs, InArcs, OutArcs, Incumbent, Ignitions, Delay)
+            if TimeExpired():
+                return ZSol, False
+            Unburned = sorted([
+                (ArrivalTime[n], n) for n in Nodes
+                if ArrivalTime[n] >= tt and not
+                any(ZSol[n, t] > 0.5 for t in ResAtTime)
+            ])
+            Candidates = [n for (_arrival, n) in Unburned][:MaxCandidates]
+            if not Candidates:
+                return ZSol, False
+            Choice = Candidates[np.random.randint(len(Candidates))]
+            if TimeExpired():
+                return ZSol, False
+            ZSol[Choice, tt] = 1
+        return ZSol, True
+
+    def MultiStartConstructiveHeuristic(Iterations, MaxCandidates):
+        nonlocal CompleteCandidates
+        ZSolBest = BaseSol.copy()
+        ObjBest = BaseObj
+        for _ in range(Iterations):
+            if TimeExpired():
+                break
+            ZSol, complete = ConstructRandomSolution(MaxCandidates)
+            if not complete:
+                if TimeExpired():
+                    break
+                continue
+            ObjNew = EvaluateCompleteSolution(ZSol)
+            if ObjNew is None:
+                break
+            CompleteCandidates += 1
+            if ObjNew < ObjBest:
+                ZSolBest = ZSol
+                ObjBest = ObjNew
+        return ZSolBest, ObjBest
+
+    def NeighOneNode(n):
+        (i, j) = n
+        return {(i - 1, j), (i + 1, j), (i, j - 1),
+                (i, j + 1), (i - 1, j - 1), (i + 1, j - 1),
+                (i - 1, j + 1), (i + 1, j + 1)}.intersection(NodeSet)
+
+    def LocalSearch(ZSol):
+        OriginalZSol = ZSol.copy()
+        Improvement = 1
+        CurrentObj = EvaluateCompleteSolution(ZSol)
+        if CurrentObj is None:
+            return OriginalZSol, None, False
+        while Improvement > 0.5:
+            if TimeExpired():
+                return OriginalZSol, None, False
+            Improvement = 0
+            TempZSol = ZSol.copy()
+            HasRes = ProtectedNodes(ZSol)
+            ArrivalTime, _, __ = ShortestPaths(
+                Nodes, Arcs, InArcs, OutArcs, HasRes, Ignitions, Delay)
+            if TimeExpired():
+                return OriginalZSol, None, False
+            BestObj = ObjectiveFromArrival(ArrivalTime)
+            for n in list(HasRes):
+                if TimeExpired():
+                    return OriginalZSol, None, False
+                tt = min(t for t in ResAtTime if ZSol[n, t] > 0.5)
+                RemovedHasRes = HasRes - {n}
+                RemovedArrivalTime, _, __ = ShortestPaths(
+                    Nodes, Arcs, InArcs, OutArcs, RemovedHasRes,
+                    Ignitions, Delay)
+                if TimeExpired():
+                    return OriginalZSol, None, False
+                Neighbourhood = set()
+                for i in list(RemovedHasRes):
+                    Neighbourhood |= NeighOneNode(i)
+                Neighbourhood -= RemovedHasRes
+                SortedUnburned = sorted([
+                    (RemovedArrivalTime[i], i) for i in Neighbourhood
+                    if RemovedArrivalTime[i] >= tt
+                ])
+                for nn in [i for (_arrival, i) in SortedUnburned][:MaxNeighbours]:
+                    if TimeExpired():
+                        return OriginalZSol, None, False
+                    AddHasRes = RemovedHasRes | {nn}
+                    AddArrivalTime, _, __ = ShortestPaths(
+                        Nodes, Arcs, InArcs, OutArcs, AddHasRes,
+                        Ignitions, Delay)
+                    if TimeExpired():
+                        return OriginalZSol, None, False
+                    infeasible = any(
+                        nnn != nn and ZSol[nnn, t] > 0.5 and
+                        AddArrivalTime[nnn] < t
+                        for (nnn, t) in ZSol
+                    )
+                    if infeasible:
+                        continue
+                    ObjAfterMove = ObjectiveFromArrival(AddArrivalTime)
+                    NextImprovement = BestObj - ObjAfterMove
+                    if NextImprovement > Improvement:
+                        if TimeExpired():
+                            return OriginalZSol, None, False
+                        BestObj = ObjAfterMove
+                        Improvement = NextImprovement
+                        TempZSol = ZSol.copy()
+                        TempZSol[n, tt] = 0
+                        TempZSol[nn, tt] = 1
+            if Improvement > 0:
+                if TimeExpired():
+                    return OriginalZSol, None, False
+                ZSol = TempZSol
+                CurrentObj = BestObj
+        return ZSol, CurrentObj, True
+
+    def Pertubation1(ZSol):
+        if TimeExpired():
+            return ZSol, False
+        ZSolNew = ZSol.copy()
+        tMax = max(_[1] for _ in ZSolNew if ZSolNew[_] > 0.5)
+        tNodes = [n for (n, t) in ZSolNew
+                  if ZSolNew[n, t] > 0.5 and t == tMax]
+        nChoice = tNodes[np.random.randint(len(tNodes))]
+        if TimeExpired():
+            return ZSol, False
+        ZSolNew[nChoice, tMax] = 0
+        return ZSolNew, True
+
+    def Pertubation2(ZSol):
+        if TimeExpired():
+            return ZSol, False
+        ZSolNew = ZSol.copy()
+        if sum(ZSol.values()) >= TotalResources - EPS:
+            return ZSol, True
+        tt = min(t for (n, t) in ZSolNew if sum(
+            ZSolNew[n, t] for n in Nodes) < ResAtTime[t])
+        Incumbent = ProtectedNodes(ZSolNew)
+        ArrivalTime, _, __ = ShortestPaths(
+            Nodes, Arcs, InArcs, OutArcs, Incumbent, Ignitions, Delay)
+        if TimeExpired():
+            return ZSol, False
+        Unburned = sorted([
+            (ArrivalTime[n], n) for n in Nodes
+            if ArrivalTime[n] >= tt and not
+            any(ZSolNew[n, t] > 0.5 for t in ResAtTime)
+        ])
+        if not Unburned:
+            return ZSol, True
+        minArrival = min(_[0] for _ in Unburned)
+        Candidates = [n for (arrival, n) in Unburned
+                      if arrival < minArrival + EPS]
+        Choice = Candidates[np.random.randint(len(Candidates))]
+        if TimeExpired():
+            return ZSol, False
+        ZSolNew[Choice, tt] = 1
+        return ZSolNew, True
+
+    def Pertubation3(ZSol, MaxModifications, MaxFailures):
+        OriginalZSol = ZSol.copy()
+        Mod = 0
+        Fail = 0
+        ZSolNew = ZSol.copy()
+        while Mod < MaxModifications and Fail < MaxFailures:
+            if TimeExpired():
+                return OriginalZSol, False
+            HasResource = ProtectedNodes(ZSolNew)
+            if not HasResource:
+                return ZSolNew, True
+            n = list(HasResource)[np.random.randint(len(HasResource))]
+            tt = min(t for (nn, t) in ZSolNew
+                     if nn == n and ZSolNew[n, t] > 0.5)
+            RemovedHasRes = HasResource - {n}
+            RemovedArrivalTime, _, __ = ShortestPaths(
+                Nodes, Arcs, InArcs, OutArcs, RemovedHasRes,
+                Ignitions, Delay)
+            if TimeExpired():
+                return OriginalZSol, False
+            Neighbourhood = [nn for nn in Nodes
+                             if nn != n and ZSolNew[nn, tt] < 0.5]
+            SortedUnburned = sorted([
+                (RemovedArrivalTime[i], i) for i in Neighbourhood
+                if RemovedArrivalTime[i] >= tt
+            ])
+            Candidates = [node for (_arrival, node) in SortedUnburned]
+            Candidates = Candidates[:MaxNeighbours]
+            if not Candidates:
+                Fail += 1
+                continue
+            Choice = Candidates[np.random.randint(len(Candidates))]
+            AddHasRes = RemovedHasRes | {Choice}
+            AddArrivalTime, _, __ = ShortestPaths(
+                Nodes, Arcs, InArcs, OutArcs, AddHasRes,
+                Ignitions, Delay)
+            if TimeExpired():
+                return OriginalZSol, False
+            infeasible = any(
+                nn != Choice and ZSolNew[nn, t] > 0.5 and
+                AddArrivalTime[nn] < t
+                for (nn, t) in ZSolNew
+            )
+            if infeasible:
+                Fail += 1
+            else:
+                if TimeExpired():
+                    return OriginalZSol, False
+                Fail = 0
+                Mod += 1
+                ZSolNew[n, tt] = 0
+                ZSolNew[Choice, tt] = 1
+        return ZSolNew, True
+
+    def Perturbate(ZSol, p1, p2, MaxModifications, MaxFailures):
+        if TimeExpired():
+            return ZSol, False
+        if sum(ZSol.values()) < 0.5:
+            p1 = 0
+        if sum(ZSol.values()) < TotalResources:
+            p2 = 0
+        Rand = np.random.random()
+        if Rand < p1:
+            return Pertubation1(ZSol)
+        if Rand < p1 + p2:
+            return Pertubation2(ZSol)
+        return Pertubation3(ZSol, MaxModifications, MaxFailures)
+
+    print("Generating multistart solution")
+    ZSolBest, ObjVal = MultiStartConstructiveHeuristic(
+        MultiStarts, MaxCandidates)
+    if CompleteCandidates == 0:
+        reason = ("time_limit_no_complete_candidate" if TimeExpired()
+                  else "no_complete_candidate")
+        return Finish(ZSolBest, ObjVal, reason)
+    if TimeExpired():
+        return Finish(ZSolBest, ObjVal, "time_limit")
+
+    print("Initial local search")
+    ZSolLocal, LocalObj, local_complete = LocalSearch(ZSolBest)
+    if local_complete and not TimeExpired() and LocalObj < ObjVal:
+        ZSolBest = ZSolLocal
+        ObjVal = LocalObj
+    if TimeExpired():
+        return Finish(ZSolBest, ObjVal, "time_limit")
+
+    NoImprovements = 0
+    while NoImprovements < MaxNoImprovements:
+        if TimeExpired():
+            return Finish(ZSolBest, ObjVal, "time_limit")
+        print("Best:", ObjVal)
+        ZSolTemp, perturbation_complete = Perturbate(
+            ZSolBest, p1, p2, MaxModifications, MaxFailures)
+        if not perturbation_complete:
+            return Finish(ZSolBest, ObjVal, "time_limit")
+        ZSolTemp, NewObjVal, local_complete = LocalSearch(ZSolTemp)
+        if not local_complete or TimeExpired():
+            return Finish(ZSolBest, ObjVal, "time_limit")
+        if NewObjVal < ObjVal:
+            if TimeExpired():
+                return Finish(ZSolBest, ObjVal, "time_limit")
+            NoImprovements = 0
+            ZSolBest = ZSolTemp.copy()
+            ObjVal = NewObjVal
+        else:
+            NoImprovements += 1
+
+    return Finish(ZSolBest, ObjVal, "no_improvement_limit")

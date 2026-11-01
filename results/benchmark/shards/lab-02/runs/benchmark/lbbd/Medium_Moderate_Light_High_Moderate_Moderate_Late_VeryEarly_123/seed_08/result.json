@@ -1,0 +1,302 @@
+{
+  "algorithm": "lbbd",
+  "baseline_mip_starts": 1,
+  "budget_policy": "global_remaining_divided_among_remaining_greedy_stages",
+  "collection": "original_55",
+  "completed_utc": "2026-09-19T08:02:00Z",
+  "engine": "legacy_python",
+  "exact_started": false,
+  "feasibility_cuts": 18,
+  "global_budget_seconds": 1350,
+  "greedy_wall_seconds": 1350.0780648899963,
+  "harris_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2_4/inputs/harris/Medium_Moderate_Light_High_Moderate_Moderate_Late_VeryEarly_123.json",
+  "instance": "Medium_Moderate_Light_High_Moderate_Moderate_Late_VeryEarly_123",
+  "instance_sha256": "3644e38e7974f4ca855d1a5119618e01b82c08cf694137a5d473770f716d532e",
+  "job_id": "job_02428",
+  "lower_bound": 687.0,
+  "mip_gap": 0.21664766248574688,
+  "n_vertices": "900",
+  "native_path": "{PROJECT_ROOT}/analysis_wsp/results_benchmark74/benchmark74_v2_4/inputs/native/Medium_Moderate_Light_High_Moderate_Moderate_Late_VeryEarly_123.json",
+  "objective": 877,
+  "objective_consistency": "exact",
+  "objective_delta_vs_solver": 0,
+  "objective_source": "independent_shortest_path_validation",
+  "optimality_cuts": 147376,
+  "optimize_calls": 10,
+  "optimize_time_allocations_seconds": [
+    134.9832964810019,
+    134.98048256544604,
+    134.97709729725466,
+    134.97330667728758,
+    134.96892637384008,
+    134.964638181997,
+    134.95978444450884,
+    134.95337537499532,
+    134.94640401451034,
+    134.89924383099424
+  ],
+  "peak_rss_bytes": 289615872,
+  "phase": "benchmark",
+  "pilot": false,
+  "protocol_sha256": "e3d18d9a7f1ac04276df98b5306333bdae4db2effd6fb8c90ee3ea6a126329fc",
+  "result_provenance": "measured",
+  "seed": 8,
+  "shard_index": "1",
+  "size_class": "Medium",
+  "solution": [
+    [
+      [
+        1,
+        5
+      ],
+      586.01
+    ],
+    [
+      [
+        1,
+        6
+      ],
+      586.01
+    ],
+    [
+      [
+        1,
+        8
+      ],
+      796.72
+    ],
+    [
+      [
+        1,
+        11
+      ],
+      656.24
+    ],
+    [
+      [
+        1,
+        13
+      ],
+      234.82
+    ],
+    [
+      [
+        1,
+        15
+      ],
+      234.82
+    ],
+    [
+      [
+        1,
+        16
+      ],
+      515.77
+    ],
+    [
+      [
+        1,
+        19
+      ],
+      515.77
+    ],
+    [
+      [
+        2,
+        1
+      ],
+      445.53
+    ],
+    [
+      [
+        2,
+        2
+      ],
+      445.53
+    ],
+    [
+      [
+        2,
+        3
+      ],
+      445.53
+    ],
+    [
+      [
+        2,
+        5
+      ],
+      586.01
+    ],
+    [
+      [
+        2,
+        6
+      ],
+      796.72
+    ],
+    [
+      [
+        2,
+        7
+      ],
+      796.72
+    ],
+    [
+      [
+        2,
+        8
+      ],
+      866.96
+    ],
+    [
+      [
+        2,
+        9
+      ],
+      866.96
+    ],
+    [
+      [
+        2,
+        10
+      ],
+      866.96
+    ],
+    [
+      [
+        2,
+        12
+      ],
+      656.24
+    ],
+    [
+      [
+        2,
+        14
+      ],
+      234.82
+    ],
+    [
+      [
+        2,
+        15
+      ],
+      515.77
+    ],
+    [
+      [
+        2,
+        18
+      ],
+      375.29
+    ],
+    [
+      [
+        3,
+        4
+      ],
+      726.48
+    ],
+    [
+      [
+        3,
+        13
+      ],
+      656.24
+    ],
+    [
+      [
+        3,
+        15
+      ],
+      726.48
+    ],
+    [
+      [
+        3,
+        16
+      ],
+      726.48
+    ],
+    [
+      [
+        3,
+        17
+      ],
+      375.29
+    ],
+    [
+      [
+        16,
+        10
+      ],
+      375.29
+    ],
+    [
+      [
+        29,
+        4
+      ],
+      305.05
+    ],
+    [
+      [
+        30,
+        3
+      ],
+      305.05
+    ],
+    [
+      [
+        30,
+        5
+      ],
+      305.05
+    ]
+  ],
+  "solver_lower_bound": 687.0,
+  "solver_mip_gap": 0.21664766248574688,
+  "solver_objective": 877,
+  "solver_status": 9,
+  "status": "completed",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "8c3e35c902d8fe88eb7578735b0dc78648b8b4bae0bca3c64d7f6ccc448873f4",
+  "thermal_after": {
+    "frequencies_mhz": {
+      "cpu0": 4200.012,
+      "cpu1": 800.0,
+      "cpu2": 800.0,
+      "cpu3": 800.0,
+      "cpu4": 4199.98,
+      "cpu5": 800.0,
+      "cpu6": 800.0,
+      "cpu7": 4103.83
+    },
+    "temperatures_c": {
+      "thermal_zone0:acpitz": 27.8,
+      "thermal_zone1:acpitz": 29.8,
+      "thermal_zone2:x86_pkg_temp": 64.0
+    },
+    "utc": "2026-09-19T08:02:00Z"
+  },
+  "time_limit_seconds": "1350",
+  "validation": {
+    "assignments": 30,
+    "feasible": true,
+    "objective_recomputed": 877
+  },
+  "wall_seconds": 1350.7008647519979,
+  "worker": {
+    "core_type": "homogeneous",
+    "logical_cpu": 1,
+    "max_mhz": 4200.0,
+    "physical_core": 1,
+    "sibling_logical_cpus": [
+      1,
+      5
+    ],
+    "socket": 0,
+    "worker_id": 1
+  }
+}

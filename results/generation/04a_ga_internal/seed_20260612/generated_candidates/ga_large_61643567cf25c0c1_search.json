@@ -1,0 +1,58 @@
+{
+  "calculation_mode": "search_exact_selected_topology",
+  "coordinate_result_provenance": "measured",
+  "feature_result_provenance": "measured",
+  "features": {
+    "arc_time_max": 84.44,
+    "arc_time_min": 1.86,
+    "arrival_q50_over_h": 0.43258131283264334,
+    "last_release_over_h": 0.4845062093435836,
+    "n_vertices": 1600.0,
+    "resources_per_decision": 1.0,
+    "topo_betweenness_unweighted_q90": 0.03099984474474708,
+    "topo_harmonic_in_distance_q90": 0.002570465985986594,
+    "topo_hits_hub_strength_q50": -2.6774824403176045e-21,
+    "topo_in_degree_min": 2.0
+  },
+  "genotype": {
+    "first_release_time": "VeryLate",
+    "generator_seed": 13221873,
+    "grid": "Large",
+    "last_release_time": "VeryEarly",
+    "num_resources": "Few",
+    "resources_delay": "Medium",
+    "resources_dist": "Many",
+    "slope": "Steep",
+    "wind": "Light"
+  },
+  "instance_sha256": "6da7ad041906fbedba2881ea77df647ec721c3f2bdc4ed90699b05b84a235740",
+  "pilot_coordinates": [
+    0.35069090762732386,
+    0.1730285635875213
+  ],
+  "prelim_bound_applied": false,
+  "topology_diagnostics": {
+    "approximation_validation_status": "not_applicable_exact",
+    "backend": "hybrid_exact",
+    "backend_components": {
+      "betweenness": "python-igraph",
+      "degree": "numpy_networkx",
+      "harmonic": "python-igraph",
+      "hits": "scipy_svds_seeded_random_state_v1"
+    },
+    "candidate_artifact_cache_hit": false,
+    "elapsed_seconds": 0.6184721930185333,
+    "graph_sha256": "0a7e825e1c5e3a4039780ebbfc78913b4c3b5c214d41890334288187f691b8b5",
+    "landmarks": null,
+    "mode": "selected_family_exact_compiled",
+    "required_topology_features": [
+      "topo_betweenness_unweighted_q90",
+      "topo_harmonic_in_distance_q90",
+      "topo_hits_hub_strength_q50",
+      "topo_in_degree_min"
+    ],
+    "result_provenance": "measured",
+    "topology_cache_capacity": 512,
+    "topology_cache_hit": true
+  }
+}

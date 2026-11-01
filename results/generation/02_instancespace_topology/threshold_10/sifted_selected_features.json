@@ -1,0 +1,27 @@
+{
+  "features": [
+    "feature_n_vertices",
+    "feature_resources_per_decision",
+    "feature_last_release_over_h",
+    "feature_arrival_q50_over_h",
+    "feature_arc_time_min",
+    "feature_arc_time_max",
+    "feature_topo_betweenness_unweighted_q90",
+    "feature_topo_harmonic_in_distance_q90",
+    "feature_topo_hits_hub_strength_q50",
+    "feature_topo_in_degree_min"
+  ],
+  "indices": [
+    0,
+    6,
+    10,
+    15,
+    25,
+    26,
+    49,
+    57,
+    85,
+    90
+  ],
+  "result_provenance": "measured"
+}

@@ -1,0 +1,30 @@
+{
+  "canonical_index_sha256": "6bde0fe6debfd7e6c00bb5f6a7ce4fe03243ee47e27b65f644c6bfdad782cd76",
+  "failure_cases": [
+    {
+      "archived_feasible_baseline_objective": 400.0,
+      "failed_job": "job_01958",
+      "failed_seed": 10,
+      "good_label_completed_only": false,
+      "good_label_with_baseline": false,
+      "instance": "Small_Moderate_Light_High_Moderate_Many_Early_VeryLate_123",
+      "label_changed": false,
+      "mean_gap_completed_only": 0.4609053497942386,
+      "mean_gap_with_baseline": 0.4629629629629628
+    },
+    {
+      "archived_feasible_baseline_objective": 900.0,
+      "failed_job": "job_01865",
+      "failed_seed": 4,
+      "good_label_completed_only": true,
+      "good_label_with_baseline": true,
+      "instance": "ga_medium_94c1bb8938f7c2bc",
+      "label_changed": false,
+      "mean_gap_completed_only": 0.06907630522088348,
+      "mean_gap_with_baseline": 0.07060240963855416
+    }
+  ],
+  "interpretation": "A exclus\u00e3o hipot\u00e9tica das falhas n\u00e3o troca a classe ILS no limiar de 10%; as duas falhas permanecem reportadas e a matriz principal usa os baselines vi\u00e1veis arquivados.",
+  "labels_changed": 0,
+  "status": "passed"
+}
