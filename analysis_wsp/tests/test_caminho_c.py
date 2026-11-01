@@ -2,6 +2,9 @@ from __future__ import annotations
 
 import json
 import math
+from types import SimpleNamespace
+
+import pytest
 from pathlib import Path
 
 from analysis_wsp.caminho_c.common import (
@@ -64,7 +67,7 @@ def test_machine_uses_one_logical_cpu_per_physical_core() -> None:
     assert len({(slot["socket"], slot["physical_core"]) for slot in slots}) == len(slots)
     assert len({slot["logical_cpu"] for slot in slots}) == len(slots)
     assert all(slot["logical_cpu"] in slot["sibling_logical_cpus"] for slot in slots)
-    assert {slot["core_type"] for slot in slots} in ({"homogeneous"}, {"P", "E"})
+    assert {slot["core_type"] for slot in slots} in ({"homogeneous"}, {"P", "E"}, {"unknown"})
 
 
 def test_real_command_has_published_parameters_and_no_iteration_cap(tmp_path: Path, monkeypatch) -> None:
@@ -92,3 +95,25 @@ def test_published_nominal_budget_is_1054500_seconds() -> None:
     counts = {400: 1, 900: 3, 1600: 6, 6400: 9}
     total = sum(vertices * TIME_SECONDS_PER_VERTEX * 10 * count for vertices, count in counts.items())
     assert total == 1_054_500
+
+
+@pytest.mark.parametrize("missing", ["", "-"])
+def test_virtual_cpu_without_max_frequency_preserves_physical_slots(monkeypatch, missing) -> None:
+    from analysis_wsp.caminho_c import common
+    sample = f"# CPU,Core,Socket,MaxMHz\n0,0,0,{missing}\n1,0,0,{missing}\n2,1,0,{missing}\n3,1,0,{missing}\n"
+    monkeypatch.setattr(common.os, "sched_getaffinity", lambda _: {0, 1, 2, 3})
+    monkeypatch.setattr(common.subprocess, "run", lambda *args, **kwargs: SimpleNamespace(stdout=sample))
+    slots = common.physical_core_slots()
+    assert [slot["logical_cpu"] for slot in slots] == [0, 2]
+    assert [slot["sibling_logical_cpus"] for slot in slots] == [[0, 1], [2, 3]]
+    assert all(slot["max_mhz"] is None and slot["core_type"] == "unknown" for slot in slots)
+
+
+def test_known_hybrid_frequencies_keep_core_classification(monkeypatch) -> None:
+    from analysis_wsp.caminho_c import common
+    sample = "0,0,0,5000\n1,0,0,5000\n2,1,0,3500\n"
+    monkeypatch.setattr(common.os, "sched_getaffinity", lambda _: {0, 1, 2})
+    monkeypatch.setattr(common.subprocess, "run", lambda *args, **kwargs: SimpleNamespace(stdout=sample))
+    slots = common.physical_core_slots()
+    assert [slot["core_type"] for slot in slots] == ["P", "E"]
+    assert [slot["max_mhz"] for slot in slots] == [5000, 3500]

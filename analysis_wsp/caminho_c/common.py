@@ -220,7 +220,7 @@ def physical_core_slots() -> list[dict[str, Any]]:
         capture_output=True,
         env=stable_locale,
     )
-    grouped: dict[tuple[int, int], list[tuple[int, float]]] = {}
+    grouped: dict[tuple[int, int], list[tuple[int, float | None]]] = {}
     for line in completed.stdout.splitlines():
         if not line or line.startswith("#"):
             continue
@@ -228,14 +228,18 @@ def physical_core_slots() -> list[dict[str, Any]]:
         cpu = int(raw_cpu)
         if cpu not in available:
             continue
-        grouped.setdefault((int(raw_socket), int(raw_core)), []).append((cpu, float(raw_mhz)))
-    maxima = sorted({round(max(mhz for _cpu, mhz in siblings), -2) for siblings in grouped.values()})
-    hybrid = len(maxima) > 1 and max(maxima) - min(maxima) >= 500
+        mhz = float(raw_mhz) if raw_mhz.strip() not in {"", "-"} else None
+        if mhz is not None and (not math.isfinite(mhz) or mhz <= 0):
+            mhz = None
+        grouped.setdefault((int(raw_socket), int(raw_core)), []).append((cpu, mhz))
+    frequencies_known = all(mhz is not None for siblings in grouped.values() for _cpu, mhz in siblings)
+    maxima = sorted({round(mhz, -2) for siblings in grouped.values() for _cpu, mhz in siblings if mhz is not None})
+    hybrid = frequencies_known and len(maxima) > 1 and max(maxima) - min(maxima) >= 500
     threshold = (max(maxima) + min(maxima)) / 2 if hybrid else 0.0
     slots: list[dict[str, Any]] = []
     for worker_id, ((socket, core), siblings) in enumerate(sorted(grouped.items())):
         siblings = sorted(siblings)
-        max_mhz = max(mhz for _cpu, mhz in siblings)
+        max_mhz = max((mhz for _cpu, mhz in siblings if mhz is not None), default=None)
         slots.append(
             {
                 "worker_id": worker_id,
@@ -243,7 +247,9 @@ def physical_core_slots() -> list[dict[str, Any]]:
                 "sibling_logical_cpus": [cpu for cpu, _mhz in siblings],
                 "socket": socket,
                 "physical_core": core,
-                "core_type": "P" if hybrid and max_mhz >= threshold else ("E" if hybrid else "homogeneous"),
+                "core_type": ("unknown" if not frequencies_known else
+                              "P" if hybrid and max_mhz >= threshold else
+                              "E" if hybrid else "homogeneous"),
                 "max_mhz": max_mhz,
             }
         )
